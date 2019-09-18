@@ -60,7 +60,7 @@
                     <select id="versionSelect">
                         @foreach($page->versions as $version => $name)
                             <option 
-                                value="/{{ $page->baseUrl . $version }}"
+                                value="{{ $page->baseUrl . '/' . $version }}"
                                 @if($page->version() === $version)
                                     selected
                                 @endif
