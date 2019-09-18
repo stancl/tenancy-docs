@@ -61,7 +61,7 @@
                         @foreach($page->navigation as $version => $_)
                             <option 
                                 value="{{ $page->baseUrl . $version }}"
-                                @if($page->version() === $version)
+                                @if($page->version() === $version) {{-- todo, doesn't work --}}
                                     'checked'
                                 @endif
                             >
