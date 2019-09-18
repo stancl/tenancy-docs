@@ -55,6 +55,16 @@
                         @include('_nav.search-input')
                     @endif
                 </div>
+
+                <div class="flex flex-1 justify-end items-center text-right md:pl-10">
+                    <select id="versionSelect">
+                        @foreach($page->navigation as $version => $_)
+                            <option value="{{ $page->baseUrl . $version }}">
+                                {{ $version }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
             </div>
 
             @yield('nav-toggle')
@@ -80,5 +90,10 @@
                 </li>
             </ul>
         </footer>
+    <script>
+        document.getElementById('versionSelect').addEventListener('change', function () {
+            window.location = document.getElementById('versionSelect').value;
+        });
+    </script>
     </body>
 </html>
