@@ -9,7 +9,7 @@ section: content
 
 Storage drivers are used to store a list of all tenants, their domains and any extra information you store about your tenants (e.g. their plan).
 
-Currently, database and Redis storage drivers are available as part of the package. However, you can [write your own](/docs/writing-storage-drivers) (and contribute ❤️) storage drivers.
+Currently, database and Redis storage drivers are available as part of the package. However, you can [write your own]({{ $page->link('writing-storage-drivers') }}) (and contribute ❤️) storage drivers.
 
 ## Database {#database}
 
@@ -35,7 +35,7 @@ php artisan migrate
 
 > If you use a non-default connection, such as `central`, you have to specify which DB to migrate using the `--database` option.
 > 
-> If you have existing migrations related to your app in `database/migrations`, move them to `database/migrations/tenant`. You can read more about tenant migrations [here](/docs/console-commands/#migrate).
+> If you have existing migrations related to your app in `database/migrations`, move them to `database/migrations/tenant`. You can read more about tenant migrations [here]({{ $page->link('console-commands/#migrate') }}).
 
 ## Redis {#redis}
 

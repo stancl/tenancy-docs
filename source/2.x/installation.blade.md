@@ -25,11 +25,11 @@ To install the package, simply run
 php artisan tenancy:install
 ```
 
-You will be asked if you want to store your data in Redis or a relational database. You can read more about this on the [Storage Drivers](/docs/storage-drivers) page.
+You will be asked if you want to store your data in Redis or a relational database. You can read more about this on the [Storage Drivers]({{ $page->link('storage-drivers') }}) page.
 
 This will do all the steps listed in the [Manual installation](#manual-installation) section for you.
 
-The only thing you have to do now is create a database/Redis connection. Read the [Storage Drivers](/docs/storage-drivers) page for information about that.
+The only thing you have to do now is create a database/Redis connection. Read the [Storage Drivers]({{ $page->link('storage-drivers') }}) page for information about that.
 
 ### Manual installation {#manual-installation}
 
@@ -64,4 +64,4 @@ php artisan vendor:publish --provider='Stancl\Tenancy\TenancyServiceProvider' --
 
 This creates a `config/tenancy.php`. You can use it to configure how the package works.
 
-Configuration is explained in detail on the [Configuration](/docs/configuration) page.
+Configuration is explained in detail on the [Configuration]({{ $page->link('configuration') }}) page.

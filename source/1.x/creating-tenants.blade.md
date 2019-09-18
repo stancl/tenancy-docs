@@ -7,7 +7,7 @@ section: content
 
 # Creating Tenants {#creating-tenants}
 
-> **Make sure your database is correctly [configured](/docs/configuration/#database) before creating tenants.**
+> **Make sure your database is correctly [configured]({{ $page->link('configuration/#database') }}) before creating tenants.**
 
 To create a tenant, you can use
 

@@ -7,7 +7,7 @@ section: content
 
 # Horizon Integration
 
-> Make sure your queue is [correctly configured](/docs/jobs-queues) before using Horizon.
+> Make sure your queue is [correctly configured]({{ $page->link('jobs-queues') }}) before using Horizon.
 
 Jobs are automatically tagged with the tenant's uuid and domain:
 
