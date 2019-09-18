@@ -50,6 +50,8 @@
                     </a>
                 </div>
 
+                <meta name="docsearch:language" content="en" />
+                <meta name="docsearch:version" content="{{ $page->version() }}" />
                 <div class="flex flex-1 justify-end items-center text-right md:pl-10">
                     @if ($page->docsearchApiKey && $page->docsearchIndexName)
                         @include('_nav.search-input')
