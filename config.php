@@ -7,13 +7,14 @@ return [
     'siteDescription' => 'A Laravel multi-database tenancy package that respects your code.',
 
     'defaultVersion' => '2.x',
+    'prettyUrls' => true,
 
     'version' => function ($page) {
         return explode('/', $page->getPath())[1];
     },
 
     'link' => function ($page, $path) {
-        return $page->baseUrl . '/' . $page->version() . '/' . $path;
+        return $page->baseUrl . '/' . $page->version() . '/' . $path . ($page->prettyUrls ? '' : '.html');
     },
 
     // Algolia DocSearch credentials

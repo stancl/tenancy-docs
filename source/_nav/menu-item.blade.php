@@ -1,7 +1,7 @@
 <li class="list-reset pl-4">
     @if ($url = is_string($item) ? $item : $item->url)
         {{-- Menu item with URL--}}
-        <a href="{{ $page->url($url) }}"
+        <a href="{{ $page->link($url) }}"
             class="{{ 'lvl' . $level }} {{ $page->isActiveParent($item) ? 'lvl' . $level . '-active' : '' }} {{ $page->isActive($url) ? 'active font-semibold text-blue' : '' }} nav-menu__item hover:text-blue"
         >
             {{ $label }}
