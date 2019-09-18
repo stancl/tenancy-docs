@@ -14,7 +14,7 @@ return [
     },
 
     'link' => function ($page, $path) {
-        return $page->baseUrl . $page->version() . '/' . $path . ($page->prettyUrls ? '' : '.html');
+        return $page->baseUrl . '/' . $page->version() . '/' . $path . ($page->prettyUrls ? '' : '.html');
     },
 
     // Algolia DocSearch credentials
