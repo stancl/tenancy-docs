@@ -59,7 +59,12 @@
                 <div class="flex flex-1 justify-end items-center text-right md:pl-10">
                     <select id="versionSelect">
                         @foreach($page->navigation as $version => $_)
-                            <option value="{{ $page->baseUrl . $version }}">
+                            <option 
+                                value="{{ $page->baseUrl . $version }}"
+                                @if($page->version() === $version)
+                                    'checked'
+                                @endif
+                            >
                                 {{ $version }}
                             </option>
                         @endforeach
