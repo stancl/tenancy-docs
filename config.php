@@ -6,6 +6,11 @@ return [
     'siteName'        => 'stancl/tenancy documentation',
     'siteDescription' => 'A Laravel multi-database tenancy package that respects your code.',
 
+    // key => display text
+    'versions' => [
+        '1.x' => '1.x',
+        '2.x' => '2.x (beta)',
+    ],
     'defaultVersion' => '2.x',
     'prettyUrls' => true,
 
