@@ -1,0 +1,4 @@
+[build]
+environment = { PHP_VERSION = "7.2" }
+publish = "/dist"
+command = "./deploy.sh"
