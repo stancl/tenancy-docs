@@ -6,3 +6,4 @@ command = "./build.sh"
 [[redirects]]
 from = "/docs/master/*"
 to = "/docs/2.x/:splat"
+status = 302
