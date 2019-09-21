@@ -1,7 +1,7 @@
 ---
 title: Tenancy Initialization
-description: Tenancy Initialization with stancl/tenancy — A Laravel multi-database tenancy package that respects your code..
-extends: _layouts.documentation
+description: Tenancy Initialization..
+extends: _layouts.documentation_v2
 section: content
 ---
 
@@ -28,7 +28,7 @@ public function switchDatabaseConnection()
 }
 ```
 
-If `tenancy.database_name_key` is set and present in the current tenant's data, the `getDatabaseName()` returns the stored database_name. Otherwise it returns the prefix + uuid + suffix.
+If `tenancy.database_name_key` is set and present in the current tenant's data, the `getDatabaseName()` returns the stored database_name. Otherwise it returns the prefix + id + suffix.
 
 ```php
 public function getDatabaseName($tenant = []): string
@@ -39,7 +39,7 @@ public function getDatabaseName($tenant = []): string
             return $tenant[$key];
         }
     }
-    return $this->app['config']['tenancy.database.prefix'] . $tenant['uuid'] . $this->app['config']['tenancy.database.suffix'];
+    return $this->app['config']['tenancy.database.prefix'] . $tenant['id'] . $this->app['config']['tenancy.database.suffix'];
 }
 ```
 
@@ -75,13 +75,13 @@ public function useConnection(string $connection)
 
 The `bootstrap()` method calls `setPhpRedisPrefix()` if `tenancy.redis.tenancy` is `true`.
 
-This method cycles through the `tenancy.redis.prefixed_connections` and sets their prefix to `tenancy.redis.prefix_base` + uuid.
+This method cycles through the `tenancy.redis.prefixed_connections` and sets their prefix to `tenancy.redis.prefix_base` + id.
 ```php
 public function setPhpRedisPrefix($connections = ['default'])
 {
     // [...]
     foreach ($connections as $connection) {
-        $prefix = $this->app['config']['tenancy.redis.prefix_base'] . $this->tenant['uuid'];
+        $prefix = $this->app['config']['tenancy.redis.prefix_base'] . $this->tenant['id'];
         $client = Redis::connection($connection)->client();
         try {
             // [...]
@@ -112,7 +112,7 @@ class CacheManager extends BaseCacheManager
 {
     public function __call($method, $parameters)
     {
-        $tags = [config('tenancy.cache.tag_base') . tenant('uuid')];
+        $tags = [config('tenancy.cache.tag_base') . tenant('id')];
         if ($method === 'tags') {
             if (\count($parameters) !== 1) {
                 throw new \Exception("Method tags() takes exactly 1 argument. {count($parameters)} passed.");
@@ -134,7 +134,7 @@ class CacheManager extends BaseCacheManager
 public function suffixFilesystemRootPaths()
 {
     // [...]
-    $suffix = $this->app['config']['tenancy.filesystem.suffix_base'] . tenant('uuid');
+    $suffix = $this->app['config']['tenancy.filesystem.suffix_base'] . tenant('id');
     // storage_path()
     $this->app->useStoragePath($old['path'] . "/{$suffix}");
     // Storage facade

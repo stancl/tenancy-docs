@@ -1,7 +1,7 @@
 ---
 title: Stay Updated
-description: Stay Updated | stancl/tenancy — A Laravel multi-database tenancy package that respects your code..
-extends: _layouts.documentation
+description: Stay Updated..
+extends: _layouts.documentation_v2
 section: content
 ---
 

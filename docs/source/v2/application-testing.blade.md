@@ -1,7 +1,7 @@
 ---
 title: Application Testing
-description: Application Testing with stancl/tenancy — A Laravel multi-database tenancy package that respects your code..
-extends: _layouts.documentation
+description: Application Testing..
+extends: _layouts.documentation_v2
 section: content
 ---
 
@@ -14,12 +14,12 @@ protected function setUp(): void
 {
     parent::setUp();
 
-    tenant()->create('test.localhost');
+    tenancy()->create('test.localhost');
     tenancy()->init('test.localhost');
 }
 ```
 
-If you're using the database storage driver, you will also need to run the `create_tenants_table` migration:
+If you're using the database storage driver, you will also need to run the migrations:
 ```php
 protected function setUp(): void
 {
@@ -30,7 +30,7 @@ protected function setUp(): void
         '--database' => 'sqlite',
     ]);
 
-    tenant()->create('test.localhost');
+    tenancy()->create('test.localhost');
     tenancy()->init('test.localhost');
 }
 ```

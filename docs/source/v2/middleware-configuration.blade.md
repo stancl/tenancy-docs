@@ -1,7 +1,7 @@
 ---
 title: Middleware Configuration
-description: Middleware Configuration with stancl/tenancy — A Laravel multi-database tenancy package that respects your code..
-extends: _layouts.documentation
+description: Middleware Configuration..
+extends: _layouts.documentation_v2
 section: content
 ---
 

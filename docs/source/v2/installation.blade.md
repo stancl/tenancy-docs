@@ -1,7 +1,7 @@
 ---
 title: Installation
-description: Installing stancl/tenancy — A Laravel multi-database tenancy package that respects your code..
-extends: _layouts.documentation
+description: Installing stancl/tenancy
+extends: _layouts.documentation_v2
 section: content
 ---
 

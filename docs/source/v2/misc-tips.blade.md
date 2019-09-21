@@ -1,7 +1,7 @@
 ---
 title: Miscellaneous Tips
-description: Miscellaneous Tips | stancl/tenancy — A Laravel multi-database tenancy package that respects your code..
-extends: _layouts.documentation
+description: Miscellaneous Tips..
+extends: _layouts.documentation_v2
 section: content
 ---
 
@@ -34,3 +34,4 @@ class MyUniqueIDGenerator implements UniqueIdentifierGenerator
 
 and then set the `tenancy.unique_id_generator` config to the full path to your class.
 
+Note that you may have to make the `id` column on the `tenants` table larger, as it's set to the exact length of uuids by default.

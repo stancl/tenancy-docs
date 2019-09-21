@@ -1,7 +1,7 @@
 ---
 title: Horizon Integration
-description: Horizon Integration with stancl/tenancy — A Laravel multi-database tenancy package that respects your code..
-extends: _layouts.documentation
+description: Horizon Integration..
+extends: _layouts.documentation_v2
 section: content
 ---
 
@@ -9,9 +9,9 @@ section: content
 
 > Make sure your queue is [correctly configured]({{ $page->link('jobs-queues') }}) before using Horizon.
 
-Jobs are automatically tagged with the tenant's uuid and domain:
+Jobs are automatically tagged with the tenant's id and domain:
 
-![UUID and domain tags](https://i.imgur.com/K2oWTJc.png)
+![id and domain tags](https://i.imgur.com/K2oWTJc.png)
 
 You can use these tags to monitor specific tenants' jobs:
 

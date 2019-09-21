@@ -1,19 +1,19 @@
 ---
 title: Telescope Integration
-description: Telescope Integration with stancl/tenancy — A Laravel multi-database tenancy package that respects your code..
-extends: _layouts.documentation
+description: Telescope Integration..
+extends: _layouts.documentation_v2
 section: content
 ---
 
 # Telescope Integration
 
-Requests in Telescope are automatically tagged with the tenant uuid and domain:
+Requests in Telescope are automatically tagged with the tenant id and domain:
 
 ![Telescope Request with tags](https://i.imgur.com/CEEluYj.png)
 
-This lets you filter requests by uuid and domain:
+This lets you filter requests by id and domain:
 
-![Filtering by uuid](https://i.imgur.com/SvbOa7S.png)
+![Filtering by id](https://i.imgur.com/SvbOa7S.png)
 ![Filtering by domain](https://i.imgur.com/dCJuEr1.png)
 
 If you'd like to set Telescope tags in your own code, e.g. in your `AppServiceProvider`, replace your `Telescope::tag()` call like this:

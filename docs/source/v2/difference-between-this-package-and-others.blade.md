@@ -1,7 +1,7 @@
 ---
 title: Difference Between This Package And Others
-description: Difference Between This Package And Others | with stancl/tenancy — A Laravel multi-database tenancy package that respects your code.
-extends: _layouts.documentation
+description: Difference Between This Package And Others
+extends: _layouts.documentation_v2
 section: content
 ---
 

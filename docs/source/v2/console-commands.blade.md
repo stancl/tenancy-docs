@@ -1,7 +1,7 @@
 ---
 title: Console Commands
-description: Console commands with stancl/tenancy — A Laravel multi-database tenancy package that respects your code..
-extends: _layouts.documentation
+description: Console commands..
+extends: _layouts.documentation_v2
 section: content
 ---
 
@@ -22,10 +22,10 @@ php artisan tenants:migrate --tenants=8075a580-1cb8-11e9-8822-49c5d8f8ff23
 
 You can use these commands outside the command line as well. If you want to migrate a tenant's database in a controller, you can use the `Artisan` facade.
 ```php
-$tenant = tenant()->create('tenant1.localhost');
+$tenant = tenancy()->create('tenant1.localhost');
 
 \Artisan::call('tenants:migrate', [
-    '--tenants' => [$tenant['uuid']]
+    '--tenants' => [$tenant['id']]
 ]);
 ```
 
@@ -50,8 +50,8 @@ php artisan tenants:run email:send --tenants=8075a580-1cb8-11e9-8822-49c5d8f8ff2
 ```none
 php artisan tenants:list
 Listing all tenants.
-[Tenant] uuid: dbe0b330-1a6e-11e9-b4c3-354da4b4f339 @ localhost
-[Tenant] uuid: 49670df0-1a87-11e9-b7ba-cf5353777957 @ dev.localhost
+[Tenant] id: dbe0b330-1a6e-11e9-b4c3-354da4b4f339 @ localhost
+[Tenant] id: 49670df0-1a87-11e9-b7ba-cf5353777957 @ dev.localhost
 ```
 
 ## Selectively clearing tenant cache {#selectively-clearing-tenant-cache}
@@ -61,4 +61,4 @@ You can delete specific tenants' cache by using the `--tags` option on `cache:cl
 php artisan cache:clear --tags=tenantdbe0b330-1a6e-11e9-b4c3-354da4b4f339
 ```
 
-The tag is `config('tenancy.cache.tag_base') . $uuid`.
+The tag is `config('tenancy.cache.tag_base') . $id`.

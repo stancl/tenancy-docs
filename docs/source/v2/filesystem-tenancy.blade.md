@@ -1,7 +1,7 @@
 ---
 title: Filesystem Tenancy
-description: Filesystem Tenancy with stancl/tenancy — A Laravel multi-database tenancy package that respects your code..
-extends: _layouts.documentation
+description: Filesystem Tenancy..
+extends: _layouts.documentation_v2
 section: content
 ---
 
@@ -9,13 +9,13 @@ section: content
 
 > Note: It's important to differentiate between storage_path() and the Storage facade. The Storage facade is what you use to put files into storage, i.e. `Storage::disk('local')->put()`.  `storage_path()` is used to get the path to the storage directory.
 
-The `storage_path()` will be suffixed with a directory named `config('tenancy.filesystem.suffix_base') . $uuid`.
+The `storage_path()` will be suffixed with a directory named `config('tenancy.filesystem.suffix_base') . $id`.
 
-The root of each disk listed in `tenancy.filesystem.disks` will be suffixed with `config('tenancy.filesystem.suffix_base') . $uuid`.
+The root of each disk listed in `tenancy.filesystem.disks` will be suffixed with `config('tenancy.filesystem.suffix_base') . $id`.
 
 **However, this alone would cause unwanted behavior.** It would work for S3 and similar disks, but for local disks, this would result in `/path_to_your_application/storage/app/tenant1e22e620-1cb8-11e9-93b6-8d1b78ac0bcd/`. That's not what we want. We want `/path_to_your_application/storage/tenant1e22e620-1cb8-11e9-93b6-8d1b78ac0bcd/app/`.
 
-That's what the `root_override` section is for. `%storage_path%` gets replaced by `storage_path()` *after* tenancy has been initialized. The roots of disks listed in the `root_override` section of the config will be replaced accordingly. All other disks will be simply suffixed with `tenancy.filesystem.suffix_base` + the tenant UUID.
+That's what the `root_override` section is for. `%storage_path%` gets replaced by `storage_path()` *after* tenancy has been initialized. The roots of disks listed in the `root_override` section of the config will be replaced accordingly. All other disks will be simply suffixed with `tenancy.filesystem.suffix_base` + the tenant id.
 
 Since `storage_path()` will be suffixed, your folder structure will look like this:
 

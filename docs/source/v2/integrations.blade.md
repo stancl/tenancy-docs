@@ -1,7 +1,7 @@
 ---
 title: Integrations
-description: Integrating stancl/tenancy — A Laravel multi-database tenancy package that respects your code..
-extends: _layouts.documentation
+description: Integrating stancl/tenancy
+extends: _layouts.documentation_v2
 section: content
 ---
 

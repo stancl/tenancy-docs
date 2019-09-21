@@ -1,13 +1,13 @@
 ---
 title: Getting Started
-description: Getting started with stancl/tenancy — A Laravel multi-database tenancy package that respects your code.
-extends: _layouts.documentation
+description: Getting started.
+extends: _layouts.documentation_v2
 section: content
 ---
 
 # Getting Started {#getting-started}
 
-[**stancl/tenancy**](https://github.com/stancl/tenancy) is a Laravel multi-database tenancy package. It is designed in a way that requires you to make no changes to your codebase. Instead of applying traits on models and replacing every single reference to cache by a reference to a tenant-aware cache, the package lets you write your app without thinking about tenancy. It handles tenancy automatically.
+[**stancl/tenancy**](https://github.com/stancl/tenancy) is a Laravel multi-database tenancy package. It makes your app multi-tenant in a way that requires no changes to the codebase. Instead of applying traits on models and replacing every single reference to cache by a reference to a tenant-aware cache, the package lets you write your app without thinking about tenancy. It handles tenancy automatically in the background.
 
 > Note: Filesystem is the only thing that can be a little problematic. Be sure to read [that page]({{ $page->link('filesystem-tenancy') }}).
 

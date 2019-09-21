@@ -8,10 +8,10 @@ return [
 
     // key => display name
     'versions' => [
-        '1.x' => '1.x',
-        '2.x' => '2.x (beta)',
+        'v1' => '1.x',
+        'v2' => '2.x (beta)',
     ],
-    'defaultVersion' => '1.x',
+    'defaultVersion' => 'v1',
     'prettyUrls' => true,
 
     'version' => function ($page) {

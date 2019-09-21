@@ -1,32 +1,32 @@
 ---
 title: Tenant Storage
-description: Tenant storage with stancl/tenancy — A Laravel multi-database tenancy package that respects your code..
-extends: _layouts.documentation
+description: Tenant storage..
+extends: _layouts.documentation_v2
 section: content
 ---
 
 # Tenant Storage {#tenant-storage}
 
-Tenant storage is where tenants' uuids and domains are stored. You can store things like the tenant's plan, subscription information, and tenant-specific application configuration in tenant storage. You can use these functions:
+Tenant storage is where tenants' ids and domains are stored. You can store things like the tenant's plan, subscription information, and tenant-specific application configuration in tenant storage. You can use these functions:
 ```php
-get (string|array $key, string $uuid = null) // $uuid defaults to the current tenant's UUID
-put (string|array $key, mixed $value = null, string $uuid = null) // if $key is array, make sure $value is null
+get (string|array $key, string $id = null) // $id defaults to the current tenant's id
+put (string|array $key, mixed $value = null, string $id = null) // if $key is array, make sure $value is null
 ```
 
 To put something into the tenant storage, you can use `put()` or `set()`.
 ```php
 tenancy()->put($key, $value);
 tenancy()->set($key, $value); // alias for put()
-tenancy()->put($key, $value, $uuid);
+tenancy()->put($key, $value, $id);
 tenancy()->put(['key1' => 'value1', 'key2' => 'value2']);
-tenancy()->put(['key1' => 'value1', 'key2' => 'value2'], null, $uuid);
+tenancy()->put(['key1' => 'value1', 'key2' => 'value2'], null, $id);
 ```
 
 To get something from the storage, you can use `get()`:
 
 ```php
 tenancy()->get($key);
-tenancy()->get($key, $uuid);
+tenancy()->get($key, $id);
 tenancy()->get(['key1', 'key2']);
 ```
 

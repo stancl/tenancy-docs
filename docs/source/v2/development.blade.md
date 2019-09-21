@@ -1,7 +1,7 @@
 ---
 title: Development
-description: Development | stancl/tenancy — A Laravel multi-database tenancy package that respects your code..
-extends: _layouts.documentation
+description: Development..
+extends: _layouts.documentation_v2
 section: content
 ---
 

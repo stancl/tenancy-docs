@@ -1,7 +1,7 @@
 ---
 title: The Event System
-description: The Event System | stancl/tenancy — A Laravel multi-database tenancy package that respects your code..
-extends: _layouts.documentation
+description: The Event System..
+extends: _layouts.documentation_v2
 section: content
 ---
 
@@ -20,7 +20,7 @@ The following events are available:
 You can hook into these events using `Tenancy::<eventName>`:
 ```php
 \Tenancy::boostrapping(function ($tenantManager) {
-    if ($tenantManager->tenant['uuid'] === 'someUUID') {
+    if ($tenantManager->tenant['id'] === 'someID') {
         config(['database.connections.someDatabaseConnection' => $tenantManager->tenant['databaseConnection']]);
         $tenantManager->database->useConnection('someDatabaseConnection');
 
@@ -29,7 +29,7 @@ You can hook into these events using `Tenancy::<eventName>`:
 });
 ```
 
-The example above checks whether the current tenant has an uuid of `someUUID`. If yes, it creates a new database connection based on data stored in the tenant's storage. Then it changes the default database connection. Finally, it returns an array of the events that this callback prevents.
+The example above checks whether the current tenant has an id of `someID`. If yes, it creates a new database connection based on data stored in the tenant's storage. Then it changes the default database connection. Finally, it returns an array of the events that this callback prevents.
 
 The following actions can be prevented:
 - database connection switch: `database`

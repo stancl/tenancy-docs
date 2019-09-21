@@ -1,7 +1,7 @@
 ---
 title: Jobs & Queues
-description: Jobs & Queues with stancl/tenancy — A Laravel multi-database tenancy package that respects your code..
-extends: _layouts.documentation
+description: Jobs & Queues..
+extends: _layouts.documentation_v2
 section: content
 ---
 

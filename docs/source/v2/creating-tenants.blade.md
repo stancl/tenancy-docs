@@ -1,7 +1,7 @@
 ---
 title: Creating Tenants
-description: Creating tenants with stancl/tenancy — A Laravel multi-database tenancy package that respects your code..
-extends: _layouts.documentation
+description: Creating tenants..
+extends: _layouts.documentation_v2
 section: content
 ---
 

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    '1.x' => [
+    'v1' => [
         'Getting Started' => [
             'url'      => 'getting-started',
             'children' => [
@@ -51,7 +51,7 @@ return [
         'Stay Updated' => 'stay-updated',
         'GitHub'       => 'https://github.com/stancl/tenancy',
     ],
-    '2.x' => [
+    'v2' => [
         'Getting Started' => [
             'url'      => 'getting-started',
             'children' => [

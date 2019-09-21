@@ -1,7 +1,7 @@
 ---
 title: Tenant Manager
-description: Tenant Manager | stancl/tenancy — A Laravel multi-database tenancy package that respects your code.
-extends: _layouts.documentation
+description: Tenant Manager.
+extends: _layouts.documentation_v2
 section: content
 ---
 
@@ -9,14 +9,14 @@ section: content
 
 This page documents a couple of other `TenantManager` methods you may find useful.
 
-### Finding tenant using UUID
+### Finding tenant using id
 
 `find()` is an alias for `getTenantById()`. You may use the second argument to specify the key(s) as a string/array.
 
 ```php
 >>> tenant()->find('dbe0b330-1a6e-11e9-b4c3-354da4b4f339');
 => [
-     "uuid" => "dbe0b330-1a6e-11e9-b4c3-354da4b4f339",
+     "id" => "dbe0b330-1a6e-11e9-b4c3-354da4b4f339",
      "domain" => "localhost",
      "foo" => "bar",
    ]
@@ -47,7 +47,7 @@ You may use the second argument to specify the key(s) as a string/array.
 ```php
 >>> tenant()->findByDomain('localhost');
 => [
-     "uuid" => "b3ce3f90-1a88-11e9-a6b0-038c6337ae50",
+     "id" => "b3ce3f90-1a88-11e9-a6b0-038c6337ae50",
      "domain" => "localhost",
    ]
 ```
@@ -63,7 +63,7 @@ tenancy()->tenant
 which is an array. If you want to get the value of a specific key from the array, you can use one of the helpers the key on the tenant array as an argument.
 
 ```php
-tenant('uuid'); // Does the same thing as tenant()->tenant['uuid']
+tenant('id'); // Does the same thing as tenancy()->getTenant('id')
 ```
 
 ### Getting all tenants
@@ -75,11 +75,11 @@ This method returns a collection of arrays.
 => Illuminate\Support\Collection {#2980
      all: [
        [
-         "uuid" => "32e20780-1a88-11e9-a051-4b6489a7edac",
+         "id" => "32e20780-1a88-11e9-a051-4b6489a7edac",
          "domain" => "localhost",
        ],
        [
-         "uuid" => "49670df0-1a87-11e9-b7ba-cf5353777957",
+         "id" => "49670df0-1a87-11e9-b7ba-cf5353777957",
          "domain" => "dev.localhost",
        ],
      ],

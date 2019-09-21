@@ -1,7 +1,7 @@
 ---
 title: HTTPS Certificates
-description: HTTPS Certificates with stancl/tenancy — A Laravel multi-database tenancy package that respects your code..
-extends: _layouts.documentation
+description: HTTPS Certificates..
+extends: _layouts.documentation_v2
 section: content
 ---
 

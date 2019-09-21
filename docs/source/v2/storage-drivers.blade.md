@@ -1,7 +1,7 @@
 ---
 title: Storage Drivers
-description: Storage Drivers of stancl/tenancy — A Laravel multi-database tenancy package that respects your code..
-extends: _layouts.documentation
+description: Storage Drivers
+extends: _layouts.documentation_v2
 section: content
 ---
 

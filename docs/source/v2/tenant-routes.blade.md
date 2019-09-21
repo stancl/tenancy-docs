@@ -1,7 +1,7 @@
 ---
 title: Tenant Routes
-description: Tenant routes with stancl/tenancy — A Laravel multi-database tenancy package that respects your code..
-extends: _layouts.documentation
+description: Tenant routes..
+extends: _layouts.documentation_v2
 section: content
 ---
 
