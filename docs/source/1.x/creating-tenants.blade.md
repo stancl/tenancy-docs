@@ -27,4 +27,4 @@ tenant()->create('tenant2.yourapp.com', [
 
 The `create` method returns an array with tenant information (`uuid`, `domain` and whatever else you supplied).
 
-> Note: Creating a tenant doesn't run [migrations](https://stancl-tenancy.netlify.com/docs/console-commands/#migrate) automatically. You have to do that yourself.
+> Note: Creating a tenant doesn't run [migrations]({{ $page->link('console-commands/#migrate') }}) automatically. You have to do that yourself.
