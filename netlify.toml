@@ -2,3 +2,7 @@
 environment = { PHP_VERSION = "7.2" }
 publish = "/dist"
 command = "./build.sh"
+
+[[redirects]]
+from = "/docs/master/*"
+to = "/docs/2.x/:splat"

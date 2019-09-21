@@ -17,7 +17,7 @@ This lets you configure the driver for tenant storage, i.e. what will be used to
 
 Available storage drivers:
 - `Stancl\Tenancy\StorageDrivers\RedisStorageDriver`
-- `Stancl\Tenancy\StorageDrivers\DatabaseStorageDriver`
+- `Stancl\Tenancy\StorageDrivers\Database\DatabaseStorageDriver`
 
 ### `tenant_route_namespace` {#tenant-route-namespace}
 
