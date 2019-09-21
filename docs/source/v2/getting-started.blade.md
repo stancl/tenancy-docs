@@ -9,8 +9,6 @@ section: content
 
 [**stancl/tenancy**](https://github.com/stancl/tenancy) is a Laravel multi-database tenancy package. It makes your app multi-tenant in a way that requires no changes to the codebase. Instead of applying traits on models and replacing every single reference to cache by a reference to a tenant-aware cache, the package lets you write your app without thinking about tenancy. It handles tenancy automatically in the background.
 
-> Note: Filesystem is the only thing that can be a little problematic. Be sure to read [that page]({{ $page->link('filesystem-tenancy') }}).
-
 ## How does it work? {#how-does-it-work}
 
 A user visits `client1.yourapp.com`. The package identifies the tenant who this domain belongs to, and automatically does the following:
@@ -18,6 +16,7 @@ A user visits `client1.yourapp.com`. The package identifies the tenant who this 
 - replaces the default cache manager
 - switches Redis connection
 - changes filesystem root paths
+- makes jobs automatically tenant-aware
 
 The benefits of this being taken care of by the package are:
 - separation of concerns: you should write your app, not tenancy implementations

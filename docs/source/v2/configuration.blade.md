@@ -19,6 +19,19 @@ Available storage drivers:
 - `Stancl\Tenancy\StorageDrivers\RedisStorageDriver`
 - `Stancl\Tenancy\StorageDrivers\Database\DatabaseStorageDriver`
 
+#### db {#db-storage-driver}
+
+- `data_column` - the name of column that holds the tenant's data in a single JSON string
+- `custom_columns` - list of keys that shouldn't be put into the data column, but into their own column
+- `connection` - what database connection should be used to store tenant data (`null` means the default connection)
+- `table_names` - the table names used by each the models that come with the storage driver
+
+> Note: Don't use the models directly. You're supposed to use [storage]({{ $page->link('tenant-storage') }}) methods on `Tenant` objects.
+
+#### redis {#redis-db-driver}
+
+- `connection` - what Redis connection should be used to store tenant data
+
 ### `tenant_route_namespace` {#tenant-route-namespace}
 
 Controller namespace used for routes in `routes/tenant.php`. The default value is the same as the namespace for `web.php` routes.
@@ -54,3 +67,55 @@ The root of each disk listed in `tenancy.filesystem.disks` will be suffixed with
 For disks listed in `root_override`, the root will be that string with `%storage_path%` replaced by `storage_path()` *after* tenancy has been initialized. All other disks will be simply suffixed with `tenancy.filesystem.suffix_base` + the tenant id.
 
 Read more about this on the [Filesystem Tenancy]({{ $page->link('filesystem-tenancy') }}) page.
+
+### `database_managers` {#database_managers}
+
+Tenant database managers handle the creation & deletion of tenant databases. This configuration array maps the database driver name to the `TenantDatabaseManager`, e.g.:
+
+```php
+'mysql' => 'Stancl\Tenancy\TenantDatabaseManagers\MySQLDatabaseManager'
+```
+
+### `database_manager_connections` {#database_maanger_connections}
+
+Connections used by TenantDatabaseManagers. They tell, for example, that the manager for the `mysql` driver (`MySQLDatabaseManager`) should use the `mysql` connection. You may want to change this if your connection is named differently, e.g. a MySQL connection named `central`.
+
+### `bootstrappers` {#bootstrappers}
+
+These are the classes that do the magic. When tenancy is initialized, TenancyBootstrappers are executed, making Laravel tenant-aware.
+
+This config is an array. The key is the alias and the value is the full class name.
+
+```php
+'cache' => 'Stancl\Tenancy\TenancyBootstrappers\CacheTenancyBootstrapper',
+```
+
+The aliases are used by the [event system]({{ $page->link('event-system') }})
+
+### `features` {#bootstrappers}
+
+Features are similar to bootstrappers, but they are executed regardless of whether tenancy has been initialized or not. Their purpose is to provide additional functionality that is not necessary for the package to work. Things like easy redirects to tenant domains, tags in Telescope, etc.
+
+### `migrate_after_creation`
+
+Run migrations after creating a tenant.
+- Default: `false`
+
+### `delete_database_after_tenant_deletion`
+
+Delete the tenant's database after deleting the tenant.
+- Default: `false`
+
+### `queue_database_creation`
+
+- Default: `false`
+
+### `queue_database_deletion`
+
+- Default: `false`
+
+### `unique_id_generator`
+
+The class used to generate a random tenant ID (when no ID is supplied during the tenant creation process).
+
+- Default: `Stancl\Tenancy\UUIDGenerator`

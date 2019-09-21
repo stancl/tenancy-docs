@@ -7,7 +7,7 @@ section: content
 
 # Storage Drivers {#storage-drivers}
 
-Storage drivers are used to store a list of all tenants, their domains and any extra information you store about your tenants (e.g. their plan).
+Storage drivers are used to store a list of all tenants, their domains and any extra information you store about your tenants (their plan, API keys, etc).
 
 Currently, database and Redis storage drivers are available as part of the package. However, you can [write your own]({{ $page->link('writing-storage-drivers') }}) (and contribute ❤️) storage drivers.
 
@@ -17,25 +17,23 @@ The database storage driver lets you store tenant information in a relational da
 
 The benefit of this storage driver is that you don't have to use both Redis and a database for your data. Also you don't have to do as much configuration.
 
-To use this driver, you need to have a `tenants` table. You may also use a custom database connection. By default, `tenancy.storage.db.connection` is set to `central`, which means that the `central` database connection will be used to store tenants. This connection is not automatically created, so you'd have to create it manually. You can create database connections in the `config/database.php` file.
+To use this driver, you need to have a `tenants` table and a `domains` table. You may also use a custom database connection. By default, `tenancy.storage.db.connection` is set to `null`, which means that the your default database connection will be used to store tenants. If you wish to use a different connection, you may create a it in the `config/database.php` file and set `tenancy.storage.db.connection` to the name of that connection.
 
-If you'd like to use an existing connection, you can set this config to the name of the connection, e.g. `mysql`.
-
-To create the `tenants` table, you can use the migration that comes with this package. If you haven't published it during installation, publish it now:
+To create the `tenants` and `domains` tables, you can use the migrations that come with this package. If you haven't published them during installation, publish them now:
 ```
 php artisan vendor:publish --provider='Stancl\Tenancy\TenancyServiceProvider' --tag=migrations
 ```
 
 By default, all of your data will be stored in the JSON column `data`. If you want to store some data in a dedicated column (to leverage indexing, for example), add the column to the migration and to `tenancy.custom_columns` config.
 
-Finally, run the migration:
+> If you have existing migrations related to your app in `database/migrations`, move them to `database/migrations/tenant`. You can read more about tenant migrations [here]({{ $page->link('console-commands/#migrate') }}). <!-- todo2 custom page for tenant migrations -->
+
+Finally, run the migrations:
 ```
 php artisan migrate
 ```
 
 > If you use a non-default connection, such as `central`, you have to specify which DB to migrate using the `--database` option.
-> 
-> If you have existing migrations related to your app in `database/migrations`, move them to `database/migrations/tenant`. You can read more about tenant migrations [here]({{ $page->link('console-commands/#migrate') }}).
 
 ## Redis {#redis}
 

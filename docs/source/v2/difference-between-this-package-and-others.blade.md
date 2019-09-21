@@ -11,7 +11,7 @@ A frequently asked question is the difference between this package and [tenancy/
 
 Packages like tenancy/multi-tenant and tenancy/tenancy give you an API for making your application multi-tenant. They give you a tenant DB connection, traits to apply on your models, a guide on creating your own tenant-aware cache, etc.
 
-This package makes your application multi-tenant automatically and attempts to make you not have to change (m)any things in your code.
+This package (stancl/tenancy) makes your application multi-tenant automatically and attempts to make you not have to change any things in your code. The philosophy behind this approach is that you should write your app, not tenancy boilerplate.
 
 ## Which one should you use?
 
