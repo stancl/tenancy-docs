@@ -20,4 +20,6 @@ Open `config/queue.php` and make sure your queue driver has an explicitly set co
 
 where `'mysql'` is the name of your non-tenant database connection with a `jobs` table.
 
+Also make sure you run the queue migrations **for the central database**, not your tenants.
+
 **If you're using Redis, make sure its `'connection'` is not in `tenancy.redis.prefixed_connections`.**
