@@ -44,7 +44,7 @@ You may use the second argument to specify the key(s) as a string/array.
 
 ### Getting the current tenant
 
-One more way to get the current [tenant]({{ $page->link('tenant') }}) is to call `getTenant()` on `TenantManager`:
+One more way to get the current [tenant]({{ $page->link('tenants') }}) is to call `getTenant()` on `TenantManager`:
 
 ```php
 tenancy()->getTenant()
@@ -53,7 +53,7 @@ tenancy()->getTenant()
 If you want to get the value of a specific key from the array, you can an argument with the key.
 
 ```php
-tenancy()->getTenant('id'); // Does the same thing as tenant('id')
+tenancy()->getTenant('id') // Does the same thing as tenant('id')
 ```
 
 ### Getting all tenants

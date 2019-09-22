@@ -67,7 +67,6 @@ return [
                 'Creating Tenants' => 'creating-tenants',
                 'Tenant Migrations'=> 'tenant-migrations',
                 'Tenant Routes'    => 'tenant-routes',
-                'Tenant Objects'   => 'tenant', // todo rename route?
                 'Tenant Storage'   => 'tenant-storage',
                 'Tenant Manager'   => 'tenant-manager',
                 'Console Commands' => 'console-commands',
@@ -76,6 +75,7 @@ return [
         'Digging Deeper' => [
             'url'      => 'digging-deeper',
             'children' => [
+                'Tenants'                    => 'tenants',
                 'Middleware Configuration'   => 'middleware-configuration',
                 'Custom Database Names'      => 'custom-database-names',
                 'Filesystem Tenancy'         => 'filesystem-tenancy',

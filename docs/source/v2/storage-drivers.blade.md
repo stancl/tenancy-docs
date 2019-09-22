@@ -26,7 +26,7 @@ php artisan vendor:publish --provider='Stancl\Tenancy\TenancyServiceProvider' --
 
 By default, all of your data will be stored in the JSON column `data`. If you want to store some data in a dedicated column (to leverage indexing, for example), add the column to the migration and to `tenancy.custom_columns` config.
 
-> If you have existing migrations related to your app in `database/migrations`, move them to `database/migrations/tenant`. You can read more about tenant migrations [here]({{ $page->link('console-commands/#migrate') }}). <!-- todo2 custom page for tenant migrations -->
+> If you have existing migrations related to your app in `database/migrations`, move them to `database/migrations/tenant`. You can read more about tenant migrations [here]({{ $page->link('tenant-migrations') }}).
 
 Finally, run the migrations:
 ```

@@ -20,6 +20,8 @@ $tenant->set($key, $value); // alias for put()
 $tenant->put(['key1' => 'value1', 'key2' => 'value2']);
 ```
 
+> **Note:** Don't start any keys with `_tenancy` unless instructed to by the docs. It is a reserved namespace used to store internal data by this package.
+
 To get something from the storage, you can use `get()`:
 
 ```php
