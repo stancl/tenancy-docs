@@ -9,16 +9,17 @@ section: content
 
 If you don't want to use the provided DB/Redis storage drivers, you can write your own driver.
 
-To create a driver, create a class that implements the `Stancl\Tenancy\Interfaces\StorageDriver` interface.
+To create a driver, create a class that implements the `Stancl\Tenancy\Contracts\StorageDriver` interface.
 
 Here's an example:
 
 ```php
+<?php
 
 namespace App\StorageDrivers\MongoDBStorageDriver;
 
 use Stancl\Tenancy\Tenant;
-use Stancl\Tenancy\Interfaces\StorageDriver;
+use Stancl\Tenancy\Contracts\StorageDriver;
 
 class MongoDBStorageDriver implements StorageDriver
 {

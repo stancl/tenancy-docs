@@ -84,7 +84,6 @@ return [
                 'Tenancy Initialization'     => 'tenancy-initialization',
                 'Application Testing'        => 'application-testing',
                 'Writing Storage Drivers'    => 'writing-storage-drivers',
-                'Development'                => 'development',
             ],
         ],
         'Integrations' => [
