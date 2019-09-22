@@ -97,6 +97,7 @@ return [
             'children' => [
                 'HTTPS Certificates' => 'https-certificates',
                 'Misc'               => 'misc-tips',
+                'Global Cache/Storage/...' => 'global-stuff',
             ],
         ],
         'Stay Updated' => 'stay-updated',
