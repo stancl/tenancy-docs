@@ -23,6 +23,10 @@ Use the `global_asset()` helper.
 
 Create a new connection and use it like `DB::connection($connectionName)->table('foo')->where(...)`
 
+## Global Redis {#global-redis}
+
+Create a new connection, *don't* put it into `tenancy.redis.prefixed_connectoins`, and use it like `Redis::connection('foo')->get('bar')`
+
 ## Global Queues/Jobs {#global-queues-jobs}
 
 Coming soon.
