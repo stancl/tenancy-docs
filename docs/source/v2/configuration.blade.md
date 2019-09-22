@@ -96,6 +96,10 @@ The aliases are used by the [event system]({{ $page->link('event-system') }})
 
 Features are similar to bootstrappers, but they are executed regardless of whether tenancy has been initialized or not. Their purpose is to provide additional functionality that is not necessary for the package to work. Things like easy redirects to tenant domains, tags in Telescope, etc.
 
+### `home_url` {#home-url}
+
+When a user tries to visit a non-tenant route on a tenant domain, the `PreventAccessFromTenantDomains` middleware will return a redirect to this url.
+
 ### `migrate_after_creation` {#migrate-after-creation}
 
 Run migrations after creating a tenant.

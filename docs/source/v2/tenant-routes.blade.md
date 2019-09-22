@@ -9,7 +9,7 @@ section: content
 
 Routes within `routes/tenant.php` will have the `web` middleware group and the `IntializeTenancy` middleware automatically applied on them. This middleware attempts to identify the tenant based on the current hostname. Once the tenant is identified, the database connection, cache, filesystem root paths and, optionally, Redis connection, will be switched.
 
-Just like `routes/web.php`, these routes use the `App\Http\Controllers` namespace.
+Just like `routes/web.php`, these routes use the `App\Http\Controllers` namespace (you can [configure this]({{ $page->link('configuration#tenant-route-namespace') }}))
 
 > If a tenant cannot be identified, an exception will be thrown. If you want to change this behavior (to a redirect, for example) read the [Middleware Configuration]({{ $page->link('middleware-configuration') }}) page.
 
@@ -17,7 +17,7 @@ Just like `routes/web.php`, these routes use the `App\Http\Controllers` namespac
 
 Routes outside the `routes/tenant.php` file will not have the tenancy middleware automatically applied on them. You can apply this middleware manually, though.
 
-If you want some of your, say, API routes to be multi-tenant, simply wrap them in a Route group with this middleware:
+If you want some of your, say, API routes to be multi-tenant, wrap them in a Route group with this middleware:
 
 ```php
 use Stancl\Tenancy\Middleware\InitializeTenancy;
@@ -27,8 +27,25 @@ Route::middleware(InitializeTenancy::class)->group(function () {
 });
 ```
 
-## Using the same routes for tenant and non-tenant parts of the application {#using-the-same-routes-for-tenant-and-non-tenant-parts-of-the-application}
+and apply the `Stancl\Tenancy\Middleware\PreventAccessFromTenantDomains` middleware on the *entire* group:
 
-The `Stancl\Tenancy\Middleware\PreventAccessFromTenantDomains` middleware makes sure 404 is returned when a user attempts to visit a web route on a tenant (non-exempt) domain.
+```php
+// app/Http/Kernel.php
+protected $middlewareGroups = [
+    // ...
+    'api' => [
+        \Stancl\Tenancy\Middleware\PreventAccessFromTenantDomains::class,
+        // ...
+    ]
+];
+```
 
-The install command applies this middleware to the `web` group. If you want to do this for another route group, add this middleware manually to that group. You can do this in `app/Http/Kernel.php`.
+## The `PreventAccess...` middleware {#prevent-access-middleware}
+
+**You cannot have conflicting routes in `web.php` and `tenant.php`**. It would break `php artisan route:list` and route caching.
+
+Since you probably want cleaner URLs on your non-tenant part of the application (landing page, etc), prefix your tenant routes with something like `/app`.
+
+The `Stancl\Tenancy\Middleware\PreventAccessFromTenantDomains` middleware prevents access to non-tenant routes from tenant domains by returning a redirect to the tenant app's home page ([`tenancy.home_url']({{ $page->link('configuration#home-url') }})). Conversely, it returns a 404 when a user attempts to visit a tenant route on a web (exempt) domain.
+
+The install command applies this middleware to the `web` group. If you want apply it for another route group, add this middleware manually to that group. You can do this in `app/Http/Kernel.php`.
