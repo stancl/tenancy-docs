@@ -81,7 +81,7 @@
             @yield('body')
         </main>
 
-        <script src="{{ mix('js/main.js', 'assets/build') }}"></script>
+        <script src="{{ $page->baseUrl . mix('js/main.js', 'assets/build') }}"></script>
 
         @stack('scripts')
 

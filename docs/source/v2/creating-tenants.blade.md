@@ -1,6 +1,6 @@
 ---
 title: Creating Tenants
-description: Creating tenants..
+description: Creating tenants
 extends: _layouts.documentation_v2
 section: content
 ---
@@ -12,14 +12,19 @@ section: content
 To create a tenant, you can use
 
 ```php
-Tenant::new()->withDomains(['tenant1.yourapp.com'])->withData(['plan' => 'free'])->save();
+use Stancl\Tenancy\Tenant;
+
+Tenant::new()
+    ->withDomains(['tenant1.yourapp.com', 'tenant1.com'])
+    ->withData(['plan' => 'free'])
+    ->save();
 ```
 
 > Tip: All domains under `.localhost` are routed to 127.0.0.1 on most operating systems. This is useful for development.
 
 The `withDomains()` and `withData()` methods are optional.
 
-You can also create a tenant using the `Tenant::create` method:
+You can also create a tenant using a single method: `Tenant::create`:
 
 ```php
 $domains = ['tenant1.myapp.com', 'tenant1.com'];
@@ -28,4 +33,6 @@ Tenant::create($domains, [
 ]);
 ```
 
-> Note: Creating a tenant doesn't run [migrations](https://stancl-tenancy.netlify.com/docs/console-commands/#migrate) automatically. You have to do that yourself. <!-- TODO auto migrate after creation -->
+`Tenant::create()` works with both `Stancl\Tenancy\Tenant` and the facade, `\Tenant`.
+
+> Note: By default, creating a tenant doesn't run [migrations]({{ $page->link('tenant-migrations' )}}) automatically. You may change this behavior using the `migrate_after_creation` [configuration]({{ $page->link('configuration#migrate-after-creation') }}).

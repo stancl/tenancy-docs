@@ -96,25 +96,25 @@ The aliases are used by the [event system]({{ $page->link('event-system') }})
 
 Features are similar to bootstrappers, but they are executed regardless of whether tenancy has been initialized or not. Their purpose is to provide additional functionality that is not necessary for the package to work. Things like easy redirects to tenant domains, tags in Telescope, etc.
 
-### `migrate_after_creation`
+### `migrate_after_creation` {#migrate-after-creation}
 
 Run migrations after creating a tenant.
 - Default: `false`
 
-### `delete_database_after_tenant_deletion`
+### `delete_database_after_tenant_deletion` {#delete-database-after-tenant-deletion}
 
 Delete the tenant's database after deleting the tenant.
 - Default: `false`
 
-### `queue_database_creation`
+### `queue_database_creation` {#queue-database-creation}
 
 - Default: `false`
 
-### `queue_database_deletion`
+### `queue_database_deletion` {#queue-database-deletion}
 
 - Default: `false`
 
-### `unique_id_generator`
+### `unique_id_generator` {#unique-id-generator}
 
 The class used to generate a random tenant ID (when no ID is supplied during the tenant creation process).
 

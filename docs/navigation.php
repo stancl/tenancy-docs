@@ -65,7 +65,9 @@ return [
             'url'      => 'usage',
             'children' => [
                 'Creating Tenants' => 'creating-tenants',
+                'Tenant Migrations'=> 'tenant-migrations',
                 'Tenant Routes'    => 'tenant-routes',
+                'Tenant Objects'   => 'tenant', // todo rename route?
                 'Tenant Storage'   => 'tenant-storage',
                 'Tenant Manager'   => 'tenant-manager',
                 'Console Commands' => 'console-commands',
