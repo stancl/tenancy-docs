@@ -17,9 +17,9 @@ The following events are available:
 
 ### Tenant-specific database connection example {#tenant-specific-database-connection-example}
 
-You can hook into these events using `Tenancy::<eventName>`:
+You can hook into these events using `Tenancy::eventListener(<eventName>, function () {})`:
 ```php
-\Tenancy::boostrapping(function ($tenantManager) {
+\Tenancy::eventListener('bootstrapping', function ($tenantManager) {
     if ($tenantManager->tenant['id'] === 'someID') {
         config(['database.connections.someDatabaseConnection' => $tenantManager->tenant['databaseConnection']]);
         $tenantManager->database->useConnection('someDatabaseConnection');
@@ -41,7 +41,7 @@ The following actions can be prevented:
 
 Another common use case for events is tenant-specific config:
 ```php
-\Tenancy::bootstrapped(function ($tenantManager) {
+\Tenancy::eventListener('bootstrapped', function ($tenantManager) {
     config(['some.api.key' => $tenantManager->tenant['api_key']);
 });
 ```
