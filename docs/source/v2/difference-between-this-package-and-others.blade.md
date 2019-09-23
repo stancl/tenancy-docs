@@ -11,7 +11,7 @@ A frequently asked question is the difference between this package and [tenancy/
 
 Packages like tenancy/multi-tenant and tenancy/tenancy give you an API for making your application multi-tenant. They give you a tenant DB connection, traits to apply on your models, a guide on creating your own tenant-aware cache, etc.
 
-This package (stancl/tenancy) makes your application multi-tenant automatically and attempts to make you not have to change any things in your code. The philosophy behind this approach is that you should write your app, not tenancy boilerplate.
+This package (stancl/tenancy) makes your application multi-tenant automatically and attempts to make you not have to change anything in your code. The philosophy behind this approach is that you should write your app, not tenancy boilerplate.
 
 Apart from saving you a ton of time, the benefit of going with the automatic approach (stancl/tenancy) is that you can adapt easily, since you're not bound to a specific implementation of multi-tenancy. [You can always change how tenancy is bootstrapped.]({{ $page->link('tenancy-bootstrappers') }})
 
