@@ -38,7 +38,7 @@ Similarly to [migrate](#migrate), these commands accept a `--tenants` option.
 
 ## Run {#run}
 
-You can use the tenants:run command to run your own commands for tenants.
+You can use the `tenants:run` command to run your own commands for tenants.
 
 If your command's signature were `email:send {--queue} {--subject=} {body}`, you would run this command like this:
 ```
@@ -61,4 +61,4 @@ You can delete specific tenants' cache by using the `--tags` option on `cache:cl
 php artisan cache:clear --tags=tenantdbe0b330-1a6e-11e9-b4c3-354da4b4f339
 ```
 
-The tag is `config('tenancy.cache.tag_base') . $id`.
+The tag is derived from `config('tenancy.cache.tag_base') . $id`.
