@@ -24,7 +24,7 @@ Available storage drivers:
 - `data_column` - the name of column that holds the tenant's data in a single JSON string
 - `custom_columns` - list of keys that shouldn't be put into the data column, but into their own column
 - `connection` - what database connection should be used to store tenant data (`null` means the default connection)
-- `table_names` - the table names used by each the models that come with the storage driver
+- `table_names` - the table names used by the models that come with the storage driver
 
 > Note: Don't use the models directly. You're supposed to use [storage]({{ $page->link('tenant-storage') }}) methods on `Tenant` objects.
 
@@ -50,7 +50,7 @@ You can set the suffix to `.sqlite` if you're using sqlite and want the files to
 
 If `tenancy.redis.tenancy` is set to true, connections listed in `tenancy.redis.prefixed_connections` will be prefixed with `config('tenancy.redis.prefix_base') . $id`.
 
-> Note: You need phpredis. Predis support will dropped by Laravel on version 7.
+> Note: You need phpredis. Predis support will dropped by Laravel in version 7.
 
 ### `cache` {#cache}
 
@@ -94,7 +94,7 @@ The aliases are used by the [event system]({{ $page->link('event-system') }})
 
 ### `features` {#bootstrappers}
 
-Features are similar to bootstrappers, but they are executed regardless of whether tenancy has been initialized or not. Their purpose is to provide additional functionality that is not necessary for the package to work. Things like easy redirects to tenant domains, tags in Telescope, etc.
+Features are similar to bootstrappers, but they are executed regardless of whether tenancy has been initialized or not. Their purpose is to provide additional functionality beyond what is necessary for the package to work. Things like easy redirects to tenant domains, tags in Telescope, etc.
 
 ### `home_url` {#home-url}
 
@@ -103,11 +103,13 @@ When a user tries to visit a non-tenant route on a tenant domain, the `PreventAc
 ### `migrate_after_creation` {#migrate-after-creation}
 
 Run migrations after creating a tenant.
+
 - Default: `false`
 
 ### `delete_database_after_tenant_deletion` {#delete-database-after-tenant-deletion}
 
 Delete the tenant's database after deleting the tenant.
+
 - Default: `false`
 
 ### `queue_database_creation` {#queue-database-creation}

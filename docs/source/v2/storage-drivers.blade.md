@@ -17,14 +17,14 @@ The database storage driver lets you store tenant information in a relational da
 
 The benefit of this storage driver is that you don't have to use both Redis and a database for your data. Also you don't have to do as much configuration.
 
-To use this driver, you need to have a `tenants` table and a `domains` table. You may also use a custom database connection. By default, `tenancy.storage.db.connection` is set to `null`, which means that the your default database connection will be used to store tenants. If you wish to use a different connection, you may create a it in the `config/database.php` file and set `tenancy.storage.db.connection` to the name of that connection.
+To use this driver, you need to have a `tenants` table and a `domains` table. You may also use a custom database connection. By default, `tenancy.storage.db.connection` is set to `null`, which means that your app's default database connection will be used to store tenants. If you wish to use a different connection, you may create it in the `config/database.php` file and set `tenancy.storage.db.connection` to the name of that connection.
 
 To create the `tenants` and `domains` tables, you can use the migrations that come with this package. If you haven't published them during installation, publish them now:
 ```
 php artisan vendor:publish --provider='Stancl\Tenancy\TenancyServiceProvider' --tag=migrations
 ```
 
-By default, all of your data will be stored in the JSON column `data`. If you want to store some data in a dedicated column (to leverage indexing, for example), add the column to the migration and to `tenancy.custom_columns` config.
+By default, all of your data will be stored in the JSON column `data`. If you want to store some data in a dedicated column (to leverage indexing, for example), add the column to the migration and to the `tenancy.custom_columns` config.
 
 > If you have existing migrations related to your app in `database/migrations`, move them to `database/migrations/tenant`. You can read more about tenant migrations [here]({{ $page->link('tenant-migrations') }}).
 
@@ -45,7 +45,7 @@ The benefit of this storage driver is its performance.
 
 Read the [Redis documentation page on persistence](https://redis.io/topics/persistence). You should definitely use AOF and if you want to be even more protected from data loss, you can use RDB **in conjunction with AOF**.
 
-If your cache driver is Redis and you don't want to use AOF with it, run two Redis instances. Otherwise, just make sure you use a different database (number) for tenancy and for anything else.
+If your cache driver is Redis and you don't want to use AOF with it, run two Redis instances. Otherwise, just make sure you use a different database (number) for tenancy and another for anything else.
 
 To use this driver, create a new Redis connection in the `database.redis` configuration (`config/database.php`) called `tenancy`.
 
@@ -57,3 +57,5 @@ To use this driver, create a new Redis connection in the `database.redis` config
     'database' => env('TENANCY_REDIS_DB', 3), // alternatively, different database number
 ],
 ```
+
+> Note: You need phpredis. Predis support will dropped by Laravel in version 7.
