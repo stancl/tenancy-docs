@@ -87,7 +87,7 @@ You may also use `->with<PropertyNameInPascalCase>` and it will be stored in sna
 These methods make the most sense (= sound the best) during tenant creation:
 
 ```php
-// $domains = ['foo.yourapp.com', 'foo.com'];
+$domains = ['foo.yourapp.com', 'foo.com'];
 $primary_domain = $domains[0];
 $id = $primary_domain . $this->randomString(24);
 
