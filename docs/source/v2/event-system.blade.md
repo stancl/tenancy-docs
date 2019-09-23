@@ -36,6 +36,8 @@ The following actions can be prevented:
 - Redis prefix: `redis`
 - CacheManager switch: `cache`
 - Filesystem changes: `filesystem`
+- Queue tenancy: `queue`
+- and anything else listed in the [`tenancy.bootstrappers` config]({{ $page->link('configuration#bootstrappers') }})
 
 ### Tenant-specific configuration example {#tenant-specific-configuration-example}
 

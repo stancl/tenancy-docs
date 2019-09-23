@@ -82,6 +82,7 @@ return [
                 'Jobs & Queues'              => 'jobs-queues',
                 'Event System'               => 'event-system',
                 'Tenancy Initialization'     => 'tenancy-initialization',
+                'Tenancy Bootstrappers'      => 'tenancy-bootstrappers',
                 'Application Testing'        => 'application-testing',
                 'Writing Storage Drivers'    => 'writing-storage-drivers',
             ],
