@@ -13,7 +13,7 @@ Packages like tenancy/multi-tenant and tenancy/tenancy give you an API for makin
 
 This package (stancl/tenancy) makes your application multi-tenant automatically and attempts to make you not have to change any things in your code. The philosophy behind this approach is that you should write your app, not tenancy boilerplate.
 
-Apart from saving you a ton of time, the benefit of going with the automatic approach (stancl/tenancy) is that you can adapt easily, since you're not bound to a specific implementation of multi-tenancy. [You can always change how tenancy is bootstrapped.]({{ $page->link('configuration#tenancy-bootstrappers') }}) <!-- todo  custom page for tenancy bootstrappers -->
+Apart from saving you a ton of time, the benefit of going with the automatic approach (stancl/tenancy) is that you can adapt easily, since you're not bound to a specific implementation of multi-tenancy. [You can always change how tenancy is bootstrapped.]({{ $page->link('tenancy-bootstrappers') }})
 
 ## Which one should you use?
 
