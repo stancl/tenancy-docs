@@ -14,10 +14,10 @@ Laravel 6.0 or higher is needed.
 First you need to require the package using composer:
 
 ```
-composer require stancl/tenancy:2.x-dev
+composer require stancl/tenancy:v2.0.0-rc1
 ```
 
-> **Note:** Be sure to `composer require stancl/tenancy` (without the `:2.x-dev`) once 2.0.0 is released. <!-- todo2 -->
+> **Note:** Be sure to `composer require stancl/tenancy` (without the `:v2.0.0-rc1`) once 2.0.0 is released. <!-- todo2 -->
 
 ### Automatic installation {#automatic-installation}
 
