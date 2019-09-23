@@ -7,14 +7,14 @@ section: content
 
 # Installation {#getting-started}
 
-Laravel 5.8 or higher is needed.
+Laravel 5.8 is needed.
 
 ### Require the package via composer
 
 First you need to require the package using composer:
 
 ```
-composer require stancl/tenancy
+composer require 'stancl/tenancy:~1.8'
 ```
 
 ### Automatic installation {#automatic-installation}
