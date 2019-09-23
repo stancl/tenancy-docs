@@ -56,8 +56,6 @@ If `tenancy.redis.tenancy` is set to true, connections listed in `tenancy.redis.
 
 The `CacheManager` instance that's resolved when you use the `Cache` or the `cache()` helper will be replaced by `Stancl\Tenancy\CacheManager`. This class automatically uses [tags](https://laravel.com/docs/master/cache#cache-tags). The tag will look like `config('tenancy.cache.tag_base') . $id`.
 
-If you need to store something in global, non-tenant cache, 
-
 ### `filesystem` {#filesystem}
 
 The `storage_path()` will be suffixed with a directory named `config('tenancy.filesystem.suffix_base') . $id`.
