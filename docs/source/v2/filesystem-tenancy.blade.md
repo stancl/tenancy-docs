@@ -43,7 +43,7 @@ Laravel's `asset()` helper has two different paths of execution:
 
 > Note: In 1.x, the `asset()` helper was not tenant-aware, and there was a `tenant_asset()` helper that followed the second option in the list above (a link to a controller). For backwards compatibility, that helper remains intact.
 
-> If you have some non-tenant-specific assets, you may use Tenancy's `global_asset()` helper.
+> If you have some non-tenant-specific assets, you may use the pakage's `global_asset()` helper.
 
 Note that all tenant assets have to be in the `app/public/` subdirectory of the tenant's storage directory, as shown in the image above.
 
