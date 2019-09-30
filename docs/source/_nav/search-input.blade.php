@@ -4,7 +4,7 @@
     class="flex md:hidden bg-grey-lightest hover:bg-blue-lightest justify-center items-center border border-grey rounded-full focus:outline-none h-10 px-3"
     onclick="searchInput.toggle()"
 >
-    <img src="/assets/img/magnifying-glass.svg" alt="search icon" class="h-4 w-4 max-w-none">
+    <img src="/docs/assets/img/magnifying-glass.svg" alt="search icon" class="h-4 w-4 max-w-none">
 </button>
 
 <div id="js-search-input" class="docsearch-input__wrapper hidden md:block">
