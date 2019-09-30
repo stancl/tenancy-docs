@@ -1,5 +1,5 @@
 .docsearch-input {
-    background-image: url('/assets/img/magnifying-glass.svg');
+    background-image: url('/docs/assets/img/magnifying-glass.svg');
     background-position: 0.8em;
     background-repeat: no-repeat;
     text-indent: 1.2em;
@@ -12,7 +12,7 @@
 
     @screen xl {
         &:focus {
-            @apply .w-1/2;
+            @apply .w-3/4;
         }
     }
 

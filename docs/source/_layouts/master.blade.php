@@ -16,6 +16,9 @@
         <meta name="twitter:image:alt" content="{{ $page->siteName }}">
         <meta name="twitter:card" content="summary_large_image">
 
+        <meta name="docsearch:language" content="en" />
+        <meta name="docsearch:version" content="{{ $page->version() }}" />
+
         @if ($page->docsearchApiKey && $page->docsearchIndexName)
             <meta name="generator" content="tighten_jigsaw_doc">
         @endif
@@ -50,8 +53,6 @@
                     </a>
                 </div>
 
-                <meta name="docsearch:language" content="en" />
-                <meta name="docsearch:version" content="{{ $page->version() }}" />
                 <div class="flex flex-1 justify-end items-center text-right md:pl-10">
                     @if ($page->docsearchApiKey && $page->docsearchIndexName)
                         @include('_nav.search-input')
