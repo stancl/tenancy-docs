@@ -1,7 +1,7 @@
 ---
 title: Tenancy Initialization
 description: Tenancy Initialization..
-extends: _layouts.documentation_v2
+extends: _layouts.documentation
 section: content
 ---
 

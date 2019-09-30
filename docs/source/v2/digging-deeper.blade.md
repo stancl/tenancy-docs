@@ -1,7 +1,7 @@
 ---
 title: Digging Deeper
 description: Digging Deeper..
-extends: _layouts.documentation_v2
+extends: _layouts.documentation
 section: content
 ---
 

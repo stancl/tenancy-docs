@@ -1,7 +1,7 @@
 ---
 title: Tenant Migrations
 description: Tenant Migrations
-extends: _layouts.documentation_v2
+extends: _layouts.documentation
 section: content
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Telescope Integration
 description: Telescope Integration..
-extends: _layouts.documentation_v2
+extends: _layouts.documentation
 section: content
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: The Event System
 description: The Event System..
-extends: _layouts.documentation_v2
+extends: _layouts.documentation
 section: content
 ---
 

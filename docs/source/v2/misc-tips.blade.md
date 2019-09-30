@@ -1,7 +1,7 @@
 ---
 title: Miscellaneous Tips
 description: Miscellaneous Tips..
-extends: _layouts.documentation_v2
+extends: _layouts.documentation
 section: content
 ---
 

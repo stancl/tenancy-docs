@@ -1,7 +1,7 @@
 ---
 title: Global Cache/Storage/Assets/...
 description: Global Cache/Storage/Assets/...
-extends: _layouts.documentation_v2
+extends: _layouts.documentation
 section: content
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Stay Updated
 description: Stay Updated..
-extends: _layouts.documentation_v2
+extends: _layouts.documentation
 section: content
 ---
 

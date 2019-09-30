@@ -1,7 +1,7 @@
 ---
 title: Integrations
 description: Integrating stancl/tenancy
-extends: _layouts.documentation_v2
+extends: _layouts.documentation
 section: content
 ---
 

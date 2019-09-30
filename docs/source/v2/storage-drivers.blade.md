@@ -1,7 +1,7 @@
 ---
 title: Storage Drivers
 description: Storage Drivers
-extends: _layouts.documentation_v2
+extends: _layouts.documentation
 section: content
 ---
 

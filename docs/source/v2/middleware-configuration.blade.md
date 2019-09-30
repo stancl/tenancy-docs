@@ -1,7 +1,7 @@
 ---
 title: Middleware Configuration
 description: Middleware Configuration..
-extends: _layouts.documentation_v2
+extends: _layouts.documentation
 section: content
 ---
 

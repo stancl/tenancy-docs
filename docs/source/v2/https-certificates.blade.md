@@ -1,7 +1,7 @@
 ---
 title: HTTPS Certificates
 description: HTTPS Certificates..
-extends: _layouts.documentation_v2
+extends: _layouts.documentation
 section: content
 ---
 

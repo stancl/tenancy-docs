@@ -1,7 +1,7 @@
 ---
 title: Tenant Manager
 description: Tenant Manager
-extends: _layouts.documentation_v2
+extends: _layouts.documentation
 section: content
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Tenancy Bootstrappers
 description: Tenancy Bootstrappers
-extends: _layouts.documentation_v2
+extends: _layouts.documentation
 section: content
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Difference Between This Package And Others
 description: Difference Between This Package And Others
-extends: _layouts.documentation_v2
+extends: _layouts.documentation
 section: content
 ---
 
