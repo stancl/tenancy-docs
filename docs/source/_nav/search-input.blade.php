@@ -30,6 +30,7 @@
             docsearch({
                 apiKey: '{{ $page->docsearchApiKey }}',
                 indexName: '{{ $page->docsearchIndexName }}',
+                algoliaOptions: { 'facetFilters': ["version:{{ $page->version() }}", "language:en"] },
                 inputSelector: '#docsearch-input',
                 debug: false // Set debug to true if you want to inspect the dropdown
             });
