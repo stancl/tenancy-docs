@@ -7,11 +7,11 @@ section: content
 
 # The Event System
 
-You can use event hooks to change the behavior of the tenancy boostrapping and tenancy ending processes.
+You can use event hooks to change the behavior of the tenancy bootstrapping and tenancy ending processes.
 
 The following events are available:
-- `boostrapping`
-- `boostrapped`
+- `bootstrapping`
+- `bootstrapped`
 - `ending`
 - `ended`
 

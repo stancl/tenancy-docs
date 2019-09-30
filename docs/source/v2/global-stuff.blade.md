@@ -25,7 +25,7 @@ Create a new connection and use it like `DB::connection($connectionName)->table(
 
 ## Global Redis {#global-redis}
 
-Create a new connection, *don't* put it into `tenancy.redis.prefixed_connectoins`, and use it like `Redis::connection('foo')->get('bar')`
+Create a new connection, *don't* put it into `tenancy.redis.prefixed_connections`, and use it like `Redis::connection('foo')->get('bar')`
 
 ## Global Queues/Jobs {#global-queues-jobs}
 

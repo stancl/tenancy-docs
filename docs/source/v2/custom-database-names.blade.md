@@ -7,9 +7,9 @@ section: content
 
 # Custom Database Names {#custom-database-names}
 
-To set the a database name for a tenant, use set `_tenancy_db_name` key in the tenant's storage.
+To set a specific database name for a tenant, set the `_tenancy_db_name` key in the tenant's storage.
 
-You should do this during the tenant creation process, to make sure the database is created with the right name:
+You should do this during the tenant creation process, to make sure the right database name is used during database creation.
 
 ```php
 use Stancl\Tenancy\Tenant;

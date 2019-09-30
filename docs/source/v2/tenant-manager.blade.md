@@ -11,7 +11,7 @@ This page documents a couple of `TenantManager` methods you may find useful.
 
 To call methods on `TenantManager`, you may use the `tenancy()` helper or the `Tenancy` facade.
 
-### Finding tenant using id
+### Find tenant by id
 
 ```php
 >>> \Tenancy::find('b07aa3b0-dc68-11e9-9352-9159b2055c42')
@@ -26,9 +26,8 @@ To call methods on `TenantManager`, you may use the `tenancy()` helper or the `T
    }
 ```
 
-### Finding tenant by domain
+### Find tenant by domain
 
-You may use the second argument to specify the key(s) as a string/array.
 
 ```php
 >>> tenancy()->findByDomain('bar.localhost')
@@ -112,7 +111,9 @@ This method returns a collection of arrays.
 => true
 ```
 
-This doesn't delete the tenant's database. If you want to delete it, save the database name prior to deleting the tenant. You can get the database name using `getDatabaseName()`
+NOTE: This doesn't delete the tenant's database. 
+
+If you want to delete it, get the database name prior to deleting the tenant using `getDatabaseName()`.
 
 ```php
 >>> $tenant->getDatabaseName()
