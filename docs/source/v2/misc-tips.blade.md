@@ -9,6 +9,8 @@ section: content
 
 ## Tenant Redirect {#tenant-redirect}
 
+> To enable this feature, uncomment the `Stancl\Tenancy\Features\TenantRedirect::class` line in your `tenancy.features` config.
+
 A customer has signed up on your website, you have created a new tenant and now you want to redirect the customer to their website. You can use the `tenant()` method on Redirect, like this:
 
 ```php

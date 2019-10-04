@@ -7,6 +7,8 @@ section: content
 
 # Telescope Integration
 
+> To enable this feature, uncomment the `Stancl\Tenancy\Features\TelescopeTags::class` line in your `tenancy.features` config.
+
 Requests in Telescope are automatically tagged with the tenant id and domain:
 
 ![Telescope Request with tags](https://i.imgur.com/CEEluYj.png)
