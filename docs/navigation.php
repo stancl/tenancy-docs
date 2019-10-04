@@ -52,6 +52,7 @@ return [
         'GitHub'       => 'https://github.com/stancl/tenancy',
     ],
     'v2' => [
+        'Upgrading from 1.x' => 'upgrading',
         'Getting Started' => [
             'url'      => 'getting-started',
             'children' => [
@@ -79,9 +80,10 @@ return [
                 'Tenant Config'              => 'tenant-config',
                 'Middleware Configuration'   => 'middleware-configuration',
                 'Custom Database Names'      => 'custom-database-names',
+                'Custom DB Connections'      => 'custom-db-connections',
                 'Filesystem Tenancy'         => 'filesystem-tenancy',
                 'Jobs & Queues'              => 'jobs-queues',
-                'Event System'               => 'event-system',
+                'Hooks / Events'             => 'hooks',
                 'Tenancy Initialization'     => 'tenancy-initialization',
                 'Tenancy Bootstrappers'      => 'tenancy-bootstrappers',
                 'Application Testing'        => 'application-testing',

@@ -15,4 +15,4 @@ When tenancy is [initialized]({{ $page->link('tenancy-initialization') }}), the 
 
 Conversely, when tenancy is ended, the `end()` method is called.
 
-In the [`tenancy.bootstrappers` configuration]( {{ $page->link('configuration#bootstrappers') }} ), bootstrappers have an alias configured (e.g. `database`) that is used by [events]({{ $page->link('event-system') }}) to say which bootstrappers are prevented.
+In the [`tenancy.bootstrappers` configuration]( {{ $page->link('configuration#bootstrappers') }} ), bootstrappers have an alias configured (e.g. `database`) that is used by [events]({{ $page->link('hooks') }}) to say which bootstrappers are prevented.

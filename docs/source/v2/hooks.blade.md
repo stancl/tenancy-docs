@@ -1,11 +1,11 @@
 ---
-title: The Event System
-description: The Event System..
+title: Hooks / The Event System
+description: Hooks / The Event System
 extends: _layouts.documentation
 section: content
 ---
 
-# The Event System
+# Hooks / The Event System
 
 You can use event hooks to change the behavior of the tenancy bootstrapping and tenancy ending processes.
 
@@ -17,9 +17,11 @@ The following events are available:
 
 ### Tenant-specific database connection example {#tenant-specific-database-connection-example}
 
-You can hook into these events using `Tenancy::eventListener(<eventName>, function () {})`:
+> Note: Tenant-specific DB connections can now be achieved using a first-class feature: [Custom DB connections]({{ $page->link('custom-db-connections') }})
+
+You can hook into these events using `Tenancy::hook(<eventName>, function () {})`:
 ```php
-\Tenancy::eventListener('bootstrapping', function ($tenantManager) {
+\Tenancy::hook('bootstrapping', function ($tenantManager) {
     if ($tenantManager->tenant['id'] === 'someID') {
         config(['database.connections.someDatabaseConnection' => $tenantManager->tenant['databaseConnection']]);
         $tenantManager->database->useConnection('someDatabaseConnection');
@@ -43,7 +45,7 @@ The following actions can be prevented:
 
 Another common use case for events is tenant-specific config:
 ```php
-\Tenancy::eventListener('bootstrapped', function ($tenantManager) {
+\Tenancy::hook('bootstrapped', function ($tenantManager) {
     config(['some.api.key' => $tenantManager->tenant['api_key']);
 });
 ```

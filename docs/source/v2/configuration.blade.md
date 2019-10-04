@@ -88,7 +88,7 @@ This config is an array. The key is the alias and the value is the full class na
 'cache' => Stancl\Tenancy\TenancyBootstrappers\CacheTenancyBootstrapper::class,
 ```
 
-The aliases are used by the [event system]({{ $page->link('event-system') }})
+The aliases are used by the [event system]({{ $page->link('hooks') }})
 
 ### `features` {#bootstrappers}
 
