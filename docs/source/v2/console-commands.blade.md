@@ -54,6 +54,21 @@ Listing all tenants.
 [Tenant] id: 49670df0-1a87-11e9-b7ba-cf5353777957 @ dev.localhost
 ```
 
+## Create tenant {#create-tenant}
+
+This command lets you create tenants from the command line. You may find this useful if you need to create tenants from some service that's separate from your app.
+
+You may specify any amount of domains using `-d <domain>`. To set data during the creation process, add arguments of the `<key>=<value>` format to the end of the call.
+
+For example:
+
+```none
+php artisan tenants:create -d aaa.localhost -d bbb.localhost plan=free email=foo@test.local
+5f6dbfb8-41da-4398-a361-5342a98d81a0
+```
+
+The command returns the created tenant's id.
+
 ## Selectively clearing tenant cache {#selectively-clearing-tenant-cache}
 
 You can delete specific tenants' cache by using the `--tags` option on `cache:clear`:
