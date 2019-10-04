@@ -110,13 +110,13 @@
                     <div class="w-full flex flex-col lg:flex-row lg:justify-between items-center mt-16 mb-12 lg:mb-20 lg:-mx-10">
                         <div class="lg:w-1/2 lg:px-10 leading-relaxed lg:text-right">
                             <h3 class="text-2xl font-medium mb-1">Easy Installation</h3>
-                            <p>Just run <code class="font-bold">composer require</code> and move your tenant routes.</p>
+                            <p>Just install the package and move your tenant routes.</p>
                         </div>
                         <div class="lg:w-1/2 lg:px-10 leading-relaxed">
                             <pre class="mt-5 lg:mt-0 whitespace-pre-wrap bg-white w-full inline-block p-4 rounded-lg shadow-lg">
 $ composer require stancl/tenancy
-$ move routes/web.php routes/tenant.php
-$ touch routes/web.php</pre>
+$ php artisan tenancy:install
+$ mv routes/web.php routes/tenant.php</pre>
                         </div>
                     </div>
     
