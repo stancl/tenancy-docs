@@ -41,9 +41,9 @@ return [
         }
     },
     'url' => function ($page, $path) {
-        return starts_with($path, 'http') ? $path : '/'.trimPath($path);
+        return starts_with($path, 'http://') ? $path : '/'.trimPath($path);
     },
     'isUrl' => function ($page, $path) {
-        return starts_with($path, 'http');
+        return starts_with($path, 'http://');
     },
 ];
