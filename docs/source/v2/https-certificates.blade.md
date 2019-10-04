@@ -5,7 +5,7 @@ extends: _layouts.documentation
 section: content
 ---
 
-# HTTPS certificates
+# HTTPS Certificates
 
 HTTPS certificates are very easy to deal with if you use the `yourclient1.yourapp.com`, `yourclient2.yourapp.com` model. You can use a wildcard HTTPS certificate.
 
