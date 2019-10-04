@@ -71,7 +71,7 @@ Read more about this on the [Filesystem Tenancy]({{ $page->link('filesystem-tena
 Tenant database managers handle the creation & deletion of tenant databases. This configuration array maps the database driver name to the `TenantDatabaseManager`, e.g.:
 
 ```php
-'mysql' => 'Stancl\Tenancy\TenantDatabaseManagers\MySQLDatabaseManager'
+'mysql' => Stancl\Tenancy\TenantDatabaseManagers\MySQLDatabaseManager::class
 ```
 
 ### `database_manager_connections` {#database_maanger_connections}
@@ -85,7 +85,7 @@ These are the classes that do the magic. When tenancy is initialized, TenancyBoo
 This config is an array. The key is the alias and the value is the full class name.
 
 ```php
-'cache' => 'Stancl\Tenancy\TenancyBootstrappers\CacheTenancyBootstrapper',
+'cache' => Stancl\Tenancy\TenancyBootstrappers\CacheTenancyBootstrapper::class,
 ```
 
 The aliases are used by the [event system]({{ $page->link('event-system') }})
