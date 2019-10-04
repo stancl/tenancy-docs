@@ -76,6 +76,7 @@ return [
             'url'      => 'digging-deeper',
             'children' => [
                 'Tenants'                    => 'tenants',
+                'Tenant Config'              => 'tenant-config',
                 'Middleware Configuration'   => 'middleware-configuration',
                 'Custom Database Names'      => 'custom-database-names',
                 'Filesystem Tenancy'         => 'filesystem-tenancy',
