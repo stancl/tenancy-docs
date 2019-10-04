@@ -45,6 +45,17 @@ protected $middlewarePriority = [
 ];
 ```
 
+Add the `\Stancl\Tenancy\Middleware\PreventAccessFromTenantDomains::class` middleware to all route groups you use, so that's probably `'web'` and possibly `'api'`:
+```php
+protected $middlewareGroups = [
+    'web' => [
+        \Stancl\Tenancy\Middleware\PreventAccessFromTenantDomains::class,
+        // ...
+    ],
+    // ...
+]
+```
+
 #### Creating routes
 
 The package lets you have tenant routes and "exempt" routes. Tenant routes are your application's routes. Exempt routes are routes exempt from tenancy — landing pages, sign up forms, and routes for managing tenants.
