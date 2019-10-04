@@ -104,6 +104,12 @@ Run migrations after creating a tenant.
 
 - Default: `false`
 
+### `queue_automatic_migration` {#queue-automatic-migration}
+
+Whether automatic tenant migrations (if enabled) should be queued.
+
+- Default: `false`
+
 ### `delete_database_after_tenant_deletion` {#delete-database-after-tenant-deletion}
 
 Delete the tenant's database after deleting the tenant.
