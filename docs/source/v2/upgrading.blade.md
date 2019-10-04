@@ -28,6 +28,7 @@ If you're coming from 1.x, it's recommended to read (or at least skim through) t
 - A concept of `Feature`s was introduced. They're classes that provide additional functionality - functionality that is not necessary to bootstrap tenancy.
 - predis support was dropped. Laravel will drop predis support in 7.x.
 - There is new syntax for [creating]({{ $page->link('creating-tenants') }}) and [interacting]({{ $page->link('tenants') }}) with tenants, be sure to read those documentation pages again.
+- The `_tenancy` namespace for keys in tenant storage is reserved by the package and should not be used unless instructed to by the documentation.
 - The config was changed *a lot*, so you should publish and configure it again.
     You can publish the configuration like this:
     ```none
