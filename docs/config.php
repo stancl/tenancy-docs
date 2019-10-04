@@ -9,9 +9,9 @@ return [
     // key => display name
     'versions' => [
         'v1' => '1.x',
-        'v2' => '2.x (beta)',
+        'v2' => '2.x',
     ],
-    'defaultVersion' => 'v1',
+    'defaultVersion' => 'v2',
     'prettyUrls' => true,
 
     'version' => function ($page) {
