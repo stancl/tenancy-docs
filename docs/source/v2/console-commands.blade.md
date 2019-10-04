@@ -18,6 +18,8 @@ You can use the `tenants:migrate` command to migrate tenant's databases. You can
 php artisan tenants:migrate --tenants=8075a580-1cb8-11e9-8822-49c5d8f8ff23
 ```
 
+You may use multiple `--tenants=<...>` options.
+
 > Note: Tenant migrations must be located in `database/migrations/tenant`.
 
 You can use these commands outside the command line as well. If you want to migrate a tenant's database in a controller, you can use the `Artisan` facade.
@@ -35,6 +37,16 @@ $tenant = tenancy()->create('tenant1.localhost');
 - Seed: `tenants:seed`
 
 Similarly to [migrate](#migrate), these commands accept a `--tenants` option.
+
+## Migrate fresh {#migrate-fresh}
+
+This package also offers a simplified, tenant-aware version of `migrate:fresh`. It runs `db:wipe` and `tenants:migrate` on the tenant's database.
+
+You may use it like this:
+
+```none
+php artisan tenants:migrate-fresh --tenants=8075a580-1cb8-11e9-8822-49c5d8f8ff23
+```
 
 ## Run {#run}
 
