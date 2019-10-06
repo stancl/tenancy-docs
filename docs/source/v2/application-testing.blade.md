@@ -25,10 +25,7 @@ protected function setUp(): void
 {
     parent::setUp();
 
-    $this->call('migrate', [
-        '--path' => database_path('migrations'),
-        '--database' => 'sqlite',
-    ]);
+    $this->call('migrate');
 
     tenancy()->create('test.localhost');
     tenancy()->init('test.localhost');
