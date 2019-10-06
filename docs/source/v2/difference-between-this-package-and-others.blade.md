@@ -39,5 +39,3 @@ Everything else happens automatically in the background:
 - Redis is made multi-tenant
 
 This means that you can also integrate with any packages you would normally use, without any difficulties.
-
-We believe that this seamless approach to multi-tenancy is consistent with Laravel's "developer happiness from download to deploy".
