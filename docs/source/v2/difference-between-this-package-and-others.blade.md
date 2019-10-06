@@ -41,11 +41,3 @@ Everything else happens automatically in the background:
 This means that you can also integrate with any packages you would normally use, without any difficulties.
 
 We believe that this seamless approach to multi-tenancy is consistent with Laravel's "developer happiness from download to deploy".
-
-## Which one should you use?
-
-If you want to implement multi-tenancy yourself by writing package-specific tenant-aware code, use tenancy/multi-tenant.
-
-If you want to be assisted in writing your own tenancy implementation, use tenancy/tenancy (currently in alpha).
-
-If you want to focus on writing your application instead of tenancy implementations, and have no problems trying to integrate other packages, use stancl/tenancy.
