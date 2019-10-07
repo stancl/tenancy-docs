@@ -30,7 +30,7 @@ Available storage drivers:
 
 #### redis {#redis-db-driver}
 
-- `connection` - what Redis connection should be used to store tenant data
+- `connection` - what Redis connection should be used to store tenant data. See the [Storage Drivers]({{ $page->link('storage-drivers') }}) documentation.
 
 ### `tenant_route_namespace` {#tenant-route-namespace}
 
