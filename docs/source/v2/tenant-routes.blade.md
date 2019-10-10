@@ -21,6 +21,8 @@ Routes outside the `routes/tenant.php` file will not have the tenancy middleware
 
 If you want certain routes (perhaps API routes) to be multi-tenant, wrap them in a Route group with this middleware:
 
+## API routes / custom route groups
+
 ```php
 use Stancl\Tenancy\Middleware\InitializeTenancy;
 
