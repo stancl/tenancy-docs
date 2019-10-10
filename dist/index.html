@@ -3,280 +3,372 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,400,500,600,700,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <link rel="stylesheet" href="tailwind.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/tailwind.css">
     <title>stancl/tenancy &mdash; Automatic multi-tenancy for your Laravel app. No code changes needed.</title>
     <meta name="description"
         content="A Laravel multi-database tenancy package that respects your code. You won't have to change a thing in your application's code.">
 </head>
-<body>
-    <div class="w-full">
-        <nav class="bg-gray-900 px-2 lg:px-6 py-3 lg:text-lg text-blue-200 w-full">
-            <div class="flex justify-between">
-                <span class="font-medium hover:border-indigo-600 border-transparent border-b-2"><a
-                        href="https://github.com/stancl/tenancy">stancl/tenancy</a></span>
-                <ul class="flex justify-between -mx-1 lg:-mx-3">
-                    <li class="px-1 lg:px-3">
-                        <a href="#stay-updated" class="hover:border-indigo-600 border-transparent border-b-2">Stay Updated</a>
-                    </li>
-                    <li class="px-1 lg:px-3">
-                        <a href="https://github.com/stancl/tenancy" class="hover:border-indigo-600 border-transparent border-b-2">View on <strong>GitHub</strong></a>
-                    </li>
-                </ul>
+<body class="antialiased font-sans w-full bg-indigo-100">
+    <header class="bg-indigo-700 relative">
+        <div class="overflow-hidden w-full top-0 left-0"> <!-- waves -->
+            <div class="bg-indigo-700 h-48 -mx-10"></div>
+            <svg class="pt-64 -mx-10 h-full bg-indigo-700" viewBox="0 0 1440 320">
+                <path class="fill-current text-indigo-600" fill-opacity="1"
+                    d="M0,32L26.7,53.3C53.3,75,107,117,160,160C213.3,203,267,245,320,234.7C373.3,224,427,160,480,128C533.3,96,587,96,640,122.7C693.3,149,747,203,800,224C853.3,245,907,235,960,197.3C1013.3,160,1067,96,1120,80C1173.3,64,1227,96,1280,112C1333.3,128,1387,128,1413,128L1440,128L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z">
+                </path>
+            </svg>
+            <div class="bg-indigo-100">
+                <div class="bg-indigo-600 h-20 -mx-10"></div>
+                <svg class="-mx-10 -mt-1 h-full" viewBox="0 0 1440 280">
+                    <path class="fill-current text-indigo-600" fill-opacity="1"
+                        d="M0,128L34.3,122.7C68.6,117,137,107,206,112C274.3,117,343,139,411,170.7C480,203,549,245,617,261.3C685.7,277,754,267,823,245.3C891.4,224,960,192,1029,154.7C1097.1,117,1166,75,1234,48C1302.9,21,1371,11,1406,5.3L1440,0L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z">
+                    </path>
+                </svg>
             </div>
-        </nav>
+        </div>
+        <div class="py-20 px-40 flex flex-wrap absolute top-0 left-0">
+            <div class="w-1/2 leading-relaxed">
+                <h1 class="text-indigo-100 text-6xl font-bold">Automatic tenancy for your Laravel app</h1>
+                <h2 class="mt-4 text-5xl font-thin text-indigo-200">No code changes required.</h2>
+                <p class="mt-5 text-2xl text-indigo-300"><strong class="text-indigo-200">stancl/tenancy</strong> is a tenancy package that uses a completely new approach to multi-tenancy.</p>
+                <p class="mt-2 text-2xl text-indigo-300">Instead of forcing you to change how you write your app, it <strong class="text-indigo-200">bootstraps tenancy automatically, in the background.</strong></p>
+                <div class="mt-8">
+                    <a href="https://tenancy.samuelstancl.me/docs/v2/getting-started/">
+                        <button
+                            class="text-indigo-100 shadow-primary font-semibold text-xl w-64 text-center py-2 bg-indigo-dark border-indigo-dark border-2 rounded-10 hover:bg-indigo-900 hover:border-indigo-900 both-transition">View
+                            Documentation</button>
+                    </a>
+                    <a
+                        href="https://samuelstancl.me/blog/make-your-laravel-app-multi-tenant-without-changing-a-line-of-code/">
+                        <button
+                            class="ml-6 text-indigo-100 font-semibold text-xl w-64 text-center py-2 rounded-10 border-indigo-500 border-2 hover:border-indigo-300 border-transition">Beginners
+                            Tutorial</button>
+                    </a>
+                </div>
+            </div>
+            <div class="w-1/2 flex justify-center items-center">
+                <div class="bg-indigo-900 text-lg leading-loose text-blue-300 rounded-15 p-6 inline-block shadow-primary">
+<pre>
+// Create a tenant
+$tenant = Tenant::new()
+    ->withDomains([
+        'tenant1.yourapp.com',
+        'tenant1.com',
+    ])->withPlan('free')
+    ->save();
 
-        <main class="w-full">
-            <div id="hero" class="bg-blue-100 w-full circuit py-8">
-                <div class="w-4/5 lg:w-3/5 mx-auto">
-
-                    <div class="leading-relaxed lg:leading-loose text-center">
-                        <h1 class="text-3xl font-bold">Automatic multi-tenancy for your Laravel app.</h1>
-                        <h2 class="text-2xl font-medium mt-3 lg:mt-1">You won't have to change a thing in your application's code.</h2>
-                    </div>
-
-                    <div class="flex justify-center mt-8">
-                        <div>
-                            <ul class="text-lg leading-loose">
-                                <li class="lg:mt-1"><img class="inline mr-1" width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png"> No model traits to change database connection</li>
-                                <li class="lg:mt-1"><img class="inline mr-1" width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png"> No replacing of Laravel classes (Cache, Storage, ...) with tenancy-aware classes</li>
-                                <li class="lg:mt-1"><img class="inline mr-1" width="20" height="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png"> Built-in tenant identification based on hostname (including second level domains)</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="flex justify-center mt-10 mb-1">
-                        <div>
-                        <a href="docs/"
-                            class="focus:outline-none focus:border-indigo-500 border-2 border-transparent">
-                            <button id="view-documentation"
-                                class="bg-purple-700 hover:bg-purple-600 text-indigo-100 uppercase tracking-wider
-                                py-2 px-4 rounded-lg focus:outline-none focus:border-indigo-500 border-2
-                                border-transparent">
-                                <!-- <svg class="w-5 inline align-middle fill-current" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <title>GitHub</title>
-                                    <path
-                                        d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                                /></svg> -->
-                                <span class="align-middle">View documentation</span>
-                            </button>
-                        </a>
-                        </div>
-                    </div>
-                    </div>
+// Write your app like you're used to
+Order::where('status', 'shipped')->get();
+Cache::get('order_count');
+asset('logo.png');
+dispatch(new SendOrderCreatedMail);
+</pre>
                 </div>
             </div>
 
-            <div id="social" class="bg-blue-100 w-full pt-4 pb-2">
-                <div class="flex justify-between w-full px-2 lg:w-30% mx-auto">
-                    <a class="github-button" href="https://github.com/stancl/tenancy" data-show-count="true"
-                        aria-label="Star stancl/tenancy on GitHub">Star</a>
-
-                    <a href="https://laravel.com" rel="nofollow"><img src="https://img.shields.io/badge/laravel-5.8-red.svg"
-                            alt="Laravel 5.8"></a>
-                    <a href="https://packagist.org/packages/stancl/tenancy" rel="nofollow"><img
-                            src="https://poser.pugx.org/stancl/tenancy/version" alt="Latest Stable Version"></a>
-                    <a href="https://travis-ci.com/stancl/tenancy" rel="nofollow"><img
-                            src="https://travis-ci.com/stancl/tenancy.svg?branch=2.x" alt="Travis CI build"></a>
-                    <a href="https://codecov.io/gh/stancl/tenancy" rel="nofollow"><img
-                            src="https://codecov.io/gh/stancl/tenancy/branch/2.x/graph/badge.svg" alt="codecov"></a>
+            <div class="flex justify-between mt-24">
+                <div class="w-1/3">
+                    <div class="bg-white py-6 px-12 h-full rounded-15 text-xl flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-3xl text-center my-1">Easy Installation</h3>
+                            <p class="mt-5">Two commands is all you need to get started.</p>
+<pre class="text-lg mt-5">
+composer require stancl/tenancy
+php artisan tenancy:install
+</pre>
+                            <p class="mt-5">After installation, just focus on what's important to you &mdash; writing your app.</p>
+                        </div>
+                        <div class="flex justify-center mt-8">
+                            <a href="https://tenancy.samuelstancl.me/docs/v2/installation">
+                                <button
+                                    class="text-indigo-800 font-bold text-xl w-64 text-center py-2 rounded-10
+                                    border-indigo-200 border-2 focus:outline-none focus:border-indigo-600
+                                    hover:border-indigo-600 border-transition">Installation
+                                    docs</button>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div id="features" class="py-10 bg-gray-100">
-                <div class="container mx-auto mt-4 px-4">
-                    <div class="lg:w-3/4 mx-auto text-center">
-                        <h2 class="text-2xl font-bold">Multi-tenancy is something that can be handled in the
-                            background. Why should your app's code be polluted with tons of tenancy features
-                            implementations?
-                        </h2>
-                        
-                        <p class="mt-10 text-lg"><strong>stancl/tenancy</strong> is a Laravel package that implements multi-database
-                            tenancy into your application in a way that doesn't require you to change anything in your existing
-                            codebase.
-                        </p>
-
-                        <h4 class="mt-10 text-xl font-bold">How does it work?</h4>
-                        <div class="mt-2 flex justify-center">
-                            <ol class="mx-5 lg:mx-10 text-lg leading-relaxed list-decimal text-left">
-                                <li class="mt-2">The tenant is identified using the current hostname.</li>
-                                <li class="mt-2">Database & Redis connections are switched, cache is tagged and filesystem root paths are suffixed.</li>
-                                <li class="mt-2">Your code is automatically multi-tenant. No changes needed.</li>
-                            </ol>
-                        </div>
-                    </div>
-    
-                    <div class="w-full flex flex-col lg:flex-row lg:justify-between items-center mt-16 mb-12 lg:mb-20 lg:-mx-10">
-                        <div class="lg:w-1/2 lg:px-10 leading-relaxed lg:text-right">
-                            <h3 class="text-2xl font-medium mb-1">Easy Installation</h3>
-                            <p>Just install the package and move your tenant routes.</p>
-                        </div>
-                        <div class="lg:w-1/2 lg:px-10 leading-relaxed">
-                            <pre class="mt-5 lg:mt-0 whitespace-pre-wrap bg-white w-full inline-block p-4 rounded-lg shadow-lg">
-$ composer require stancl/tenancy
-$ php artisan tenancy:install
-$ mv routes/web.php routes/tenant.php</pre>
-                        </div>
-                    </div>
-    
-                    <div class="w-full flex flex-col-reverse lg:flex-row lg:justify-between items-center my-12 lg:my-20 lg:-mx-10">
-                        <div class="lg:w-1/2 lg:px-10 leading-relaxed">
-                            <pre class="mt-5 lg:mt-0 whitespace-pre-wrap bg-white w-full inline-block p-4 rounded-lg shadow-lg">
-cache()->remember('total_revenue', function () {
-   return Order::with('products')->get()->products->sum();
-});</pre>
-                        </div>
-                        <div class="lg:w-1/2 lg:px-10 leading-relaxed">
-                            <h3 class="text-2xl font-medium mb-1">Automatic Data Separation</h3>
-                            <p>Tenants' databases, Redis stores, filesystems and caches are automatically separated. You can write your app like you're used to and let the package worry about tenant data separation.</p>
-                        </div>
-                    </div>
-
-                    <div class="w-full flex flex-col lg:flex-row lg:justify-between items-center my-12 lg:my-20 lg:-mx-10">
-                        <div class="lg:w-1/2 lg:px-10 leading-relaxed lg:text-right">
-                            <h3 class="text-2xl font-medium mb-1">Configurable</h3>
-                            <p>Even though everything happens automatically, you're still in control. You can configure how database names, Redis keys and filesystem paths are prefixed, as well as how cache is tagged and what DB/Redis connections and FS disks are made multi-tenant.</p>
-                        </div>
-                        <div class="lg:w-1/2 lg:px-10 leading-relaxed">
-                            <pre class="mt-5 lg:mt-0 whitespace-pre-wrap bg-white w-full inline-block p-4 rounded-lg shadow-lg">
-'redis' => [
-  'tenancy' => true,
-  'prefix_base' => 'tenant',
-  'prefixed_connections' => [
-    'default',
-    'cache',
-  ],
-]</pre>
-                        </div>
-                    </div>
-
-                    <div class="w-full flex flex-col-reverse lg:flex-row lg:justify-between items-center my-12 lg:my-20 lg:-mx-10">
-                        <div class="lg:w-1/2 lg:px-10 leading-relaxed">
-                            <pre class="mt-5 lg:mt-0 whitespace-pre-wrap bg-white w-full inline-block p-4 rounded-lg shadow-lg">
-$ artisan tenants:seed --tenants=8075a580-1cb8-11e9-8822-49c5d8f8ff23
-Tenant: 8075a580-1cb8-11e9-8822-49c5d8f8ff23 (laravel.localhost)
-Database seeding completed successfully.</pre>
-                        </div>
-                        <div class="lg:w-1/2 lg:px-10 leading-relaxed">
-                            <h3 class="text-2xl font-medium mb-1">CLI-friendly</h3>
-                            <p><span class="font-medium">stancl/tenancy</span> comes with artisan commands for
-                                migrating, rolling back, as well as seeding tenant databases.</p>
-                        </div>
-                    </div>
-
-                    <div class="w-full flex flex-col lg:flex-row lg:justify-between items-center my-12 lg:my-20 lg:-mx-10">
-                        <div class="lg:w-1/2 lg:px-10 leading-relaxed lg:text-right">
-                            <h3 class="text-2xl font-medium mb-1">SOLID Extensibility</h3>
-                            <p>The package follows the SOLID principles and is open to extension. You're free to write
-                                (and contribute! <img width="20" height="20" class="inline"
-                                    src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">)
-                                your own storage drivers and database managers.
+                <div class="ml-24 w-1/3">
+                    <div class="bg-white py-6 px-12 h-full rounded-15 text-xl flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-3xl text-center my-1">Automatic & Flexible</h3>
+                            <p class="mt-5">Multi-tenancy is something that can be handled in the background.</p>
+                            <p class="mt-5">Why should your code be <em>polluted</em> with tons of tenancy-related things?
+                            </p>
+                            <p class="mt-5">Why have your code <em>bound</em> to a specific implementation? Handling things in the
+                                background gives you the flexibility to change how tenancy works for your project without pain.
                             </p>
                         </div>
-                        <div class="lg:w-1/2 lg:px-10 leading-relaxed">
-                            <pre class="mt-5 lg:mt-0 whitespace-pre-wrap bg-white w-full inline-block p-4 rounded-lg shadow-lg">
-class PostgreSQLDatabaseManager implements TenantDatabaseManager
-{
-  public function createDatabase($name)
-  {
-    //
-  }
-</pre>
+                        <div class="flex justify-center mt-8">
+                            <a href="https://tenancy.samuelstancl.me/docs/v2/configuration">
+                                <button
+                                    class="text-indigo-800 font-bold text-xl w-64 text-center py-2 rounded-10
+                                    border-indigo-200 border-2 focus:outline-none focus:border-indigo-600
+                                    hover:border-indigo-600 border-transition">Configuration docs</button>
+                            </a>
                         </div>
                     </div>
                 </div>
-
-            </div>
-
-            <div id="notifications" class="py-8 flex bg-purple-100">
-                <div class="container mx-auto px-4">
-                    <h2 id="stay-updated" class="text-2xl font-bold text-center">Stay Updated</h2>
-                    <p class="mt-4">
-                        If you'd like to be notified about new versions and related stuff, you can sign up for e-mail notificatons or join our <a href="https://t.me/joinchat/AAAAAFjdrbSJg0ZCHTzxLA" target="_blank" class="link">Telegram
-                        channel.</a>
-                    </p>
-
-                    <div class="flex justify-center">
-
-                        <form
-                            action="https://github.us3.list-manage.com/subscribe/post?u=6a33c422777aedd88e9a9488e&amp;id=9b99f013b8"
-                            method="post" class="mt-8"
-                            target="_blank" novalidate>
-                            <div id="mc_embed_signup_scroll">
-                                <h2 class="text-lg font-medium">Subscribe to e-mail notifications</h2>
-                                <div class="mt-3">
-                                    <label for="mce-EMAIL">Email Address</label>
-                                    <input type="email" value="" placeholder="your@email.com" name="EMAIL" class="rounded-lg shadow mx-2 px-2 focus:outline-none focus:border-blue-400 border-transparent border leading-relaxed py-1" id="mce-EMAIL">
+                <div class="ml-24 w-1/3">
+                    <div class="bg-white py-6 px-12 h-full rounded-15 text-xl flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-3xl text-center my-1">Awesome Integration</h3>
+                            <p class="mt-5">By switching things in the background, the package doesn’t stand in your way.
+                            </p>
+                            <p class="mt-5">You can integrate with just about any package.</p>
+                            <div class="flex h-full -mb-8 justify-between items-center mx-6">
+                                <svg class="block w-12" title="Telescope" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+                                    <path fill="#000"
+                                        d="M0 40a39.87 39.87 0 0 1 11.72-28.28A40 40 0 1 1 0 40zm34 10a4 4 0 0 1-4-4v-2a2 2 0 1 0-4 0v2a4 4 0 0 1-4 4h-2a2 2 0 1 0 0 4h2a4 4 0 0 1 4 4v2a2 2 0 1 0 4 0v-2a4 4 0 0 1 4-4h2a2 2 0 1 0 0-4h-2zm24-24a6 6 0 0 1-6-6v-3a3 3 0 0 0-6 0v3a6 6 0 0 1-6 6h-3a3 3 0 0 0 0 6h3a6 6 0 0 1 6 6v3a3 3 0 0 0 6 0v-3a6 6 0 0 1 6-6h3a3 3 0 0 0 0-6h-3zm-4 36a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM21 28a3 3 0 1 0 0-6 3 3 0 0 0 0 6z">
+                                    </path>
+                                </svg>
+                                <svg class="block w-12" title="Nova" version="1.1" viewBox="0 0 30 30"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <clipPath id="clipPath29">
+                                            <rect y="-1.5829e-8" width="29.936" height="30.064" fill="#fff" />
+                                        </clipPath>
+                                    </defs>
+                                    <g clip-path="url(#clipPath29)" fill="none" fill-rule="evenodd">
+                                        <g transform="translate(-250,-27)" fill="#252d37">
+                                            <path id="Combined-Shape"
+                                                d="m300.84 49.5h-8.4821v-13.34h2.854v10.84h5.6281zm10.059 0h-2.5546v-1.02c-0.6586 0.8-1.7962 1.26-3.0535 1.26-1.5368 0-3.333-1.04-3.333-3.2 0-2.28 1.7962-3.12 3.333-3.12 1.2973 0 2.4149 0.42 3.0535 1.18v-1.22c0-0.98-0.83822-1.62-2.1155-1.62-1.0178 0-1.9758 0.4-2.7741 1.14l-0.99789-1.78c1.1775-1.06 2.6943-1.52 4.2111-1.52 2.2153 0 4.231 0.88 4.231 3.66zm-4.5903-1.48c0.81827 0 1.6166-0.28 2.0357-0.84v-1.2c-0.41911-0.56-1.2174-0.86-2.0357-0.86-0.99789 0-1.8162 0.54-1.8162 1.46s0.81827 1.44 1.8162 1.44zm9.6196 1.48h-2.5346v-9.66h2.5346v1.3c0.69852-0.84 1.876-1.54 3.0735-1.54v2.48c-0.17962-0.04-0.39916-0.06-0.69852-0.06-0.83823 0-1.9559 0.48-2.375 1.1zm12.993 0h-2.5546v-1.02c-0.65861 0.8-1.7962 1.26-3.0535 1.26-1.5368 0-3.333-1.04-3.333-3.2 0-2.28 1.7962-3.12 3.333-3.12 1.2973 0 2.4149 0.42 3.0535 1.18v-1.22c0-0.98-0.83823-1.62-2.1155-1.62-1.0178 0-1.9758 0.4-2.7741 1.14l-0.99788-1.78c1.1775-1.06 2.6943-1.52 4.2111-1.52 2.2153 0 4.231 0.88 4.231 3.66zm-4.5903-1.48c0.81827 0 1.6166-0.28 2.0357-0.84v-1.2c-0.41911-0.56-1.2174-0.86-2.0357-0.86-0.99789 0-1.8162 0.54-1.8162 1.46s0.81827 1.44 1.8162 1.44zm12.314 1.48h-2.7342l-3.8718-9.66h2.7143l2.5147 6.72 2.5346-6.72h2.7143zm9.5398 0.24c-2.9338 0-5.1491-1.98-5.1491-5.08 0-2.8 2.0756-5.06 4.9894-5.06 2.8939 0 4.8298 2.16 4.8298 5.3v0.6h-7.1648c0.17962 1.18 1.1376 2.16 2.7741 2.16 0.81827 0 1.9359-0.34 2.5546-0.94l1.1376 1.68c-0.95798 0.88-2.4748 1.34-3.9716 1.34zm2.2353-6c-0.0798-0.92-0.71848-2.06-2.3949-2.06-1.5767 0-2.2552 1.1-2.355 2.06zm6.8056 5.76h-2.5346v-13.34h2.5346zm19 0h-1.5966l-7.7636-10.64v10.64h-1.6565v-13.34h1.6964l7.6638 10.42v-10.42h1.6565zm7.2646 0.24c-2.9338 0-4.7699-2.28-4.7699-5.08s1.8361-5.06 4.7699-5.06 4.7699 2.26 4.7699 5.06-1.8361 5.08-4.7699 5.08zm0-1.34c2.0557 0 3.1932-1.76 3.1932-3.74 0-1.96-1.1376-3.72-3.1932-3.72s-3.1932 1.76-3.1932 3.72c0 1.98 1.1376 3.74 3.1932 3.74zm11.416 1.1h-1.6365l-4.0115-9.66h1.6365l3.1932 7.92 3.2132-7.92h1.6166zm13.092 0h-1.4968v-1.1c-0.77836 0.88-1.896 1.34-3.1932 1.34-1.6166 0-3.3529-1.1-3.3529-3.2 0-2.18 1.7164-3.18 3.3529-3.18 1.3172 0 2.4149 0.42 3.1932 1.3v-1.74c0-1.28-1.0378-2.02-2.4348-2.02-1.1576 0-2.0956 0.4-2.9538 1.34l-0.69853-1.04c1.0378-1.08 2.2752-1.6 3.8518-1.6 2.0557 0 3.7321 0.92 3.7321 3.26zm-4.1313-0.84c1.0378 0 2.0556-0.4 2.6344-1.2v-1.84c-0.57878-0.78-1.5966-1.18-2.6344-1.18-1.417 0-2.3949 0.88-2.3949 2.1 0 1.24 0.97793 2.12 2.3949 2.12zm-126.77 3.9093c-2.7448 2.7364-6.5482 4.4307-10.751 4.4307-4.6788 0-8.8622-2.0995-11.642-5.3988 5.9527 4.9167 14.819 4.609 20.407-0.92307 3.7654-3.7277 3.7654-9.7716 0-13.499-3.7654-3.7277-9.8703-3.7277-13.636 0-1.6137 1.5976-1.6137 4.1878 0 5.7854s4.2301 1.5976 5.8439 0c0.53791-0.53253 1.41-0.53253 1.948 0 0.53791 0.53253 0.53791 1.3959 0 1.9285-2.6896 2.6627-7.0502 2.6627-9.7398 0s-2.6896-6.9797 0-9.6424c4.8412-4.7928 12.69-4.7928 17.532 0 4.8287 4.7804 4.8412 12.523 0.0376 17.319zm0.89023-20.17c-5.9527-4.9167-14.819-4.609-20.407 0.92307-3.7654 3.7277-3.7654 9.7716 0 13.499 3.7654 3.7277 9.8703 3.7277 13.636 0 1.6137-1.5976 1.6137-4.1878 0-5.7854s-4.2301-1.5976-5.8439 0c-0.53791 0.53253-1.41 0.53253-1.948 0-0.53791-0.53253-0.53791-1.3959 0-1.9285 2.6896-2.6627 7.0502-2.6627 9.7398 0s2.6896 6.9797 0 9.6424c-4.8412 4.7928-12.69 4.7928-17.532 0-4.8349-4.7866-4.8412-12.543-0.0188-17.338 2.7434-2.7254 6.539-4.412 10.733-4.412 4.6788 0 8.8622 2.0995 11.642 5.3988z" />
+                                        </g>
+                                    </g>
+                                </svg>
+                                <svg class="block w-12" title="Horizon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                                    <path fill="#000"
+                                        d="M5.26176342 26.4094389C2.04147988 23.6582233 0 19.5675182 0 15c0-4.1421356 1.67893219-7.89213562 4.39339828-10.60660172C7.10786438 1.67893219 10.8578644 0 15 0c8.2842712 0 15 6.71572875 15 15 0 8.2842712-6.7157288 15-15 15-3.716753 0-7.11777662-1.3517984-9.73823658-3.5905611zM4.03811305 15.9222506C5.70084247 14.4569342 6.87195416 12.5 10 12.5c5 0 5 5 10 5 3.1280454 0 4.2991572-1.9569336 5.961887-3.4222502C25.4934253 8.43417206 20.7645408 4 15 4 8.92486775 4 4 8.92486775 4 15c0 .3105915.01287248.6181765.03811305.9222506z" />
+                                </svg>
+                                <img class="block h-8" src="spatie.png" alt="Spatie">
                                 </div>
-                                <div class="mt-5">
-                                    <h3 class="font-medium">What would you like to be notified about?</h3>
-                                    <ul class="mt-2">
-                                        <li class="leading-loose"><input class="form-checkbox mx-2 focus:outline-none focus:shadow-none focus:border-blue-400 border-blue-200 border" type="checkbox" value="1" name="group[27425][1]"
-                                                id="mce-group[27425]-27425-0"><label for="mce-group[27425]-27425-0">Major
-                                                versions of stancl/tenancy: important breaking changes</label></li>
-                                        <li class="leading-loose"><input class="form-checkbox mx-2 focus:outline-none focus:shadow-none focus:border-blue-400 border-blue-200 border" type="checkbox" value="2" name="group[27425][2]"
-                                                id="mce-group[27425]-27425-1"><label for="mce-group[27425]-27425-1">Minor
-                                                versions of stancl/tenancy: new features, bug fixes</label></li>
-                                        <li class="leading-loose"><input class="form-checkbox mx-2 focus:outline-none focus:shadow-none focus:border-blue-400 border-blue-200 border" type="checkbox" value="4" name="group[27425][4]"
-                                                id="mce-group[27425]-27425-2"><label for="mce-group[27425]-27425-2">Other:
-                                                once in a while, when I make something cool, I may send you an email</label>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div id="mce-responses" class="clear">
-                                    <div class="response" id="mce-error-response" style="display:none"></div>
-                                    <div class="response" id="mce-success-response" style="display:none"></div>
-                                </div>
-                                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
-                                        name="b_6a33c422777aedd88e9a9488e_9b99f013b8" tabindex="-1" value=""></div>
-                                <input type="hidden" name="subscribe" value="1">
+                        </div>
+                        <div class="flex justify-center mt-8">
+                            <a href="https://tenancy.samuelstancl.me/docs/v2/integrations">
                                 <button
-                                    class="mx-auto block mt-6 bg-indigo-600 text-white uppercase tracking-wider
-                                    rounded-lg focus:outline-none focus:border-blue-400 border-transparent border
-                                    hover:bg-indigo-500 px-2 py-1" style="box-shadow: 0px 0px 20px 4px rgba(198, 130,
-                                    240, 0.45)"
-                                    type="submit">
-                                    <svg class="w-5 align-middle inline fill-current" viewBox="0 0 20 20">
-                                        <path
-                                            d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM6.7 9.29L9 11.6l4.3-4.3 1.4 1.42L9 14.4l-3.7-3.7 1.4-1.42z" />
-                                        </svg>
-                                    <span class="align-middle">Subscribe</span>
-                                </button>
-                            </div>
-                        </form>
+                                    class="text-indigo-800 font-bold text-xl w-64 text-center py-2 rounded-10
+                                    border-indigo-200 border-2 focus:outline-none focus:border-indigo-600
+                                    hover:border-indigo-600 border-transition">Integration
+                                    docs</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </header>
 
-            <div id="footer" class="bg-gray-900 text-gray-100 py-8 flex justify-center">
-                <div class="px-3">
-                    <h1 class="text-2xl text-center"><a class="border-b-2 border-gray-600 hover:border-gray-100"
-                            href="https://github.com/stancl/tenancy">stancl/tenancy</a></h1>
+    <div class="w-full flex items-center justify-center px-64 py-6 bg-white">
+        <div class="w-1/2 text-right">
+            <h3 class="text-3xl font-semibold">Automatic Data Separation</h3>
+            <p class="text-lg">Tenants' databases, caches, filesystems, queues and Redis stores are automatically separated. You can
+                write your app like you're used to and let the package worry about tenant data separation.</p>
+        </div>
+        <div class="w-1/2 flex justify-start ml-16">
+<pre class="bg-indigo-900 leading-relaxed text-blue-300 rounded-15 py-6 px-8 inline-block w-full">
+cache()->remember('total_revenue', function () {
+    return Order::with('products')
+        ->get()
+        ->products
+        ->sum();
+});
+</pre>
+        </div>
+    </div>
 
-                    <ul class="flex flex-wrap justify-center lg:flex-row my-6">
-                        <li class="mx-2"><a class="github-button" href="https://github.com/stancl" data-size="large" data-show-count="true"
-                            aria-label="Follow @stancl on GitHub">Follow @stancl</a></li>
-        
-                        <li class="mx-2"><a class="github-button" href="https://github.com/stancl/tenancy/subscription" data-icon="octicon-eye"
-                            data-size="large" data-show-count="true" aria-label="Watch stancl/tenancy on GitHub">Watch</a></li>
-        
-                        <li class="mx-2"><a class="github-button" href="https://github.com/stancl/tenancy" data-icon="octicon-star" data-size="large"
-                            data-show-count="true" aria-label="Star stancl/tenancy on GitHub">Star</a></li>
-        
-                        <li class="mx-2"><a class="github-button" href="https://github.com/stancl/tenancy/fork" data-icon="octicon-repo-forked"
-                            data-size="large" data-show-count="true" aria-label="Fork stancl/tenancy on GitHub">Fork</a></li>
-                    </ul>
+    <div class="w-full flex items-center justify-center px-64 py-6 bg-white mt-10">
+        <div class="w-1/2 flex justify-end mr-16">
+<pre class="bg-indigo-900 leading-relaxed text-blue-300 rounded-15 py-6 px-8 inline-block w-full">
+'redis' => [
+    'prefix_base' => 'tenant',
+    'prefixed_connections' => [
+        'default',
+    ],
+],
+</pre>
+        </div>
+        <div class="w-1/2 text-left">
+            <h3 class="text-3xl font-semibold">Configurable</h3>
+            <p class="text-lg">Even though everything happens automatically, you're still in control. You can configure
+                how database names, Redis keys and filesystem paths are prefixed, as well as how cache is tagged and
+                what DB/Redis connections and FS disks are made multi-tenant.</p>
+        </div>
+    </div>
 
-                    <hr class="my-5">
+    <div class="w-full flex items-center justify-center px-64 py-6 bg-white mt-10">
+        <div class="w-1/2 text-right">
+            <h3 class="text-3xl font-semibold">CLI-friendly</h3>
+            <p class="text-lg"><strong>stancl/tenancy</strong> comes with artisan commands for migrating, rolling
+                back, as well as
+                seeding tenant databases.</p>
+        </div>
+        <div class="w-1/2 flex justify-start ml-16">
+<pre class="bg-indigo-900 leading-relaxed text-blue-300 rounded-15 py-6 px-8 inline-block w-full">
+$ artisan tenants:seed --tenants=8075a580-1cb8-11e9-8822-49c5d8f8ff23
+Tenant: 8075a580-1cb8-11e9-8822-49c5d8f8ff23 (tenant1.localhost)
+Database seeding completed successfully.
+</pre>
+        </div>
+    </div>
 
-                    <p class="text-center">Thanks to Steve Schoger for HeroPatterns and Zondicons! <img width="20" height="20"
-                            class="inline" src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png"> CC BY 4.0
-                    </p>
-                </div>
+    <div class="w-full flex items-center justify-center px-64 py-6 bg-white mt-10">
+        <div class="w-1/2 flex justify-end mr-16">
+<pre class="bg-indigo-900 leading-relaxed text-blue-300 rounded-15 py-6 px-8 inline-block w-full">
+class PostgreSQLDatabaseManager implements TenantDatabaseManager
+{
+    public function createDatabase($name)
+    {
+        //
+    }
+}
+</pre>
+        </div>
+        <div class="w-1/2 text-left">
+            <h3 class="text-3xl font-semibold">SOLID extensibility</h3>
+            <p class="text-lg">The package follows the SOLID principles and is open to extension. You're free to write
+                (and contribute ❤️) your own Storage Drivers, Tenancy Bootstrappers, and Feature classes.</p>
+        </div>
+    </div>
+    <div class="p-16 flex justify-center">
+        <div>
+            <h2 class="text-4xl font-bold text-center">How it works</h2>
+            <ul class="text-xl leading-loose mt-4">
+                <li>1. The tenant is identified using the current hostname.</li>
+                <li>2. Tenancy Bootstrappers are executed:</li>
+                <ul class="pl-6 my-1">
+                    <li class="flex items-center">
+                        <svg class="block mr-3" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 26C20.1797 26 26 20.1797 26 13C26 5.8203 20.1797 0 13 0C5.8203 0 0 5.8203 0 13C0 20.1797 5.8203 26 13 26Z" fill="#C3DAFE" /> <path d="M10.4 16.3668L18.59 8.17677C18.8402 7.96543 19.1609 7.85631 19.4881 7.87122C19.8152 7.88613 20.1247 8.02397 20.3546 8.25718C20.5846 8.49039 20.718 8.80179 20.7283 9.12912C20.7385 9.45646 20.6249 9.77561 20.41 10.0228L11.31 19.1228C11.067 19.361 10.7403 19.4944 10.4 19.4944C10.0597 19.4944 9.73302 19.361 9.49001 19.1228L5.59001 15.2228C5.37515 14.9756 5.26149 14.6565 5.27176 14.3291C5.28202 14.0018 5.41546 13.6904 5.64538 13.4572C5.87531 13.224 6.18479 13.0861 6.51194 13.0712C6.8391 13.0563 7.15983 13.1654 7.41001 13.3768L10.4 16.3668Z" fill="#4C51BF" /></svg>
+                        Database connections are switched
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="block mr-3" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 26C20.1797 26 26 20.1797 26 13C26 5.8203 20.1797 0 13 0C5.8203 0 0 5.8203 0 13C0 20.1797 5.8203 26 13 26Z" fill="#C3DAFE" /> <path d="M10.4 16.3668L18.59 8.17677C18.8402 7.96543 19.1609 7.85631 19.4881 7.87122C19.8152 7.88613 20.1247 8.02397 20.3546 8.25718C20.5846 8.49039 20.718 8.80179 20.7283 9.12912C20.7385 9.45646 20.6249 9.77561 20.41 10.0228L11.31 19.1228C11.067 19.361 10.7403 19.4944 10.4 19.4944C10.0597 19.4944 9.73302 19.361 9.49001 19.1228L5.59001 15.2228C5.37515 14.9756 5.26149 14.6565 5.27176 14.3291C5.28202 14.0018 5.41546 13.6904 5.64538 13.4572C5.87531 13.224 6.18479 13.0861 6.51194 13.0712C6.8391 13.0563 7.15983 13.1654 7.41001 13.3768L10.4 16.3668Z" fill="#4C51BF" /></svg>
+                        Cache tag is set
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="block mr-3" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 26C20.1797 26 26 20.1797 26 13C26 5.8203 20.1797 0 13 0C5.8203 0 0 5.8203 0 13C0 20.1797 5.8203 26 13 26Z" fill="#C3DAFE" /> <path d="M10.4 16.3668L18.59 8.17677C18.8402 7.96543 19.1609 7.85631 19.4881 7.87122C19.8152 7.88613 20.1247 8.02397 20.3546 8.25718C20.5846 8.49039 20.718 8.80179 20.7283 9.12912C20.7385 9.45646 20.6249 9.77561 20.41 10.0228L11.31 19.1228C11.067 19.361 10.7403 19.4944 10.4 19.4944C10.0597 19.4944 9.73302 19.361 9.49001 19.1228L5.59001 15.2228C5.37515 14.9756 5.26149 14.6565 5.27176 14.3291C5.28202 14.0018 5.41546 13.6904 5.64538 13.4572C5.87531 13.224 6.18479 13.0861 6.51194 13.0712C6.8391 13.0563 7.15983 13.1654 7.41001 13.3768L10.4 16.3668Z" fill="#4C51BF" /></svg>
+                        Filesystem's root paths are suffixed
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="block mr-3" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 26C20.1797 26 26 20.1797 26 13C26 5.8203 20.1797 0 13 0C5.8203 0 0 5.8203 0 13C0 20.1797 5.8203 26 13 26Z" fill="#C3DAFE" /> <path d="M10.4 16.3668L18.59 8.17677C18.8402 7.96543 19.1609 7.85631 19.4881 7.87122C19.8152 7.88613 20.1247 8.02397 20.3546 8.25718C20.5846 8.49039 20.718 8.80179 20.7283 9.12912C20.7385 9.45646 20.6249 9.77561 20.41 10.0228L11.31 19.1228C11.067 19.361 10.7403 19.4944 10.4 19.4944C10.0597 19.4944 9.73302 19.361 9.49001 19.1228L5.59001 15.2228C5.37515 14.9756 5.26149 14.6565 5.27176 14.3291C5.28202 14.0018 5.41546 13.6904 5.64538 13.4572C5.87531 13.224 6.18479 13.0861 6.51194 13.0712C6.8391 13.0563 7.15983 13.1654 7.41001 13.3768L10.4 16.3668Z" fill="#4C51BF" /></svg>
+                        Jobs are made automatically tenant-aware
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="block mr-3" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 26C20.1797 26 26 20.1797 26 13C26 5.8203 20.1797 0 13 0C5.8203 0 0 5.8203 0 13C0 20.1797 5.8203 26 13 26Z" fill="#C3DAFE" /> <path d="M10.4 16.3668L18.59 8.17677C18.8402 7.96543 19.1609 7.85631 19.4881 7.87122C19.8152 7.88613 20.1247 8.02397 20.3546 8.25718C20.5846 8.49039 20.718 8.80179 20.7283 9.12912C20.7385 9.45646 20.6249 9.77561 20.41 10.0228L11.31 19.1228C11.067 19.361 10.7403 19.4944 10.4 19.4944C10.0597 19.4944 9.73302 19.361 9.49001 19.1228L5.59001 15.2228C5.37515 14.9756 5.26149 14.6565 5.27176 14.3291C5.28202 14.0018 5.41546 13.6904 5.64538 13.4572C5.87531 13.224 6.18479 13.0861 6.51194 13.0712C6.8391 13.0563 7.15983 13.1654 7.41001 13.3768L10.4 16.3668Z" fill="#4C51BF" /></svg>
+                        Redis prefix is set
+                    </li>
+                </ul>
+                <li>3. Your code is multi-tenant. No changes needed.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="p-20 flex justify-center bg-indigo-900">
+        <div class="text-xl">
+            <h2 class="text-4xl font-bold text-center text-indigo-100">Ready to try it?</h2>
+            <p class="text-indigo-200 my-6 text-center leading-loose">
+                Just create a new Laravel project and install the package.<br>
+                We think you’ll love it.
+            </p>
+            <div class="flex justify-center">
+                <a href="https://tenancy.samuelstancl.me/docs/v2/installation">
+                    <button class="rounded-10 bg-indigo-700 px-8 py-2 tracking-wide text-indigo-100 font-semibold
+                    focus:outline-none focus:border-indigo-600 border-transparent border hover:bg-indigo-600">INSTALLATION</button>
+                </a>
             </div>
-        </main>
+        </div>
+    </div>
+    <div class="p-24">
+        <div class="border-2 border-indigo-200 bg-blue-100 rounded-15 p-10 flex justify-center">
+            <div class="text-xl">
+                <h2 class="text-3xl font-bold text-center">Stay Updated</h2>
+                <p class="mt-4">If you'd like to be notified about new versions and related stuff, you can sign up for e-mail
+                    notifications or join our <a class="text-blue-600"
+                        href="https://t.me/joinchat/AAAAAFjdrbSJg0ZCHTzxLA">Telegram channel</a>.</p>
+                <form
+                    action="https://github.us3.list-manage.com/subscribe/post?u=6a33c422777aedd88e9a9488e&amp;id=9b99f013b8"
+                    method="post" class="mt-8" target="_blank" novalidate>
+                    <div id="mc_embed_signup_scroll">
+                        <h2 class="text-xl font-bold">Subscribe to e-mail notifications</h2>
+                        <div class="mt-3">
+                            <label for="mce-EMAIL">Email Address</label>
+                            <input type="email" value="" placeholder="your@email.com" name="EMAIL"
+                                class="rounded-10 mx-2 px-3 py-1 focus:outline-none focus:border-blue-400 border-indigo-200 border-2 leading-relaxed"
+                                id="mce-EMAIL">
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="font-semibold">What would you like to be notified about?</h3>
+                            <ul class="mt-2">
+                                <li class="leading-loose"><input
+                                        class="form-checkbox text-indigo-600 mx-2 focus:outline-none focus:shadow-none focus:border-blue-400 border-blue-200 border"
+                                        type="checkbox" value="1" name="group[27425][1]"
+                                        id="mce-group[27425]-27425-0"><label for="mce-group[27425]-27425-0">Major
+                                        versions of stancl/tenancy: important breaking changes</label></li>
+                                <li class="leading-loose"><input
+                                        class="form-checkbox text-indigo-600 mx-2 focus:outline-none focus:shadow-none focus:border-blue-400 border-blue-200 border"
+                                        type="checkbox" value="2" name="group[27425][2]"
+                                        id="mce-group[27425]-27425-1"><label for="mce-group[27425]-27425-1">Minor
+                                        versions of stancl/tenancy: new features, bug fixes</label></li>
+                                <li class="leading-loose"><input
+                                        class="form-checkbox text-indigo-600 mx-2 focus:outline-none focus:shadow-none focus:border-blue-400 border-blue-200 border"
+                                        type="checkbox" value="4" name="group[27425][4]"
+                                        id="mce-group[27425]-27425-2"><label for="mce-group[27425]-27425-2">Other:
+                                        once in a while, when I make something cool, I may send you an email</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="mce-responses" class="clear">
+                            <div class="response" id="mce-error-response" style="display:none"></div>
+                            <div class="response" id="mce-success-response" style="display:none"></div>
+                        </div>
+                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                                name="b_6a33c422777aedd88e9a9488e_9b99f013b8" tabindex="-1" value=""></div>
+                        <input type="hidden" name="subscribe" value="1">
+                        <div class="flex justify-center">
+                            <button
+                                class="mt-4 rounded-10 bg-indigo-700 px-8 py-2 tracking-wide text-indigo-100 font-semibold
+                                        rounded-10 focus:outline-none focus:border-blue-400 border-transparent border
+                                        hover:bg-indigo-600 px-2 py-1" type="submit">
+                                <span class="align-middle">SUBSCRIBE</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="bg-indigo-dark text-gray-100 py-8 flex justify-center">
+        <div class="px-3">
+            <h1 class="text-3xl text-center"><a class="border-b-2 border-gray-600 hover:border-gray-100"
+                    href="https://github.com/stancl/tenancy">stancl/tenancy</a></h1>
+
+            <ul class="flex flex-wrap justify-center lg:flex-row my-8">
+                <li class="mx-2"><a class="github-button" href="https://github.com/stancl/tenancy"
+                        data-icon="octicon-star" data-size="large" data-show-count="true"
+                        aria-label="Star stancl/tenancy on GitHub">Star</a></li>
+
+                <li class="mx-2"><a class="github-button" href="https://github.com/stancl" data-size="large"
+                        data-show-count="true" aria-label="Follow @stancl on GitHub">Follow @stancl</a></li>
+
+                <li class="mx-2"><a class="github-button" href="https://github.com/stancl/tenancy/subscription"
+                        data-icon="octicon-eye" data-size="large" data-show-count="true"
+                        aria-label="Watch stancl/tenancy on GitHub">Watch</a></li>
+
+                <li class="mx-2"><a class="github-button" href="https://github.com/stancl/tenancy/fork"
+                        data-icon="octicon-repo-forked" data-size="large" data-show-count="true"
+                        aria-label="Fork stancl/tenancy on GitHub">Fork</a></li>
+            </ul>
+
+            <hr class="my-5 border border-gray-600">
+
+            <ul class="text-gray-400 text-lg">
+                <li><a class="hover:border-gray-500 border-b border-transparent" href="https://github.com/stancl/tenancy">GitHub</a></li>
+                <li><a class="hover:border-gray-500 border-b border-transparent" href="https://tenancy.samuelstancl.me/docs">Documentation</a></li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>
