@@ -13,7 +13,7 @@
 </head>
 <body class="antialiased font-sans w-full bg-indigo-100">
     <header class="bg-indigo-700 relative">
-        <div class="overflow-hidden w-full top-0 left-0"> <!-- waves -->
+        <div class="overflow-hidden w-full xl:block hidden top-0 left-0"> <!-- waves -->
             <div class="bg-indigo-700 h-48 -mx-10"></div>
             <svg class="pt-64 -mx-10 h-full bg-indigo-700" viewBox="0 0 1440 320">
                 <path class="fill-current text-indigo-600" fill-opacity="1"
@@ -29,10 +29,10 @@
                 </svg>
             </div>
         </div>
-        <div class="p-8 xl:py-20 xl:px-40 flex flex-wrap absolute top-0 left-0">
+        <div class="p-8 xl:py-20 xl:px-40 flex flex-wrap xl:absolute top-0 left-0">
             <div class="w-full xl:w-1/2 leading-relaxed">
-                <h1 class="text-indigo-100 text-6xl font-bold">Automatic tenancy for your Laravel app</h1>
-                <h2 class="mt-4 text-5xl font-thin text-indigo-200">No code changes required.</h2>
+                <h1 class="text-indigo-100 text-5xl xl:text-6xl font-bold">Automatic tenancy for your Laravel app</h1>
+                <h2 class="mt-4 text-4xl xl:text-5xl font-thin text-indigo-200">No code changes required.</h2>
                 <p class="mt-5 text-2xl text-indigo-300"><strong class="text-indigo-200">stancl/tenancy</strong> is a tenancy package that uses a completely new approach to multi-tenancy.</p>
                 <p class="mt-2 text-2xl text-indigo-300">Instead of forcing you to change how you write your app, it <strong class="text-indigo-200">bootstraps tenancy automatically, in the background.</strong></p>
                 <div class="mt-8">
@@ -69,7 +69,7 @@ dispatch(new SendOrderCreatedMail);
                 </div>
             </div>
 
-            <div class="flex flex-col xl:flex-row justify-between mt-24">
+            <div class="flex flex-col xl:flex-row justify-between mx-auto mt-24">
                 <div class="xl:w-1/3 w-full">
                     <div class="bg-white py-6 px-12 h-full rounded-15 text-xl flex flex-col justify-between">
                         <div>
@@ -113,7 +113,7 @@ php artisan tenancy:install
                         </div>
                     </div>
                 </div>
-                <div class="mt-6 xl:ml-24 xl:w-1/3 w-full">
+                <div class="mt-6 xl:mt-0 xl:ml-24 xl:w-1/3 w-full">
                     <div class="bg-white py-6 px-12 h-full rounded-15 text-xl flex flex-col justify-between">
                         <div>
                             <h3 class="font-bold text-3xl text-center my-1">Awesome Integration</h3>
@@ -163,7 +163,7 @@ php artisan tenancy:install
     </header>
 
     <div class="w-full flex flex-col xl:flex-row items-center justify-center px-6 xl:px-64 py-6 bg-white">
-        <div class="w-full xl:w-1/2 text-right">
+        <div class="w-full xl:w-1/2 text-left xl:text-right">
             <h3 class="text-3xl font-semibold">Automatic Data Separation</h3>
             <p class="text-lg">Tenants' databases, caches, filesystems, queues and Redis stores are automatically separated. You can
                 write your app like you're used to and let the package worry about tenant data separation.</p>
@@ -200,7 +200,7 @@ cache()->remember('total_revenue', function () {
     </div>
 
     <div class="w-full flex flex-col xl:flex-row items-center justify-center px-6 xl:px-64 py-6 bg-white mt-10">
-        <div class="w-full xl:w-1/2 text-right">
+        <div class="w-full xl:w-1/2 text-left xl:text-right">
             <h3 class="text-3xl font-semibold">CLI-friendly</h3>
             <p class="text-lg"><strong>stancl/tenancy</strong> comes with artisan commands for migrating, rolling
                 back, as well as
