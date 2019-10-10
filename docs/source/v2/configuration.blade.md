@@ -30,7 +30,7 @@ Available storage drivers:
 
 #### redis {#redis-db-driver}
 
-- `connection` - what Redis connection should be used to store tenant data
+- `connection` - what Redis connection should be used to store tenant data. See the [Storage Drivers]({{ $page->link('storage-drivers') }}) documentation.
 
 ### `tenant_route_namespace` {#tenant-route-namespace}
 
@@ -48,7 +48,7 @@ You can set the suffix to `.sqlite` if you're using sqlite and want the files to
 
 ### `redis` {#redis}
 
-If `tenancy.redis.tenancy` is set to true, connections listed in `tenancy.redis.prefixed_connections` will be prefixed with `config('tenancy.redis.prefix_base') . $id`.
+If the `RedisTenancyBootstrapper` is enabled (see `bootstrappers` below), any connections listed in `tenancy.redis.prefixed_connections` will be prefixed with `config('tenancy.redis.prefix_base') . $id`.
 
 > Note: You need phpredis. Predis support will dropped by Laravel in version 7.
 

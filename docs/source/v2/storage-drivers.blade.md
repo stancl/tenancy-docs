@@ -47,7 +47,7 @@ Read the [Redis documentation page on persistence](https://redis.io/topics/persi
 
 If your cache driver is Redis and you don't want to use AOF with it, run two Redis instances. Otherwise, just make sure you use a different database (number) for tenancy and another for anything else.
 
-To use this driver, create a new Redis connection in the `database.redis` configuration (`config/database.php`) called `tenancy`.
+To use this driver, create a new Redis connection in the `database.redis` configuration (`config/database.php`) called `tenancy` (or if you use another name, be sure to update it in the `tenancy.storage_drivers.redis.connection` configuration (`config/tenancy.php`)).
 
 ```php
 'tenancy' => [

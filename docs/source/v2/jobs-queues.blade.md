@@ -13,7 +13,7 @@ Jobs are automatically multi-tenant, which means that if a job is dispatched whi
 
 Open `config/queue.php` and make sure your queue driver has an explicitly set connection. Otherwise it would use the default one, which would cause issues, since `database.default` is changed by the package and Redis connections are prefixed.
 
-**If you're using `database`, add a new line to `queue.connections.database`:**
+**If you're using `database`, add a new line to `queue.connections.database` and `queue.failed`:**
 ```php
 'connection' => 'mysql',
 ```
