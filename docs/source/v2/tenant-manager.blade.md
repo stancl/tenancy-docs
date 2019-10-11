@@ -94,7 +94,7 @@ This method returns a collection of arrays.
    }
 ```
 
-### Deleting a tenant
+### Deleting a tenant {#deleting-a-tenant}
 
 ```php
 >>> $tenant = tenancy()->findByDomain('foo.localhost');
@@ -121,3 +121,13 @@ If you want to delete it, get the database name prior to deleting the tenant usi
 ```
 
 If you want tenant databases to be deleted automatically, you may use the [`delete_database_after_tenant_deletion` configuration]({{ $page->link('configuration#delete-database-after-tenant-deletion') }})
+
+### Soft deleting a tenant {#soft-deleting-a-tenant}
+
+You may also "soft delete" tenants. The `softDelete()` method detaches all domains from a tenant:
+
+```php
+$tenant->softDelete();
+```
+
+The list of original domains will be accessible under the `_tenancy_original_domains` key in the tenant storage.
