@@ -9,7 +9,7 @@ section: content
 
 The `config/tenancy.php` file lets you configure how the package behaves.
 
-> **Note:** If the `tenancy.php` file doesn't exist in your `config` directory, you can publish it by running `php artisan vendor:publish --provider='Stancl\Tenancy\TenancyServiceProvider' --tag=config`
+> If the `tenancy.php` file doesn't exist in your `config` directory, you can publish it by running `php artisan vendor:publish --provider='Stancl\Tenancy\TenancyServiceProvider' --tag=config`
 
 ### `storage_driver, storage` {#storage}
 
