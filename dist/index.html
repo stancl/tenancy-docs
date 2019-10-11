@@ -38,7 +38,7 @@
                 <div class="mt-8">
                     <a href="https://tenancy.samuelstancl.me/docs/v2/getting-started/">
                         <button
-                            class="text-indigo-100 shadow-primary font-semibold text-xl w-64 text-center py-2
+                            class="text-indigo-100 shadow-primary font-semibold text-xl w-full xl:w-64 text-center py-2
                             bg-indigo-dark border-indigo-dark border-2 rounded-10 hover:bg-indigo-900
                             hover:border-indigo-900 focus:outline-none both-transition">View
                             Documentation</button>
@@ -46,7 +46,7 @@
                     <a
                         href="https://samuelstancl.me/blog/make-your-laravel-app-multi-tenant-without-changing-a-line-of-code/">
                         <button
-                            class="mt-2 xl:mt-0 xl:ml-6 text-indigo-100 font-semibold text-xl w-64 text-center py-2
+                            class="mt-2 xl:mt-0 xl:ml-6 text-indigo-100 font-semibold text-xl w-full xl:w-64 text-center py-2
                             rounded-10 border-indigo-500 border-2 hover:border-indigo-300 border-transition
                             focus:outline-none">Beginners
                             Tutorial</button>
@@ -74,9 +74,9 @@ dispatch(new SendOrderCreatedMail);
                 </div>
             </div>
 
-            <div class="flex flex-col xl:flex-row justify-between mx-auto mt-24">
+            <div class="flex flex-col xl:flex-row justify-between mx-auto w-full xl:w-auto mt-24">
                 <div class="xl:w-1/3 w-full">
-                    <div class="bg-white py-6 px-6 xl:px-12 h-full rounded-15 text-xl flex flex-col justify-between shadow-card">
+                    <div class="bg-white py-6 px-8 xl:px-12 h-full rounded-15 text-xl flex flex-col justify-between shadow-card">
                         <div>
                             <h3 class="font-bold text-3xl text-center my-1">Easy Installation</h3>
                             <p class="mt-5">Two commands is all you need to get started.</p>
@@ -169,14 +169,14 @@ php artisan tenancy:install
         </div>
     </header>
 
-    <div class="w-full flex flex-col xl:flex-row items-center justify-center px-6 xl:px-64 py-6 bg-white">
-        <div class="w-full xl:w-1/2 text-left xl:text-right">
+    <div class="w-full flex flex-col xl:flex-row items-center justify-center xl:px-64 bg-white mt-10">
+        <div class="w-full xl:w-1/2 text-left xl:text-right px-6 py-6">
             <h3 class="text-3xl font-semibold">Automatic Data Separation</h3>
             <p class="text-lg">Tenants' databases, caches, filesystems, queues and Redis stores are automatically separated. You can
                 write your app like you're used to and let the package worry about tenant data separation.</p>
         </div>
-        <div class="w-full xl:w-1/2 flex justify-start xl:ml-16">
-<pre class="bg-indigo-900 leading-relaxed text-blue-300 rounded-15 py-6 px-8 inline-block w-full whitespace-pre-wrap">
+        <div class="w-full xl:w-1/2 flex justify-start xl:ml-16 xl:px-6 xl:py-6">
+<pre class="bg-indigo-900 leading-relaxed text-blue-300 xl:rounded-15 py-6 px-8 inline-block w-full whitespace-pre-wrap">
 cache()->remember('total_revenue', function () {
     return Order::with('products')
         ->get()
@@ -187,9 +187,9 @@ cache()->remember('total_revenue', function () {
         </div>
     </div>
 
-    <div class="w-full flex flex-col xl:flex-row items-center justify-center px-6 xl:px-64 py-6 bg-white mt-10">
-        <div class="w-full xl:w-1/2 flex justify-end xl:mr-16">
-<pre class="bg-indigo-900 leading-relaxed text-blue-300 rounded-15 py-6 px-8 inline-block w-full whitespace-pre-wrap">
+    <div class="w-full flex flex-col-reverse xl:flex-row items-center justify-center xl:px-64 bg-white mt-10">
+        <div class="w-full xl:w-1/2 flex justify-end xl:mr-16 xl:px-6 xl:py-6">
+<pre class="bg-indigo-900 leading-relaxed text-blue-300 xl:rounded-15 py-6 px-8 inline-block w-full whitespace-pre-wrap">
 'redis' => [
     'prefix_base' => 'tenant',
     'prefixed_connections' => [
@@ -198,7 +198,7 @@ cache()->remember('total_revenue', function () {
 ],
 </pre>
         </div>
-        <div class="w-full xl:w-1/2 text-left">
+        <div class="w-full xl:w-1/2 text-left px-6 py-6">
             <h3 class="text-3xl font-semibold">Configurable</h3>
             <p class="text-lg">Even though everything happens automatically, you're still in control. You can configure
                 how database names, Redis keys and filesystem paths are prefixed, as well as how cache is tagged and
@@ -206,15 +206,15 @@ cache()->remember('total_revenue', function () {
         </div>
     </div>
 
-    <div class="w-full flex flex-col xl:flex-row items-center justify-center px-6 xl:px-64 py-6 bg-white mt-10">
-        <div class="w-full xl:w-1/2 text-left xl:text-right">
+    <div class="w-full flex flex-col xl:flex-row items-center justify-center xl:px-64 bg-white mt-10">
+        <div class="w-full xl:w-1/2 text-left xl:text-right px-6 py-6">
             <h3 class="text-3xl font-semibold">CLI-friendly</h3>
             <p class="text-lg"><strong>stancl/tenancy</strong> comes with artisan commands for migrating, rolling
                 back, as well as
                 seeding tenant databases.</p>
         </div>
-        <div class="w-full xl:w-1/2 flex justify-start xl:ml-16">
-<pre class="bg-indigo-900 leading-relaxed text-blue-300 rounded-15 py-6 px-8 inline-block w-full whitespace-pre-wrap">
+        <div class="w-full xl:w-1/2 flex justify-start xl:ml-16 xl:px-6 xl:py-6">
+<pre class="bg-indigo-900 leading-relaxed text-blue-300 xl:rounded-15 py-6 px-8 inline-block w-full whitespace-pre-wrap">
 $ artisan tenants:seed --tenants=8075a580-1cb8-11e9-8822-49c5d8f8ff23
 Tenant: 8075a580-1cb8-11e9-8822-49c5d8f8ff23 (tenant1.localhost)
 Database seeding completed successfully.
@@ -222,9 +222,9 @@ Database seeding completed successfully.
         </div>
     </div>
 
-    <div class="w-full flex flex-col xl:flex-row items-center justify-center px-6 xl:px-64 py-6 bg-white mt-10">
-        <div class="w-full xl:w-1/2 flex justify-end xl:mr-16">
-<pre class="bg-indigo-900 leading-relaxed text-blue-300 rounded-15 py-6 px-8 inline-block w-full whitespace-pre-wrap">
+    <div class="w-full flex flex-col-reverse xl:flex-row items-center justify-center xl:px-64 bg-white mt-10">
+        <div class="w-full xl:w-1/2 flex justify-end xl:mr-16 xl:px-6 xl:py-6">
+<pre class="bg-indigo-900 leading-relaxed text-blue-300 xl:rounded-15 py-6 px-8 inline-block w-full whitespace-pre-wrap">
 class PostgreSQLDatabaseManager implements TenantDatabaseManager
 {
     public function createDatabase($name)
@@ -234,13 +234,13 @@ class PostgreSQLDatabaseManager implements TenantDatabaseManager
 }
 </pre>
         </div>
-        <div class="w-full xl:w-1/2 text-left">
+        <div class="w-full xl:w-1/2 text-left px-6 py-6">
             <h3 class="text-3xl font-semibold">SOLID extensibility</h3>
             <p class="text-lg">The package follows the SOLID principles and is open to extension. You're free to write
                 (and contribute ❤️) your own Storage Drivers, Tenancy Bootstrappers, and Feature classes.</p>
         </div>
     </div>
-    <div class="py-6 xl:py-16 flex justify-center">
+    <div class="py-6 xl:py-16 px-4 flex justify-center">
         <div>
             <h2 class="text-4xl font-bold text-center">How it works</h2>
             <ul class="text-xl leading-loose mt-4">
@@ -272,7 +272,7 @@ class PostgreSQLDatabaseManager implements TenantDatabaseManager
             </ul>
         </div>
     </div>
-    <div class="py-10 xl:p-20 flex justify-center bg-indigo-900">
+    <div class="py-10 px-4 xl:py-20 flex justify-center bg-indigo-900">
         <div class="text-xl">
             <h2 class="text-4xl font-bold text-center text-indigo-100">Ready to try it?</h2>
             <p class="text-indigo-200 my-6 text-center leading-loose">
