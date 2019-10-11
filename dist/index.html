@@ -12,24 +12,24 @@
         content="A Laravel multi-database tenancy package that respects your code. You won't have to change a thing in your application's code.">
 </head>
 <body class="antialiased font-sans w-full bg-indigo-100">
-    <header class="bg-indigo-700 relative">
-        <div class="overflow-hidden w-full xl:block hidden top-0 left-0"> <!-- waves -->
+    <header class="relative">
+        <div class="overflow-hidden w-full xl:block hidden absolute top-0 left-0"> <!-- waves -->
             <div class="bg-indigo-700 h-48 -mx-10"></div>
-            <svg class="pt-64 -mx-10 h-full bg-indigo-700" viewBox="0 0 1440 320">
+            <svg class="pt-64 -mx-10 h-full -my-1 bg-indigo-700" viewBox="0 0 1440 320">
                 <path class="fill-current text-indigo-600" fill-opacity="1"
                     d="M0,32L26.7,53.3C53.3,75,107,117,160,160C213.3,203,267,245,320,234.7C373.3,224,427,160,480,128C533.3,96,587,96,640,122.7C693.3,149,747,203,800,224C853.3,245,907,235,960,197.3C1013.3,160,1067,96,1120,80C1173.3,64,1227,96,1280,112C1333.3,128,1387,128,1413,128L1440,128L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z">
                 </path>
             </svg>
             <div class="bg-indigo-100">
                 <div class="bg-indigo-600 h-20 -mx-10"></div>
-                <svg class="-mx-10 -mt-1 h-full" viewBox="0 0 1440 280">
+                <svg class="-mx-10 -my-1 h-full" viewBox="0 0 1440 280">
                     <path class="fill-current text-indigo-600" fill-opacity="1"
                         d="M0,128L34.3,122.7C68.6,117,137,107,206,112C274.3,117,343,139,411,170.7C480,203,549,245,617,261.3C685.7,277,754,267,823,245.3C891.4,224,960,192,1029,154.7C1097.1,117,1166,75,1234,48C1302.9,21,1371,11,1406,5.3L1440,0L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z">
                     </path>
                 </svg>
             </div>
         </div>
-        <div class="p-6 xl:py-20 xl:px-40 flex flex-wrap xl:absolute top-0 left-0">
+        <div class="bg-indigo-700 xl:bg-transparent p-6 xl:py-20 xl:px-40 flex flex-wrap xl:relative top-0 left-0">
             <div class="w-full xl:w-1/2 leading-relaxed">
                 <h1 class="text-indigo-100 text-5xl xl:text-6xl font-bold">Automatic tenancy for your Laravel app</h1>
                 <h2 class="mt-4 text-4xl xl:text-5xl font-thin text-indigo-200">No code changes required.</h2>
@@ -61,7 +61,8 @@ $tenant = Tenant::new()
     ->withDomains([
         'tenant1.yourapp.com',
         'tenant1.com',
-    ])->withPlan('free')
+    ])
+    ->withPlan('free')
     ->save();
 
 // Write your app like you're used to
@@ -101,7 +102,7 @@ php artisan tenancy:install
                         <div>
                             <h3 class="font-bold text-3xl text-center my-1">Automatic & Flexible</h3>
                             <p class="mt-5">Multi-tenancy is something that can be handled in the background.</p>
-                            <p class="mt-5">Why should your code be <em>polluted</em> with tons of tenancy-related things?
+                            <p class="mt-5">Why should your code be <em>polluted</em> with tons of tenancy-related things? And why be <em>bound</em> to a specific implementation?
                             </p>
                             <p class="mt-5">Handling tenancy in the
                                 background gives you the flexibility to change how tenancy works for your project without pain.
