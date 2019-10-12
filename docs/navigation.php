@@ -77,6 +77,7 @@ return [
             'url'      => 'digging-deeper',
             'children' => [
                 'Tenants'                    => 'tenants',
+                'Central App'                => 'central-app',
                 'Tenant Config'              => 'tenant-config',
                 'Middleware Configuration'   => 'middleware-configuration',
                 'Custom Database Names'      => 'custom-database-names',
@@ -101,7 +102,6 @@ return [
             'children' => [
                 'HTTPS Certificates' => 'https-certificates',
                 'Misc'               => 'misc-tips',
-                'Global Cache/Storage/...' => 'global-stuff',
             ],
         ],
         'Stay Updated' => 'stay-updated',
