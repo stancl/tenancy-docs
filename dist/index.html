@@ -30,29 +30,12 @@
                 </svg>
             </div>
         </div>
-        <div class="bg-indigo-700 xl:bg-transparent p-6 xl:py-20 xl:px-40 flex flex-wrap xl:relative top-0 left-0">
+        <div class="bg-indigo-700 xl:bg-transparent p-6 xl:py-20 xl:px-20 2xl:px-40 flex flex-wrap xl:relative top-0 left-0">
             <div class="w-full xl:w-1/2 leading-relaxed">
                 <h1 class="text-indigo-100 text-5xl xl:text-6xl font-bold">Automatic tenancy for your Laravel app</h1>
                 <h2 class="mt-4 text-4xl xl:text-5xl font-thin text-indigo-200">No code changes required.</h2>
                 <p class="mt-5 text-2xl text-indigo-300"><strong class="text-indigo-200">stancl/tenancy</strong> is a package that uses a completely new approach to implementing multi-tenancy.</p>
                 <p class="mt-2 text-2xl text-indigo-300">Instead of forcing you to change how you write your app, it <strong class="text-indigo-200">bootstraps tenancy automatically, in the background.</strong></p>
-                <div class="mt-8">
-                    <a href="https://tenancy.samuelstancl.me/docs/v2/getting-started/">
-                        <button
-                            class="text-indigo-100 shadow-primary font-semibold text-xl w-full xl:w-64 text-center py-2
-                            bg-indigo-dark border-indigo-dark border-2 rounded-10 hover:bg-indigo-900
-                            hover:border-indigo-900 focus:outline-none both-transition">View
-                            Documentation</button>
-                    </a>
-                    <a
-                        href="https://samuelstancl.me/blog/make-your-laravel-app-multi-tenant-without-changing-a-line-of-code/">
-                        <button
-                            class="mt-2 xl:mt-0 xl:ml-6 text-indigo-100 font-semibold text-xl w-full xl:w-64 text-center py-2
-                            rounded-10 border-indigo-500 border-2 hover:border-indigo-300 border-transition
-                            focus:outline-none">Beginners
-                            Tutorial</button>
-                    </a>
-                </div>
             </div>
             <div class="w-1/2 justify-center items-center hidden xl:flex">
                 <div class="bg-indigo-900 text-lg leading-loose text-blue-300 rounded-15 p-6 inline-block shadow-primary">
@@ -74,7 +57,21 @@ dispatch(new SendOrderCreatedMail);
 </pre>
                 </div>
             </div>
-
+            <div class="w-full xl:w-auto mt-8 xl:mt-2">
+                <a href="https://tenancy.samuelstancl.me/docs/v2/getting-started/">
+                    <button class="text-indigo-100 shadow-primary font-semibold text-xl w-full xl:w-64 text-center py-2
+                        bg-indigo-dark border-indigo-dark border-2 rounded-10 hover:bg-indigo-900
+                        hover:border-indigo-900 focus:outline-none both-transition">View
+                        Documentation</button>
+                </a>
+                <a
+                    href="https://samuelstancl.me/blog/make-your-laravel-app-multi-tenant-without-changing-a-line-of-code/">
+                    <button class="mt-2 xl:mt-0 xl:ml-6 text-indigo-100 font-semibold text-xl w-full xl:w-64 text-center py-2
+                        rounded-10 border-indigo-500 border-2 hover:border-indigo-300 border-transition
+                        focus:outline-none">Beginners
+                        Tutorial</button>
+                </a>
+            </div>
             <div class="flex flex-col xl:flex-row justify-between mx-auto w-full xl:w-auto mt-24">
                 <div class="xl:w-1/3 w-full">
                     <div class="bg-white py-6 px-8 xl:px-12 h-full rounded-15 text-xl flex flex-col justify-between shadow-card">
@@ -87,7 +84,7 @@ php artisan tenancy:install
 </pre>
                             <p class="mt-5">After installation, just focus on what's important to you &mdash; writing your app.</p>
                         </div>
-                        <div class="flex justify-center xl:mt-8">
+                        <div class="flex justify-center mt-4 xl:mt-8">
                             <a href="https://tenancy.samuelstancl.me/docs/v2/installation">
                                 <button
                                     class="text-indigo-800 font-bold text-xl w-64 text-center py-2 rounded-10
@@ -98,7 +95,7 @@ php artisan tenancy:install
                         </div>
                     </div>
                 </div>
-                <div class="ml-24 w-1/3 hidden xl:block">
+                <div class="xl:ml-12 2xl:ml-24 w-1/3 hidden xl:block">
                     <div class="bg-white py-6 px-12 h-full rounded-15 text-xl flex flex-col justify-between shadow-card">
                         <div>
                             <h3 class="font-bold text-3xl text-center my-1">Automatic & Flexible</h3>
@@ -119,7 +116,7 @@ php artisan tenancy:install
                         </div>
                     </div>
                 </div>
-                <div class="mt-6 xl:mt-0 xl:ml-24 xl:w-1/3 w-full">
+                <div class="mt-6 xl:mt-0 xl:ml-12 2xl:ml-24 xl:w-1/3 w-full">
                     <div
                         class="bg-white py-6 px-6 xl:px-12 h-full rounded-15 text-xl flex flex-col justify-between
                         shadow-card">
@@ -128,7 +125,7 @@ php artisan tenancy:install
                             <p class="mt-5">By switching things in the background, the package doesn’t stand in your way.
                             </p>
                             <p class="mt-5">You can integrate with just about any package.</p>
-                            <div class="flex h-full my-4 xl:mt-0 xl:-mb-8 justify-between items-center xl:mx-6">
+                            <div class="flex mx-auto w-1/2 xl:w-full h-full my-4 xl:mt-0 xl:-mb-8 justify-between items-center xl:mx-6">
                                 <svg class="block w-12" title="Telescope" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
                                     <path fill="#000"
                                         d="M0 40a39.87 39.87 0 0 1 11.72-28.28A40 40 0 1 1 0 40zm34 10a4 4 0 0 1-4-4v-2a2 2 0 1 0-4 0v2a4 4 0 0 1-4 4h-2a2 2 0 1 0 0 4h2a4 4 0 0 1 4 4v2a2 2 0 1 0 4 0v-2a4 4 0 0 1 4-4h2a2 2 0 1 0 0-4h-2zm24-24a6 6 0 0 1-6-6v-3a3 3 0 0 0-6 0v3a6 6 0 0 1-6 6h-3a3 3 0 0 0 0 6h3a6 6 0 0 1 6 6v3a3 3 0 0 0 6 0v-3a6 6 0 0 1 6-6h3a3 3 0 0 0 0-6h-3zm-4 36a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM21 28a3 3 0 1 0 0-6 3 3 0 0 0 0 6z">
@@ -155,7 +152,7 @@ php artisan tenancy:install
                                 <img class="block h-8" src="spatie.png" alt="Spatie">
                                 </div>
                         </div>
-                        <div class="flex justify-center xl:mt-8">
+                        <div class="flex justify-center mt-4 xl:mt-8">
                             <a href="https://tenancy.samuelstancl.me/docs/v2/integrations">
                                 <button
                                     class="text-indigo-800 font-bold text-xl w-64 text-center py-2 rounded-10
