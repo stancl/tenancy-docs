@@ -21,28 +21,28 @@ However, since you don't want routes related to the app on your main domain and 
 
 To use central things (databases/caches/Redis connections/filesystems/...) on special places of your tenant app, you may do the following.
 
-## Central database {#central-database}
+### Central database {#central-database}
 
 Create a new connection and use it like `DB::connection($connectionName)->table('foo')->where(...)`
 
 If you want to use models, create a `getConnectionName()` method that returns the name of the central connection
 
-## Central redis {#central-redis}
+### Central redis {#central-redis}
 
 Create a new connection, *don't* put it into `tenancy.redis.prefixed_connections`, and use it like `Redis::connection('foo')->get('bar')`
 
-## Central cache {#central-cache}
+### Central cache {#central-cache}
 
 Use the `GlobalCache` facade, or the `global_cache()` helper.
 
-## Central storage {#central-storage}
+### Central storage {#central-storage}
 
 Create a disk and *don't* add it to `tenancy.filesystem.disks`.
 
-## Central assets {#central-assets}
+### Central assets {#central-assets}
 
 Use the `global_asset()` helper.
 
-## Central queues {#central-queues}
+### Central queues {#central-queues}
 
 Coming soon.
