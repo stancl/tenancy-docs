@@ -1,6 +1,6 @@
 ---
 title: Tenant Routes
-description: Tenant routes..
+description: Tenant Routes
 extends: _layouts.documentation
 section: content
 ---
