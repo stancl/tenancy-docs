@@ -3,6 +3,9 @@ environment = { PHP_VERSION = "7.2" }
 publish = "/dist"
 command = "./build.sh"
 
+[context.deploy-preview]
+command = "./staging.sh"
+
 [[redirects]]
 from = "/docs/master/*"
 to = "/docs/v2/:splat"

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'baseUrl'    => 'http://jigsaw-docs-staging.tighten.co',
+    'baseUrl'    => env('DEPLOY_URL') . '/docs',
     'production' => false,
 
     // DocSearch credentials
