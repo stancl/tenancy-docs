@@ -31,7 +31,7 @@ In previous versions, the `InitializeTenancy` middleware was applied only on ten
 
 ## Central routes {#central-routes}
 
-Routes files other than `routes/tenant.php` will not have the `tenancy` middleware automatically applied on them, so will be Central routes. If you want routes to be tenant-routes, you can apply the `tenant` middleware manually, as described in custom route groups below.
+Routes in files other than `routes/tenant.php` will not have the `tenancy` middleware automatically applied on them, so they will be central routes. If you want these routes to be tenant routes, you can apply the `tenancy` middleware manually, as described in custom route groups below.
 
 ## API routes / custom route groups {#custom-groups}
 
