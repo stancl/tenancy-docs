@@ -12,6 +12,7 @@ To make Nova part of your tenant application, do the following:
     ```none
     php artisan vendor:publish --tag=nova-migrations
     ```
+    > Note: Unfortunately, Nova will still be adding its migrations to your central migrations. This is something we'd like to solve in the future.
 - Add the `'tenancy'` middleware group to your `nova.middleware` config. Example:
     ```php
     'middleware' => [
