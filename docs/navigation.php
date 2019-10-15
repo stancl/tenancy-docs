@@ -94,8 +94,9 @@ return [
         'Integrations' => [
             'url'      => 'integrations',
             'children' => [
-                'Telescope' => 'telescope',
+                'Spatie Packages' => 'spatie',
                 'Horizon'   => 'horizon',
+                'Telescope' => 'telescope',
             ],
         ],
         'Tips' => [
