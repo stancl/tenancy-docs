@@ -15,11 +15,13 @@ Just like `routes/web.php`, these routes use the `App\Http\Controllers` namespac
 
 ## Middleware {#middleware}
 
-The package automatically adds the `InitializeTenancy` middleware to the global middleware stack. The middleware checks if the current domain is not part of `tenancy.exempt_domains`. If not, it attempts to identify the tenant based on the current hostname. Once the tenant is identified, the database connection, cache, filesystem root paths and, optionally, Redis connection, will be switched.
+The package automatically adds the `InitializeTenancy` middleware to the global middleware stack. This middleware checks if the current domain is not part of `tenancy.exempt_domains`. If not, it attempts to identify the tenant based on the current hostname. Once the tenant is identified, the database connection, cache, filesystem root paths and, optionally, Redis connection, will be switched.
 
-After the *global* middleware is executed, the controllers are constructed. After that, the *route* middleware is executed.
+After the *global* middleware is executed, the controllers are constructed. 
 
-All route groups in your application should have the `\Stancl\Tenancy\Middleware\PreventAccessFromTenantDomains` middleware applied on them, to prevent access from tenant domains to central routes and vice versa.
+After that, the *route* middleware is executed.
+
+All route groups in your application should have the `\Stancl\Tenancy\Middleware\PreventAccessFromTenantDomains` middleware applied on them, to prevent access from tenant domains to central routes and vice versa. See below for more detail about the `PreventAccessFromTenantDomains` middleware.
 
 All tenant routes in your application should have the `tenancy` middleware group applied on them.
 
@@ -29,7 +31,7 @@ In previous versions, the `InitializeTenancy` middleware was applied only on ten
 
 ## Central routes {#central-routes}
 
-Routes outside the `routes/tenant.php` file will not have the tenancy middleware automatically applied on them. You can apply this middleware manually, though.
+Routes in files other than `routes/tenant.php` will not have the `tenancy` middleware automatically applied on them, so they will be central routes. If you want these routes to be tenant routes, you can apply the `tenancy` middleware manually, as described in custom route groups below.
 
 ## API routes / custom route groups {#custom-groups}
 
@@ -62,4 +64,4 @@ Suggestion: Since you probably want cleaner URLs on your non-tenant part of the 
 
 The `Stancl\Tenancy\Middleware\PreventAccessFromTenantDomains` middleware prevents access to non-tenant routes from tenant domains by returning a redirect to the tenant app's home page ([`tenancy.home_url`]({{ $page->link('configuration#home-url') }})). Conversely, it returns a 404 when a user attempts to visit a tenant route on a web (exempt) domain.
 
-The `tenancy:install` command applies this middleware to the `web` and `api` groups. If you want apply it for another route group, add this middleware manually to that group. You can do this in `app/Http/Kernel.php`.
+The `tenancy:install` command applies this middleware to the `web` and `api` groups. To apply it for another route group, add this middleware manually to that group. You can do this in `app/Http/Kernel.php`.
