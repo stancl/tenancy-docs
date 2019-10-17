@@ -108,7 +108,7 @@ Run migrations after creating a tenant.
 
 - Default: `false`
 
-### `seed_after_creation` {#seed-after-creation}
+### `seed_after_migration` {#seed-after-migration}
 
 Run seeds after creating a tenant.
 
