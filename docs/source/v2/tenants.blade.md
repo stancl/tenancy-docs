@@ -36,6 +36,35 @@ $tenant->removeDomains('foo.yourapp.com')->save();
 
 > Don't forget to `->save()` after modifying the domains!
 
+## `run()` {#run}
+
+The `$tenant->run()` command lets you execute a closure inside a tenant's "environment".
+```php
+$tenant->run(function ($tenant) {
+    User::create(['name' => 'Admin', 'email' => 'admin@yourapp.com', ...]);
+});
+```
+
+It also lets you get data from the tenant's environment:
+```php
+$tenantsUserCount = $tenant->run(function ($tenant) {
+    return User::count();
+});
+```
+
+If you need access to the tenant within the closure, it's passed as the first argument.
+
+This feature is a safe alternative to:
+```php
+tenancy()->initialize($tenant);
+
+// make some changes
+
+tenancy()->end();
+```
+
+and it also checks if tenancy was initialized. If it was, it returns to the original tenant after running the closure.
+
 ## `$persisted` {#persisted}
 
 This property says whether the model has saved to the storage yet. In other words, if it's `false`, it's a new instance that has not been `->save()`d yet.
