@@ -45,4 +45,4 @@ Use the `global_asset()` helper.
 
 ### Central queues {#central-queues}
 
-Coming soon.
+Create a new queue connection with the `central` key set to `true`.
