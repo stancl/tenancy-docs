@@ -98,25 +98,31 @@ Features are similar to bootstrappers, but they are executed regardless of wheth
 
 When a user tries to visit a non-tenant route on a tenant domain, the `PreventAccessFromTenantDomains` middleware will return a redirect to this url.
 
+### `queue_database_creation` {#queue-database-creation}
+
+- Default: `false`
+
 ### `migrate_after_creation` {#migrate-after-creation}
 
 Run migrations after creating a tenant.
 
 - Default: `false`
 
-### `queue_automatic_migration` {#queue-automatic-migration}
+### `seed_after_creation` {#seed-after-creation}
 
-Whether automatic tenant migrations (if enabled) should be queued.
+Run seeds after creating a tenant.
 
 - Default: `false`
+
+### `seeder_parameters` {#seeder_parameters}
+
+Parameters passed to the `tenants:seed` command.
+
+- Default: `['--class' => 'DatabaseSeeder']`
 
 ### `delete_database_after_tenant_deletion` {#delete-database-after-tenant-deletion}
 
 Delete the tenant's database after deleting the tenant.
-
-- Default: `false`
-
-### `queue_database_creation` {#queue-database-creation}
 
 - Default: `false`
 
