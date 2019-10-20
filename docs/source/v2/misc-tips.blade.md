@@ -15,7 +15,7 @@ A customer has signed up on your website, you have created a new tenant and now 
 
 ```php
 // tenant sign up controller
-return redirect()->route('dashboard')->tenant($tenant['domain']);
+return redirect()->route('dashboard')->tenant($domain);
 ```
 
 ## Custom ID scheme
