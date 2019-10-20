@@ -29,7 +29,7 @@ class MyUniqueIDGenerator implements UniqueIdentifierGenerator
 {
     public static function handle(string $domain, array $data): string
     {
-        return $domain . \Webpatser\Uuid\Uuid::generate(1, $domain);
+        return $domain . \Ramsey\Uuid\Uuid::uuid4()->toString();
     }
 }
 ```
