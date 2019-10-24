@@ -25,7 +25,7 @@ protected function setUp(): void
 {
     parent::setUp();
 
-    $this->call('migrate');
+    $this->artisan('migrate');
 
     tenancy()->create('test.localhost');
     tenancy()->init('test.localhost');
