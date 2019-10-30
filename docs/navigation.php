@@ -107,5 +107,6 @@ return [
         ],
         'Stay Updated' => 'stay-updated',
         'GitHub'       => 'https://github.com/stancl/tenancy',
+        'Tutorial'     => 'https://samuelstancl.me/blog/make-your-laravel-app-multi-tenant-without-changing-a-line-of-code/',
     ],
 ];
