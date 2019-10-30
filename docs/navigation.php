@@ -96,6 +96,7 @@ return [
             'children' => [
                 'Spatie Packages' => 'spatie',
                 'Horizon'   => 'horizon',
+                'Nova'   => 'nova',
                 'Telescope' => 'telescope',
             ],
         ],
