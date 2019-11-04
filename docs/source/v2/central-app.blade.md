@@ -41,7 +41,11 @@ Create a disk and *don't* add it to `tenancy.filesystem.disks`.
 
 ### Central assets {#central-assets}
 
-Use the `global_asset()` helper.
+Mix is intended for template-related assets and as such, it's not scoped to the current tenant.
+
+Alternatively, the package provides a `global_asset()` helper which is a non-tenant-aware replacement for `asset()`, in case you don't want to use `mix()`.
+
+It's recommended to use `mix()` though, due to its features such as version tagging.
 
 ### Central queues {#central-queues}
 
