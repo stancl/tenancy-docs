@@ -7,6 +7,8 @@ section: content
 
 # Application Testing {#application-testing}
 
+> Note: You cannot use `:memory:` SQLite databases or the `RefreshDatabase` trait due to the switching of default database.
+
 To test your application with this package installed, you can create tenants in the `setUp()` method of your test case:
 
 ```php
@@ -19,13 +21,27 @@ protected function setUp(): void
 }
 ```
 
+And to delete tenants & their databases after tests:
+```php
+public function tearDown(): void
+{
+    config([
+        'tenancy.queue_database_deletion' => false,
+        'tenancy.delete_database_after_tenant_deletion' => true,
+    ]);
+    tenancy()->all()->each->delete();
+
+    parent::tearDown();
+}
+```
+
 If you're using the database storage driver, you will also need to run the migrations:
 ```php
 protected function setUp(): void
 {
     parent::setUp();
 
-    $this->artisan('migrate');
+    $this->artisan('migrate:fresh');
 
     tenancy()->create('test.localhost');
     tenancy()->init('test.localhost');
