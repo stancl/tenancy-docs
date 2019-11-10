@@ -78,7 +78,7 @@ return [
             'children' => [
                 'Tenants'                    => 'tenants',
                 'Central App'                => 'central-app',
-                'Middleware Configuration'   => 'middleware-configuration',
+                'Universal Routes'           => 'universal-routes',
                 'Custom Database Names'      => 'custom-database-names',
                 'Custom DB Connections'      => 'custom-db-connections',
                 'Filesystem Tenancy'         => 'filesystem-tenancy',
@@ -87,6 +87,8 @@ return [
                 'Tenancy Initialization'     => 'tenancy-initialization',
                 'Tenancy Bootstrappers'      => 'tenancy-bootstrappers',
                 'Application Testing'        => 'application-testing',
+                'Tenant-Aware Commands'      => 'tenant-aware-commands',
+                'Middleware Configuration'   => 'middleware-configuration',
                 'Writing Storage Drivers'    => 'writing-storage-drivers',
             ],
         ],
