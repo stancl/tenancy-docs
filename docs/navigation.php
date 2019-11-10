@@ -78,7 +78,6 @@ return [
             'children' => [
                 'Tenants'                    => 'tenants',
                 'Central App'                => 'central-app',
-                'Tenant Config'              => 'tenant-config',
                 'Middleware Configuration'   => 'middleware-configuration',
                 'Custom Database Names'      => 'custom-database-names',
                 'Custom DB Connections'      => 'custom-db-connections',
@@ -89,6 +88,14 @@ return [
                 'Tenancy Bootstrappers'      => 'tenancy-bootstrappers',
                 'Application Testing'        => 'application-testing',
                 'Writing Storage Drivers'    => 'writing-storage-drivers',
+            ],
+        ],
+        'Optional Features' => [
+            'url' => 'features',
+            'children' => [
+                'Tenant Config' => 'features/tenant-config',
+                'Timestamps' => 'features/timestamps',
+                'Tenant Redirect' => 'features/tenant-redirect',
             ],
         ],
         'Integrations' => [

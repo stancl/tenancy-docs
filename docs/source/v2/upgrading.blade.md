@@ -51,6 +51,6 @@ If you're coming from 1.x, it's recommended to read (or at least skim through) t
 
 ## New Features
 
-- [Tenant Config]({{ $page->link('tenant-config') }})
+- [Tenant Config]({{ $page->link('features/tenant-config') }})
 - [Migrate Fresh]({{ $page->link('console-commands#migrate-fresh') }})
 - [`tenants:create`]({{ $page->link('console-commands#create-tenant') }})
