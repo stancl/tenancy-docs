@@ -47,3 +47,9 @@ Note that $key has to be a string or an array with string keys. The value(s) can
      "c" => "d",
    ]
 ```
+
+To delete keys from the storage, you may use these methods:
+```php
+$tenant->deleteKey($key)
+$tenant->deleteKeys(['foo', 'bar']);
+```

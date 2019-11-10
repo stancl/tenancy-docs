@@ -28,7 +28,6 @@ To call methods on `TenantManager`, you may use the `tenancy()` helper or the `T
 
 ### Find tenant by domain
 
-
 ```php
 >>> tenancy()->findByDomain('bar.localhost')
 => Stancl\Tenancy\Tenant {#3091
@@ -39,6 +38,14 @@ To call methods on `TenantManager`, you may use the `tenancy()` helper or the `T
        "bar.localhost",
      ],
    }
+```
+
+### Find tenant by arbitrary key
+
+> Note: Only the DB storage driver implements this feature.
+```php
+tenancy()->findBy('email', $email);
+tenancy()->findByEmail($email);
 ```
 
 ### Getting the current tenant
