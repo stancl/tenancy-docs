@@ -58,10 +58,42 @@ protected $middlewareGroups = [
 
 ## The `PreventAccess...` middleware {#prevent-access-middleware}
 
-**You cannot have conflicting routes in `web.php` and `tenant.php`**. It would break `php artisan route:list` and route caching.
-
-Suggestion: Since you probably want cleaner URLs on your non-tenant part of the application (landing page, etc), prefix your tenant routes with something like `/app`.
-
 The `Stancl\Tenancy\Middleware\PreventAccessFromTenantDomains` middleware prevents access to non-tenant routes from tenant domains by returning a redirect to the tenant app's home page ([`tenancy.home_url`]({{ $page->link('configuration#home-url') }})). Conversely, it returns a 404 when a user attempts to visit a tenant route on a web (exempt) domain.
 
 The `tenancy:install` command applies this middleware to the `web` and `api` groups. To apply it for another route group, add this middleware manually to that group. You can do this in `app/Http/Kernel.php`.
+
+## Conflicting routes {#conflicting-routes}
+
+By default, you cannot have conflicting routes in `web.php` and `tenant.php`. It would break `php artisan route:list` and route caching.
+
+**However**, tenant routes are loaded after the web/api routes, so if you register your central routes only for domains listed in the `tenancy.exempt_domains` config, you **can use the same URLs for central and tenant routes**.
+
+Here's an example implementation:
+```php
+// RouteServiceProvider
+
+protected function mapWebRoutes()
+{
+    foreach (config('tenancy.exempt_domains', []) as $domain) {
+        Route::middleware('web')
+            ->domain($domain)
+            ->namespace($this->namespace)
+            ->group(base_path('routes/web.php'));
+    }
+}
+
+protected function mapApiRoutes()
+{
+    foreach (config('tenancy.exempt_domains', []) as $domain) {
+        Route::prefix('api')
+            ->middleware('api')
+            ->domain($domain)
+            ->namespace($this->namespace)
+            ->group(base_path('routes/api.php'));
+    }
+}
+```
+
+One thing to keep in mind though: If you use multiple exempt domains, you cannot use route names. They can be used only once, so the name would link to the URL on the first exempt domain.
+
+If you don't need conflicting routes, you may want to do the following: Since you probably want cleaner URLs on your non-tenant part of the application (landing page, etc), prefix your tenant routes with something like `/app`.
