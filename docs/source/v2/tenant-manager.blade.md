@@ -11,7 +11,7 @@ This page documents a couple of `TenantManager` methods you may find useful.
 
 To call methods on `TenantManager`, you may use the `tenancy()` helper or the `Tenancy` facade.
 
-### Find tenant by id
+### Find tenant by id {#find-by-id}
 
 ```php
 >>> \Tenancy::find('b07aa3b0-dc68-11e9-9352-9159b2055c42')
@@ -26,7 +26,7 @@ To call methods on `TenantManager`, you may use the `tenancy()` helper or the `T
    }
 ```
 
-### Find tenant by domain
+### Find tenant by domain {#find-by-domain}
 
 ```php
 >>> tenancy()->findByDomain('bar.localhost')
@@ -40,7 +40,7 @@ To call methods on `TenantManager`, you may use the `tenancy()` helper or the `T
    }
 ```
 
-### Find tenant by arbitrary key
+### Find tenant by arbitrary key {#find-by-arbitrary-key}
 
 > Note: Only the DB storage driver implements this feature.
 ```php
