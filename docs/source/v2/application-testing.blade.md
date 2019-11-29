@@ -155,4 +155,4 @@ phpunit.xml:
 
 > Don't forget to create an empty database/testing.sqlite
 
-You may also wish toa dd `testing.sqlite` to `database/.gitignore`.
+You may also wish to add `testing.sqlite` to `database/.gitignore`.
