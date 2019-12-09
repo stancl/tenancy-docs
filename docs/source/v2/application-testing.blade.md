@@ -149,7 +149,7 @@ abstract class TestCase extends BaseTestCase
 
 phpunit.xml:
 ```xml
-<server name="DB_DRIVER" value="sqlite"/>
+<server name="DB_CONNECTION" value="sqlite"/>
 <server name="DB_DATABASE" value="database/testing.sqlite"/>
 ```
 
