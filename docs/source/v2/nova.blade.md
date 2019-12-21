@@ -12,7 +12,7 @@ To use Nova inside of the tenant part of your application, do the following:
     ```none
     php artisan vendor:publish --tag=nova-migrations
     ```
-    > Note: Unfortunately, Nova will still be adding its migrations to your central migrations. This is something we'd like to solve in the future.
+- Prevent Nova from adding its migrations to your central migrations by adding `Nova::ignoreMigrations()` to `NovaServiceProvider::boot()` (Don't do this if you want to use Nova [both in the central & tenant parts]({{ $page->link('universal-routes') }}) of the app.)
 - Add the `'tenancy'` middleware group to your `nova.middleware` config. Example:
     ```php
     'middleware' => [
