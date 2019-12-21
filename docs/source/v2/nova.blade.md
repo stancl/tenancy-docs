@@ -7,7 +7,7 @@ section: content
 
 # Nova Integration {#nova-integration}
 
-To make Nova part of your tenant application, do the following:
+To use Nova inside of the tenant part of your application, do the following:
 - Publish the Nova migrations and move them to the `database/migrations/tenant` directory.
     ```none
     php artisan vendor:publish --tag=nova-migrations
