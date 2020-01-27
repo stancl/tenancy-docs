@@ -13,8 +13,51 @@
         content="A Laravel multi-database tenancy package that respects your code. You won't have to change a thing in your application's code.">
 </head>
 <body class="antialiased font-sans w-full bg-indigo-100">
-    <header class="relative">
-        <div class="overflow-hidden w-full xl:block hidden absolute top-0 left-0"> <!-- waves -->
+    <div class="fixed lg:flex hidden top-0 left-0 z-50 h-16 bg-indigo-700 w-full justify-between items-center px-40">
+        <div class="font-bold text-2xl text-indigo-100 tracking-wide">
+            <a href="#">stancl/tenancy</a>
+        </div>
+        <div class="text-lg text-indigo-200 flex justify-between items-center">
+            <div class="mx-4 hover:text-indigo-100">
+                <a href="https://tenancy.samuelstancl.me/docs/v2/difference-between-this-package-and-others/">
+                    This Package vs Others
+                </a>
+            </div>
+            <!-- todo write the blog post and then add the link <div class="mx-4 hover:text-indigo-100">
+                <a href="todo">
+                    Why Automatic Tenancy
+                </a>
+            </div> -->
+            <div class="mx-4 hover:text-indigo-100">
+                <a
+                    href="https://samuelstancl.me/blog/make-your-laravel-app-multi-tenant-without-changing-a-line-of-code/">
+                    Tutorial
+                </a>
+            </div>
+            <div class="mx-4 hover:text-indigo-100">
+                <a href="https://github.com/stancl/tenancy">
+                    GitHub
+                </a>
+            </div>
+            <div class="mx-4 hover:text-indigo-100">
+                <a href="https://github.com/stancl/tenancy/blob/2.x/SUPPORT.md">
+                    Need help?
+                </a>
+            </div>
+            <div class="mx-4 hover:text-indigo-100">
+                <a href="https://gumroad.com/l/tenancy">
+                    Donate
+                </a>
+            </div>
+            <a class="mx-4" href="https://tenancy.samuelstancl.me/docs/v2/getting-started/">
+                <button class="text-indigo-100 shadow-primary font-semibold text-center px-6 py-2
+                        bg-indigo-dark border-indigo-dark border-2 rounded-10 hover:bg-indigo-900
+                        hover:border-indigo-900 focus:outline-none both-transition">Get Started</button>
+            </a>
+        </div>
+    </div>
+    <header class="relative lg:mt-16">
+        <div class="overflow-hidden w-full xl:block hiddegn absolute top-0 left-0"> <!-- waves -->
             <div class="bg-indigo-700 h-48 -mx-10"></div>
             <svg class="pt-64 -mx-10 h-full -my-1 bg-indigo-700" viewBox="0 0 1440 320">
                 <path class="fill-current text-indigo-600" fill-opacity="1"
