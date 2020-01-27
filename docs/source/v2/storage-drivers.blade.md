@@ -17,9 +17,9 @@ The database storage driver lets you store tenant information in a relational da
 
 The benefit of this storage driver is that you don't have to use both Redis and a database for your data. Also you don't have to do as much configuration.
 
-To use this driver, you need to have a `tenants` table and a `domains` table. You may also use a custom database connection. By default, `tenancy.storage.db.connection` is set to `null`, which means that your app's default database connection will be used to store tenants.
+To use this driver, you need to have a `tenants` table and a `domains` table. You may also use a custom database connection. By default, `tenancy.storage_drivers.db.connection` is set to `null`, which means that your app's default database connection will be used to store tenants.
 
-If you wish to use a different connection, e.g. `central`, you may create it in the `config/database.php` file and set `tenancy.storage.db.connection` to the name of that connection. It's recommended to do this for easier changes in the future.
+If you wish to use a different connection, e.g. `central`, you may create it in the `config/database.php` file and set `tenancy.storage_drivers.db.connection` to the name of that connection. It's recommended to do this for easier changes in the future.
 
 To create the `tenants` and `domains` tables, you can use the migrations that come with this package. If you haven't published them during installation, publish them now:
 ```
