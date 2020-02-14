@@ -17,7 +17,7 @@ Routes in the `routes/web.php` file are the central routes. When they are visite
 
 However, since you don't want routes related to the app on your main domain and sign up forms on tenant domains, you must also define what domains host the central stuff in the `tenancy.exempt_domains` config.
 
-The exempt domains should not include the protocol. For example, you should include ```example.com``` rather than ```https://example.com```, otherwise this will throw a ```TenantCouldNotBeIdentifiedException``` exception.
+The exempt domains should not include the protocol. For example, you should include ```example.com``` rather than ```https://example.com```.
 
 ## Using central things inside the tenant app {#using-central-things-inside-the-tenant-app}
 
