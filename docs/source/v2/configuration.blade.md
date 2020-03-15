@@ -38,7 +38,7 @@ Controller namespace used for routes in `routes/tenant.php`. The default value i
 
 ### `exempt_domains` {#exempt-domains}
 
-If a hostname from this array is visited, the `tenant.php` routes won't be registered, letting you use the same routes as in that file. This should be the root domain without the protocol (i.e., ```example.com``` rather than ```https://example.com```).
+If a hostname from this array is visited, the `tenant.php` routes won't be registered, letting you use the same routes as in that file. This should be the domain without the protocol (i.e., ```example.com``` rather than ```https://example.com```).
 
 ### `database` {#database}
 
