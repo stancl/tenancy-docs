@@ -39,7 +39,7 @@ When a tenant route is visited and the tenant can't be identified, an exception 
 // use Stancl\Tenancy\Middleware\InitializeTenancy;
 
 $this->app->bind(InitializeTenancy::class, function ($app) {
-    return new InitializeTenancy(function ($exception) {
+    return new InitializeTenancy(function ($exception, $request, $next) {
         // return redirect()->route('foo');
     });
 });
