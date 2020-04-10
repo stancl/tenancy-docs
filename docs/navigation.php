@@ -108,6 +108,7 @@ return [
                 'Passport'   => 'passport',
                 'Nova'   => 'nova',
                 'Telescope' => 'telescope',
+                'Livewire' => 'livewire',
             ],
         ],
         'Tips' => [
