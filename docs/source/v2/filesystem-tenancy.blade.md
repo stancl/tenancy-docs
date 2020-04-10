@@ -60,4 +60,10 @@ Storage::disk('public')->put($filename, $data);
 Storage::disk('local')->put("public/$filename", $data);
 ```
 
+Note that every request for a tenant asset requires a full framework boot and tenancy initialization. This is not ideal if you have some assets that occur on each page (like logos). So for non-private assets, you may want to create a disk and use URLs from that disk instead. For example:
+
+```php
+Storage::disk('app-public')->url('tenants/logos/' . tenant()->id . '.png');
+```
+
 If you want to store something globally, simply create a new disk and *don't* add it to the `tenancy.filesystem.disks` config.

@@ -19,8 +19,8 @@ Tenant::new()->withData([
 
 // Make tweaks to the connection before bootstrapping tenancy
 tenancy()->hook('bootstrapping', function ($tenantManager) {
-    config(['database.connections.someTenantConnectionTemplate.name' => $tenantManager->tenant['database_name']]);
-    config(['database.connections.someTenantConnectionTemplate.password' => $tenantManager->tenant['database_password']]);
-    config(['database.connections.someTenantConnectionTemplate.host' => $tenantManager->tenant['database_host']]);
+    config(['database.connections.someTenantConnectionTemplate.name' => $tenantManager->getTenant('database_name')]);
+    config(['database.connections.someTenantConnectionTemplate.password' => $tenantManager->getTenant('database_password')]);
+    config(['database.connections.someTenantConnectionTemplate.host' => $tenantManager->getTenant('database_host')]);
 });
 ```
