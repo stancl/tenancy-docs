@@ -6,6 +6,8 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="description" content="{{ $page->description ?? $page->siteDescription }}">
 
+        <meta name="theme-color" content="#4c51bf">
+
         <meta property="og:site_name" content="{{ $page->siteName }}"/>
         <meta property="og:title" content="{{ $page->title ?  $page->title . ' | ' : '' }}{{ $page->siteName }}"/>
         <meta property="og:description" content="{{ $page->description ?? $page->siteDescription }} {{ $page->siteName }}"/>
