@@ -79,6 +79,7 @@ return [
                 'Tenants'                    => 'tenants',
                 'Central App'                => 'central-app',
                 'Universal Routes'           => 'universal-routes',
+                'Cacheed Tenant Lookup'      => 'cached-tenant-lookup',
                 'Custom Database Names'      => 'custom-database-names',
                 'Custom DB Connections'      => 'custom-db-connections',
                 'Disabling DB Creation'      => 'disabling-db-creation',
