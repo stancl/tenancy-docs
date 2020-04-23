@@ -112,6 +112,16 @@ let colors = {
   'indigo-lighter': '#b2b7ff',
   'indigo-lightest': '#e6e8ff',
 
+  'indigo-100': '#ebf4ff',
+  'indigo-200': '#c3dafe',
+  'indigo-300': '#a3bffa',
+  'indigo-400': '#7f9cf5',
+  'indigo-500': '#667eea',
+  'indigo-600': '#5a67d8',
+  'indigo-700': '#4c51bf',
+  'indigo-800': '#434190',
+  'indigo-900': '#3c366b',
+
   'purple-darkest': '#21183c',
   'purple-darker': '#382b5f',
   'purple-dark': '#794acf',

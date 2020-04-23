@@ -3,8 +3,8 @@
 return [
     'baseUrl'         => '',
     'production'      => false,
-    'siteName'        => 'stancl/tenancy documentation',
-    'siteDescription' => 'A Laravel multi-database tenancy package that respects your code.',
+    'siteName'        => 'Tenancy for Laravel documentation',
+    'siteDescription' => 'stancl/tenancy — An automatic multi-tenancy package for Laravel.',
 
     // key => display name
     'versions' => [
