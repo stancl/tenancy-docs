@@ -81,6 +81,7 @@ return [
                 'Universal Routes'           => 'universal-routes',
                 'Custom Database Names'      => 'custom-database-names',
                 'Custom DB Connections'      => 'custom-db-connections',
+                'Disabling DB Creation'      => 'disabling-db-creation',
                 'Filesystem Tenancy'         => 'filesystem-tenancy',
                 'Jobs & Queues'              => 'jobs-queues',
                 'Hooks / Events'             => 'hooks',
