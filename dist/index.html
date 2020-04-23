@@ -254,7 +254,7 @@ php artisan tenancy:install
         </div>
     </header>
 
-    <div class="w-full flex flex-col xl:flex-row items-center justify-center xl:px-64 bg-white mt-10">
+    <div class="w-full flex flex-col xl:flex-row items-center justify-center xl:px-64 bg-white py-5 mt-5">
         <div class="w-full xl:w-1/2 text-left xl:text-right px-6 py-6">
             <h3 class="text-3xl font-semibold">Automatic Data Separation</h3>
             <p class="text-lg">Tenants' databases, caches, filesystems, queues and Redis stores are automatically separated. You can
@@ -272,7 +272,7 @@ cache()->remember('total_revenue', function () {
         </div>
     </div>
 
-    <div class="w-full flex flex-col-reverse xl:flex-row items-center justify-center xl:px-64 bg-white mt-10">
+    <div class="w-full flex flex-col-reverse xl:flex-row items-center justify-center xl:px-64 bg-white py-5">
         <div class="w-full xl:w-1/2 flex justify-end xl:mr-16 xl:px-6 xl:py-6">
 <pre class="bg-indigo-900 leading-relaxed text-blue-300 xl:rounded-15 py-6 px-8 inline-block w-full whitespace-pre-wrap">
 'redis' => [
@@ -291,7 +291,7 @@ cache()->remember('total_revenue', function () {
         </div>
     </div>
 
-    <div class="w-full flex flex-col xl:flex-row items-center justify-center xl:px-64 bg-white mt-10">
+    <div class="w-full flex flex-col xl:flex-row items-center justify-center xl:px-64 bg-white py-5">
         <div class="w-full xl:w-1/2 text-left xl:text-right px-6 py-6">
             <h3 class="text-3xl font-semibold">CLI-friendly</h3>
             <p class="text-lg"><strong>stancl/tenancy</strong> comes with artisan commands for migrating, rolling
@@ -307,7 +307,7 @@ Database seeding completed successfully.
         </div>
     </div>
 
-    <div class="w-full flex flex-col-reverse xl:flex-row items-center justify-center xl:px-64 bg-white mt-10">
+    <div class="w-full flex flex-col-reverse xl:flex-row items-center justify-center xl:px-64 bg-white py-5">
         <div class="w-full xl:w-1/2 flex justify-end xl:mr-16 xl:px-6 xl:py-6">
 <pre class="bg-indigo-900 leading-relaxed text-blue-300 xl:rounded-15 py-6 px-8 inline-block w-full whitespace-pre-wrap">
 class PostgreSQLDatabaseManager implements TenantDatabaseManager
@@ -362,7 +362,7 @@ class PostgreSQLDatabaseManager implements TenantDatabaseManager
             <h2 class="text-4xl font-bold text-center text-indigo-100">Ready to try it?</h2>
             <p class="text-indigo-200 my-6 text-center leading-relaxed xl:leading-loose">
                 Just create a new Laravel project and install the package.<br>
-                We think you'll love it.
+                Or, install it into your existing project. It will work just as well.
             </p>
             <div class="flex justify-center">
                 <a href="https://tenancyforlaravel.com/docs/v2/installation">
