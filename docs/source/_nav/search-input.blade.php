@@ -7,7 +7,7 @@
     <img src="/docs/assets/img/magnifying-glass.svg" alt="search icon" class="h-4 w-4 max-w-none">
 </button>
 
-<div id="js-search-input" class="docsearch-input__wrapper hidden md:block">
+<div id="js-search-input" class="docsearch-input__wrapper hidden md:block bg-indigo-700">
     <label for="search" class="hidden">Search</label>
 
     <input
