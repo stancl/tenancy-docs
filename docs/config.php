@@ -31,7 +31,7 @@ return [
 
     // helpers
     'isActive' => function ($page, $path) {
-        return ends_with(trimPath($page->getPath()), trimPath($path));
+        return ends_with(trimPath($page->getPath()), trimPath($page->version() . '/' . $path));
     },
     'isActiveParent' => function ($page, $menuItem) {
         if (is_object($menuItem) && $menuItem->children) {
