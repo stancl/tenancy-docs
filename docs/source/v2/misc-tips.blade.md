@@ -16,9 +16,9 @@ use Stancl\Tenancy\Contracts\UniqueIdentifierGenerator;
 
 class MyUniqueIDGenerator implements UniqueIdentifierGenerator
 {
-    public static function handle(string $domain, array $data): string
+    public static function generate(array $domains, array $data = []): string
     {
-        return $domain . \Ramsey\Uuid\Uuid::uuid4()->toString();
+        return $domains[0] . \Ramsey\Uuid\Uuid::uuid4()->toString();
     }
 }
 ```
