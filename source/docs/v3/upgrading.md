@@ -68,10 +68,5 @@ section: content
 
 - Replace your Http Kernel with a stock version (copy it from laravel/laravel: [https://github.com/laravel/laravel/blob/master/app/Http/Kernel.php](https://github.com/laravel/laravel/blob/master/app/Http/Kernel.php)) and add back in any changes you made. The package now doesn't necessitate any Kernel changes, so remove all of the 2.x ones.
 - Delete config, publish it & the new files using `php artisan tenancy:install`
-- Create Tenant model, as instructed on the Tenants page
-
-    [Tenants](Tenants%20e929a50afae2436c936b323fab4a0f60.md)
-
-- Update routes to use the correct middleware, see the Routes page
-
-    [Routes](Routes%20f0bfa87432bb4a7da9d9f5f150bd1a45.md)
+- Create Tenant model, as instructed on the [Tenants]({{ $page->link('tenants') }}) page
+- Update routes to use the correct middleware, see the [Routes]({{ $page->link('routes') }}) page
