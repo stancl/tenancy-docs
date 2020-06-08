@@ -20,35 +20,35 @@
           <label for="first_name" class="block text-sm font-medium leading-5 text-gray-700">First name
           </label>
           <div class="mt-1 relative rounded-md shadow-sm">
-            <input id="first_name" class="form-input py-3 px-4 block w-full transition ease-in-out duration-150" />
+            <input id="first_name" name="first_name" class="form-input py-3 px-4 block w-full transition ease-in-out duration-150" />
           </div>
         </div>
         <div>
           <label for="last_name" class="block text-sm font-medium leading-5 text-gray-700">Last name
           </label>
           <div class="mt-1 relative rounded-md shadow-sm">
-            <input id="last_name" class="form-input py-3 px-4 block w-full transition ease-in-out duration-150" />
+            <input id="last_name" name="last_name" class="form-input py-3 px-4 block w-full transition ease-in-out duration-150" />
           </div>
         </div>
         <div class="sm:col-span-2">
           <label for="company" class="block text-sm font-medium leading-5 text-gray-700">Company
           </label>
           <div class="mt-1 relative rounded-md shadow-sm">
-            <input id="company" class="form-input py-3 px-4 block w-full transition ease-in-out duration-150" />
+            <input id="company" name="company" class="form-input py-3 px-4 block w-full transition ease-in-out duration-150" />
           </div>
         </div>
         <div class="sm:col-span-2">
           <label for="email" class="block text-sm font-medium leading-5 text-gray-700">Email
           </label>
           <div class="mt-1 relative rounded-md shadow-sm">
-            <input id="email" type="email" class="form-input py-3 px-4 block w-full transition ease-in-out duration-150" />
+            <input id="email" name="email" type="email" class="form-input py-3 px-4 block w-full transition ease-in-out duration-150" />
           </div>
         </div>
         <div class="sm:col-span-2">
           <label for="message" class="block text-sm font-medium leading-5 text-gray-700">Message
           </label>
           <div class="mt-1 relative rounded-md shadow-sm">
-            <textarea id="message" rows="4" class="form-textarea py-3 px-4 block w-full transition ease-in-out duration-150"></textarea>
+            <textarea id="message" name="message" rows="4" class="form-textarea py-3 px-4 block w-full transition ease-in-out duration-150"></textarea>
           </div>
         </div>
         <div class="sm:col-span-2">
