@@ -1,0 +1,32 @@
+.nav-menu {
+    @apply mb-4;
+
+    @screen lg {
+        @apply block pr-4 bg-transparent border-b-0 shadow-none;
+    }
+}
+
+.nav-menu__item {
+    @apply block mt-4 text-base font-normal leading-loose tracking-wide text-gray-600 no-underline uppercase;
+}
+
+a.nav-menu__item {
+    @apply inline mt-0 font-medium tracking-normal text-indigo-800 normal-case;
+}
+
+a.nav-menu__item:hover {
+    @apply text-indigo-600;
+}
+
+.nav-menu .active {
+    @apply font-semibold text-indigo-600;
+}
+
+ul.list-reset ul.list-reset {
+    @apply pl-4;
+}
+
+.turbolinks-progress-bar {
+	@apply bg-indigo-500;
+	height: 3px;
+}

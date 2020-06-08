@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+
+
+/* @import 'highlight'; */
+@import 'dracula';
+@import 'base';
+@import 'navigation';
+@import 'search';
+
+
+@tailwind utilities;

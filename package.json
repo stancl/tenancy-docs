@@ -1,20 +1,27 @@
 {
-  "scripts": {
-    "serve": "cross-env NODE_ENV=development concurrently \"postcss tailwind.css -o dist/tailwind.css --watch\"  \"live-server ./dist\"",
-    "development": "cross-env NODE_ENV=development postcss tailwind.css -o dist/tailwind.css",
-    "production": "cross-env NODE_ENV=production postcss tailwind.css -o dist/tailwind.css"
-  },
-  "dependencies": {
-    "autoprefixer": "^9.7.4",
-    "tailwindcss": "^1.1.4"
-  },
-  "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^1.3.0",
-    "@tailwindcss/custom-forms": "^0.2.1",
-    "concurrently": "^4.1.2",
-    "cross-env": "^5.2.1",
-    "cssnano": "^4.1.10",
-    "live-server": "^1.2.1",
-    "postcss-cli": "^6.1.2"
-  }
+    "private": true,
+    "scripts": {
+        "local": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --env=local --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "staging": "cross-env NODE_ENV=staging node_modules/webpack/bin/webpack.js --progress --hide-modules --env=staging --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --env=production --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "dev": "npm run local",
+        "watch": "npm run local -- --watch"
+    },
+    "devDependencies": {
+        "@tailwindcss/ui": "^0.3.0",
+        "cross-env": "^3.2.3",
+        "docsearch.js": "^2.6.2",
+        "highlight.js": "^9.13.1",
+        "laravel-mix": "^5.0.4",
+        "laravel-mix-jigsaw": "github:iskrisis/laravel-mix-jigsaw",
+        "laravel-mix-purgecss": "^4.0.0||^5.0.0",
+        "precss": "^4.0.0",
+        "sass": "^1.15.2",
+        "sass-loader": "^7.1.0",
+        "tailwindcss": "^1.4.6",
+        "vue-template-compiler": "^2.5.21"
+    },
+    "dependencies": {
+        "turbolinks": "^5.2.0"
+    }
 }

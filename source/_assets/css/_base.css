@@ -1,0 +1,102 @@
+body {
+    font-size: 17px;
+}
+
+
+
+.markdown {
+
+    a {
+        @apply font-semibold text-indigo-700 no-underline;
+
+        &:hover {
+            @apply text-indigo-500;
+        }
+    }
+
+    blockquote {
+        @apply pl-6 my-8 text-lg italic font-normal text-gray-800 border-l-4 border-blue-100;
+    }
+
+    code {
+        @apply px-2 py-px text-sm bg-gray-200 rounded;
+    }
+
+    pre {
+        @apply p-4 my-4 text-base leading-loose bg-gray-900 rounded;
+
+        code {
+            @apply block p-0 bg-transparent;
+        }
+    }
+
+    code.hljs {
+        @apply p-0 bg-transparent;
+
+        .hljs-comment,
+        .hljs-keyword,
+        .hljs-meta {
+            @apply font-normal;
+            /* @apply roman; */
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply mt-8 mb-4 leading-tight text-black;
+
+        &:first-child {
+            @apply mt-0;
+        }
+    }
+
+    h1 {
+        @apply text-5xl font-extrabold;
+    }
+
+    h2 {
+        @apply text-4xl font-bold;
+    }
+
+    h3 {
+        @apply text-3xl font-bold;
+    }
+
+    h4 {
+        @apply text-2xl font-normal;
+    }
+
+    h5 {
+        @apply text-xl font-normal;
+    }
+
+    h6 {
+        @apply text-lg font-light;
+    }
+
+    hr {
+        @apply my-12 border-b border-blue-200 rounded-full;
+    }
+
+    li {
+        @apply ml-5 leading-loose;
+
+        ul,
+        ol {
+            @apply my-0;
+        }
+    }
+
+    ol,
+    ul {
+        @apply my-4 list-disc;
+    }
+
+    p {
+        @apply my-6;
+    }
+}

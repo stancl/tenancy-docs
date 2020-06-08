@@ -1,12 +1,13 @@
 [build]
-environment = { PHP_VERSION = "7.2" }
-publish = "/dist"
-command = "./build.sh"
+environment = { PHP_VERSION = "7.4" }
+publish = "/build_production"
+command = "npm run production"
 
 [context.deploy-preview]
-command = "./staging.sh"
+publish = "/build_staging"
+command = "npm run staging"
 
 [[redirects]]
 from = "/docs/master/*"
-to = "/docs/v2/:splat"
+to = "/docs/v3/:splat"
 status = 302
