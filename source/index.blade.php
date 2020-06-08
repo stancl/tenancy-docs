@@ -58,8 +58,7 @@ $tenant-&gt;createDomain([
 Order::where('status', 'shipped')-&gt;get();
 Cache::get('order_count');
 asset('logo.png');
-dispatch(new SendOrderCreatedMail);
-    </pre>
+dispatch(new SendOrderCreatedMail);</pre>
   </div>
 </div>
 </div>
