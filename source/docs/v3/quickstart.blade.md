@@ -171,7 +171,7 @@ $ php artisan tinker
 Now we'll create a user inside each tenant's database:
 
 ```php
-App\Tenant::cursor()->runForEach(function () {
+App\Tenant::all()->runForEach(function () {
     factory(App\User::class)->create();
 });
 ```
