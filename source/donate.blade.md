@@ -23,7 +23,7 @@ If you would like to support me on a monthly basis in EUR, you can use Patreon: 
 
 ### GitHub Sponsors - USD
 
-If you would like to support me on a monthly basis in USD, you can use GitHub Sponsors. Click the *Sponsor* button on left: [https://github.com/stancl/](https://patreon.com/samuelstancl)
+If you would like to support me on a monthly basis in USD, you can use GitHub Sponsors. Click the *Sponsor* button on left: [https://github.com/stancl/](https://github.com/stancl/)
 
 ## One-time donations
 
