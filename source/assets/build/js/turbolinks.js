@@ -115,7 +115,7 @@ eval("var Turbolinks = __webpack_require__(/*! turbolinks */ \"./node_modules/tu
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/samuel/Projects/tenancyforlaravel/source/_assets/js/turbolinks.js */"./source/_assets/js/turbolinks.js");
+module.exports = __webpack_require__(/*! /Users/samuel/Projects/tenancy-docs/source/_assets/js/turbolinks.js */"./source/_assets/js/turbolinks.js");
 
 
 /***/ })

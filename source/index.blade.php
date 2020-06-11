@@ -101,11 +101,7 @@ dispatch(new SendOrderCreatedMail);</pre>
         <div class="flex">
           <div class="flex-shrink-0">
             <div class="flex items-center justify-center w-12 h-12 text-white bg-indigo-500 rounded-md">
-              <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9">
-              </path>
-            </svg>
+              <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
           </div>
         </div>
         <div class="ml-4">
@@ -121,9 +117,7 @@ dispatch(new SendOrderCreatedMail);</pre>
         <div class="flex-shrink-0">
           <div class="flex items-center justify-center w-12 h-12 text-white bg-indigo-500 rounded-md">
             <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3">
-            </path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"></path>
           </svg>
         </div>
       </div>
@@ -139,10 +133,7 @@ dispatch(new SendOrderCreatedMail);</pre>
     <div class="flex">
       <div class="flex-shrink-0">
         <div class="flex items-center justify-center w-12 h-12 text-white bg-indigo-500 rounded-md">
-          <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-          </svg>
+          <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
         </div>
       </div>
       <div class="ml-4">
@@ -197,11 +188,7 @@ fill="none" viewBox="0 0 404 784">
           <div class="flex">
             <div class="flex-shrink-0">
               <div class="flex items-center justify-center w-12 h-12 text-white bg-indigo-500 rounded-md">
-                <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z">
-                </path>
-              </svg>
+                <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
             </div>
           </div>
           <div class="ml-4">
@@ -216,15 +203,11 @@ fill="none" viewBox="0 0 404 784">
         <div class="flex">
           <div class="flex-shrink-0">
             <div class="flex items-center justify-center w-12 h-12 text-white bg-indigo-500 rounded-md">
-              <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-              </path>
-            </svg>
+              <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
           </div>
         </div>
         <div class="ml-4">
-          <h5 class="text-lg font-medium leading-6 text-gray-900">Single-database tenancy</h5>
+          <h5 class="text-lg font-medium leading-6 text-gray-900">Single or multi-database tenancy</h5>
           <p class="mt-2 text-base leading-6 text-gray-600">
             Don't want to use the database-per-tenant approach? No problem, we provide you with model traits for scoping models to the current tenant, <strong>including models that aren't related to the tenant directly.</strong>
           </p>
@@ -235,11 +218,7 @@ fill="none" viewBox="0 0 404 784">
       <div class="flex">
         <div class="flex-shrink-0">
           <div class="flex items-center justify-center w-12 h-12 text-white bg-indigo-500 rounded-md">
-            <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-            </path>
-          </svg>
+            <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path></svg>
         </div>
       </div>
       <div class="ml-4">
@@ -287,10 +266,7 @@ fill="none" viewBox="0 0 404 784">
   <div class="mt-12 lg:grid lg:grid-cols-3 lg:gap-8">
     <div>
       <div class="flex items-center justify-center w-12 h-12 text-white bg-indigo-500 rounded-md">
-        <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-        </svg>
+        <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
       </div>
       <div class="mt-5">
         <h5 class="text-lg font-medium leading-6 text-gray-900">Shared users between tenants</h5>
@@ -301,10 +277,7 @@ fill="none" viewBox="0 0 404 784">
     </div>
     <div class="mt-10 lg:mt-0">
       <div class="flex items-center justify-center w-12 h-12 text-white bg-indigo-500 rounded-md">
-        <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
-        </svg>
+        <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
       </div>
       <div class="mt-5">
         <h5 class="text-lg font-medium leading-6 text-gray-900">User impersonation</h5>
@@ -315,9 +288,7 @@ fill="none" viewBox="0 0 404 784">
     </div>
     <div class="mt-10 lg:mt-0">
       <div class="flex items-center justify-center w-12 h-12 text-white bg-indigo-500 rounded-md">
-        <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-        </svg>
+        <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
       </div>
       <div class="mt-5">
         <h5 class="text-lg font-medium leading-6 text-gray-900">Works with any database</h5>
@@ -508,56 +479,62 @@ fill="none" viewBox="0 0 404 784">
 </div>
 </div>
 
-<section class="py-12 overflow-hidden bg-gray-50 md:py-20 lg:py-24">
-  <div class="relative max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
-    <svg
-    class="absolute hidden transform top-full right-full translate-x-1/3 -translate-y-1/4 lg:translate-x-1/2 xl:-translate-y-1/2"
-    width="404" height="404" fill="none" viewBox="0 0 404 404" role="img" aria-labelledby="svg-workcation">
-    <title id="svg-workcation">Workcation</title>
-    <defs>
-      <pattern id="ad119f34-7694-4c31-947f-5c9d249b21f3" x="0" y="0" width="20" height="20"
-      patternUnits="userSpaceOnUse">
-      <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
-    </pattern>
-  </defs>
-  <rect width="404" height="404" fill="url(#ad119f34-7694-4c31-947f-5c9d249b21f3)" />
-</svg>
-
-<div class="relative">
-  <div class="flex justify-center">
-    <a href="https://kronosapp.io/" target="_blank" class="inline-block h-10 mx-auto">
-      <img class="h-full" src="https://kronosapp.io/landing-assets/images/kronos/logo.svg" alt="Kronos">
-    </a>
-  </div>
-  <blockquote class="mt-8">
-    <div class="max-w-3xl mx-auto text-2xl font-medium leading-9 text-center text-gray-900">
-      <p>
-        &ldquo;Tenancy for Laravel allowed us to effortlessly and quickly integrate the needed
-        landlord/tenant functionality
-        needed for our SaaS platform. It fits our needs perfectly.&rdquo;
-      </p>
-    </div>
-    <footer class="mt-8">
-      <div class="md:flex md:items-center md:justify-center">
-        <div class="md:flex-shrink-0">
-          <img class="w-10 h-10 mx-auto rounded-full"
-          src="https://media-exp1.licdn.com/dms/image/C5603AQEmispANTVYDA/profile-displayphoto-shrink_800_800/0?e=1596067200&v=beta&t=UO5qyQNEg6ZnEOtd7XeS7N_EOV7pQwGOcVmJzhHpdUg"
-          alt="Kronos" />
-        </div>
-        <div class="mt-3 text-center md:mt-0 md:ml-4 md:flex md:items-center">
-          <div class="text-base font-medium leading-6 text-gray-900">Jørgen Solli</div>
-          
-          <svg class="hidden w-5 h-5 mx-1 text-indigo-600 md:block" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M11 0h3L9 20H6l5-20z" />
-          </svg>
-          
-          <a href="https://kronosapp.io/" target="_blank" class="text-base font-medium leading-6 text-gray-500">Owner, Kronos</a>
-        </div>
+<section class="bg-gray-50">
+  <div class="max-w-screen-xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8">
+    <div class="py-12 px-4 sm:px-6 md:flex md:flex-col md:py-16 md:pl-0 md:pr-10 lg:pr-16">
+      <div class="md:flex-shrink-0">
+        <img class="h-12" src="https://kronosapp.io/landing-assets/images/kronos/logo.svg" alt="Kronos">
       </div>
-    </footer>
-  </blockquote>
-</div>
-</div>
+      <blockquote class="mt-8 md:flex-grow md:flex md:flex-col">
+        <div class="max-w-3xl mx-auto text-xl font-medium leading-8 text-left text-gray-900">
+        <p>
+          &ldquo;Tenancy for Laravel allowed us to effortlessly and quickly integrate the needed
+          landlord/tenant functionality for our SaaS platform. It fits our needs perfectly.&rdquo;
+        </p>
+      </div>
+        <footer class="mt-8">
+          <div class="flex">
+            <div class="flex-shrink-0 inline-flex rounded-full border-2 border-white">
+              <img class="h-12 w-12 rounded-full" src="https://media-exp1.licdn.com/dms/image/C5603AQEmispANTVYDA/profile-displayphoto-shrink_800_800/0?e=1596067200&v=beta&t=UO5qyQNEg6ZnEOtd7XeS7N_EOV7pQwGOcVmJzhHpdUg" alt="Jørgen Solli" />
+            </div>
+            <div class="ml-4">
+              <div class="text-base leading-6 font-medium text-gray-900">Jørgen Solli
+              </div>
+              <div class="text-base font-medium leading-6 text-gray-500">
+                <a href="https://kronosapp.io/">Owner, Kronos</a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </blockquote>
+    </div>
+    <div class="py-12 px-4 sm:px-6 md:py-16 md:pr-0 md:pl-10 lg:pl-16">
+      <div class="md:flex-shrink-0">
+        <img class="h-12" src="https://res.cloudinary.com/danskdynamit/image/upload/v1527500599/z81esdqpqebgwgqwsllj.svg" alt="Napp">
+      </div>
+      <blockquote class="mt-8 md:flex-grow md:flex md:flex-col">
+        <div class="max-w-3xl mx-auto text-xl font-medium leading-8 text-left text-gray-900">
+          <p>
+            &ldquo;This package enabled us to abstract all the context switching to focus our development efforts elsewhere. That resulted in significant performance increase. The event driven architecture is powerful, flexible and bends to all our needs.&rdquo;
+          </p>
+        </div>
+        <footer class="mt-8">
+          <div class="flex">
+            <div class="flex-shrink-0 inline-flex rounded-full border-2 border-white">
+              <img class="h-12 w-12 rounded-full" src="https://avatars1.githubusercontent.com/u/312065?s=400&v=4" alt="Mads Møller" />
+            </div>
+            <div class="ml-4">
+              <div class="text-base leading-6 font-medium text-gray-900">Mads Møller
+              </div>
+              <div class="text-base font-medium leading-6 text-gray-500">
+                <a href="https://napp.dk/en">CTO, Napp</a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </blockquote>
+    </div>
+  </div>
 </section>
 
 <div class="flex justify-center bg-gray-50">

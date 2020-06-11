@@ -145,33 +145,33 @@ Note the difference between *initializing tenancy and bootstrapping* tenancy. Te
 The following events are dispatched as a result of Eloquent events being fired in the default `Tenant` implementation (the most often used events are bold):
 
 - `CreatingTenant`
-- `**TenantCreated**`
+- **`TenantCreated`**
 - `SavingTenant`
 - `TenantSaved`
 - `UpdatingTenant`
 - `TenantUpdated`
 - `DeletingTenant`
-- `**TenantDeleted**`
+- **`TenantDeleted`**
 
 ### Domain
 
 These events are optional. They're only relevant to you if you're using domains for your tenants.
 
 - `CreatingDomain`
-- `**DomainCreated**`
+- **`DomainCreated`**
 - `SavingDomain`
 - `DomainSaved`
 - `UpdatingDomain`
 - `DomainUpdated`
 - `DeletingDomain`
-- `**DomainDeleted**`
+- **`DomainDeleted`**
 
 ### Database
 
 These events are also optional. They're relevant to you if you're using multi-database tenancy:
 
 - `CreatingDatabase`
-- `**DatabaseCreated**`
+- **`DatabaseCreated`**
 - `MigratingDatabase`
 - `DatabaseMigrated`
 - `SeedingDatabase`
@@ -179,9 +179,9 @@ These events are also optional. They're relevant to you if you're using multi-da
 - `RollingBackDatabase`
 - `DatabaseRolledBack`
 - `DeletingDatabase`
-- `**DatabaseDeleted**`
+- **`DatabaseDeleted`**
 
 ### Resource syncing
 
-- `**SyncedResourceSaved**`
+- **`SyncedResourceSaved`**
 - `SyncedResourceChangedInForeignDatabase`

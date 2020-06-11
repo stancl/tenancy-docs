@@ -25,8 +25,6 @@ It would have been a good option for when you want to implement multi-tenancy ma
 
     I'm not sharing this to intentionally make hyn/multi-tenancy bad, but **be very careful if you decide to go with that package**.
 
-- It will very likely be sunset — or, in other words, killed — soon, since tenancy/tenancy is being released.
-
 ## tenancy/tenancy
 
 This package intends to provide you with a framework for building your own multi-tenancy implementation. The documentation is quite lacking, so I couldn't get a too detailed idea of what it does, but from my understanding, it gives you things like events which you can use to build your own multi-tenancy logic.
@@ -37,19 +35,9 @@ However, if you're looking for a package that will help you make a multi-tenant 
 
 ## spatie/laravel-multitenancy
 
-It's hard to find good things to say about this package. It's basically a simplified copy of v2 of stancl/tenancy.
+This package is a very simple implementation of multi-tenancy.
 
-stancl/tenancy was the first package to use the automatic approach. The Spatie package is a copy of that, though in Freek's words, he hasn't looked into other packages prior to developing his.
-
-[https://twitter.com/freekmurze/status/1257765177174482944](https://twitter.com/freekmurze/status/1257765177174482944)
-
-(That, in my opinion, is a red flag, since you'd want to do research before just blindly coding something and marketing it.)
-
-The package is basically Mohamed Said's video series on multi-tenancy glued into a package.
-
-They also don't seem to have an interest in having their package help the largest amount of people:
-
-[https://twitter.com/freekmurze/status/1260187383191961601](https://twitter.com/freekmurze/status/1260187383191961601)
+It does the same thing as stancl/tenancy v2, but with far fewer features out of the box.
 
 The only benefit I see in this package compared to v2 of stancl/tenancy is that it uses Eloquent out of the box, which makes things like Cashier integration easier. But, that's irrelevant since we're in v3 already and v3 uses Eloquent.
 
