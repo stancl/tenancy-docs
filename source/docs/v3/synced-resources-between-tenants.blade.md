@@ -8,6 +8,8 @@ section: content
 
 If you'd like to share certain resources, usually users, between tenant databases, you can use our resource syncing feature. This will let you **sync specific columns between specific tenant databases and the central database.**
 
+This is a relatively complex feature, so before implementing it, make sure you really need it. You only need this feature if you're using multi-database tenancy and need to sync specific resources (like users) between different tenants' databases.
+
 ## Database
 
 The resource exists in the central database, for example a `users` table. Another table exists in the tenants' databases. It can use the same name as the central database or a different name — up to you.
@@ -172,7 +174,7 @@ Here's how it will work:
     tenancy()->initialize($tenant);
 
     // Create the same user in tenant DB
-    $user = TenantUser::create([
+    $user = User::create([
         'global_id' => 'acme',
         'name' => 'John Doe',
         'email' => 'john@localhost',

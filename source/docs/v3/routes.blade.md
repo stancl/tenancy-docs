@@ -77,3 +77,5 @@ Due to the order in which the service providers (and as such, their routes) are 
 However, tenant routes that don't have their central counterpart will still be accessible on central domains and will result in a "Tenant could not be identified on domain ..." error. To avoid this, use the `Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains` middleware on all of your tenant routes. This middleware will abort with a 404 if the user is trying to visit a tenant route on a central domain.
 
 ## Universal routes
+
+See the [Universal Routes feature]({{ $page->link('features/universal-routes') }}).

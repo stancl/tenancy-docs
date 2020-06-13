@@ -148,7 +148,16 @@ return [
                 'Event system' => 'event-system',
                 'Routes' => 'routes',
                 'Tenancy bootstrappers' => 'tenancy-bootstrappers',
-                'Feature classes' => 'feature-classes',
+                'Optional Features' => [
+                    'url' => 'optional-features',
+                    'children' => [
+                        'User impersonation' => 'features/user-impersonation',
+                        'Telescope tags' => 'features/telescope-tags',
+                        'Tenant Config' => 'features/tenant-config',
+                        'Cross-domain redirect' => 'features/cross-domain-redirect',
+                        'Universal routes' => 'features/universal-routes',
+                    ],
+                ],
             ],
         ],
 
@@ -187,7 +196,17 @@ return [
             'children' => [
                 'Manual initialization' => 'manual-initialization',
                 'Testing' => 'testing',
-                'Integrating with other packages' => 'integrating',
+                'Integrating with other packages' => [
+                    'url' => 'integrating',
+                    'children' => [
+                        'Spatie packages' => 'integrations/spatie',
+                        'Horizon' => 'integrations/horizon',
+                        'Passport' => 'integrations/passport',
+                        'Nova' => 'integrations/nova',
+                        'Telescope' => 'integrations/telescope',
+                        'Livewire' => 'integrations/livewire',
+                    ],
+                ],
                 'Console commands' => 'console-commands',
                 'Cached lookup' => 'cached-lookup',
             ],

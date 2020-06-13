@@ -4,10 +4,21 @@ extends: _layouts.documentation
 section: content
 ---
 
-
 # Configuration
 
 The package is highly configurable. This page covers what you can configure in the `config/tenancy.php` file, but note that many more things are configurable. Some things can be changed by extending classes (e.g. the `Tenant` model), and **many** things can be changed using static properties. These things will *usually* be mentioned on the respective pages of the documentation, but not every time. For this reason, don't be afraid to dive into the package's source code — whenever the class you're using has a `public static` property, **it's intended to be configured**.
+
+## Static properties
+
+You can set static properties like this (example):
+
+```php
+\Stancl\Tenancy\Middleware\InitializeTenancyByDomain::$onFail = function () {
+    return redirect('https://my-central-domain.com/');
+};
+```
+
+A good place to put these calls is your `app/Providers/TenancyServiceProvider`'s `boot()` method.
 
 ### Tenant model
 
@@ -87,7 +98,7 @@ See this section in the config, it's documented with comments.
 
 `tenancy.features`
 
-This config array lets you enable, disable or add your own [feature classes]({{ $page->link('feature-classes') }}).
+This config array lets you enable, disable or add your own [feature classes]({{ $page->link('optional-features') }}).
 
 ### Migration parameters
 

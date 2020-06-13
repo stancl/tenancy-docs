@@ -102,9 +102,7 @@ Keys that start with the internal prefix (`tenancy_` by default, but you can cus
 
 ## Events
 
-The `Tenant` model dispatches Eloquent events, all of which have their own respective class. You can read more about this on the *Event system* page.
-
-[Event system]({{ $page->link('event-system') }})
+The `Tenant` model dispatches Eloquent events, all of which have their own respective class. You can read more about this on the [Event system]({{ $page->link('event-system') }}) page.
 
 ## Accessing the current tenant
 

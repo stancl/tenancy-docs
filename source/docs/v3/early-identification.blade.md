@@ -51,8 +51,8 @@ class PostController
     {
         if ($request->has('image')) {
             $post->image_url = $this->cloudinary()->store(
-								$request->file('image')
-						);
+                $request->file('image')
+            );
         }
     }
 }

@@ -72,7 +72,7 @@ Contact me on [samuel@tenancyforlaravel.com](mailto:samuel@tenancyforlaravel.com
 
 If you're a business making a donation, you may want an invoice.
 
-Contact me on [samuel@tenancyforlaravel.com](mailto:samuel@tenancyforlaravel.com?subject=Donation%20with%20invoice) and let me know what you need to have on the invoice and I will make it happen.
+Contact me on [samuel@tenancyforlaravel.com](mailto:samuel@tenancyforlaravel.com?subject=Donation%20with%20invoice), let me know what you need to have on the invoice and I will make it happen.
 
 ### Thank you!
 

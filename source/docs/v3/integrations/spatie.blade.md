@@ -29,8 +29,8 @@ mv database/migrations/*_create_permission_tables.php database/migrations/tenant
 Then add this to your `AppServiceProvider::boot()` method:
 
 ```php
-Event::listen(TenancyBootstrapped::class, function (Tenancy $tenancy) {
-    \Spatie\Permission\PermissionRegistrar::$cacheKey = 'spatie.permission.cache.tenant.' . $tenancy->tenant->id;
+Event::listen(TenancyBootstrapped::class, function (TenancyBootstrapped $event) {
+    \Spatie\Permission\PermissionRegistrar::$cacheKey = 'spatie.permission.cache.tenant.' . $event->tenancy->tenant->id;
 });
 ```
 
