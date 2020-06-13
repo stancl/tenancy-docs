@@ -96,3 +96,13 @@ InitializeTenancyByRequestData::$queryParameter = null;
 ## Manually identifying tenants
 
 See the [manual initialization page]({{ $page->link('manual-initialization') }}) to see how to identify tenants manually.
+
+## Customizing onFail logic
+
+Each identification middleware has a static `$onFail` property that can be used to customize the behavior that should happen when a tenant couldn't be identified.
+
+```php
+\Stancl\Tenancy\Middleware\InitializeTenancyByDomain::$onFail = function ($exception, $request, $next) {
+    return redirect('https://my-central-domain.com/');
+};
+```
