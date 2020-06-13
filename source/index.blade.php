@@ -771,7 +771,7 @@ fill="none" viewBox="0 0 404 784">
 </dt>
 <dd class="pr-12 mt-2" x-show="openPanel === 7" style="display: none;">
   <p class="text-base leading-6 text-gray-700">
-    Yes, you can ask questions on our <a class="text-indigo-600" href="https://discord.gg/7cpgPxv">Discord community</a>. We also offer paid consulting &mdash; <a class="text-indigo-600" href="mailto:samuel@tenancyforlaravel.com">just shoot us an email.</a>
+    Yes, you can ask questions on our <a class="text-indigo-600" href="https://discord.gg/7cpgPxv">Discord community</a>. We also offer paid consulting &mdash; <a class="text-indigo-600" href="/contact/">just shoot us an email.</a>
   </p>
 </dd>
 </div>
