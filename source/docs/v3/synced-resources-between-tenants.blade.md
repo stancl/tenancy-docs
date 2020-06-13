@@ -199,7 +199,7 @@ If you create more tenants and create the user in those tenants' databases, the 
 
 Creating the user inside a tenant's database will copy the resource 1:1 to the central database, including the unsynced columns (here they act as default values).
 
-## Attaching resources tenants
+## Attaching resources to tenants
 
 You can see that in the example above we're using the `TenantPivot` model for the BelongsToMany relationship. This lets us cascade synced resources from the central database to tenants:
 
