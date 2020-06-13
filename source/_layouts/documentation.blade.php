@@ -69,7 +69,14 @@
                             @include('_nav.menu', ['items' => $page->navigation[$page->version()]])
                         </nav>
                         <div class="markdown lg:pl-4 md:col-span-6 lg:col-span-4 col-span-8 pb-16 break-words" v-pre>
-                                @yield('content')
+                            @if($page->version() !== $page->defaultVersion)
+                                <div class="bg-yellow-50 border border-yellow-100 text-yellow-800 w-full px-4 py-3 rounded-lg">
+                                    You're looking at {{ $page->version() }} documentation. The current version is {{ $page->defaultVersion }}.
+                                    You can find the docs for the current version <a href="/docs/{{ $page->defaultVersion }}">here</a>.
+                                </div>
+                            @endif
+
+                            @yield('content')
                         </div>
                     </div>
                 </section>
