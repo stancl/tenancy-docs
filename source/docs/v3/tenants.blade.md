@@ -86,6 +86,15 @@ public static function getDataColumn(): string
 }
 ```
 
+Note that querying data inside the `data` column with `where()` will require that you do for example:
+```php
+where('data.foo', 'bar')
+```
+
+The data column is encoded/decoded only on model retrieval and saving.
+
+Also a good rule of thumb is that when you need to query the data with `WHERE` clauses, it should have a dedicated column. This will improve performance and you won't have to think about the `data.` prefixing.
+
 ## Running commands in the tenant context
 
 You may run commands in a tenant's context and then return to the previous context (be it central, or another tenant's) by passing a callable to the `run()` method on the tenant object. For example:
