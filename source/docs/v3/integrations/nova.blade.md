@@ -48,6 +48,16 @@ To use Nova inside of the tenant part of your application, do the following:
     with these lines:
 
     ```php
-    ->withAuthenticationRoutes(['web', 'tenancy'])
-    ->withPasswordResetRoutes(['web', 'tenancy'])
+    ->withAuthenticationRoutes([
+        // You can make this simpler by creating a tenancy route group
+        InitializeTenancyByDomain::class,
+        PreventAccessFromCentralDomains::class,
+        'web',
+    ])
+    ->withPasswordResetRoutes([
+        // You can make this simpler by creating a tenancy route group
+        InitializeTenancyByDomain::class,
+        PreventAccessFromCentralDomains::class,
+        'web',
+    ])
     ```
