@@ -27,13 +27,11 @@ If you would like to support me on a monthly basis in USD, you can use GitHub Sp
 
 ## One-time donations
 
-### PayPal
-
-You can donate here: [https://paypal.me/samuelstancl](https://paypal.me/samuelstancl)
-
 ### Credit card
 
 If you'd like to donate using credit/debit card, select the amount below and click *Donate*. You will be redirected to Stripe.
+
+This is the prefered method for one-time donations because it comes with **no fees at all** for either party.
 
 <select id="stripe-onetime-price" class="block form-select w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5">
     <option value="price_1GrLEBGlrejN28Vyt5SvEaaF">$5</option>
@@ -59,6 +57,10 @@ If you'd like to donate using credit/debit card, select the amount below and cli
 <button id="stripe-onetime" class="hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md">
     Donate
 </button>
+
+### PayPal
+
+You can donate here: [https://paypal.me/samuelstancl](https://paypal.me/samuelstancl)
 
 ### Bank transfer
 
