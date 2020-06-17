@@ -8,6 +8,10 @@ section: content
 
 > This hasn't been tested yet and might not be 100% right. It *should* work well, but note the todo at the bottom of the script for updating the `domains` table.
 
+Note that most of the package's code is different now, which means that you will have to update all of the places where you interact with the package's classes.
+
+That said, automatic tenancy will still work the same way.
+
 - Move all `_tenancy_` prefixed keys in tenant storage to `tenancy_` prefixed keys
 
     Run this **with 2.x code** (but put application down first, this will break your app and require that you update to 3.x immediately after). Of course make a backup of the DB first.
