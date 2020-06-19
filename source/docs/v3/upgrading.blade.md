@@ -20,6 +20,8 @@ That said, automatic tenancy will still work the same way.
 
     ```php
     use Stancl\Tenancy\Tenant;
+    use Illuminate\Support\Str; 
+
     tenancy()
         ->all()
         ->each(function (Tenant $tenant) {
