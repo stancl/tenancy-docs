@@ -65,7 +65,7 @@ That said, automatic tenancy will still work the same way.
             });
 
             Schema::table('domains', function (Blueprint $table) {
-                $table->increments('id')->before('domain');
+                $table->increments('id')->first();
                 $table->unique('domain');
                 $table->timestamps();
             });
