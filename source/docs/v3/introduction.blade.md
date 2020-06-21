@@ -27,10 +27,10 @@ This package lets you do both, though it focuses more on multi-database tenancy 
 
 ## Modes of multi-tenancy
 
-The tenancy "mode" is a unique property of this package. In previous versions, this package was intended primarily for [**automatic tenancy**]({{ $page->link('automatic-mode') }}), which means that after a tenant was identified, things like database connections, caches, filesystems, queues etc were switched to that tenant's context — his data completely isolated from the rest.
+The tenancy "mode" is a unique property of this package. In previous versions, this package was intended primarily for [automatic tenancy]({{ $page->link('automatic-mode') }}), which means that after a tenant was identified, things like database connections, caches, filesystems, queues etc were switched to that tenant's context — his data completely isolated from the rest.
 
-In the current version, we're also making [**manual tenancy**]({{ $page->link('manual-mode') }}) a first-class feature. We provide you with things like model traits if you wish to scope the data yourself.
+In the current version, we're also making [manual tenancy]({{ $page->link('manual-mode') }}) a first-class feature. We provide you with things like model traits if you wish to scope the data yourself.
 
 ## Tenant identification
 
-For your application to be tenant-aware, a tenant has to be identified. This package ships with a large number of identification middlewares. You may identify tenants by domain, subdomain, domain OR subdomain at the same time, path or request data.
+For your application to be tenant-aware, a [tenant has to be identified]({{ $page->link('tenant-identification') }}). This package ships with a large number of identification middlewares. You may identify tenants by domain, subdomain, domain OR subdomain at the same time, path or request data.
