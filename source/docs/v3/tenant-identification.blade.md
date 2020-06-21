@@ -40,7 +40,7 @@ The middleware for this method is `Stancl\Tenancy\Middleware\InitializeTenancyBy
 
 If you'd like to use subdomains and domains at the same time, use the `Stancl\Tenancy\Middleware\InitializeTenancyByDomainOrSubdomain` middleware.
 
-Records that contain **dots** in the `domain` column will be treated as subdomains and records that don't contain any dots will be treated as domains (hostnames).
+Records that contain **dots** in the `domain` column will be treated as domains/hostnames (eg. `foo.bar.com`) and records that don't contain any dots will be treated as subdomains (eg. `foo`).
 
 ## Path identification
 
