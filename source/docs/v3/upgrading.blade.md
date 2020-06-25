@@ -41,38 +41,70 @@ That said, automatic tenancy will still work the same way.
 
     ```
 
-- Add an `id` autoincrement column to `domains` table and retroactively generate the ids
-
-    (Note: You may want to make this part of a migration)
+- Create migration file with `php artisan make:migration upgrade_tenancy_package`
 
     ```php
-    use Illuminate\Support\Facades\Schema;
+    <?php
+
     use Illuminate\Support\Facades\DB;
+    use Illuminate\Support\Facades\Schema;
     use Illuminate\Database\Schema\Blueprint;
+    use Illuminate\Database\Migrations\Migration;
 
-    $domains = DB::table('domains')->get();
+    class UpgradeTenancyPackage extends Migration
+    {
+        /**
+         * Run the migrations.
+         *
+         * @return void
+         */
+        public function up()
+        {
+            Schema::table('domains', function (Blueprint $table) {
+                $table->dropPrimary();
+            });
 
-    Schema::table('domains', function (Blueprint $table) {
-        $table->unsignedBigInteger('id')->nullable();
-    });
+            Schema::table('domains', function (Blueprint $table) {
+                $table->increments('id')->first();
+                $table->unique('domain');
+                $table->timestamps();
+            });
 
-    $counter = 1;
-    foreach ($domains as $domain) {
-        DB::table('domains')
-            ->where('domain', $domain->domain)
-            ->update(['id' => $counter]);
-        $counter += 1;
+            Schema::table('tenants', function (Blueprint $table) {
+                $table->json('data')->nullable()->change();
+                $table->timestamps();
+            });
+
+            DB::table('domains')->update([
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+        }
+
+        /**
+         * Reverse the migrations.
+         *
+         * @return void
+         */
+        public function down()
+        {
+            Schema::table('domains', function (Blueprint $table) {
+                $table->dropColumn('id');
+                $table->dropUnique(['domain']);
+                $table->dropTimestamps();
+                $table->primary('domain');
+            });
+
+            Schema::table('tenants', function (Blueprint $table) {
+                $table->json('data')->nullable(false)->change();
+                $table->dropTimestamps();
+            });
+        }
     }
 
-    Schema::table('domains', function (Blueprint $table) {
-        $table->dropPrimary();
-    });
-    Schema::table('domains', function (Blueprint $table) {
-        $table->primary('id'); // todo: here we want to make it autoincrement, not just primary
-    });
     ```
 
 - Replace your Http Kernel with a stock version (copy it from laravel/laravel: [https://github.com/laravel/laravel/blob/master/app/Http/Kernel.php](https://github.com/laravel/laravel/blob/master/app/Http/Kernel.php)) and add back in any changes you made. The package now doesn't necessitate any Kernel changes, so remove all of the 2.x ones.
-- Delete config, publish it & the new files using `php artisan tenancy:install`
+- Delete config, publish it & the new files using `php artisan tenancy:install`. Register the new provider (see instructions on the [Installation]({{ $page->link('installation') }}) page)
 - Create Tenant model, as instructed on the [Tenants]({{ $page->link('tenants') }}) page
 - Update routes to use the correct middleware, see the [Routes]({{ $page->link('routes') }}) page

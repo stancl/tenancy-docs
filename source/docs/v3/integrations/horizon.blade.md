@@ -8,13 +8,20 @@ section: content
 
 Make sure your [queues]({{ $page->link('queues') }}) are configured correctly before using this.
 
-You may add the current tenant's id to your job tags:
+## Tags
+
+You may add the current tenant's id to your job tags by defining a `tags` method on the class:
 
 ```php
+/**
+* Get the tags that should be assigned to the job.
+*
+* @return array
+*/
 public function tags()
 {
     return [
-        'tenant' => tenant('id'),
+        'tenant:' . tenant('id'),
     ];
 }
 ```
