@@ -86,14 +86,14 @@ And redirect the user (or, presumably an "admin") to the route you created.
 // a concept of "primary domains" if you need them. Or maybe you use
 // one domain per tenant. The package lets you do anything you want.
 $domain = $tenant->primary_domain;
-return redirect("https://$domain/impersonate/$token");
+return redirect("https://$domain/impersonate/{$token->token}");
 ```
 
 ### Path identification
 
 ```jsx
 // Make sure you use the correct prefix for your routes.
-return redirect("{$tenant->id}/impersonate/$token");
+return redirect("{$tenant->id}/impersonate/{$token->token}");
 ```
 
 And that's it. The user will be redirected to your impersonation route, logged in as the impersonated user, and finally redirected to your redirect URL.
