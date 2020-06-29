@@ -9,7 +9,7 @@ section: content
 Require the package using composer:
 
 ```php
-composer require stancl/tenancy:3.x-dev
+composer require stancl/tenancy
 ```
 
 Then run the following command:
