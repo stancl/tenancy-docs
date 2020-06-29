@@ -6,8 +6,6 @@ section: content
 
 # Upgrading from 2.x
 
-> This hasn't been tested yet and might not be 100% right. It *should* work well, but note the todo at the bottom of the script for updating the `domains` table.
-
 Note that most of the package's code is different now, which means that you will have to update all of the places where you interact with the package's classes.
 
 That said, automatic tenancy will still work the same way.
