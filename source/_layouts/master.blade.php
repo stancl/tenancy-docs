@@ -9,7 +9,10 @@
   <meta property="og:description" content="{{ $page->siteDescription }}"/>
 
   <meta property="og:image" content="/assets/img/logo.png"/>
-  <meta property="twitter:image" content="/assets/img/logo.png"/>
+  <meta property="twitter:image" content="https://tenancyforlaravel.com/assets/img/logo.png"/>
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:site" content="@samuelstancl">
+  <meta property="twitter:title" content="{{ ($title ?? null) ? $title . ' | Tenancy for Laravel' : 'Tenancy for Laravel' }}">
   <meta property="og:type" content="website"/>
 
   <meta name="theme-color" content="#5850EC">
