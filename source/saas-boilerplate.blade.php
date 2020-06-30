@@ -529,6 +529,35 @@
 </dd>
 </div>
 </div>
+<div class="pt-6 mt-6 border-t border-gray-200">
+  <div>
+    <dt class="text-lg leading-7">
+      <button x-description="Expand/collapse question button"
+      @click="openPanel = (openPanel === 8 ? null : 8)"
+      class="flex items-start justify-between w-full text-left text-gray-400 focus:outline-none focus:text-gray-900"
+      x-bind:aria-expanded="openPanel === 8">
+      <span class="font-medium text-gray-900">
+        What setup does the boilerplate use?
+      </span>
+      <span class="flex items-center ml-6 h-7">
+        <svg class="w-6 h-6 transform rotate-0"
+        x-description="Expand/collapse icon, toggle classes based on question open state."
+        x-state-on="Open" x-state:on="Open" x-state-off="Closed" x-state:off="Closed"
+        :class="{ '-rotate-180': openPanel === 8, 'rotate-0': !(openPanel === 8) }"
+        x-bind-class="{ '-rotate-180': openPanel === 8, 'rotate-0': !(openPanel === 8) }"
+        stroke="currentColor" fill="none" viewBox="0 0 24 24" null="[object Object]">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </span>
+  </button>
+</dt>
+<dd class="pr-12 mt-2" x-show="openPanel === 8" style="display: none;">
+  <p class="text-base leading-6 text-gray-700">
+    Multi-domain multi-database tenancy. Customers get subdomains by default, can add their own 2nd level domains. Billing is done with Cashier Stripe, front-end is done with Tailwind CSS, occasional Alpine.js, and Livewire for some forms.
+  </p>
+</dd>
+</div>
+</div>
 </dl>
 </div>
 </div>
