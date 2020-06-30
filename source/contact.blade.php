@@ -5,10 +5,10 @@
   <div class="relative max-w-xl mx-auto">
     <div class="text-center">
       <h2 class="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-        Contact me
+        Contact us
       </h2>
       <p class="mt-4 text-lg leading-6 text-gray-500">
-        You can contact me if you need consulting, want to have your implementation audited, or want to discuss something.
+        You can contact us if you need consulting, want to have your implementation audited, or want to discuss something.
       </p>
       <p class="mt-4 text-lg leading-6 text-gray-500">
         You can also use email: <a class="text-indigo-700" href="mailto:samuel@tenancyforlaravel.com">samuel@tenancyforlaravel.com</a>.
