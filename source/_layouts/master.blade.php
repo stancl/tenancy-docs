@@ -9,6 +9,7 @@
   <meta property="og:description" content="{{ $page->siteDescription }}"/>
 
   <meta property="og:image" content="/assets/img/logo.png"/>
+  <meta property="twitter:image" content="/assets/img/logo.png"/>
   <meta property="og:type" content="website"/>
 
   <meta name="theme-color" content="#5850EC">
