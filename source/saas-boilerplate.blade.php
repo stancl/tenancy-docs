@@ -320,4 +320,220 @@
   </div>
 </div>
 
+
+<div class="bg-gray-50" x-data="{ openPanel: 1 }">
+  <div class="max-w-screen-xl px-4 py-12 mx-auto sm:py-16 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-extrabold leading-9 text-center text-gray-900 sm:text-4xl sm:leading-10">
+        Frequently asked questions
+      </h2>
+      <div class="pt-6 mt-6 border-t-2 border-gray-200">
+        <dl>
+          <div>
+            <dt class="text-lg leading-7">
+              <button x-description="Expand/collapse question button" @click="openPanel = (openPanel === 1 ? null : 1)"
+              class="flex items-start justify-between w-full text-left text-gray-400 focus:outline-none focus:text-gray-900"
+              x-bind:aria-expanded="openPanel === 1" aria-expanded="true">
+              <span class="font-medium text-gray-900">
+                Can I pay with PayPal/credit card?
+              </span>
+              <span class="flex items-center ml-6 h-7">
+                <svg class="w-6 h-6 transform -rotate-180"
+                x-description="Expand/collapse icon, toggle classes based on question open state." x-state-on="Open"
+                x-state:on="Open" x-state-off="Closed" x-state:off="Closed"
+                :class="{ '-rotate-180': openPanel === 1, 'rotate-0': !(openPanel === 1) }"
+                x-bind-class="{ '-rotate-180': openPanel === 1, 'rotate-0': !(openPanel === 1) }"
+                stroke="currentColor" fill="none" viewBox="0 0 24 24" null="[object Object]">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </span>
+          </button>
+        </dt>
+        <dd class="pr-12 mt-2" x-show="openPanel === 1">
+          <p class="text-base leading-6 text-gray-700">
+            Yes! Payments are processed using Gumroad which lets you pay with PayPal or a payment card.
+          </p>
+        </dd>
+      </div>
+      <div class="pt-6 mt-6 border-t border-gray-200">
+        <div>
+          <dt class="text-lg leading-7">
+            <button x-description="Expand/collapse question button"
+            @click="openPanel = (openPanel === 2 ? null : 2)"
+            class="flex items-start justify-between w-full text-left text-gray-400 focus:outline-none focus:text-gray-900"
+            x-bind:aria-expanded="openPanel === 2">
+            <span class="font-medium text-gray-900">
+              Can I get an invoice?
+            </span>
+            <span class="flex items-center ml-6 h-7">
+              <svg class="w-6 h-6 transform rotate-0"
+              x-description="Expand/collapse icon, toggle classes based on question open state."
+              x-state-on="Open" x-state:on="Open" x-state-off="Closed" x-state:off="Closed"
+              :class="{ '-rotate-180': openPanel === 2, 'rotate-0': !(openPanel === 2) }"
+              x-bind-class="{ '-rotate-180': openPanel === 2, 'rotate-0': !(openPanel === 2) }"
+              stroke="currentColor" fill="none" viewBox="0 0 24 24" null="[object Object]">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </span>
+        </button>
+      </dt>
+      <dd class="pr-12 mt-2" x-show="openPanel === 2" style="display: none;">
+        <p class="text-base leading-6 text-gray-700">
+          Sure! When you receive the payment confirmation from Gumroad, you'll see a <em>Generate invoice</em> button. Use that and add your company details. Also be sure to add your VAT ID during the payment, if you have one, to be billed without extra VAT.
+        </p>
+      </dd>
+    </div>
+  </div>
+  <div class="pt-6 mt-6 border-t border-gray-200">
+    <div>
+      <dt class="text-lg leading-7">
+        <button x-description="Expand/collapse question button"
+        @click="openPanel = (openPanel === 3 ? null : 3)"
+        class="flex items-start justify-between w-full text-left text-gray-400 focus:outline-none focus:text-gray-900"
+        x-bind:aria-expanded="openPanel === 3">
+        <span class="font-medium text-gray-900">
+          Do I need a Laravel Nova license?
+        </span>
+        <span class="flex items-center ml-6 h-7">
+          <svg class="w-6 h-6 transform rotate-0"
+          x-description="Expand/collapse icon, toggle classes based on question open state."
+          x-state-on="Open" x-state:on="Open" x-state-off="Closed" x-state:off="Closed"
+          :class="{ '-rotate-180': openPanel === 3, 'rotate-0': !(openPanel === 3) }"
+          x-bind-class="{ '-rotate-180': openPanel === 3, 'rotate-0': !(openPanel === 3) }"
+          stroke="currentColor" fill="none" viewBox="0 0 24 24" null="[object Object]">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </span>
+    </button>
+  </dt>
+  <dd class="pr-12 mt-2" x-show="openPanel === 3" style="display: none;">
+    <p class="text-base leading-6 text-gray-700">
+      Kind of. If you want to use the prepared Nova resources, yes. If you want to use a custom admin panel &mdash; nothing wrong with that. Simply delete the Nova files and write your admin panel.
+    </p>
+  </dd>
+</div>
+</div>
+<div class="pt-6 mt-6 border-t border-gray-200">
+  <div>
+    <dt class="text-lg leading-7">
+      <button x-description="Expand/collapse question button"
+      @click="openPanel = (openPanel === 4 ? null : 4)"
+      class="flex items-start justify-between w-full text-left text-gray-400 focus:outline-none focus:text-gray-900"
+      x-bind:aria-expanded="openPanel === 4">
+      <span class="font-medium text-gray-900">
+        Do you offer discounts/PPP?
+      </span>
+      <span class="flex items-center ml-6 h-7">
+        <svg class="w-6 h-6 transform rotate-0"
+        x-description="Expand/collapse icon, toggle classes based on question open state."
+        x-state-on="Open" x-state:on="Open" x-state-off="Closed" x-state:off="Closed"
+        :class="{ '-rotate-180': openPanel === 4, 'rotate-0': !(openPanel === 4) }"
+        x-bind-class="{ '-rotate-180': openPanel === 4, 'rotate-0': !(openPanel === 4) }"
+        stroke="currentColor" fill="none" viewBox="0 0 24 24" null="[object Object]">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </span>
+  </button>
+</dt>
+<dd class="pr-12 mt-2" x-show="openPanel === 4" style="display: none;">
+  <p class="text-base leading-6 text-gray-700">
+    If you're from a low-income country, yes. See the section about price parity below the pricing section. We want the boilerplate to help pay for the package's development, but if you <strong>need</strong> a discount to start building your project, we'll gladly give it to you.
+  </p>
+</dd>
+</div>
+</div>
+<div class="pt-6 mt-6 border-t border-gray-200">
+  <div>
+    <dt class="text-lg leading-7">
+      <button x-description="Expand/collapse question button"
+      @click="openPanel = (openPanel === 5 ? null : 5)"
+      class="flex items-start justify-between w-full text-left text-gray-400 focus:outline-none focus:text-gray-900"
+      x-bind:aria-expanded="openPanel === 5">
+      <span class="font-medium text-gray-900">
+        For how many sites can the boilerplate be used?
+      </span>
+      <span class="flex items-center ml-6 h-7">
+        <svg class="w-6 h-6 transform rotate-0"
+        x-description="Expand/collapse icon, toggle classes based on question open state."
+        x-state-on="Open" x-state:on="Open" x-state-off="Closed" x-state:off="Closed"
+        :class="{ '-rotate-180': openPanel === 5, 'rotate-0': !(openPanel === 5) }"
+        x-bind-class="{ '-rotate-180': openPanel === 5, 'rotate-0': !(openPanel === 5) }"
+        stroke="currentColor" fill="none" viewBox="0 0 24 24" null="[object Object]">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </span>
+  </button>
+</dt>
+<dd class="pr-12 mt-2" x-show="openPanel === 5" style="display: none;">
+  <p class="text-base leading-6 text-gray-700">
+    The boilerplate is not bound to a specific site. It's simply yours. When you have access to it, you can use it to build your products. Just don't share it with third parties.
+  </p>
+</dd>
+</div>
+</div>
+<div class="pt-6 mt-6 border-t border-gray-200">
+  <div>
+    <dt class="text-lg leading-7">
+      <button x-description="Expand/collapse question button"
+      @click="openPanel = (openPanel === 6 ? null : 6)"
+      class="flex items-start justify-between w-full text-left text-gray-400 focus:outline-none focus:text-gray-900"
+      x-bind:aria-expanded="openPanel === 6">
+      <span class="font-medium text-gray-900">
+        Can I use Mollie/Paddle/...?
+      </span>
+      <span class="flex items-center ml-6 h-7">
+        <svg class="w-6 h-6 transform rotate-0"
+        x-description="Expand/collapse icon, toggle classes based on question open state."
+        x-state-on="Open" x-state:on="Open" x-state-off="Closed" x-state:off="Closed"
+        :class="{ '-rotate-180': openPanel === 6, 'rotate-0': !(openPanel === 6) }"
+        x-bind-class="{ '-rotate-180': openPanel === 6, 'rotate-0': !(openPanel === 6) }"
+        stroke="currentColor" fill="none" viewBox="0 0 24 24" null="[object Object]">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </span>
+  </button>
+</dt>
+<dd class="pr-12 mt-2" x-show="openPanel === 6" style="display: none;">
+  <p class="text-base leading-6 text-gray-700">
+    Yes, you can use anything you want. The boilerplate comes with defaults to get you up & running as quickly as possible, but you can change every single part of it.
+  </p>
+</dd>
+</div>
+</div>
+<div class="pt-6 mt-6 border-t border-gray-200">
+  <div>
+    <dt class="text-lg leading-7">
+      <button x-description="Expand/collapse question button"
+      @click="openPanel = (openPanel === 7 ? null : 7)"
+      class="flex items-start justify-between w-full text-left text-gray-400 focus:outline-none focus:text-gray-900"
+      x-bind:aria-expanded="openPanel === 7">
+      <span class="font-medium text-gray-900">
+        What's the difference between the two licenses?
+      </span>
+      <span class="flex items-center ml-6 h-7">
+        <svg class="w-6 h-6 transform rotate-0"
+        x-description="Expand/collapse icon, toggle classes based on question open state."
+        x-state-on="Open" x-state:on="Open" x-state-off="Closed" x-state:off="Closed"
+        :class="{ '-rotate-180': openPanel === 7, 'rotate-0': !(openPanel === 7) }"
+        x-bind-class="{ '-rotate-180': openPanel === 7, 'rotate-0': !(openPanel === 7) }"
+        stroke="currentColor" fill="none" viewBox="0 0 24 24" null="[object Object]">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </span>
+  </button>
+</dt>
+<dd class="pr-12 mt-2" x-show="openPanel === 7" style="display: none;">
+  <p class="text-base leading-6 text-gray-700">
+    The <strong>Standard</strong> license is for smaller companies making &lt; 60 000 USD in annual revenue. The <strong>Enterprise</strong> license is for companies making more than that, or companies that want priority support.
+  </p>
+</dd>
+</div>
+</div>
+</dl>
+</div>
+</div>
+</div>
+</div>
+
+
 @endsection
