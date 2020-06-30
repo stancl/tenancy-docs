@@ -144,7 +144,7 @@
           We try to make the boilerplate affordable for small startups, while also providing premium services for enterprise clients.
         </p>
         <p class="mt-2 text-xl leading-7 text-gray-300">
-          One time payment.
+          One time payment. Save tens of hours of development time and focus on your application, not boilerplate.
         </p>
       </div>
     </div>
@@ -215,7 +215,7 @@
                 </li>
               </ul>
               <div class="mt-6 rounded-md shadow">
-                <a href="https://gumroad.com/l/saas-boilerplate/launch-website" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out" aria-describedby="tier-standard">
+                <a target="_blank" href="https://gumroad.com/l/saas-boilerplate/launch-website" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out" aria-describedby="tier-standard">
                   Details
                 </a>
               </div>
@@ -282,7 +282,7 @@
                 </li>
               </ul>
               <div class="mt-6 rounded-md shadow">
-                <a href="https://gumroad.com/l/saas-boilerplate-enterprise/launch-website" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out" aria-describedby="tier-enterprise">
+                <a target="_blank" href="https://gumroad.com/l/saas-boilerplate-enterprise/launch-website" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out" aria-describedby="tier-enterprise">
                   Details
                 </a>
               </div>
@@ -319,7 +319,5 @@
     </div>
   </div>
 </div>
-
-<script type="text/javascript" src="https://gumroad.com/js/gumroad.js"></script>
 
 @endsection
