@@ -112,21 +112,21 @@
 <h2 class="mt-16 text-center text-xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
   User settings
 </h2>
-<div class="mt-8 flex justify-center">
+<div class="mt-8 flex items-center justify-center">
   <img class="w-3/4" alt="User settings" src="https://i.imgur.com/1Ddn2q6.png">
 </div>
 
 <h2 class="mt-16 text-center text-xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
   Tenant-aware test suite
 </h2>
-<div class="mt-8 flex justify-center">
+<div class="mt-8 flex items-center justify-center">
   <img class="w-3/4" alt="Tenant-aware test suite" src="https://i.imgur.com/pgG0ctW.png">
 </div>
 
 <h2 class="mt-16 text-center text-xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
   Nova resources
 </h2>
-<div class="mt-8 flex justify-center">
+<div class="mt-8 flex items-center justify-center">
   <img class="w-3/4" alt="Nova resources" src="https://i.imgur.com/lwJaO0q.png">
 </div>
 
