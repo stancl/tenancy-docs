@@ -27,7 +27,8 @@ class TestCase // extends ...
 
     public function setUp(): void
     {
-    	parent::setUp();
+        parent::setUp();
+
         if ($this->tenancy) {
             $this->initializeTenancy();
         }
