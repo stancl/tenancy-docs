@@ -15,10 +15,8 @@ We recommend following this tutorial just **to get things working** so that you 
 First, require the package using composer:
 
 ```php
-composer require stancl/tenancy:3.x-dev
+composer require stancl/tenancy
 ```
-
-After stable 3.x is released, update your version constraint by running `composer require stancl/tenancy:^3.0`
 
 Then, run the `tenancy:install` command:
 
