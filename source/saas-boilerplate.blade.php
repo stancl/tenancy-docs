@@ -82,7 +82,7 @@
           <h5 class="text-lg leading-6 font-medium text-gray-900">Ploi integration
           </h5>
           <p class="mt-2 text-base leading-6 text-gray-600">
-            Integration with <a href="https://ploi.io/?ref=tenancyforlaravel.com" class="text-indigo-600 hover:text-indigo-500">ploi.io</a>. Automatic creation of vhosts and HTTPS certificates when customers add domains. <em>(Coming by the end of the week.)</em>
+            Integration with <a href="https://ploi.io/?ref=tenancyforlaravel.com" class="text-indigo-600 hover:text-indigo-500">ploi.io</a>. Automatic creation of vhosts and HTTPS certificates when customers add domains.
           </p>
         </div>
       </div>
