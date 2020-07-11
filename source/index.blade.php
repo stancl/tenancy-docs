@@ -51,7 +51,7 @@ width="640" height="784" fill="none" viewBox="0 0 640 784">
 <span class="text-blue-100">// Create a tenant</span>
 $tenant = Tenant::create();
 $tenant-&gt;createDomain([
-'domain' => 'acme.com',
+  'domain' => 'acme.com',
 ]);
 
 <span class="text-blue-100">// Write your app like you're used to</span>
