@@ -206,7 +206,7 @@ You can see that in the example above we're using the `TenantPivot` model for th
 ```php
 $user = CentralUser::create(...);
 
-$user->attach($tenant);
+$user->tenants()->attach($tenant);
 ```
 
 Attaching a tenant to a user will copy even the unsynced columns (they act as default values), similarly to how creating the user inside the tenant's database will copy the tenant to the central database 1:1.
