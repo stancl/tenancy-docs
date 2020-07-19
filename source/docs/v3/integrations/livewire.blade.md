@@ -24,4 +24,4 @@ to this:
 
 Now you can use Livewire both in the central app and the tenant app.
 
-Also make sure to enable [universal routes]({{ $page->link('features/universal-routes') }})
+Also make sure to enable [universal routes]({{ $page->link('features/universal-routes') }}).

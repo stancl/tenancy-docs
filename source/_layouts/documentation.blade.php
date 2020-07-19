@@ -12,6 +12,10 @@
         <meta property="og:url" content="{{ $page->getUrl() }}"/>
         <meta property="og:image" content="/assets/img/logo.png"/>
         <meta property="og:type" content="website"/>
+        <meta property="twitter:image" content="https://tenancyforlaravel.com/assets/img/logo.png"/>
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:site" content="@samuelstancl">
+        <meta property="twitter:title" content="{{ ($title ?? null) ? $title . ' | Tenancy for Laravel' : 'Tenancy for Laravel' }}">
 
         <meta name="theme-color" content="#5850EC">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
