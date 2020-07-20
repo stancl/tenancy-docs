@@ -209,6 +209,7 @@ return [
                 ],
                 'Console commands' => 'console-commands',
                 'Cached lookup' => 'cached-lookup',
+                'Real-time facades' => 'realtime-facades',
             ],
         ],
     ],
