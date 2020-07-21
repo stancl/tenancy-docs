@@ -4,6 +4,6 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Multi database tenancy  {#multi-database-tenancy}
+# Multi-database tenancy {#multi-database-tenancy}
 
 TODO
