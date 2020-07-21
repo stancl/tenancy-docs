@@ -4,7 +4,7 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Synced resources between tenants {synced-resources-between-tenants}
+# Synced resources between tenants {#synced-resources-between-tenants}
 
 If you'd like to share certain resources, usually users, between tenant databases, you can use our resource syncing feature. This will let you **sync specific columns between specific tenant databases and the central database.**
 
@@ -30,7 +30,7 @@ An important requirement of the `Syncable` interface is the `getSyncedAttributeN
 
 The resource needs to have the same global ID in the central database and in tenant databases.
 
-## How it works [#how-it-works]
+## How it works {#how-it-works}
 
 Let's write an example implementation:
 

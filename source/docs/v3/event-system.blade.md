@@ -28,7 +28,7 @@ $this->tenancy->initialize($tenant);
 
 Again, all of the above is configurable. You might even disable all tenancy bootstrappers, and just use tenant identification and scope your app manually around the tenant stored in `Stancl\Tenancy\Tenancy`. The choice is yours.
 
-# TenancyServiceProvider {#tenancyservice}
+# TenancyServiceProvider {#tenancyserviceprovider}
 
 This package comes with a very convenient service provider that's added to your application when you install the package. This service provider is used for mapping listeners to events specific to the package and is the place where you should put any tenancy-specific service container calls — to not pollute your AppServiceProvider.
 
@@ -52,7 +52,7 @@ The `JobPipeline` is a simple, yet **extremely powerful** class that lets you **
 
 You may use a job pipeline like any other listener, so you can register it in the `TenancyServiceProvider`, `EventServiceProvider` using the `$listen` array, or in any other place using `Event::listen()` — up to you.
 
-## Creating job pipelines
+## Creating job pipelines {creating-job-pipelines}
 
 To create a job pipeline, start by specifying the jobs you want to use:
 

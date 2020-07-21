@@ -59,7 +59,7 @@ Listing all tenants.
 [Tenant] id: 49670df0-1a87-11e9-b7ba-cf5353777957 @ dev.localhost
 ```
 
-## **Selectively clearing tenant cache** {#selectively clearing tenant cache}
+## **Selectively clearing tenant cache** {#selectively-clearing-tenant-cache}
 
 You can delete specific tenants' cache by using the `--tags` option on `cache:clear`:
 
