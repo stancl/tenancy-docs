@@ -4,7 +4,7 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Livewire
+# Livewire {#livewire}
 
 Open the `config/livewire.php` file and change this:
 

@@ -4,7 +4,7 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Upgrading from 2.x
+# Upgrading from 2.x {upgrading-from-2.x}
 
 Note that most of the package's code is different now, which means that you will have to update all of the places where you interact with the package's classes.
 

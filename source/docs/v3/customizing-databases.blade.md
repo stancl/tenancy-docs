@@ -4,13 +4,13 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Customizing databases
+# Customizing databases {#customizing-databases}
 
 You may customize how a tenant's DB connection is constructed by storing specific internal keys on the tenant.
 
 If you changed the internal prefix on the tenant model, then use that instead of `tenancy_`.
 
-## Specifying database names
+## Specifying database names {#specifying-database-names}
 
 You may specify the tenant's database name by setting the `tenancy_db_name` key when creating the tenant.
 
@@ -32,7 +32,7 @@ Tenant::create([
 ]);
 ```
 
-## Specifying database credentials
+## Specifying database credentials {#specifying-database-credentials}
 
 Database user & password are only created when you use the permission controlled MySQL database manager. See the database config for more info. 
 
@@ -49,11 +49,11 @@ The user will be given the grants specified in the `PermissionControlledMySQLDat
 
 Note that you don't want to grant the users the ability to grant themselves more grants.
 
-## Specifying template connections
+## Specifying template connections {#specifying-the-template-connections}
 
 To specify the connection that should be used to construct this tenant's database connection (the array like you'd find in `config/database.php`, set the `tenancy_db_connection` key. Otherwise, the connection whose name is in the `tenancy.database.template_connection` config will be used. If that key is null, the central connection will be used.
 
-## Specifying other connection details
+## Specifying other connection details {#specifyng-other-connection-details}
 
 You may also set specific connection details without necessarily creating a new connection. The final "connection array" will be constructed by merging the following:
 

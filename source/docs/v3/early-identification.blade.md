@@ -4,7 +4,7 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Early identification
+# Early identification {#early-identification}
 
 A slight "gotcha" with using the automatic approach to transition the application's context based on a route middleware is that **route-level middleware is executed after controller constructors.**
 
@@ -12,7 +12,7 @@ The implication of this is if you're using dependency injection to inject some s
 
 There are two ways to solve it, the former of which is preferable.
 
-## Not using constructor DI
+## Not using constructor DI {#not-using-constructor-di}
 
 You can inject dependencies in route **actions**, meaning: If you have a route that binds a `Post` model, you can still inject dependencies like this:
 
@@ -58,7 +58,7 @@ class PostController
 }
 ```
 
-## Using a more complex middleware setup
+## Using a more complex middleware setup {#using-a-more-complex-middleware-setup}
 
 > Note: There's a new MW in v3 for preventing access from central domains. v2 was doing this a bit differently.
 

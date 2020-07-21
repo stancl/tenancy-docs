@@ -4,11 +4,11 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Laravel Horizon
+# Laravel Horizon {#laravel-horizon}
 
 Make sure your [queues]({{ $page->link('queues') }}) are configured correctly before using this.
 
-## Tags
+## Tags {#tags}
 
 You may add the current tenant's id to your job tags by defining a `tags` method on the class:
 

@@ -5,7 +5,7 @@ section: content
 ---
 
 
-# Manual mode
+# Manual mode {#manual-mode}
 
 > See: [Automatic mode]({{ $page->link('automatic-mode') }})
 

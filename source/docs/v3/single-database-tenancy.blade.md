@@ -4,7 +4,7 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Single-database tenancy
+# Single-database tenancy {#single-database-tenancy}
 
 Single-database tenancy comes with lower devops complexity, but larger code complexity than multi-database tenancy, since you have to scope things manually, and won't be able to integrate some third-party packages.
 
@@ -16,7 +16,7 @@ You can still use the other [tenancy bootstrappers]({{ $page->link('tenancy-boot
 
 Also make sure you have disabled the database creation jobs (`CreateDatabase`, `MigrateDatabase`, `SeedDatabase` ...) from listening to the `TenantCreated` event.
 
-# Concepts
+# Concepts {#concepts}
 
 In single-database tenancy, there are 4 types of models:
 
@@ -86,9 +86,9 @@ class Comment extends Model
 
 And this will automatically scope the `Comment::all()` call to the current tenant. Note that the limitation of this is that you **need to be able to define a relationship to a primary model**, so if you need to do this on the "Vote" in ***Vote** belongsTo **Comment** belongsTo **Post** belongsTo **Tenant**,* you need to define some strange relationship. Laravel supports `HasOneThrough`, but not `BelongsToThrough`, so you'd need to do some hacks around that. For that reason, I recommend avoiding these `Comment::all()`-type queries altogether.
 
-# Database considerations
+# Database considerations {#database-considerations}
 
-### Unique indexes
+### Unique indexes {unique-indexes}
 
 If you'd have a unique index such as:
 
@@ -112,7 +112,7 @@ $table->unique(['post_id', 'user_id']);
 
 TODO: Unique constraints, validation, mention that eloquent models will be scoped, but DB calls won't
 
-### Validation
+### Validation {#validations}
 
 The `unique` and `exists` validation rules of course aren't scoped to the current tenant, so you need to scope them manually like this:
 
@@ -136,7 +136,7 @@ $rules = [
 ]
 ```
 
-### Low-level database queries
+### Low-level database queries {#low-level-database-queries}
 
 And the final thing to keep in mind is that `DB` facade calls, or any other types of direct database queries, of course won't be scoped to the current tenant.
 
@@ -144,11 +144,11 @@ The package can only provide scoping logic for the abstraction logic that Eloque
 
 Be careful with using them.
 
-## Making global queries
+## Making global queries {#making-global-queries}
 
 To disable the tenant scope, simply add `withoutTenancy()` to your query.
 
-## Customizing the column name
+## Customizing the column name {#customizing-the-column-name}
 
 If you'd like to customize the column name to use e.g. `team_id` instead of `tenant_id` — if that makes more sense given your business terminology — you can do that by setting this static property in a service provider or some such class:
 

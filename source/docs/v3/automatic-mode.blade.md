@@ -4,7 +4,7 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Automatic mode
+# Automatic mode {#automatic-mode}
 
 By default, the package bootstraps tenancy automatically in the background. This means that when a tenant is identified (usually using middleware), the default database/cache/filesystem/etc is switched to that tenant's context. You can read more about this on the [Tenancy bootstrappers]({{ $page->link('tenancy-bootstrappers') }}) page.
 

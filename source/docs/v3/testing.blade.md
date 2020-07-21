@@ -4,15 +4,15 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Testing
+# Testing {#testing}
 
 TODO: Review
 
-## Central app
+## Central app {#central-app}
 
 To test your central app, just write normal Laravel tests.
 
-## Tenant app
+## Tenant app {#central-app}
 
 Note: If you're using multi-database tenancy & the automatic mode, it's not possible to use `:memory:` SQLite databases or the `RefreshDatabase` trait due to the switching of default database.
 

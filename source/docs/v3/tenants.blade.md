@@ -4,7 +4,7 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Tenants
+# Tenants {#tenants}
 
 A tenant can be any model that implements the `Stancl\Tenancy\Contracts\Tenant` interface.
 
@@ -46,7 +46,7 @@ If you want to customize the `Domain` model, you can do that too.
 
 **If you don't need domains or databases, ignore the steps above.** Everything will work just as well.
 
-## Creating tenants
+## Creating tenants {#creating-tenants}
 
 You can create tenants like any other models:
 
@@ -58,7 +58,7 @@ $tenant = Tenant::create([
 
 After the tenant is created, an event will be fired. This will result in things like the database being created and migrated, depending on what jobs listen to the event.
 
-## Custom columns
+## Custom columns {#custom-columns}
 
 Attributes of the tenant model which don't have their own column will be stored in the `data` JSON column.
 
@@ -95,7 +95,7 @@ The data column is encoded/decoded only on model retrieval and saving.
 
 Also a good rule of thumb is that when you need to query the data with `WHERE` clauses, it should have a dedicated column. This will improve performance and you won't have to think about the `data.` prefixing.
 
-## Running commands in the tenant context
+## Running commands in the tenant context {#running-commands-in-the-tenant-context}
 
 You may run commands in a tenant's context and then return to the previous context (be it central, or another tenant's) by passing a callable to the `run()` method on the tenant object. For example:
 
@@ -105,21 +105,21 @@ $tenant->run(function () {
 });
 ```
 
-## Internal keys
+## Internal keys {#internal-keys}
 
 Keys that start with the internal prefix (`tenancy_` by default, but you can customize this by overriding the `internalPrefix()` method) are for internal use, so don't start any attribute/column names with that.
 
-## Events
+## Events {#events}
 
 The `Tenant` model dispatches Eloquent events, all of which have their own respective class. You can read more about this on the [Event system]({{ $page->link('event-system') }}) page.
 
-## Accessing the current tenant
+## Accessing the current tenant {#accessing-the-current-tenant}
 
 You may access the current tenant using the `tenant()` helper. You can also pass an argument to get an attribute from that tenant model, e.g. `tenant('id')`.
 
 Alternatively, you may typehint the `Stancl\Tenancy\Contracts\Tenant` interface to inject the model using the service container.
 
-## Incrementing IDs
+## Incrementing IDs {#incrementing-ids}
 
 By default, the migration uses `string` for the `id` column, and the model generates UUIDs when you don't supply an `id` during tenant creation.
 

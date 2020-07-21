@@ -4,13 +4,13 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Quickstart Tutorial
+# Quickstart Tutorial {#quickstart-tutorial}
 
 This tutorial focuses on getting you started with stancl/tenancy 3.x quickly. It implements multi-database tenancy & domain identification. If you need a different implementation, then **that's absolutely possible with this package** and it's very easy to refactor to a different implementation.
 
 We recommend following this tutorial just **to get things working** so that you can play with the package. Then if you need to, you can refactor the details of the multi-tenancy implementation (e.g. single-database tenancy, request data identification, etc).
 
-## Installation
+## Installation {#installation}
 
 First, require the package using composer:
 
@@ -46,7 +46,7 @@ App\Providers\RouteServiceProvider::class,
 App\Providers\TenancyServiceProvider::class, // <-- here
 ```
 
-## Creating a tenant model
+## Creating a tenant model {#creating-a-tenant-model}
 
 Now you need to create a Tenant model. The package comes with a default Tenant model that has many features, but it attempts to be mostly unopinonated and as such, we need to create a custom model to use domains & databases. Create `App\Tenant` like this:
 
@@ -74,13 +74,13 @@ Now we need to tell the package to use this custom model:
 'tenant_model' => \App\Tenant::class,
 ```
 
-## Events
+## Events {#events}
 
 The defaults will work out of the box here, but a short explanation will be useful. The `TenancyServiceProvider` file in your `app/Providers` directory maps tenancy events to listeners. By default, when a tenant is created, it runs a `JobPipeline` (a smart thing that's part of this package) which makes sure that the `CreateDatabase`, `MigrateDatabase` and optionally other jobs (e.g. `SeedDatabase`) are ran sequentially.
 
 In other words, it creates & migrates the tenant's database after he's created — and it does this in the correct order, because normal event-listener mapping would execute the listeners in some stupid order that would result in things like the database being migrated before it's created, or seeded before it's migrated.
 
-## Central routes
+## Central routes {#central-routes}
 
 We'll make a small change to the `app/Providers/RouteServiceProvider.php` file. Specifically, we'll make sure that central routes are registered on central domains only. 
 
@@ -112,7 +112,7 @@ protected function centralDomains(): array
 }
 ```
 
-## Central domains
+## Central domains {#central-domains}
 
 Now we need to actually specify the central domains. A central domain is a domain that serves your "central app" content, e.g. the landing page where tenants sign up. Open the `config/tenancy.php` file and add them in:
 
@@ -122,7 +122,7 @@ Now we need to actually specify the central domains. A central domain is a domai
 ],
 ```
 
-## Tenant routes
+## Tenant routes {#tenant-routes}
 
 Your tenant routes will look like this by default:
 
@@ -149,11 +149,11 @@ Route::get('/', function () {
 });
 ```
 
-## Migrations
+## Migrations {#migrations}
 
 To have users in tenant databases, let's move the `users` table migration to `database/migrations/tenant`. This will prevent the table from being created in the central database, and it will be instead created in the tenant database when a tenant is created — thanks to our event setup.
 
-## Creating tenants
+## Creating tenants {#creating-tenants}
 
 For testing purposes, we'll create a tenant in `tinker` — no need to waste time creating controllers and views for now.
 
@@ -174,6 +174,6 @@ App\Tenant::all()->runForEach(function () {
 });
 ```
 
-## Trying it out
+## Trying it out {#trying-it-out}
 
 Now we visit `foo.localhost` in our browser and we should see a dump of the users table where we see some user. If we visit `bar.localhost`, we should see a different user.

@@ -4,7 +4,7 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Tenant identification
+# Tenant identification {#tenant-identification}
 
 The package lets you identify tenants using the following methods:
 
@@ -18,7 +18,7 @@ However, **you're free to write additional tenant resolvers.**
 
 All of the identification methods mentioned above come with their own middleware. You can read more about each identification method below.
 
-## Domain identification
+## Domain identification {#domain-identification}
 
 To use this identification method, make sure your tenant model uses the `HasDomains` trait.
 
@@ -28,7 +28,7 @@ The relationship is `Tenant hasMany Domain`. Store the hostnames in the `domain`
 
 This identification method comes with the `Stancl\Tenancy\Middleware\InitializeTenancyByDomain` middleware.
 
-## Subdomain identification
+## Subdomain identification {#subdomain-identification}
 
 This is the exact same as domain identification, except you store the subdomains in the `domain` column of the `domains` table.
 
@@ -36,13 +36,13 @@ The benefit of this approach rather than storing the subdomain's full hostname i
 
 The middleware for this method is `Stancl\Tenancy\Middleware\InitializeTenancyBySubdomain`.
 
-## Combined domain/subdomain identification
+## Combined domain/subdomain identification {#combined-domain/subdomain-identification}
 
 If you'd like to use subdomains and domains at the same time, use the `Stancl\Tenancy\Middleware\InitializeTenancyByDomainOrSubdomain` middleware.
 
 Records that contain **dots** in the `domain` column will be treated as domains/hostnames (eg. `foo.bar.com`) and records that don't contain any dots will be treated as subdomains (eg. `foo`).
 
-## Path identification
+## Path identification {#path-identification}
 
 Some applications will want to use a single domain, but use paths to identify the tenant. This would be when you want customers to use your branded product rather than giving them a whitelabel product that they can use on their own domains.
 
@@ -61,7 +61,7 @@ Route::group([
 
 If you'd like to customize the name of the argument (e.g. use `team` instead of `tenant`, look into the middleware for the public static property).
 
-## Request data identification
+## Request data identification {#request-data-identification}
 
 You might want to identify tenants based on request data (headers or query parameters). Applications with SPA frontends and API backends may want to use this approach.
 
@@ -93,11 +93,11 @@ use Stancl\Tenancy\Middleware\InitializeTenancyByRequestData;
 InitializeTenancyByRequestData::$queryParameter = null;
 ```
 
-## Manually identifying tenants
+## Manually identifying tenants {#manually-identifying-tenants}
 
 See the [manual initialization page]({{ $page->link('manual-initialization') }}) to see how to identify tenants manually.
 
-## Customizing onFail logic
+## Customizing onFail logic {#customizing-onfail-logic}
 
 Each identification middleware has a static `$onFail` property that can be used to customize the behavior that should happen when a tenant couldn't be identified.
 

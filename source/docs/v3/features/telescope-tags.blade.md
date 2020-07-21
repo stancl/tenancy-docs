@@ -4,6 +4,6 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Telescope tags
+# Telescope tags {#telescope-tags}
 
 TODO
