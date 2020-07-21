@@ -37,7 +37,7 @@ If you wish to use autoincrement ids instead of uuids:
 1. set this config key to null, or create a custom tenant model that doesn't use this trait
 2. update the `tenants` table migration to use an incrementing column type instead of `string`
 
-### Domain model {3domain-model}
+### Domain model {#domain-model}
 
 `tenancy.domain_model`
 

@@ -38,7 +38,7 @@ Note that you can register listeners to this package's events **anywhere you wan
 Event::listen(TenancyInitialized::class, BootstrapTenancy::class);
 ```
 
-# Bootstrapping tenancy [#bootstrapping-tenancy]
+# Bootstrapping tenancy {#bootstrapping-tenancy}
 
 By default, the `BootstrapTenancy` class is listening to the `TenancyInitialized` event (exactly as you can see in the example above). That listener will execute the configured tenancy bootstrappers to transition the application into the tenant's context. You can read more about this on the [tenancy bootstrappers]({{ $page->link('tenancy-bootstrappers') }}) page.
 

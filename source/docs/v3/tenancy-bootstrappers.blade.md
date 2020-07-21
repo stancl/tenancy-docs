@@ -49,7 +49,7 @@ You can read more about this on the *Queues* page:
 
 [Queues]({{ $page->link('queues') }})
 
-## Redis tenancy bootstrapper {#resis-tenancy-bootstrapper}
+## Redis tenancy bootstrapper {#redis-tenancy-bootstrapper}
 
 If you're using `Redis` calls (not cache calls, **direct** Redis calls) inside the tenant app, you will want to scope Redis data too. To do this, use this bootstrapper. It changes the Redis prefix for each tenant.
 

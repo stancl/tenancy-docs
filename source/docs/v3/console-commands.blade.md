@@ -50,7 +50,7 @@ If your command's signature were `email:send {--queue} {--subject=} {body}`, yo
 php artisan tenants:run email:send --tenants=8075a580-1cb8-11e9-8822-49c5d8f8ff23 --option="queue=1" --option="subject=New Feature" --argument="body=We have launched a new feature. ..."
 ```
 
-## **Tenant list** {#teant-list}
+## **Tenant list** {#tenant-list}
 
 ```
 php artisan tenants:list
