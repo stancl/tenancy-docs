@@ -5,7 +5,7 @@ section: content
 ---
 
 
-# Event system
+# Event system {#event-system}
 
 This package is heavily based around events, which makes it incredibly flexible.
 
@@ -28,7 +28,7 @@ $this->tenancy->initialize($tenant);
 
 Again, all of the above is configurable. You might even disable all tenancy bootstrappers, and just use tenant identification and scope your app manually around the tenant stored in `Stancl\Tenancy\Tenancy`. The choice is yours.
 
-# TenancyServiceProvider
+# TenancyServiceProvider {#tenancyserviceprovider}
 
 This package comes with a very convenient service provider that's added to your application when you install the package. This service provider is used for mapping listeners to events specific to the package and is the place where you should put any tenancy-specific service container calls — to not pollute your AppServiceProvider.
 
@@ -38,13 +38,13 @@ Note that you can register listeners to this package's events **anywhere you wan
 Event::listen(TenancyInitialized::class, BootstrapTenancy::class);
 ```
 
-# Bootstrapping tenancy
+# Bootstrapping tenancy {#bootstrapping-tenancy}
 
 By default, the `BootstrapTenancy` class is listening to the `TenancyInitialized` event (exactly as you can see in the example above). That listener will execute the configured tenancy bootstrappers to transition the application into the tenant's context. You can read more about this on the [tenancy bootstrappers]({{ $page->link('tenancy-bootstrappers') }}) page.
 
 Conversely, when the `TenancyEnded` event fires, the `RevertToCentralContext` event transitions the app back into the central context.
 
-# Job pipelines
+# Job pipelines {#job-pipelines}
 
 You may want to use job pipelines even in projects that don't use this package — we think they're a cool concept so they're extracted into a separate package: [github.com/stancl/jobpipeline](https://github.com/stancl/jobpipeline)
 
@@ -52,7 +52,7 @@ The `JobPipeline` is a simple, yet **extremely powerful** class that lets you **
 
 You may use a job pipeline like any other listener, so you can register it in the `TenancyServiceProvider`, `EventServiceProvider` using the `$listen` array, or in any other place using `Event::listen()` — up to you.
 
-## Creating job pipelines
+## Creating job pipelines {creating-job-pipelines}
 
 To create a job pipeline, start by specifying the jobs you want to use:
 
@@ -121,13 +121,13 @@ Event::listen(TenantCreated::class, JobPipeline::make([
 
 Note that you can use job pipelines even for converting single jobs to event listeners. That's useful if you have some logic in job classes and don't want to create listener classes just to be able to run these jobs as a result of an event being fired.
 
-# Available events
+# Available events {#available-events}
 
 Note: Some database events (`DatabaseMigrated`, `DatabaseSeeded`, `DatabaseRolledback` and possibly others) are **fired in the tenant context.** Depending on how your application bootstraps tenancy, you might need to be specific about interacting with the central database in these events' listeners — that is, if you need to.
 
 Note: All events are located in the `Stancl\Tenancy\Events` namespace.
 
-### **Tenancy**
+### **Tenancy** {#tenancy}
 
 - `InitializingTenancy`
 - `TenancyInitialized`
@@ -140,7 +140,7 @@ Note: All events are located in the `Stancl\Tenancy\Events` namespace.
 
 Note the difference between *initializing tenancy and bootstrapping* tenancy. Tenancy is initialized when a tenant is loaded into the `Tenancy` object. Whereas boostrapping happens **as a result of initialization** — if you're using automatic tenancy, the `BootstrapTenancy` class is listening to the `TenancyInitialized` event and after it's done executing bootstrappers, it fires an event saying that tenancy was bootstrapped. You want to use the bootstrapped event if you want to execute something **after the app has been transitioned to the tenant context.**
 
-### Tenant
+### Tenant {#tenant}
 
 The following events are dispatched as a result of Eloquent events being fired in the default `Tenant` implementation (the most often used events are bold):
 
@@ -153,7 +153,7 @@ The following events are dispatched as a result of Eloquent events being fired i
 - `DeletingTenant`
 - **`TenantDeleted`**
 
-### Domain
+### Domain {#domain}
 
 These events are optional. They're only relevant to you if you're using domains for your tenants.
 
@@ -166,7 +166,7 @@ These events are optional. They're only relevant to you if you're using domains 
 - `DeletingDomain`
 - **`DomainDeleted`**
 
-### Database
+### Database {#database}
 
 These events are also optional. They're relevant to you if you're using multi-database tenancy:
 
@@ -181,7 +181,7 @@ These events are also optional. They're relevant to you if you're using multi-da
 - `DeletingDatabase`
 - **`DatabaseDeleted`**
 
-### Resource syncing
+### Resource syncing {#resource-syncing}
 
 - **`SyncedResourceSaved`**
 - `SyncedResourceChangedInForeignDatabase`

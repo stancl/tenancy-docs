@@ -4,7 +4,7 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Laravel Nova
+# Laravel Nova {#laravel-nova}
 
 ## In the central app
 
@@ -12,7 +12,7 @@ If you wish to use Laravel Nova in the central application (to manage tenants), 
 
 You can find the full Nova setup for managing tenants in the [SaaS boilerplate](/saas-boilerplate):
 
-## In the tenant app
+## In the tenant app {#in-the-tenant-app}
 
 To use Nova inside of the tenant part of your application, do the following:
 

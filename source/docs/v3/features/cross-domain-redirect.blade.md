@@ -4,7 +4,7 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Cross-domain redirect
+# Cross-domain redirect {#cross-domain-redirect}
 
 To enable this feature, uncomment the `Stancl\Tenancy\Features\CrossDomainRedirect::class` line in your `tenancy.features` config.
 

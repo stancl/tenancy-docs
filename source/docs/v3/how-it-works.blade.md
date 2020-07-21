@@ -5,7 +5,7 @@ section: content
 ---
 
 
-# How it works
+# How it works {how-it-works}
 
 This package is very flexible and lets you use tenancy however you want. But it comes with sensible defaults that work like this out of the box:
 

@@ -4,20 +4,20 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Integration with Spatie packages
+# Integration with Spatie packages {#integration-with-spatie-packages}
 
-## **laravel-activitylog**
+## **laravel-activitylog** {#laravel-activitylog}
 
-### For the tenant app:
+### For the tenant app: {#for-the-tenant-app}
 
 - Set the `database_connection` key in `config/activitylog.php` to `null`. This makes activitylog use the default connection.
 - Publish the migrations and move them to `database/migrations/tenant`. (And, of course, don't forget to run `artisan tenants:migrate`.)
 
-### For the central app:
+### For the central app: {#for-the-central-app}
 
 - Set the `database_connection` key in `config/activitylog.php` to the name of your central database connection.
 
-## **laravel-permission**
+## **laravel-permission** {#laravel-permission}
 
 Install the package like usual, but publish the migrations and move them to `migrations/tenant`:
 

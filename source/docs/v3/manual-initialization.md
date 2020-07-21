@@ -4,7 +4,7 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Manual initialization
+# Manual initialization {#manual-initialization}
 
 Sometimes you may want to initialize tenancy manually — that is, not using web middleware, command traits, queue tenancy etc.
 

@@ -4,7 +4,7 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Optional features
+# Optional features {#optional-features}
 
 "Features" are classes that provide additional functionality that's not needed for the core tenancy logic. Out of the box, the package comes with these Features:
 

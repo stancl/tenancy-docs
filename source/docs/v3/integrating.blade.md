@@ -5,7 +5,7 @@ section: content
 ---
 
 
-# Integrating with other packages
+# Integrating with other packages {#integrating-with-other-packages}
 
 If you're using the [automatic mode]({{ $page->link('features/automatic-mode') }}) & [multi-database tenancy]({{ $page->link('multi-database-tenancy') }}), you'll be able to integrate with other packages easily.
 

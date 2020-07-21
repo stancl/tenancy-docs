@@ -4,7 +4,7 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Real-time facades
+# Real-time facades {#real-time-facades}
 
 When using `storage_path()` suffixing (for local filesystem tenancy), each tenant gets a separate subdirectory in `storage/`.
 
@@ -20,11 +20,11 @@ storage/app/tenant123/foo.png
 
 This means that the other directories in `storage/` are also tenant-scoped. Importantly, the `framework` directory.
 
-## The issue with real-time facades
+## The issue with real-time facades {#the-issue-with-real-time-facades}
 
 When real-time facades are used, Laravel creates a PHP file with facade-like code, stores it in `storage_path/framework/cache` and autoloads it.
 
-## Creating framework directories for tenants
+## Creating framework directories for tenants {#creating-framework-directories-for-tenants}
 
 To solve this, you need to create these directories for tenants. But note that you only need this if:
 1. you're using `storage_path()` suffixing (enabled in `tenancy` config)

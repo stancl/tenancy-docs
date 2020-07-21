@@ -4,11 +4,11 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Configuration
+# Configuration  {#configuration}
 
 The package is highly configurable. This page covers what you can configure in the `config/tenancy.php` file, but note that many more things are configurable. Some things can be changed by extending classes (e.g. the `Tenant` model), and **many** things can be changed using static properties. These things will *usually* be mentioned on the respective pages of the documentation, but not every time. For this reason, don't be afraid to dive into the package's source code — whenever the class you're using has a `public static` property, **it's intended to be configured**.
 
-## Static properties
+## Static properties {#static-properties}
 
 You can set static properties like this (example):
 
@@ -20,13 +20,13 @@ You can set static properties like this (example):
 
 A good place to put these calls is your `app/Providers/TenancyServiceProvider`'s `boot()` method.
 
-### Tenant model
+### Tenant model {#tenant-model}
 
 `tenancy.tenant_model`
 
 This config specifies what `Tenant` model should be used by the package. There's a high chance you're using a custom model, as instructed to by the [Tenants]({{ $page->link('tenants') }}) page, so be sure to change it in the config.
 
-### Unique ID generator
+### Unique ID generator {#unique-id-generator}
 
 `tenancy.id_generator`
 
@@ -37,13 +37,13 @@ If you wish to use autoincrement ids instead of uuids:
 1. set this config key to null, or create a custom tenant model that doesn't use this trait
 2. update the `tenants` table migration to use an incrementing column type instead of `string`
 
-### Domain model
+### Domain model {#domain-model}
 
 `tenancy.domain_model`
 
 Similar to the Tenant model config. If you're using a custom model for domains, change it in this config. If you're not using domains (e.g. if you're using path or request data identification) at all, ignore this config key altogether.
 
-### Central domains
+### Central domains {#central-domains}
 
 `tenancy.central_domains`
 
@@ -52,13 +52,13 @@ The list of domains that host your [central app]({{ $page->link('the-two-applica
 - the `PreventAccessFromCentralDomains` middleware, to prevent access from central domains to tenant routes,
 - the `InitializeTenancyBySubdomain` middleware, to check whether the current hostname is a subdomain on one of your central domains.
 
-### Bootstrappers
+### Bootstrappers {#bootstrappers}
 
 `tenancy.bootstrappers`
 
 This config array lets you enable, disable or add your own [tenancy bootstrappers]({{ $page->link('tenancy-bootstrappers') }}).
 
-### Database
+### Database {#database}
 
 `tenancy.database.*`
 
@@ -66,7 +66,7 @@ This section is relevant to the multi-database tenancy, specifically, to the `Da
 
 See this section in the config, it's documented with comments.
 
-### Cache
+### Cache {#cache}
 
 `tenancy.cache.*`
 
@@ -76,7 +76,7 @@ Note: To use the cache separation, you need to use a cache store that supports t
 
 See this section in the config, it's documented with comments.
 
-### Filesystem
+### Filesystem {#filesystem}
 
 `tenancy.filesystem.*`
 
@@ -84,7 +84,7 @@ This section is relevant to cache separation, specifically, to the `FilesystemTe
 
 See this section in the config, it's documented with comments.
 
-### Redis
+### Redis {#redis}
 
 `tenancy.redis.*`
 
@@ -94,19 +94,19 @@ Note: To use the this bootstrapper, you need phpredis.
 
 See this section in the config, it's documented with comments.
 
-### Features
+### Features {#features}
 
 `tenancy.features`
 
 This config array lets you enable, disable or add your own [feature classes]({{ $page->link('optional-features') }}).
 
-### Migration parameters
+### Migration parameters {#migration-parameters}
 
 `tenancy.migration_parameters`
 
 This config array lets you set parameters used by default when running the `tenants:migrate` command (or when this command is executed using the `MigrateDatabase` job). Of course, all of these parameters can be overridden by passing them directly in the command call, be it in CLI or using `Artisan::call()`.
 
-### Seeder parameters
+### Seeder parameters {#seeder-parameters}
 
 `tenancy.seeder_parameters`
 

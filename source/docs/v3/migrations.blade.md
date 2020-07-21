@@ -4,7 +4,7 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Migrations
+# Migrations {#migrations}
 
 Move your tenant migrations to the `database/migrations/tenant` directory. You can execute them using `php artisan tenants:migrate`.
 

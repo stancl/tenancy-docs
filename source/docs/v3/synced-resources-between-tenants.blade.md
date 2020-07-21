@@ -4,13 +4,13 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Synced resources between tenants
+# Synced resources between tenants {#synced-resources-between-tenants}
 
 If you'd like to share certain resources, usually users, between tenant databases, you can use our resource syncing feature. This will let you **sync specific columns between specific tenant databases and the central database.**
 
 This is a relatively complex feature, so before implementing it, make sure you really need it. You only need this feature if you're using multi-database tenancy and need to sync specific resources (like users) between different tenants' databases.
 
-## Database
+## Database {#database}
 
 The resource exists in the central database, for example a `users` table. Another table exists in the tenants' databases. It can use the same name as the central database or a different name — up to you.
 
@@ -18,7 +18,7 @@ Then there's a pivot table in the central database that maps the resource (`user
 
 The resource isn't synced with all tenant databases — that would be unwanted, e.g. a user typically only exists in select few tenants.
 
-## Concepts
+## Concepts {#concepts}
 
 You will need two models for the resource. One for the tenant database and one for the central database. The tenant model must implement the `Syncable` interface and the central model must implement the `SyncMaster` interface.
 
@@ -30,7 +30,7 @@ An important requirement of the `Syncable` interface is the `getSyncedAttributeN
 
 The resource needs to have the same global ID in the central database and in tenant databases.
 
-## How it works
+## How it works {#how-it-works}
 
 Let's write an example implementation:
 
@@ -199,7 +199,7 @@ If you create more tenants and create the user in those tenants' databases, the 
 
 Creating the user inside a tenant's database will copy the resource 1:1 to the central database, including the unsynced columns (here they act as default values).
 
-## Attaching resources to tenants
+## Attaching resources to tenants {#attaching-resources-to-tenants}
 
 You can see that in the example above we're using the `TenantPivot` model for the BelongsToMany relationship. This lets us cascade synced resources from the central database to tenants:
 
@@ -213,7 +213,7 @@ Attaching a tenant to a user will copy even the unsynced columns (they act as de
 
 If you'd like to use a custom pivot model, look into the source code of `TenantPivot` to see what to copy (or extend it) if you want to preserve this behavior.
 
-## Queueing
+## Queueing {#queueing}
 
 In production, you're almost certainly want to queue the listener that copies the changes to other databases. To do this, change the listener's static property:
 

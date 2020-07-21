@@ -4,7 +4,7 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Universal Routes
+# Universal Routes {#universal-routes}
 
 > Note: If you need custom [onFail]({{ $page->link('tenant-identification') }}) logic, you cannot use this feature as it will override any of your changes to that logic. Instead, look into the source code of this feature and make your onFail logic implement universal routes too.
 

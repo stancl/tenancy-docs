@@ -4,7 +4,7 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Laravel Telescope
+# Laravel Telescope {#laravel-telescope}
 
 Enable the the *Telescope tags* feature to have all Telescope requests tagged with the current tenant's id.
 

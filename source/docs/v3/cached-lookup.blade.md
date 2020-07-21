@@ -4,7 +4,7 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Cached lookup
+# Cached lookup {#cached-lookup}
 
 If you're using multiple databases, you may want to avoid making a query to the central database on **each tenant request** — for tenant identification. Even though the queries are very simple, the app has to establish a connection with the central database which is expensive.
 

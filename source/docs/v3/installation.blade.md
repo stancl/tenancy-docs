@@ -4,7 +4,7 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Installation
+# Installation {#installation}
 
 Require the package using composer:
 

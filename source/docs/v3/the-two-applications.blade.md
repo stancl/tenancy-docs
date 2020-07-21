@@ -4,7 +4,7 @@ extends: _layouts.documentation
 section: content
 ---
 
-# The two applications
+# The two applications {#the-two-applications}
 
 You will find these two terms a lot throughout this documentation:
 

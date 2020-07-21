@@ -4,7 +4,7 @@ extends: _layouts.documentation
 section: content
 ---
 
-# User impersonation
+# User impersonation {#user-impersonation}
 
 This package comes with a feature that lets you impersonate users inside tenant databases. This feature works with **any identification method** and **any auth guard** — even if you use multiple.
 
@@ -48,7 +48,7 @@ And finally, run the migration:
 php artisan migrate
 ```
 
-## Usage
+## Usage {#usage}
 
 First, you need to create a tenant route that looks like this:
 
@@ -79,7 +79,7 @@ $token = tenancy()->impersonate($tenant, $user->id, $redirectUrl);
 
 And redirect the user (or, presumably an "admin") to the route you created.
 
-### Domain identification
+### Domain identification {#domain-identification}
 
 ```jsx
 // Note: This is not part of the package, it's up to you to implement
@@ -89,7 +89,7 @@ $domain = $tenant->primary_domain;
 return redirect("https://$domain/impersonate/{$token->token}");
 ```
 
-### Path identification
+### Path identification {#path-identification}
 
 ```jsx
 // Make sure you use the correct prefix for your routes.
@@ -98,7 +98,7 @@ return redirect("{$tenant->id}/impersonate/{$token->token}");
 
 And that's it. The user will be redirected to your impersonation route, logged in as the impersonated user, and finally redirected to your redirect URL.
 
-### Custom auth guards
+### Custom auth guards {#custom-auth-guards}
 
 If you're using multiple auth guards, you may want to specify what auth guard the impersonation logic should use.
 
@@ -108,7 +108,7 @@ To do this, simply pass the auth guard name as the fourth argument to the `imper
 tenancy()->impersonate($tenant, $user->id, $redirectUrl, 'jwt');
 ```
 
-## Customization
+## Customization {#customization}
 
 You may customize the TTL of impersonation tokens by setting the following static property to the amount of seconds you want to use:
 
