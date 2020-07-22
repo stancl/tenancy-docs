@@ -36,7 +36,7 @@ The benefit of this approach rather than storing the subdomain's full hostname i
 
 The middleware for this method is `Stancl\Tenancy\Middleware\InitializeTenancyBySubdomain`.
 
-## Combined domain/subdomain identification {#combined-domain/subdomain-identification}
+## Combined domain/subdomain identification {#combined-domain-subdomain-identification}
 
 If you'd like to use subdomains and domains at the same time, use the `Stancl\Tenancy\Middleware\InitializeTenancyByDomainOrSubdomain` middleware.
 
