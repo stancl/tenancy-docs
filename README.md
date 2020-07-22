@@ -34,6 +34,6 @@ For the main repository, see [stancl/tenancy](https://github.com/stancl/tenancy)
 
 ### Push it
 
-1. `git add -A && git commit -m "My message"` (replacing `My message` with a commit message, such as `Fix header logo on Android`) to stage and commit your changes
+1. `git add -a && git commit -m "My message"` (replacing `My message` with a commit message, such as `update readme.md`) to stage and commit your changes
 1. `git push my-fork-name the-name-of-my-branch`
 1.  A Netlify build will also be automatically created once you make your PR so other people can see your change.
