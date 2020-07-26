@@ -6,7 +6,7 @@ section: content
 
 # Compared to other packages {#compared-to-other-packages}
 
-## hyn/multi-tenancy {#hyn/multi-tenancy}
+## hyn/multi-tenancy {#hyn-multi-tenancy}
 
 This package intends to provide you with the necessary tooling for adding multi-tenancy **manually** to your application. It will give you model traits, classes for creating tenant databases, and some additional tooling.
 
@@ -25,7 +25,7 @@ It would have been a good option for when you want to implement multi-tenancy ma
 
     I'm not sharing this to intentionally make hyn/multi-tenancy bad, but **be very careful if you decide to go with that package**.
 
-## tenancy/tenancy {#tenancy/tenancy}
+## tenancy/tenancy {#tenancy-tenancy}
 
 This package intends to provide you with a framework for building your own multi-tenancy implementation. The documentation is quite lacking, so I couldn't get a too detailed idea of what it does, but from my understanding, it gives you things like events which you can use to build your own multi-tenancy logic.
 
@@ -33,7 +33,7 @@ If you want the absolute highest flexibility and would otherwise build your own 
 
 However, if you're looking for a package that will help you make a multi-tenant project quickly, this is probably not the right choice.
 
-## spatie/laravel-multitenancy {#tenacy/laravel-multitenancy}
+## spatie/laravel-multitenancy {#tenacy-laravel-multitenancy}
 
 This package is a very simple implementation of multi-tenancy.
 
@@ -43,7 +43,7 @@ The only benefit I see in this package compared to v2 of stancl/tenancy is that 
 
 So, I suggest you consider this package only if you value simplicity for some reason, and aren't building anything with any amount of complexity and need for "business features".
 
-## stancl/tenancy {#stancl/tenancy}
+## stancl/tenancy {#stancl-tenancy}
 
 In my — biased, of course, but likely true as well — opinion, this package is the absolute best choice for the vast majority of applications.
 
