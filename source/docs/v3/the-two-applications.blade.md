@@ -18,5 +18,3 @@ The tenant application is executed in tenant context — usually with the tenant
 The central application will house your signup page **where tenants are created**, your admin panel used to **manage your tenants**, etc.
 
 The tenant application will likely house the larger part of your application — the real service being used by your tenants.
-
-TODO: Explain how to structure application code for clarity
