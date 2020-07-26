@@ -110,8 +110,6 @@ and this on **secondary models:**
 $table->unique(['post_id', 'user_id']);
 ```
 
-TODO: Unique constraints, validation, mention that eloquent models will be scoped, but DB calls won't
-
 ### Validation {#validations}
 
 The `unique` and `exists` validation rules of course aren't scoped to the current tenant, so you need to scope them manually like this:
