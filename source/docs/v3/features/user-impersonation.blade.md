@@ -10,7 +10,7 @@ This package comes with a feature that lets you impersonate users inside tenant 
 
 ## How it works
 
-You generate an impersonation token an store it in the central database, in the `tenant_user_impersonation_tokens` table.
+You generate an impersonation token and store it in the central database, in the `tenant_user_impersonation_tokens` table.
 
 Each record in the table holds the following data:
 
