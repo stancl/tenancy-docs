@@ -46,7 +46,7 @@ Conversely, when the `TenancyEnded` event fires, the `RevertToCentralContext` ev
 
 # Job pipelines {#job-pipelines}
 
-You may want to use job pipelines even in projects that don't use this package — we think they're a cool concept so they're extracted into a separate package: [github.com/stancl/jobpipeline](https://github.com/stancl/jobpipeline)
+You may want to use job pipelines even in projects that don't use this package — I think they're a cool concept so they're extracted into a separate package: [github.com/stancl/jobpipeline](https://github.com/stancl/jobpipeline)
 
 The `JobPipeline` is a simple, yet **extremely powerful** class that lets you **convert any (series of) jobs into event listeners.**
 
