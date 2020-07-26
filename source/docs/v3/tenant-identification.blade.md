@@ -99,7 +99,7 @@ See the [manual initialization page]({{ $page->link('manual-initialization') }})
 
 ## Customizing onFail logic {#customizing-onfail-logic}
 
-Each identification middleware has a static `$onFail` property that can be used to customize the behavior that should happen when a tenant couldn't be identified.
+Each identification middleware has a [static `$onFail` property]({{ $page->link('configuration/#static-properties') }}) that can be used to customize the behavior that should happen when a tenant couldn't be identified.
 
 ```php
 \Stancl\Tenancy\Middleware\InitializeTenancyByDomain::$onFail = function ($exception, $request, $next) {
