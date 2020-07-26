@@ -9,14 +9,9 @@ section: content
 
 If you're using the [automatic mode]({{ $page->link('features/automatic-mode') }}) & [multi-database tenancy]({{ $page->link('multi-database-tenancy') }}), you'll be able to integrate with other packages easily.
 
-[Integration with Spatie packages]({{ $page->link('integrations/spatie') }})
-
-[Laravel Horizon]({{ $page->link('integrations/horizon') }})
-
-[Laravel Passport]({{ $page->link('integrations/passport') }})
-
-[Laravel Nova]({{ $page->link('integrations/nova') }})
-
-[Laravel Telescope]({{ $page->link('integrations/telescope') }})
-
-[Livewire]({{ $page->link('integrations/livewire') }})
+- [Integration with Spatie packages]({{ $page->link('integrations/spatie') }})
+- [Laravel Horizon]({{ $page->link('integrations/horizon') }})
+- [Laravel Passport]({{ $page->link('integrations/passport') }})
+- [Laravel Nova]({{ $page->link('integrations/nova') }})
+- [Laravel Telescope]({{ $page->link('integrations/telescope') }})
+- [Livewire]({{ $page->link('integrations/livewire') }})
