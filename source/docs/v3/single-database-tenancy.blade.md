@@ -118,9 +118,7 @@ The `unique` and `exists` validation rules of course aren't scoped to the curren
 Rule::unique('posts', 'slug')->where('tenant_id', tenant('id'));
 ```
 
-If that feels like a chore, you may use the `Stancl\Tenancy\Database\Concerns\HasScopedValidationRules` trait on your custom *Tenant* model to add methods for these two rules.
-
-[Tenants](Tenants%20e929a50afae2436c936b323fab4a0f60.md)
+If that feels like a chore, you may use the `Stancl\Tenancy\Database\Concerns\HasScopedValidationRules` trait on your custom [Tenant]({{ $page->link('tenants') }}) model to add methods for these two rules.
 
 You'll be able to use these two methods:
 
