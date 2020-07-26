@@ -10,7 +10,7 @@ section: content
 
 Sometimes, you may want to use the exact same **route action** both in the central application and the tenant application. Note the emphasis on route **action** — you may use the same **path** with different actions in central & tenant routes, whereas this section covers using the same **route and action**.
 
-Generally, try to avoid these use cases as much as possible and prefer duplicating the code. Using the same controller and model for users in central & tenant apps will break down once you need slightly different behavior — e.g. different views returned by controllers, different behavior on models, etc.
+Generally, try to avoid these use cases as much as possible and prefer duplicating the code. Using the same controller and model for users in central & tenant apps will break down once you need slightly different behavior — e.g. different views returned by controllers, different behavior in models, etc.
 
 First, enable the `UniversalRoutes` feature by uncommenting the following line in your `tenancy.features` config:
 
