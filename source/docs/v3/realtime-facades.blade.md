@@ -27,6 +27,7 @@ When real-time facades are used, Laravel creates a PHP file with facade-like cod
 ## Creating framework directories for tenants {#creating-framework-directories-for-tenants}
 
 To solve this, you need to create these directories for tenants. But note that you only need this if:
+
 1. you're using `storage_path()` suffixing (enabled in `tenancy` config)
 2. **and** you're using real-time facades
 
