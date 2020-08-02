@@ -226,7 +226,7 @@ return [
                 'Structuring the Codebase for Clarity' => 'https://sponsors.tenancyforlaravel.com/structuring-the-codebase-for-clarity',
                 'Tenant Database Management with Ploi' => 'https://sponsors.tenancyforlaravel.com/tenant-database-management-with-ploi',
                 'Universal (Central & Tenant) Nova' => 'https://sponsors.tenancyforlaravel.com/universal-central-and-tenant-nova',
-                ],
+            ],
         ],
     ],
 ];
