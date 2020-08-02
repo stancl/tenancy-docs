@@ -215,16 +215,18 @@ return [
         ],
 
         'Sponsor-only content' => [
-            'Exclusive content for sponsors' => 'https://sponsors.tenancyforlaravel.com/',
-            'Billable Tenants with Cashier' => 'https://sponsors.tenancyforlaravel.com/billable-tenants-with-cashier',
-            'Central (SSO-like) Authentication' => 'https://sponsors.tenancyforlaravel.com/central-sso-like-authentication',
-            'Customer HTTPS Certificates with Ploi' => 'https://sponsors.tenancyforlaravel.com/customer-https-certificates-with-ploi',
-            'Deploying Applications to Ploi' => 'https://sponsors.tenancyforlaravel.com/deploying-applications-to-ploi',
-            'Frictionless Testing Setup' => 'https://sponsors.tenancyforlaravel.com/frictionless-testing-setup',
-            'Queued Onboarding Flow' => 'https://sponsors.tenancyforlaravel.com/queued-onboarding-flow',
-            'Structuring the Codebase for Clarity' => 'https://sponsors.tenancyforlaravel.com/structuring-the-codebase-for-clarity',
-            'Tenant Database Management with Ploi' => 'https://sponsors.tenancyforlaravel.com/tenant-database-management-with-ploi',
-            'Universal (Central & Tenant) Nova' => 'https://sponsors.tenancyforlaravel.com/universal-central-and-tenant-nova',
+            'children' => [
+                'Exclusive content for sponsors' => 'https://sponsors.tenancyforlaravel.com/',
+                'Billable Tenants with Cashier' => 'https://sponsors.tenancyforlaravel.com/billable-tenants-with-cashier',
+                'Central (SSO-like) Authentication' => 'https://sponsors.tenancyforlaravel.com/central-sso-like-authentication',
+                'Customer HTTPS Certificates with Ploi' => 'https://sponsors.tenancyforlaravel.com/customer-https-certificates-with-ploi',
+                'Deploying Applications to Ploi' => 'https://sponsors.tenancyforlaravel.com/deploying-applications-to-ploi',
+                'Frictionless Testing Setup' => 'https://sponsors.tenancyforlaravel.com/frictionless-testing-setup',
+                'Queued Onboarding Flow' => 'https://sponsors.tenancyforlaravel.com/queued-onboarding-flow',
+                'Structuring the Codebase for Clarity' => 'https://sponsors.tenancyforlaravel.com/structuring-the-codebase-for-clarity',
+                'Tenant Database Management with Ploi' => 'https://sponsors.tenancyforlaravel.com/tenant-database-management-with-ploi',
+                'Universal (Central & Tenant) Nova' => 'https://sponsors.tenancyforlaravel.com/universal-central-and-tenant-nova',
+                ],
         ],
     ],
 ];
