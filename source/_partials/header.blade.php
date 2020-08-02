@@ -121,6 +121,22 @@
                   </p>
                 </a>
               </div>
+
+              <div class="bg-gray-50 sm:p-8 p-5">
+                <a href="https://sponsors.tenancyforlaravel.com" class="hover:bg-gray-100 flow-root p-3 -m-3 space-y-1 transition duration-150 ease-in-out rounded-md">
+                  <div class="flex items-center space-x-3">
+                    <div class="text-base font-medium leading-6 text-gray-900">
+                      Exclusive content
+                    </div>
+                    <span class="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium leading-5 bg-indigo-100 text-indigo-800">
+                      Sponsor-only
+                    </span>
+                  </div>
+                  <p class="text-sm leading-5 text-gray-500">
+                    A collection of actionable solutions for common complex problems.
+                  </p>
+                </a>
+              </div>
             </div>
           </div>
         </div>
