@@ -14,7 +14,7 @@
         <footer class="mt-8">
           <div class="flex">
             <div class="flex-shrink-0 inline-flex rounded-full border-2 border-white">
-              <img class="h-12 w-12 rounded-full" src="https://media-exp1.licdn.com/dms/image/C5603AQEmispANTVYDA/profile-displayphoto-shrink_800_800/0?e=1596067200&v=beta&t=UO5qyQNEg6ZnEOtd7XeS7N_EOV7pQwGOcVmJzhHpdUg" alt="Jørgen Solli" />
+              <img class="h-12 w-12 rounded-full" src="https://media-exp1.licdn.com/dms/image/C5603AQEmispANTVYDA/profile-displayphoto-shrink_200_200/0?e=1600905600&v=beta&t=5D91f-juRO3AYIN-0qvGM1bUwg0PlwIDgG9bdol9Qwc" alt="Jørgen Solli" />
             </div>
             <div class="ml-4">
               <div class="text-base leading-6 font-medium text-gray-900">Jørgen Solli
