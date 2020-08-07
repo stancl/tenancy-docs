@@ -8,7 +8,8 @@ return [
     'siteName'        => 'Tenancy for Laravel',
     'siteDescription' => 'Automatically turn any Laravel application multi-tenant — no code changes needed. stancl/tenancy automatically switches database connections and all other things in the background, letting you leverage standard Laravel code into a full SaaS application. Most features out of all multi-tenancy packages. Single & multi-database tenancy.',
 
-    'githubUrl' => 'https://github.com/stancl/tenancy',
+    'githubUrl'     => 'https://github.com/stancl/tenancy',
+    'githubDocsUrl' => 'https://github.com/stancl/tenancy-docs',
 
     // key => display name
     'versions' => [
@@ -25,6 +26,10 @@ return [
 
     'link' => function ($page, $path) {
         return $page->baseUrl . '/docs/' . $page->version() . '/' . $path . ($page->prettyUrls ? '' : '.html');
+    },
+
+    'editLink' => function ($page) {
+        return "{$page->githubDocsUrl}/edit/master/source/{$page->getRelativePath()}/{$page->getFilename()}.{$page->getExtension()}";
     },
 
     // Algolia DocSearch credentials

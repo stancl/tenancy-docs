@@ -6,7 +6,7 @@ section: content
 
 # Universal Routes {#universal-routes}
 
-> Note: If you need custom [onFail]({{ $page->link('tenant-identification') }}) logic, you cannot use this feature as it will override any of your changes to that logic. Instead, look into the source code of this feature and make your onFail logic implement universal routes too.
+> Note: If you need custom [onFail]({{ $page->link('tenant-identification') }}) logic, you cannot use this feature as it will override any of your changes to that logic. Instead, look into the source code of this feature and make your onFail logic implement universal routes too. If you do this, make sure to disable this feature in the config file followed by a cache clear.
 
 Sometimes, you may want to use the exact same **route action** both in the central application and the tenant application. Note the emphasis on route **action** — you may use the same **path** with different actions in central & tenant routes, whereas this section covers using the same **route and action**.
 
