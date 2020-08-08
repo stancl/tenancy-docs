@@ -17,11 +17,7 @@ Any donations will be greatly appreciated and help ensure that the package is de
 
 ## Monthly donations
 
-### Patreon - EUR
-
-If you would like to support me on a monthly basis in EUR, you can use Patreon: [https://patreon.com/samuelstancl](https://patreon.com/samuelstancl)
-
-### GitHub Sponsors - USD
+### GitHub Sponsors
 
 If you would like to support me on a monthly basis in USD, you can use GitHub Sponsors. Click the *Sponsor* button on left: [https://github.com/stancl/](https://github.com/stancl/)
 
