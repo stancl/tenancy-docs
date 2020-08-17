@@ -1,7 +1,6 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 const plugin       = require('tailwindcss/plugin')
 
-
 module.exports = {
   purge: [
     './source/**/*.md', './source/**/*.php', './source/*.php'
