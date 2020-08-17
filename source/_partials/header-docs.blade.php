@@ -1,11 +1,11 @@
 <div x-data="navMenu()" class="relative bg-white" data-turbolinks-permanent>
-  <div class="sm:px-6 md:justify-start md:space-x-10 flex items-center justify-between px-4 pt-3 pb-6">
-    <div class="lg:w-0 lg:flex-1">
+  <div class="sm:px-6 md:justify-start md:space-x-10 flex flex-wrap items-center justify-between px-4 pt-3 pb-2 lg:pb-6">
+    <div class="flex-grow lg:w-0 lg:flex-1">
       <a href="{{ $page->baseUrl }}" class="flex" data-turbolinks="false">
         <img src="/assets/img/tenancyforlaravel.svg" alt="" style="height: 70px">
       </a>
     </div>
-    <div class="md:hidden -my-2 -mr-2">
+    <div class="flex-grow md:hidden -my-2 -mr-2 flex justify-end">
       <button @click="toggle()" type="button"
         class="hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md">
         <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -13,7 +13,7 @@
         </svg>
       </button>
     </div>
-    <nav class="md:flex flex-grow hidden">
+    <nav class="flex-basis-full md:flex-basis-auto md:flex flex-grow">
       @include('_nav.search-input')
     </nav>
     <div class="md:flex md:flex-1 lg:w-0 items-center justify-end hidden space-x-8">
@@ -72,11 +72,13 @@
           toggle() {
               const menu = document.getElementById('js-nav-menu');
               menu.classList.toggle('hidden');
-              menu.classList.toggle('lg:block');
-              mobileMenuOpen = !mobileMenuOpen;
+              menu.classList.toggle('block')
+
+              const search = document.getElementById('js-search-input');
+              search.classList.toggle('hidden');
+
+              this.mobileMenuOpen = !this.mobileMenuOpen;
           },
-
-
         }
     }
 </script>
