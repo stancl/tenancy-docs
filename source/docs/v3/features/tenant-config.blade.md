@@ -8,7 +8,7 @@ section: content
 
 It's likely you will need to use tenant-specific config in your application. That config could be API keys, things like "products per page" and many other things.
 
-You could just use the the tenant model to get these values, but you may still want to use Laravel's `config()` because of:
+You could just use the tenant model to get these values, but you may still want to use Laravel's `config()` because of:
 
 - separation of concerns — if you just write tenancy implementation-agnostic `config('shop.products_per_page')`, you will have a much better time changing tenancy implementations
 - default values — you may want to use the tenant storage only to override values in your config file
