@@ -8,6 +8,8 @@ section: content
 
 > If you just want to write an SPA, but don't need an API for some other use (e.g. mobile app), you can avoid a lot of the complexity of writing SPAs by using [Inertia.js](https://inertiajs.com/).
 
+> Note: This guide may be out of date (it's from the v2 era). If you have Passport and Tenancy v3 working, please consider contributing back by submitting a pull request updating this page. You may use the **Edit this page** button at the bottom of this page.
+
 To use Passport inside the tenant part of your application, you may do the following.
 
 - Add this to the `register` method in your `AppServiceProvider`:
