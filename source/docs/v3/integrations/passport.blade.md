@@ -54,3 +54,5 @@ And again, you need to create clients in your tenant database seeding process.
 ![Passport for both central & tenant app](/assets/images/passport_universal.png)
 
 And make sure you enable the *Universal Routes* feature.
+
+Also change the value of `storage.database.connection` to `null` in the file `config/passport.php` to force Passport to use the default database connection. That way, Passport will work in both central and tenant parts of the application.
