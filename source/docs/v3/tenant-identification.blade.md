@@ -59,7 +59,7 @@ Route::group([
 });
 ```
 
-If you'd like to customize the name of the argument (e.g. use `team` instead of `tenant`, look into the middleware for the public static property).
+If you'd like to customize the name of the argument (e.g. use `team` instead of `tenant`, look into the `PathTenantResolver` for the public static property).
 
 ## Request data identification {#request-data-identification}
 
