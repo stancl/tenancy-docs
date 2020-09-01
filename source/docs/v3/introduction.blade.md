@@ -33,4 +33,4 @@ In the current version, we're also making [manual tenancy]({{ $page->link('manua
 
 ## Tenant identification {#tenant-identification}
 
-For your application to be tenant-aware, a [tenant has to be identified]({{ $page->link('tenant-identification') }}). This package ships with a large number of identification middleware. You may identify tenants by domain, subdomain, domain OR subdomain at the same time, path or request data.
+For your application to be tenant-aware, a [tenant has to be identified]({{ $page->link('tenant-identification') }}). This package ships with many identification middleware classes. You may identify tenants by domain, subdomain, domain OR subdomain at the same time, path or request data.
