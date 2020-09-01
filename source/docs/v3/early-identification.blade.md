@@ -33,7 +33,7 @@ class PostController
 }
 ```
 
-If you don't like that because you access some dependency from many actions, consider creating a memoized method:
+If you don't like that because you access some dependency from many actions, consider creating a memorized method:
 
 ```php
 class PostController

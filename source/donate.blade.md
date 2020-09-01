@@ -27,7 +27,7 @@ If you would like to support me on a monthly basis in USD, you can use GitHub Sp
 
 If you'd like to donate using credit/debit card, select the amount below and click *Donate*. You will be redirected to Stripe.
 
-This is the prefered method for one-time donations because it comes with **no fees at all** for either party.
+This is the preferred method for one-time donations because it comes with **no fees at all** for either party.
 
 <select id="stripe-onetime-price" class="block form-select w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5">
     <option value="price_1GrLEBGlrejN28Vyt5SvEaaF">$5</option>
