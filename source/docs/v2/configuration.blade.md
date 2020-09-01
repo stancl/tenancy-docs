@@ -92,7 +92,7 @@ The aliases are used by the [event system]({{ $page->link('hooks') }})
 
 ### `features` {#bootstrappers}
 
-[Features]({{ $page->link('optional-features') }}) are similar to bootstrappers, but they are executed regardless of whether tenancy has been initialized or not. Their purpose is to provide additional functionality beyond what is necessary for the package to work. Things like easy redirects to tenant domains, tags in Telescope, etc.
+[Features]({{ $page->link('features') }}) are similar to bootstrappers, but they are executed regardless of whether tenancy has been initialized or not. Their purpose is to provide additional functionality beyond what is necessary for the package to work. Things like easy redirects to tenant domains, tags in Telescope, etc.
 
 ### `home_url` {#home-url}
 

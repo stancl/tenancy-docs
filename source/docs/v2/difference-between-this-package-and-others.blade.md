@@ -23,7 +23,7 @@ This package takes a completely new approach to multi-tenancy.
 
 It makes your application multi-tenant automatically and attempts to make you not have to change anything in your code. The philosophy behind this approach is that you should write your app, not tenancy boilerplate.
 
-We belive that your code will be a lot cleaner if tenancy and the actual app don't mix. Why pollute your code with tons of tenancy implementations, when you can push all of tenancy one layer below your actual application?
+We believe that your code will be a lot cleaner if tenancy and the actual app don't mix. Why pollute your code with tons of tenancy implementations, when you can push all of tenancy one layer below your actual application?
 
 Apart from saving you a ton of time, the benefit of going with the automatic approach is that you can adapt easily, since you're not bound to a specific implementation of multi-tenancy. [You can always change how tenancy is bootstrapped.]({{ $page->link('tenancy-bootstrappers') }})
 

@@ -7,7 +7,7 @@ section: content
 
 # Upgrading from 1.x {#upgrading}
 
-The 2.0.0 release is essentialy a ~60% rewrite, with 3,187 additions and 1,896 deletions (lines of code). Version 2 introduces Laravel 6 support and drops Laravel 5.8 support.
+The 2.0.0 release is essentially a ~60% rewrite, with 3,187 additions and 1,896 deletions (lines of code). Version 2 introduces Laravel 6 support and drops Laravel 5.8 support.
 
 This guide attempts to cover the main changes that were made to the package. The rewrite was mainly:
 - an internal thing: much better code quality means much better maintainability and much more features in the future :)

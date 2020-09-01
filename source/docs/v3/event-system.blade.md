@@ -138,7 +138,7 @@ Note: All events are located in the `Stancl\Tenancy\Events` namespace.
 - `RevertingToCentralContext`
 - `RevertedToCentralContext`
 
-Note the difference between *initializing tenancy and bootstrapping* tenancy. Tenancy is initialized when a tenant is loaded into the `Tenancy` object. Whereas boostrapping happens **as a result of initialization** — if you're using automatic tenancy, the `BootstrapTenancy` class is listening to the `TenancyInitialized` event and after it's done executing bootstrappers, it fires an event saying that tenancy was bootstrapped. You want to use the bootstrapped event if you want to execute something **after the app has been transitioned to the tenant context.**
+Note the difference between *initializing tenancy and bootstrapping* tenancy. Tenancy is initialized when a tenant is loaded into the `Tenancy` object. Whereas bootstrapping happens **as a result of initialization** — if you're using automatic tenancy, the `BootstrapTenancy` class is listening to the `TenancyInitialized` event and after it's done executing bootstrappers, it fires an event saying that tenancy was bootstrapped. You want to use the bootstrapped event if you want to execute something **after the app has been transitioned to the tenant context.**
 
 ### Tenant {#tenant}
 

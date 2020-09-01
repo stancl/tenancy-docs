@@ -11,7 +11,7 @@ This package uses routes to separate the tenant part of the application from the
 
 ## Central routes {#central-routes}
 
-Routes in the `routes/web.php` file are the central routes. When they are visited, tenancy is *not* intialized and any model, cache call, controller, job dispatch, Redis call and anything else that is called in during this request will be central.
+Routes in the `routes/web.php` file are the central routes. When they are visited, tenancy is *not* initialized and any model, cache call, controller, job dispatch, Redis call and anything else that is called in during this request will be central.
 
 ## Central domains {#central-domains}
 
