@@ -6,7 +6,25 @@ section: content
 
 # Testing {#testing}
 
+> If you're a sponsor, you can get an opinionated, but automatic testing setup on the site with exclusive content for sponsors: https://sponsors.tenancyforlaravel.com/frictionless-testing-setup
+
 TODO: Review
+
+## Events
+
+Keep in mind that the package makes heavy use of events, so if you use `Event::fake()` anywhere in your tests, tenancy initialization and related processes might break.
+
+For that reason, try to be selective about faking tests. Use for example:
+
+```php
+Event::fake([MyEvent::class]);
+```
+
+rather than
+
+```php
+Event::fake();
+```
 
 ## Central app {#central-app}
 
