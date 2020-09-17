@@ -85,6 +85,22 @@ In other words, it creates & migrates the tenant's database after he's created â
 We'll make a small change to the `app/Providers/RouteServiceProvider.php` file. Specifically, we'll make sure that central routes are registered on central domains only. 
 
 ```php
+public function boot()
+{
+    $this->configureRateLimiting();
+    $this->mapWebRoutes(); // Add this to boot()
+    $this->mapApiRoutes(); // Add this to boot()
+
+    $this->routes(function () {
+        Route::middleware('web')
+            ->group(base_path('routes/web.php'));
+
+        Route::prefix('api')
+            ->middleware('api')
+            ->group(base_path('routes/api.php'));
+    });
+}
+...
 protected function mapWebRoutes()
 {
     foreach ($this->centralDomains() as $domain) {
