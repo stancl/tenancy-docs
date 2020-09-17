@@ -85,13 +85,6 @@ In other words, it creates & migrates the tenant's database after he's created â
 We'll make a small change to the `app/Providers/RouteServiceProvider.php` file. Specifically, we'll make sure that central routes are registered on central domains only. 
 
 ```php
-public function boot()
-{
-    $this->configureRateLimiting();
-    $this->mapWebRoutes(); // Add this to boot
-    $this->mapApiRoutes(); // Add this to boot
-}
-.....
 protected function mapWebRoutes()
 {
     foreach ($this->centralDomains() as $domain) {
@@ -116,6 +109,15 @@ protected function mapApiRoutes()
 protected function centralDomains(): array
 {
     return config('tenancy.central_domains');
+}
+```
+In Laravel 8, call these methods manually from your RouteServiceProvider's boot() method, instead of the $this->routes() calls
+```php
+public function boot()
+{
+    $this->configureRateLimiting();
+    $this->mapWebRoutes(); // Add this to boot
+    $this->mapApiRoutes(); // Add this to boot
 }
 ```
 
