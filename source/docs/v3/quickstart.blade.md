@@ -112,6 +112,18 @@ protected function centralDomains(): array
 }
 ```
 
+If you're using Laravel 8, call these methods manually from your `RouteServiceProvider`'s `boot()` method, instead of the `$this->routes()` calls.
+
+```php
+public function boot()
+{
+    $this->configureRateLimiting();
+
+    $this->mapWebRoutes();
+    $this->mapApiRoutes();
+}
+```
+
 ## Central domains {#central-domains}
 
 Now we need to actually specify the central domains. A central domain is a domain that serves your "central app" content, e.g. the landing page where tenants sign up. Open the `config/tenancy.php` file and add them in:
