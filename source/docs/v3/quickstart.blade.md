@@ -174,6 +174,14 @@ App\Tenant::all()->runForEach(function () {
 });
 ```
 
+If you use Laravel 8, the the command is slightly different:
+
+```php
+App\Tenant::all()->runForEach(function () {
+    User::factory()->create();
+});
+```
+
 ## Trying it out {#trying-it-out}
 
 Now we visit `foo.localhost` in our browser and we should see a dump of the users table where we see some user. If we visit `bar.localhost`, we should see a different user.
