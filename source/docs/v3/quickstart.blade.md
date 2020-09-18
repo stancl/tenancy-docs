@@ -111,13 +111,16 @@ protected function centralDomains(): array
     return config('tenancy.central_domains');
 }
 ```
-In Laravel 8, call these methods manually from your RouteServiceProvider's boot() method, instead of the $this->routes() calls
+
+If you're using Laravel 8, call these methods manually from your `RouteServiceProvider`'s `boot()` method, instead of the `$this->routes()` calls.
+
 ```php
 public function boot()
 {
     $this->configureRateLimiting();
-    $this->mapWebRoutes(); // Add this to boot
-    $this->mapApiRoutes(); // Add this to boot
+
+    $this->mapWebRoutes();
+    $this->mapApiRoutes();
 }
 ```
 
