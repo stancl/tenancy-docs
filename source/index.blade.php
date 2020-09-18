@@ -469,7 +469,7 @@ fill="none" viewBox="0 0 404 784">
               Sponsors &lt;3
             </dt>
             <dd class="order-1 text-5xl font-extrabold leading-none text-indigo-600">
-              25+
+              50+
             </dd>
           </div>
         </dl>
