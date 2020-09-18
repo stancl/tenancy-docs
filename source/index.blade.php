@@ -452,7 +452,7 @@ fill="none" viewBox="0 0 404 784">
                 Stars on GitHub
               </dt>
               <dd class="order-1 text-5xl font-extrabold leading-none text-indigo-600" aria-describedby="item-1">
-                1000+
+                1200+
               </dd>
             </div>
             <div
