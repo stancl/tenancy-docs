@@ -74,7 +74,7 @@ $tenant->plan = 'free'; // to be stored in the plan column (see below)
 $tenant->save();
 ```
 
-You may define the custom columns that **won't** be used in the `data` JSON column by overriding the `getCustomColumns()` method on your `Tenant` model:
+You may define the custom columns that **won't** be stored in the `data` JSON column by overriding the `getCustomColumns()` method on your `Tenant` model:
 
 ```php
 public static function getCustomColumns(): array
