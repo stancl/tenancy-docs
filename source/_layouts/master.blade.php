@@ -56,5 +56,6 @@
 {{-- /Footer --}}
 
 <script src="{{ $page->baseUrl . mix('js/main.js', 'assets/build') }}"></script>
+@stack('scripts')
 </body>
 </html>

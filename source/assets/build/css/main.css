@@ -37070,6 +37070,14 @@ ul.list-reset ul.list-reset {
   transition-delay: 1000ms;
 }
 
+.flex-basis-full {
+  flex-basis: 100%;
+}
+
+.flex-basis-auto {
+  flex-basis: auto;
+}
+
 @media (min-width: 640px) {
   .sm\:space-y-0 > :not(template) ~ :not(template) {
     --space-y-reverse: 0;
@@ -72883,6 +72891,14 @@ ul.list-reset ul.list-reset {
 
   .sm\:delay-1000 {
     transition-delay: 1000ms;
+  }
+
+  .sm\:flex-basis-full {
+    flex-basis: 100%;
+  }
+
+  .sm\:flex-basis-auto {
+    flex-basis: auto;
   }
 }
 
@@ -108700,6 +108716,14 @@ ul.list-reset ul.list-reset {
   .md\:delay-1000 {
     transition-delay: 1000ms;
   }
+
+  .md\:flex-basis-full {
+    flex-basis: 100%;
+  }
+
+  .md\:flex-basis-auto {
+    flex-basis: auto;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -144516,6 +144540,14 @@ ul.list-reset ul.list-reset {
   .lg\:delay-1000 {
     transition-delay: 1000ms;
   }
+
+  .lg\:flex-basis-full {
+    flex-basis: 100%;
+  }
+
+  .lg\:flex-basis-auto {
+    flex-basis: auto;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -180331,5 +180363,13 @@ ul.list-reset ul.list-reset {
 
   .xl\:delay-1000 {
     transition-delay: 1000ms;
+  }
+
+  .xl\:flex-basis-full {
+    flex-basis: 100%;
+  }
+
+  .xl\:flex-basis-auto {
+    flex-basis: auto;
   }
 }
