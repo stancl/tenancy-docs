@@ -566,7 +566,7 @@
 
 
 @endsection
-
+{{--
 @push('scripts')
 <script type="text/javascript" src="https://gumroad.com/js/gumroad.js"></script>
-@endpush
+@endpush --}}
