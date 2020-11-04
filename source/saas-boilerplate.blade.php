@@ -215,7 +215,7 @@
                 </li>
               </ul>
               <div class="mt-6 rounded-md shadow">
-                <a target="_blank" href="https://gumroad.com/l/saas-boilerplate?offer_code=launch2&wanted=true" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out" aria-describedby="tier-standard">
+                <a target="_blank" href="https://gumroad.com/l/saas-boilerplate?offer_code=launch-website&wanted=true" data-gumroad-single-product="true" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out" aria-describedby="tier-standard">
                   Purchase
                 </a>
               </div>
@@ -282,7 +282,7 @@
                 </li>
               </ul>
               <div class="mt-6 rounded-md shadow">
-                <a target="_blank" href="https://gumroad.com/l/saas-boilerplate-enterprise?offer_code=launch-website&wanted=true" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out" aria-describedby="tier-enterprise">
+                <a target="_blank" href="https://gumroad.com/l/saas-boilerplate-enterprise?offer_code=launch-website&wanted=true" data-gumroad-single-product="true" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out" aria-describedby="tier-enterprise">
                   Purchase
                 </a>
               </div>
@@ -566,7 +566,7 @@
 
 
 @endsection
-{{--
+
 @push('scripts')
-<script type="text/javascript" src="https://gumroad.com/js/gumroad.js"></script>
-@endpush --}}
+    <script type="text/javascript" src="https://gumroad.com/js/gumroad.js"></script>
+@endpush
