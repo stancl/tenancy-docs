@@ -213,6 +213,8 @@ Attaching a tenant to a user will copy even the unsynced columns (they act as de
 
 If you'd like to use a custom pivot model, look into the source code of `TenantPivot` to see what to copy (or extend it) if you want to preserve this behavior.
 
+Also note that if you create a user in the tenant's database, the global id will be created using the ID generator. If you disable the ID generator for [incrementing tenant ids]({{ $page->link('tenants') }}#incrementing-ids), you'll need to make some changes.
+
 ## Queueing {#queueing}
 
 In production, you're almost certainly want to queue the listener that copies the changes to other databases. To do this, change the listener's static property:
