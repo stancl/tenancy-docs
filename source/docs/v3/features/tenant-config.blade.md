@@ -23,7 +23,7 @@ Uncomment the following line in your `tenancy.features` config:
 
 ## **Configuring the mappings** {#configuring-the-mappings}
 
-This feature maps keys in the tenant storage to config keys based on the `$storageToConfigMap` public property.
+This feature maps keys in the tenant storage to config keys based on the `$storageToConfigMap` [static property]({{ $page->link('configuration#static-properties') }}).
 
 For example, if your `$storageToConfigMap` looked like this:
 
