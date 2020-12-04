@@ -11,7 +11,7 @@
         "@tailwindcss/ui": "^0.3.0",
         "cross-env": "^3.2.3",
         "docsearch.js": "^2.6.2",
-        "highlight.js": "^9.13.1",
+        "highlight.js": "^10.4.1",
         "laravel-mix": "^5.0.4",
         "laravel-mix-jigsaw": "github:iskrisis/laravel-mix-jigsaw",
         "laravel-mix-purgecss": "^4.0.0||^5.0.0",
