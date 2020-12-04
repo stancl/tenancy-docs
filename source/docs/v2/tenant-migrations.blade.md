@@ -23,7 +23,7 @@ You can run migrations from outside the command line as well. To run migrations 
 $tenant = \Tenant::create('tenant1.localhost');
 
 \Artisan::call('tenants:migrate', [
-    '--tenants' => [$tenant->id];
+    '--tenants' => [$tenant->id]
 ]);
 ```
 
