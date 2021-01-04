@@ -189,7 +189,7 @@ App\Tenant::all()->runForEach(function () {
 If you use Laravel 8, the the command is slightly different:
 
 ```php
-App\Tenant::all()->runForEach(function () {
+App\Models\Tenant::all()->runForEach(function () {
     App\Models\User::factory()->create();
 });
 ```
