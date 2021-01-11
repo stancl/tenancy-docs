@@ -23,37 +23,6 @@ If you would like to support me on a monthly basis in USD, you can use GitHub Sp
 
 ## One-time donations
 
-### Credit card
-
-If you'd like to donate using credit/debit card, select the amount below and click *Donate*. You will be redirected to Stripe.
-
-This is the preferred method for one-time donations because it comes with **no fees at all** for either party.
-
-<select id="stripe-onetime-price" class="block form-select w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5">
-    <option value="price_1GrLEBGlrejN28Vyt5SvEaaF">$5</option>
-    <option value="price_1GrLEDGlrejN28Vy91VVKWX1">$10</option>
-    <option value="price_1GrLEBGlrejN28VyfLLvLERX">$15</option>
-    <option value="price_1GrLECGlrejN28Vy50PmJYK0">$20</option>
-    <option value="price_1GrLEBGlrejN28VyRmRs614N">$25</option>
-    <option value="price_1GrLECGlrejN28VyosKALxvW" selected>$30</option>
-    <option value="price_1GrLEBGlrejN28Vy0sOTXc1e">$50</option>
-    <option value="price_1GrLECGlrejN28VySBEVgvXJ">$80</option>
-    <option value="price_1GrLECGlrejN28VyJgflOx3c">$100</option>
-    <option value="price_1GrLECGlrejN28VyyxMCGf6H">$150</option>
-    <option value="price_1GrLccGlrejN28VyPhP3kgTA">$200</option>
-    <option value="price_1GrLccGlrejN28VyGwq0PcmT">$300</option>
-    <option value="price_1GrLcdGlrejN28VyQyOsSBOK">$350</option>
-    <option value="price_1GrLccGlrejN28Vyo1xrk8QM">$400</option>
-    <option value="price_1GrLceGlrejN28VyW9sQeqWI">$500</option>
-    <option value="price_1GrLcdGlrejN28Vy4Y3O4l6K">$600</option>
-    <option value="price_1GrLcdGlrejN28Vyin6U7qGp">$800</option>
-    <option value="price_1GrLcdGlrejN28VyCFIzWcUy">$1000</option>
-</select>
-
-<button id="stripe-onetime" class="hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md">
-    Donate
-</button>
-
 ### PayPal
 
 You can donate here: [https://paypal.me/samuelstancl](https://paypal.me/samuelstancl)
