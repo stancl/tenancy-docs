@@ -34,7 +34,7 @@ The `Stancl\Tenancy\Database\Concerns\GeneratesIds` trait, which is applied on t
 
 If you wish to use autoincrement ids instead of uuids:
 
-1. set this config key to null, or create a custom tenant model that doesn't use this trait
+1. set this config key `tenancy.id_generator` to null, or create a custom tenant model that doesn't use this trait
 2. update the `tenants` table migration to use an incrementing column type instead of `string`
 
 ### Domain model {#domain-model}
