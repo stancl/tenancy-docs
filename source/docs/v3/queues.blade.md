@@ -26,7 +26,7 @@ To force the database queue driver to use the central connection, open your `que
 
 Make sure the connection used by the queue is not in `tenancy.redis.prefixed_connections`.
 
->If you are making use of a different `REDIS_CLIENT ` other than `phpredis` (which is the default on most Laravel apps), you may run into an error indicating that Laravel `tried to set a connection on null` in the RedisManager class. Defaulting back to `phpredis` as the `REDIS_CLIENT` should fix this issue.
+>If you are making use of a different `REDIS_CLIENT ` other than `phpredis` (which is the default on most Laravel apps) or `predis`, you may run into an error indicating that Laravel `tried to set a connection on null` in the RedisManager class. Defaulting back to `phpredis` as the `REDIS_CLIENT` should fix this issue.
 
 ## Central queues {#central-queues}
 
