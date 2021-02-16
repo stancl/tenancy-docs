@@ -62,7 +62,7 @@ After the tenant is created, an event will be fired. This will result in things 
 
 Attributes of the tenant model which don't have their own column will be stored in the `data` JSON column.
 
-You may define the custom columns be overriding the `getCustomColumns()` method on your `Tenant` model:
+You may define the custom columns by overriding the `getCustomColumns()` method on your `Tenant` model:
 
 ```php
 public static function getCustomColumns(): array
