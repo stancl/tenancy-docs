@@ -66,12 +66,34 @@ class Tenant extends BaseTenant implements TenantWithDatabase
 }
 ```
 
-Now we need to tell the package to use this custom model:
+If you use Laravel 8, the path and code is slightly different, create the file `app/Models/Tenant.php` like this:
 
 ```php
-// config/tenancy.php
+<?php
 
+namespace App\Models;
+
+use Stancl\Tenancy\Database\Models\Tenant as BaseTenant;
+use Stancl\Tenancy\Contracts\TenantWithDatabase;
+use Stancl\Tenancy\Database\Concerns\HasDatabase;
+use Stancl\Tenancy\Database\Concerns\HasDomains;
+
+class Tenant extends BaseTenant implements TenantWithDatabase
+{
+    use HasDatabase, HasDomains;
+}
+```
+
+Now we need to tell the package to use this custom model. Open the `config/tenancy.php` file and modify the line below:
+
+```php
 'tenant_model' => \App\Tenant::class,
+```
+
+If you use Laravel 8, the code is slightly different:
+
+```php
+'tenant_model' => \App\Models\Tenant::class,
 ```
 
 ## Events {#events}
@@ -134,6 +156,15 @@ Now we need to actually specify the central domains. A central domain is a domai
 ],
 ```
 
+If you're using Laravel 8 with Laravel Sail, no changes are needed, default values are good to go:
+
+```php
+'central_domains' => [
+    '127.0.0.1',
+    'localhost',
+],
+```
+
 ## Tenant routes {#tenant-routes}
 
 Your tenant routes will look like this by default:
@@ -161,9 +192,18 @@ Route::get('/', function () {
 });
 ```
 
+If you use Laravel 8, the code is slightly different, open the file `routes/tenant.php` and apply the modification below:
+
+```php
+Route::get('/', function () {
+    dd(\App\Models\User::all());
+    return 'This is your multi-tenant application. The id of the current tenant is ' . tenant('id');
+});
+```
+
 ## Migrations {#migrations}
 
-To have users in tenant databases, let's move the `users` table migration to `database/migrations/tenant`. This will prevent the table from being created in the central database, and it will be instead created in the tenant database when a tenant is created — thanks to our event setup.
+To have users in tenant databases, let's move the `users` table migration (the file `database/migrations/2014_10_12_000000_create_users_table.php` or similar) to `database/migrations/tenant`. This will prevent the table from being created in the central database, and it will be instead created in the tenant database when a tenant is created — thanks to our event setup.
 
 ## Creating tenants {#creating-tenants}
 
@@ -178,6 +218,17 @@ $ php artisan tinker
 >>> $tenant2->domains()->create(['domain' => 'bar.localhost']);
 ```
 
+If you use Laravel 8, the commands are slightly different:
+
+```php
+$ php artisan tinker
+>>> $tenant1 = App\Models\Tenant::create(['id' => 'foo']);
+>>> $tenant1->domains()->create(['domain' => 'foo.localhost']);
+>>>
+>>> $tenant2 = App\Models\Tenant::create(['id' => 'bar']);
+>>> $tenant2->domains()->create(['domain' => 'bar.localhost']);
+```
+
 Now we'll create a user inside each tenant's database:
 
 ```php
@@ -186,7 +237,7 @@ App\Tenant::all()->runForEach(function () {
 });
 ```
 
-If you use Laravel 8, the the command is slightly different:
+If you use Laravel 8, the command is slightly different:
 
 ```php
 App\Models\Tenant::all()->runForEach(function () {
@@ -196,4 +247,4 @@ App\Models\Tenant::all()->runForEach(function () {
 
 ## Trying it out {#trying-it-out}
 
-Now we visit `foo.localhost` in our browser and we should see a dump of the users table where we see some user. If we visit `bar.localhost`, we should see a different user.
+Now we visit `foo.localhost` in our browser, replace `localhost` with one of the values of `central_domains` in the file `config/tenancy.php` as modified previously. We should see a dump of the users table where we see some user. If we visit `bar.localhost`, we should see a different user.
