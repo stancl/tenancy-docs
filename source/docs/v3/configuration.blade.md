@@ -80,7 +80,7 @@ See this section in the config, it's documented with comments.
 
 `tenancy.filesystem.*`
 
-This section is relevant to cache separation, specifically, to the `FilesystemTenancyBootstrapper`.
+This section is relevant to storage separation, specifically, to the `FilesystemTenancyBootstrapper`.
 
 See this section in the config, it's documented with comments.
 
