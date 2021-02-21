@@ -48,12 +48,12 @@ App\Providers\TenancyServiceProvider::class, // <-- here
 
 ## Creating a tenant model {#creating-a-tenant-model}
 
-Now you need to create a Tenant model. The package comes with a default Tenant model that has many features, but it attempts to be mostly unopinonated and as such, we need to create a custom model to use domains & databases. Create `App\Tenant` like this:
+Now you need to create a Tenant model. The package comes with a default Tenant model that has many features, but it attempts to be mostly unopinonated and as such, we need to create a custom model to use domains & databases. Create the file `app/Models/Tenant.php` like this:
 
 ```php
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Stancl\Tenancy\Database\Models\Tenant as BaseTenant;
 use Stancl\Tenancy\Contracts\TenantWithDatabase;
@@ -66,12 +66,12 @@ class Tenant extends BaseTenant implements TenantWithDatabase
 }
 ```
 
-Now we need to tell the package to use this custom model:
+*Please note: if you have the models anywhere else, you should adjust the code and commands of this tutorial accordingly.*
+
+Now we need to tell the package to use this custom model. Open the `config/tenancy.php` file and modify the line below:
 
 ```php
-// config/tenancy.php
-
-'tenant_model' => \App\Tenant::class,
+'tenant_model' => \App\Models\Tenant::class,
 ```
 
 ## Events {#events}
@@ -112,7 +112,7 @@ protected function centralDomains(): array
 }
 ```
 
-If you're using Laravel 8, call these methods manually from your `RouteServiceProvider`'s `boot()` method, instead of the `$this->routes()` calls.
+Call these methods manually from your `RouteServiceProvider`'s `boot()` method, instead of the `$this->routes()` calls.
 
 ```php
 public function boot()
@@ -134,6 +134,15 @@ Now we need to actually specify the central domains. A central domain is a domai
 ],
 ```
 
+If you're using Laravel Sail, no changes are needed, default values are good to go:
+
+```php
+'central_domains' => [
+    '127.0.0.1',
+    'localhost',
+],
+```
+
 ## Tenant routes {#tenant-routes}
 
 Your tenant routes will look like this by default:
@@ -152,18 +161,18 @@ Route::middleware([
 
 These routes will only be accessible on tenant (non-central) domains — the `PreventAccessFromCentralDomains` middleware enforces that.
 
-Let's make a small change to dump all the users in the database, so that we can actually see multi-tenancy working.
+Let's make a small change to dump all the users in the database, so that we can actually see multi-tenancy working. Open the file `routes/tenant.php` and apply the modification below:
 
 ```php
 Route::get('/', function () {
-    dd(\App\User::all());
+    dd(\App\Models\User::all());
     return 'This is your multi-tenant application. The id of the current tenant is ' . tenant('id');
 });
 ```
 
 ## Migrations {#migrations}
 
-To have users in tenant databases, let's move the `users` table migration to `database/migrations/tenant`. This will prevent the table from being created in the central database, and it will be instead created in the tenant database when a tenant is created — thanks to our event setup.
+To have users in tenant databases, let's move the `users` table migration (the file `database/migrations/2014_10_12_000000_create_users_table.php` or similar) to `database/migrations/tenant`. This will prevent the table from being created in the central database, and it will be instead created in the tenant database when a tenant is created — thanks to our event setup.
 
 ## Creating tenants {#creating-tenants}
 
@@ -171,22 +180,14 @@ For testing purposes, we'll create a tenant in `tinker` — no need to waste tim
 
 ```php
 $ php artisan tinker
->>> $tenant1 = Tenant::create(['id' => 'foo']);
+>>> $tenant1 = App\Models\Tenant::create(['id' => 'foo']);
 >>> $tenant1->domains()->create(['domain' => 'foo.localhost']);
 >>>
->>> $tenant2 = Tenant::create(['id' => 'bar']);
+>>> $tenant2 = App\Models\Tenant::create(['id' => 'bar']);
 >>> $tenant2->domains()->create(['domain' => 'bar.localhost']);
 ```
 
 Now we'll create a user inside each tenant's database:
-
-```php
-App\Tenant::all()->runForEach(function () {
-    factory(App\User::class)->create();
-});
-```
-
-If you use Laravel 8, the the command is slightly different:
 
 ```php
 App\Models\Tenant::all()->runForEach(function () {
@@ -196,4 +197,4 @@ App\Models\Tenant::all()->runForEach(function () {
 
 ## Trying it out {#trying-it-out}
 
-Now we visit `foo.localhost` in our browser and we should see a dump of the users table where we see some user. If we visit `bar.localhost`, we should see a different user.
+Now we visit `foo.localhost` in our browser, replace `localhost` with one of the values of `central_domains` in the file `config/tenancy.php` as modified previously. We should see a dump of the users table where we see some user. If we visit `bar.localhost`, we should see a different user.
