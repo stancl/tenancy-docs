@@ -18,7 +18,7 @@ To use Passport inside the tenant part of your application, you may do the follo
     Passport::ignoreMigrations();
     Passport::routes(null, ['middleware' => [
         // You can make this simpler by creating a tenancy route group
-        InitializeTenancyByDomain::class,
+        InitializeTenancyBySubdomain::class,
         PreventAccessFromCentralDomains::class,
     ]]);
     ```
