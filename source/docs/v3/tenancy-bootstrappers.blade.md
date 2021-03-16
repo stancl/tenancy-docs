@@ -33,9 +33,23 @@ Note that you must use a cache store that supports tagging, e.g. Redis.
 This bootstrapper does the following things:
 
 - Suffixes roots of disks used by the `Storage` facade
-- Suffixes `storage_path()` (useful if you're using the local disk for storing tenant data)
-- Makes `asset()` calls use the TenantAssetController to retrieve tenant-specific data
+- Suffixes `storage_path()` (useful if you're using the local disk for storing tenant files)
+- Makes `asset()` calls use the TenantAssetController to retrieve tenant-specific files
     - Note: For some assets, e.g. images, you may want to use `global_asset()` (if the asset is shared for all tenants). And for JS/CSS assets, you should use `mix()` or again `global_asset()`.
+    - Because the `asset()` helper uses the TenantAssetController to retrieve tenant-specific files. Be aware this requires the tenant to be identified and initialized to function. Accordingly, you should ensure that the tenant identification middleware used is appropriate for your use case (defaults to InitializeTenancyByDomain). For example, if you are only using subdomain identification, you should update the middleware used by the TenantAssetController to the InitializeTenancyBySubdomain middleware. To do this, you can follow the steps outlined in [configuration]({{ $page->link('configuration') }}) to update the public static property which defined the middleware used, e.g. in your TenancyServiceProvider:
+    
+```php
+use Stancl\Tenancy\Controllers\TenantAssetsController;
+use Stancl\Tenancy\Middleware\InitializeTenancyByDomainOrSubdomain;
+
+    // other methods in the TenancyServiceProvider
+
+    public function boot()
+    {
+        // update the middleware used by the asset controller
+        TenantAssetsController::$tenancyMiddleware = InitializeTenancyByDomainOrSubdomain::class;
+    }
+```
 
 This bootstrapper is the most complex one, by far. We will have a — better written — explanation in v3 docs soon, but for now, refer to the 2.x docs for information about filesystem tenancy. [https://tenancyforlaravel.com/docs/v2/filesystem-tenancy/](https://tenancyforlaravel.com/docs/v2/filesystem-tenancy/)
 
