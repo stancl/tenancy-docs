@@ -6,6 +6,8 @@ section: content
 
 # Installation {#installation}
 
+Laravel 6.0 or higher is needed.
+
 Require the package using composer:
 
 ```php
