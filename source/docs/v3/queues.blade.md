@@ -35,11 +35,11 @@ To dispatch a job such that it will run centrally under all circumstances, creat
 ```jsx
 // queue.connections
 'central' => [
-		'driver' => 'database',
+    'driver' => 'database',
     'table' => 'jobs',
     'queue' => 'default',
     'retry_after' => 90,
-		'central' => true, // <---
+    'central' => true, // <---
 ],
 ```
 
