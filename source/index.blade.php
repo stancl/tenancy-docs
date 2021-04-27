@@ -452,7 +452,7 @@ fill="none" viewBox="0 0 404 784">
                 Stars on GitHub
               </dt>
               <dd class="order-1 text-5xl font-extrabold leading-none text-indigo-600" aria-describedby="item-1">
-                1400+
+                1700+
               </dd>
             </div>
             <div
@@ -461,7 +461,7 @@ fill="none" viewBox="0 0 404 784">
               Downloads
             </dt>
             <dd class="order-1 text-5xl font-extrabold leading-none text-indigo-600">
-              90 000+
+              180 000+
             </dd>
           </div>
           <div class="flex flex-col p-6 text-center border-t border-gray-100 sm:border-0 sm:border-l">
@@ -469,7 +469,7 @@ fill="none" viewBox="0 0 404 784">
               Sponsors &lt;3
             </dt>
             <dd class="order-1 text-5xl font-extrabold leading-none text-indigo-600">
-              70+
+              90+
             </dd>
           </div>
         </dl>
