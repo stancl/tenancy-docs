@@ -134,7 +134,7 @@
 				</a>
 			</div>
 			<p class="mt-8 text-base leading-6 text-gray-400 md:mt-0 md:order-1">
-				&copy; 2020 Samuel Štancl. All rights reserved.
+				&copy; {{ date('Y') }} Samuel Štancl. All rights reserved.
 			</p>
 		</div>
 	</div>
