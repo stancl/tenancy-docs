@@ -15,11 +15,12 @@ Open the `config/livewire.php` file and change this:
 to this:
 
 ```php
-'middleware_group' => [
-    'web',
-    'universal',
-    InitializeTenancyByDomain::class, // or whatever tenancy middleware you use
-],
+    'middleware_group' => [
+        'web',
+        'universal',
+        Stancl\Tenancy\Middleware\InitializeTenancyByDomain::class, // or whatever tenancy middleware you use
+    ],
+
 ```
 
 Now you can use Livewire both in the central app and the tenant app.
