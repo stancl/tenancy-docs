@@ -134,7 +134,7 @@
 				</a>
 			</div>
 			<p class="mt-8 text-base leading-6 text-gray-400 md:mt-0 md:order-1">
-				&copy; {{ date('Y') }} Samuel Štancl. All rights reserved.
+                Made by <a href="https://archte.ch">ArchTech</a>. &copy; {{ date('Y') }} All rights reserved.
 			</p>
 		</div>
 	</div>
