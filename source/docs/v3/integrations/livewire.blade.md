@@ -18,10 +18,12 @@ to this:
     'middleware_group' => [
         'web',
         'universal',
-        Stancl\Tenancy\Middleware\InitializeTenancyByDomain::class, // or whatever tenancy middleware you use
+        InitializeTenancyByDomain::class, // or whatever tenancy middleware you use
     ],
 
 ```
+
+(Don't forget to import the middleware class.)
 
 Now you can use Livewire both in the central app and the tenant app.
 
