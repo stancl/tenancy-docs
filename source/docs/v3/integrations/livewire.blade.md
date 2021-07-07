@@ -15,12 +15,11 @@ Open the `config/livewire.php` file and change this:
 to this:
 
 ```php
-    'middleware_group' => [
-        'web',
-        'universal',
-        InitializeTenancyByDomain::class, // or whatever tenancy middleware you use
-    ],
-
+'middleware_group' => [
+    'web',
+    'universal',
+    InitializeTenancyByDomain::class, // or whatever tenancy middleware you use
+],
 ```
 
 (Don't forget to import the middleware class.)
