@@ -61,8 +61,8 @@ If you want to use the same keypair for all tenants, do the following.
     {
         $client = new ClientRepository();
         
-        $client->createPasswordGrantClient(null, 'Default password grant client', 'http://{{your.redirect.path}}');
-        $client->createPersonalAccessClient(null, 'Default personal access client', 'http://{{your.redirect.path}}');
+        $client->createPasswordGrantClient(null, 'Default password grant client', 'http://your.redirect.path');
+        $client->createPersonalAccessClient(null, 'Default personal access client', 'http://your.redirect.path');
     }
     ```
 
