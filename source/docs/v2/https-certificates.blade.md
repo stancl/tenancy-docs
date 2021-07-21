@@ -38,3 +38,5 @@ You can generate a certificate using certbot. If you use the `--nginx` flag, you
 Creating this config dynamically from PHP is not easy, but is probably feasible. Giving `www-data` write access to `/etc/nginx/sites-available/tenants.conf` should work.
 
 However, you still need to reload nginx configuration to apply the changes to configuration. This is problematic and I'm not sure if there is a simple and secure way to do this from PHP.
+
+You can follow this guide for step-by-step tutorial for installing [SSL certificate on NGINX](https://www.armanism.com/blog/install-free-ssl-on-nginx).
