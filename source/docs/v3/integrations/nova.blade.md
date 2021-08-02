@@ -24,6 +24,7 @@ To use Nova inside of the tenant part of your application, do the following:
 
 - Prevent Nova from adding its migrations to your central migrations by adding `Nova::ignoreMigrations()` to `NovaServiceProvider::boot()` (Don't do this if you want to use Nova **[both in the central & tenant parts]({{ $page->link('features/universal-routes') }})** of the app.)
 - Add the tenancy middleware to your `nova.middleware` config. Example:
+
     ```php
     'middleware' => [
         // You can make this simpler by creating a tenancy route group
