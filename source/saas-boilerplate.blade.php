@@ -553,7 +553,7 @@
 </dt>
 <dd class="pr-12 mt-2" x-show="openPanel === 8" style="display: none;">
   <p class="text-base leading-6 text-gray-700">
-    Laravel 7 (a new version with Jetstream and Laravel 8 will be released in the coming months). Multi-domain multi-database tenancy. Customers get subdomains by default, can add their own 2nd level domains. Billing is done with Cashier Stripe, front-end is done with Tailwind CSS, occasional Alpine.js, and Livewire for some forms.
+    Laravel 8 (a new version with Jetstream will be released in the coming months). Multi-domain multi-database tenancy. Customers get subdomains by default, can add their own 2nd level domains. Billing is done with Cashier Stripe, front-end is done with Tailwind CSS, occasional Alpine.js, and Livewire for some forms.
   </p>
 </dd>
 </div>
