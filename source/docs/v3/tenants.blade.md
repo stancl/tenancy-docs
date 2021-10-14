@@ -18,12 +18,12 @@ The base model has the following features on top of the ones that are necessary 
 
 **Most** applications using this package will want domain/subdomain identification and tenant databases.
 
-To do this, create a new model, e.g. `App\Tenant`, that looks like this:
+To do this, create a new model, e.g. `App\Models\Tenant`, that looks like this:
 
 ```php
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Stancl\Tenancy\Database\Models\Tenant as BaseTenant;
 use Stancl\Tenancy\Contracts\TenantWithDatabase;
@@ -39,7 +39,7 @@ class Tenant extends BaseTenant implements TenantWithDatabase
 Then, configure the package to use this model in `config/tenancy.php`:
 
 ```php
-'tenant_model' => \App\Tenant::class,
+'tenant_model' => \App\Models\Tenant::class,
 ```
 
 If you want to customize the `Domain` model, you can do that too.
@@ -51,6 +51,8 @@ If you want to customize the `Domain` model, you can do that too.
 You can create tenants like any other models:
 
 ```php
+use App\Models\Tenant;
+
 $tenant = Tenant::create([
     'plan' => 'free',
 ]);
