@@ -63,7 +63,6 @@
 @unless(isset($banner) && $banner === false )
     @include('_partials.banner')
 @endunless
-
 {{-- /Banner --}}
 
 <script src="{{ $page->baseUrl . mix('js/main.js', 'assets/build') }}"></script>

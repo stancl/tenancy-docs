@@ -61,6 +61,10 @@
         @endif
 
         <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+
+        <style>
+            [x-cloak] { display: none !important; }
+        </style>
     </head>
     <body class="font-sans antialiased">
         <div class="p-2">
@@ -103,6 +107,12 @@
         </div>
 
         @include('_partials.footer')
+
+        {{-- Banner --}}
+        @unless(isset($banner) && $banner === false )
+            @include('_partials.banner')
+        @endunless
+        {{-- /Banner --}}
 
         @if ($page->docsearchApiKey && $page->docsearchIndexName)
         <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" data-turbolinks-eval="false"></script>
