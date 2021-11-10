@@ -1,4 +1,4 @@
-@extends('_layouts.master', ['title' => 'Multi-tenant SaaS boilerplate for Laravel'])
+@extends('_layouts.master', ['title' => 'Multi-tenant SaaS boilerplate for Laravel', 'banner' => false])
 
 @section('content')
 
