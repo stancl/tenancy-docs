@@ -16,11 +16,11 @@
         <meta property="twitter:site" content="@samuelstancl">
         <meta property="twitter:title" content="{{ ($title ?? null) ? $title . ' | Tenancy for Laravel' : 'Tenancy for Laravel' }}">
         <meta name="twitter:image:alt" content="{{ $page->siteName }}">
-        
+
         <meta name="twitter:image" content="https://previewify.app/i/760?url={{ $page->getUrl() }}">
         <meta property="og:image" content="https://previewify.app/i/760?url={{ $page->getUrl() }}">
-        
-        <meta name="previewify:overline" content="Tenancy for Laravel">
+
+        <meta name="previewify:overline" content="Tenancy for Laravel {{ $page->version() }}">
         <meta name="previewify:title" content="{{ ($title ?? null) ? $title . ' | Tenancy for Laravel' : 'Tenancy for Laravel' }}">
         <meta name="previewify:subtitle" content="Turn any Laravel application multi-tenant, automatically. No code changes needed.">
         <meta name="previewify:repository" content="stancl/tenancy">
@@ -75,7 +75,7 @@
     <body class="font-sans antialiased">
         <div class="p-2">
             @include('_partials.header-docs')
-    
+
             <main role="main" class="">
                 <section class="px-6 py-4">
                     <div class="grid grid-cols-8 gap-4">
