@@ -11,12 +11,15 @@
         <meta property="og:description" content="{{ $page->description ?? $page->title }} | {{ $page->siteName }}"/>
         <meta property="og:url" content="{{ $page->getUrl() }}"/>
         <meta property="og:type" content="website"/>
+
         <meta property="twitter:card" content="summary_large_image">
         <meta property="twitter:site" content="@samuelstancl">
         <meta property="twitter:title" content="{{ ($title ?? null) ? $title . ' | Tenancy for Laravel' : 'Tenancy for Laravel' }}">
-
-        <meta property="og:image" content="https://previewify.app/i/760?url={{ $page->getUrl() }}">
+        <meta name="twitter:image:alt" content="{{ $page->siteName }}">
+        
         <meta name="twitter:image" content="https://previewify.app/i/760?url={{ $page->getUrl() }}">
+        <meta property="og:image" content="https://previewify.app/i/760?url={{ $page->getUrl() }}">
+        
         <meta name="previewify:overline" content="Tenancy for Laravel">
         <meta name="previewify:title" content="{{ ($title ?? null) ? $title . ' | Tenancy for Laravel' : 'Tenancy for Laravel' }}">
         <meta name="previewify:subtitle" content="Turn any Laravel application multi-tenant, automatically. No code changes needed.">
@@ -28,8 +31,6 @@
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
-
-        <meta name="twitter:image:alt" content="{{ $page->siteName }}">
 
         <meta name="docsearch:language" content="en" />
         <meta name="docsearch:version" content="{{ $page->version() }}" />
