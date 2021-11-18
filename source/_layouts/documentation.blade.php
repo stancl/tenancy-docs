@@ -21,7 +21,7 @@
         <meta property="og:image" content="https://previewify.app/i/760?url={{ $page->getUrl() }}">
 
         <meta name="previewify:overline" content="Tenancy for Laravel {{ $page->version() }}">
-        <meta name="previewify:title" content="{{ ($title ?? null) ? $title . ' | Tenancy for Laravel' : 'Tenancy for Laravel' }}">
+        <meta name="previewify:title" content="{{ $page->title ?: 'Documentation | Tenancy for Laravel' }}">
         <meta name="previewify:subtitle" content="Turn any Laravel application multi-tenant, automatically. No code changes needed.">
         <meta name="previewify:repository" content="stancl/tenancy">
         <meta name="previewify:image" content="https://tenancyforlaravel.com/assets/img/previewify-image.png">
