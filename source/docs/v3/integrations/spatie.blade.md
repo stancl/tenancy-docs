@@ -30,6 +30,13 @@ Then add this to your `AppServiceProvider::boot()` method:
 
 ```php
 Event::listen(TenancyBootstrapped::class, function (TenancyBootstrapped $event) {
+    // TenancyBootstraped event is called if you are creating tenants through the central app,
+    // so to prevent making caches with wrong permissions the code below can be used
+    // 
+    // $isACentralDomain = in_array(request()->getHost(), config('tenancy.central_domains'), true);
+    // if(!$isACentralDomain) {
+    //     \Spatie\Permission\PermissionRegistrar::$cacheKey = 'spatie.permission.cache.tenant.' . $event->tenancy->tenant->id;
+    // }
     \Spatie\Permission\PermissionRegistrar::$cacheKey = 'spatie.permission.cache.tenant.' . $event->tenancy->tenant->id;
 });
 ```
