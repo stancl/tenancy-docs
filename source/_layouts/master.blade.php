@@ -38,7 +38,7 @@
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
   <title>{{ ($title ?? null) ? $title . ' | Tenancy for Laravel' : 'Tenancy for Laravel' }}</title>
   
-  <script async src="https://cdn.splitbee.io/sb.js"></script>
+  <script async data-api="/_hive" src="/bee.js"></script>
 
   <style>
     [x-cloak] { display: none !important; }
