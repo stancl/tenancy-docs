@@ -21,7 +21,7 @@
                     </p>
                 </div>
                 <div class="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
-                    <a href="https://tenancyforlaravel.com/saas-boilerplate/" class="w-full inline-flex space-x-2 justify-center py-2 px-4 rounded-md bg-white text-sm font-medium hover:bg-gray-50">
+                    <a href="https://tenancyforlaravel.com/saas-boilerplate/" data-splitbee-event="Click banner CTA" class="w-full inline-flex space-x-2 justify-center py-2 px-4 rounded-md bg-white text-sm font-medium hover:bg-gray-50">
                         <span class="font-medium text-brown-900">
                             SaaS boilerplate
                         </span>
