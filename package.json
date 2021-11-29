@@ -19,7 +19,8 @@
         "sass": "^1.15.2",
         "sass-loader": "^7.1.0",
         "tailwindcss": "^1.4.6",
-        "vue-template-compiler": "^2.5.21"
+        "vue-template-compiler": "^2.5.21",
+        "@splitbee/web": "^0.3.0"
     },
     "dependencies": {
         "turbolinks": "^5.2.0"

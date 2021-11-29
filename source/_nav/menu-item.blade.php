@@ -2,7 +2,7 @@
     @if ($url = is_string($item) ? $item : $item->url)
         <a href="{{ $page->isUrl($url) ? $url : $page->link($url) }}"
             class="{{ 'lvl' . $level }} {{ $page->isActiveParent($item) ? 'lvl' . $level . '-active' : '' }} {{ $page->isActive($url) ? 'active' : '' }} nav-menu__item"
-            @if(Str::contains($url, 'saas-boilerplate')) data-splitbee-event="Click sidebar CTA" @endif
+            @if(\Illuminate\Support\Str::contains($url, 'saas-boilerplate')) data-splitbee-event="Click sidebar CTA" @endif
         >
             {{ $label }}
         </a>
