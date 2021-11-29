@@ -60,6 +60,7 @@
         <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
 
+        <script async src="https://cdn.splitbee.io/sb.js"></script>
         <script src="{{ mix('js/turbolinks.js', 'assets/build') }}"></script>
 
         @if ($page->docsearchApiKey && $page->docsearchIndexName)
