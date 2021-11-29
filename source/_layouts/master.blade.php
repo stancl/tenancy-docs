@@ -37,6 +37,8 @@
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
   <title>{{ ($title ?? null) ? $title . ' | Tenancy for Laravel' : 'Tenancy for Laravel' }}</title>
+  
+  <script async src="https://cdn.splitbee.io/sb.js"></script>
 
   <style>
     [x-cloak] { display: none !important; }
