@@ -1,8 +1,8 @@
 import splitbee from '@splitbee/web';
 
 splitbee.init({
-  scriptUrl: "/bee.js",
-  apiUrl: "/_hive",
+  scriptUrl: "https://tenancyforlaravel.com/bee.js",
+  apiUrl: "https://tenancyforlaravel.com/_hive",
 })
 
 let tag = document.getElementsByClassName('extsb')[0];
