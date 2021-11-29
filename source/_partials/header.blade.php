@@ -154,7 +154,7 @@
           <div class="rounded-lg shadow-lg">
             <div class="overflow-hidden rounded-lg shadow-xs">
               <div class="sm:gap-8 sm:p-8 relative z-20 grid gap-6 px-5 py-6 bg-white">
-                <a href="/saas-boilerplate" class="hover:bg-gray-50 block p-3 -m-3 space-y-1 transition duration-150 ease-in-out rounded-md">
+                <a href="/saas-boilerplate" data-splitbee-event="Click header CTA" class="hover:bg-gray-50 block p-3 -m-3 space-y-1 transition duration-150 ease-in-out rounded-md">
                   <p class="text-base font-medium leading-6 text-gray-900">
                     SaaS boilerplate
                   </p>
@@ -315,7 +315,7 @@
         </div>
         <div class="px-5 py-6 space-y-6">
           <div class="grid grid-cols-2 gap-4">
-            <a href="/saas-boilerplate" class="hover:text-gray-700 text-base font-medium leading-6 text-gray-900 transition duration-150 ease-in-out">
+            <a href="/saas-boilerplate" data-splitbee-event="Click header CTA" class="hover:text-gray-700 text-base font-medium leading-6 text-gray-900 transition duration-150 ease-in-out">
               SaaS boilerplate
             </a>
             <a href="/contact" class="hover:text-gray-700 text-base font-medium leading-6 text-gray-900 transition duration-150 ease-in-out">
