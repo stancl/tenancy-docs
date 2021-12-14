@@ -1,25 +1,16 @@
 import splitbee from '@splitbee/web';
 
-(function (tag) {
-    if (! tag) {
-        return;
-    }
+splitbee.init({
+    scriptUrl: "https://tenancyforlaravel.com/bee.js",
+    apiUrl: "https://tenancyforlaravel.com/_hive",
+})
 
-    let data = tag.dataset;
-    if (! data.token) {
-        return;
-    }
+window.auth = function (username) {
+    if (! username) return window.location.replace('https://github.com/tenancy-for-laravel/saas-boilerplate');
 
-    splitbee.init({
-        scriptUrl: "https://tenancyforlaravel.com/bee.js",
-        apiUrl: "https://tenancyforlaravel.com/_hive",
-        token: data.token,
-    })
-
-    splitbee.enableCookie();
-    splitbee.user.set({github: data.github});
-    splitbee.track('Purchase', {
-        product: data.product,
-        price: data.price,
+    splitbee.user.set({
+        userId: username.substr(1),
+    }).finally(() => {
+        window.location.replace('https://github.com/tenancy-for-laravel/saas-boilerplate');
     });
-})(document.getElementById('extsb'));
+}
