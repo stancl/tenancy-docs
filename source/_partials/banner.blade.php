@@ -1,4 +1,4 @@
-<div class="z-50 fixed bottom-0 inset-x-0 pb-2 sm:pb-5" x-data="{ show: true, hide() { window.localStorage.show_banner = 'hide'; this.show = false } }" x-init="
+<div x-cloak class="z-50 fixed bottom-0 inset-x-0 pb-2 sm:pb-5" x-data="{ show: true, hide() { window.localStorage.show_banner = 'hide'; this.show = false } }" x-init="
     show = window.localStorage.show_banner !== 'hide'
     " x-show="show">
     <div class="max-w-screen-xl mx-auto px-2 sm:px-6 lg:px-8">
