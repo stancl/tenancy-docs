@@ -17,8 +17,8 @@
         <meta property="twitter:title" content="{{ ($title ?? null) ? $title . ' | Tenancy for Laravel' : 'Tenancy for Laravel' }}">
         <meta name="twitter:image:alt" content="{{ $page->siteName }}">
 
-        <meta name="twitter:image" content="https://previewify.app/generate/templates/760/meta?url=https://tenancyforlaravel.com/?url={{ $page->getUrl() }}">
-        <meta property="og:image" content="https://previewify.app/generate/templates/760/meta?url=https://tenancyforlaravel.com/?url={{ $page->getUrl() }}">
+        <meta name="twitter:image" content="https://previewify.app/generate/templates/760/meta?url={{ $page->getUrl() }}">
+        <meta property="og:image" content="https://previewify.app/generate/templates/760/meta?url={{ $page->getUrl() }}">
 
         <meta name="previewify:overline" content="Tenancy for Laravel {{ $page->version() }}">
         <meta name="previewify:title" content="{{ $page->title ?: 'Documentation | Tenancy for Laravel' }}">
