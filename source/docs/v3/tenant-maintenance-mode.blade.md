@@ -24,6 +24,11 @@ This will let you use the following method on each tenant object:
 $tenant->putDownForMaintenance();
 ```
 
+To remove specific tenant from maintainance mode:
+```php
+$tenant->update(['maintenance_mode' => null]);
+```
+
 ## Middleware {#middleware}
 
 You will also need to use the `Stancl\Tenancy\Middleware\CheckTenantForMaintenanceMode` middleware on your tenant routes.
