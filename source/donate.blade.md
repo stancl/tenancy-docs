@@ -33,13 +33,13 @@ If you'd like to donate money from your bank account in your local currency, you
 
 I use [TransferWise](https://transferwise.com/invite/u/samuels1719) (affiliate link 🙂), so I can accept bank transfers in almost any currency.
 
-Contact me on [samuel@tenancyforlaravel.com](mailto:samuel@tenancyforlaravel.com?subject=Donation) and I'll give you bank details for your local currency.
+Contact me on [tenancy@archte.ch](mailto:tenancy@archte.ch?subject=Donation) and I'll give you bank details for your local currency.
 
 ## Legal
 
 If you're a business making a donation, you may want an invoice.
 
-Contact me on [samuel@tenancyforlaravel.com](mailto:samuel@tenancyforlaravel.com?subject=Donation%20with%20invoice), let me know what you need to have on the invoice and I will make it happen.
+Contact me on [tenancy@archte.ch](mailto:tenancy@archte.ch?subject=Donation%20with%20invoice), let me know what you need to have on the invoice and I will make it happen.
 
 ### Thank you!
 
