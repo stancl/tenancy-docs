@@ -26,4 +26,4 @@ To retrieve the current domain model (when using domain identification), you may
 
 For local development, you may use `*.localhost` domains (like `foo.localhost`) for tenants. On many operating systems, these work the same way as `localhost`.
 
-If you're using Valet, you may want to use e.g. `saas.test` for the central domain and `foo.saas.test`, `bar.saas.test` etc for tenant domains.
+If you're using Valet, you may want to use e.g. `saas.test` for the central domain and `foo.saas.test`, `bar.saas.test` etc for tenant domains. Use the valet link command to point multiple domains to a single source if you are using multiple domains. Open the terminal in the project folder and run the command `valet link foo.test`. You can point to as many domains as you want. 
