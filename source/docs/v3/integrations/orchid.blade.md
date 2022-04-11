@@ -12,7 +12,7 @@ The instruction is written for a newly installed Orchid platform, it is proposed
 
 Laravel Orchid has already been installed according to the [documentation Orchid](https://orchid.software/en/docs/installation/). All the steps have also been completed [Quickstart Tutorial](/docs/v3/quickstart).
 
-- To use Orchid both in the central & tenant parts you need to enable [Universal Routes](docs/v3/features/universal-routes).
+- To use Orchid both in the central & tenant parts you need to enable [Universal Routes]({{ $page->link('features/universal-routes') }}).
 - Add the tenancy middleware to your `config\platform.php`
 
     ```php
