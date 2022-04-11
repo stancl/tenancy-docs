@@ -30,7 +30,7 @@ Laravel Orchid has already been installed according to the [documentation Orchid
     ->breadcrumbs(function (Trail $trail) {
         return $trail->push(__('Home'), route('platform.index'));
     });
-     ```
+    ```
 
 - In the file `app\Providers\RouteServiceProvider.php`, if necessary, change the path to the "home" route for your central application. By default for Orchid it will be `'admin/main'`
 
@@ -51,4 +51,4 @@ Laravel Orchid has already been installed according to the [documentation Orchid
             return 'This is your multi-tenant application. The id of the current tenant is ' . tenant('id');
         });
     });
-     ```
+    ```
