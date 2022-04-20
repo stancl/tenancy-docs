@@ -30,7 +30,7 @@ For example, if your `$storageToConfigMap` looked like this:
 ```php
 \Stancl\Tenancy\Features\TenantConfig::$storageToConfigMap = [
     'paypal_api_key' => 'services.paypal.api_key',
-],
+];
 ```
 
 the value of `paypal_api_key` in tenant model would be copied to the `services.paypal.api_key` config when tenancy is initialized.
@@ -45,5 +45,5 @@ Sometimes you may want to copy the value to multiple config keys. To do that, sp
         'app.locale',
         'locales.default',
     ],
-],
+];
 ```
