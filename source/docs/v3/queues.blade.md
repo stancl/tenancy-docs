@@ -10,8 +10,6 @@ If you're using the `QueueTenancyBootstrapper`, queued jobs dispatched from the 
 
 **However**, note that if you're using the `DatabaseTenancyBootstrapper` and the `database` queue driver, or the `RedisTenancyBootstrapper` and the `redis` queue driver, you will need to make sure the jobs don't get dispatched into the tenant context for these drivers.
 
-Note: You cannot inject model **instances** with the `SerializesModels` trait, because it tries to hydrate the models before the `tenant` connection is created. Inject model ids instead and use `find()` in the handle method.
-
 ### Database queue driver {#database-queue-driver}
 
 To force the database queue driver to use the central connection, open your `queue.connections.database` config and add the following line:
@@ -35,11 +33,11 @@ To dispatch a job such that it will run centrally under all circumstances, creat
 ```jsx
 // queue.connections
 'central' => [
-		'driver' => 'database',
+    'driver' => 'database',
     'table' => 'jobs',
     'queue' => 'default',
     'retry_after' => 90,
-		'central' => true, // <---
+    'central' => true, // <---
 ],
 ```
 

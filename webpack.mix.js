@@ -11,6 +11,7 @@ mix.setPublicPath('source/assets/build');
 mix.js('source/_assets/js/main.js', 'js')
     .sourceMaps()
     .js('source/_assets/js/turbolinks.js', 'js')
+    .js('source/_assets/js/extsb.js', 'js')
     .postCss('source/_assets/css/main.css', 'css/main.css', [
         require('precss')(),
         tailwindcss('./tailwind.config.js')

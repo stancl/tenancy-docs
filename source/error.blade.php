@@ -10,7 +10,7 @@
         </div>
         <div class="ml-3">
             <h3 class="text-sm leading-5 font-medium text-red-800">
-                {{ error }}
+                {{ $error }}
             </h3>
         </div>
     </div>

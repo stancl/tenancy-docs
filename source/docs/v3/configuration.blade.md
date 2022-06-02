@@ -36,6 +36,7 @@ If you wish to use autoincrement ids instead of uuids:
 
 1. set this config key to null, or create a custom tenant model that doesn't use this trait
 2. update the `tenants` table migration to use an incrementing column type instead of `string`
+3. update the `domains` table migration `tenant_id` column to the same type as `tenants` id
 
 ### Domain model {#domain-model}
 
@@ -80,7 +81,7 @@ See this section in the config, it's documented with comments.
 
 `tenancy.filesystem.*`
 
-This section is relevant to cache separation, specifically, to the `FilesystemTenancyBootstrapper`.
+This section is relevant to storage separation, specifically, to the `FilesystemTenancyBootstrapper`.
 
 See this section in the config, it's documented with comments.
 

@@ -154,7 +154,7 @@
           <div class="rounded-lg shadow-lg">
             <div class="overflow-hidden rounded-lg shadow-xs">
               <div class="sm:gap-8 sm:p-8 relative z-20 grid gap-6 px-5 py-6 bg-white">
-                <a href="/saas-boilerplate" class="hover:bg-gray-50 block p-3 -m-3 space-y-1 transition duration-150 ease-in-out rounded-md">
+                <a href="/saas-boilerplate" data-splitbee-event="Click header CTA" class="hover:bg-gray-50 block p-3 -m-3 space-y-1 transition duration-150 ease-in-out rounded-md">
                   <p class="text-base font-medium leading-6 text-gray-900">
                     SaaS boilerplate
                   </p>
@@ -176,6 +176,40 @@
                   </p>
                   <p class="text-sm leading-5 text-gray-500">
                     Have the package author to review your tenancy implementation before you launch.
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div x-data="{ flyoutMenuOpen: false }" @click.away="flyoutMenuOpen = false" class="relative">
+        <button type="button" @click="flyoutMenuOpen = !flyoutMenuOpen" x-state:on="Item active" x-state:off="Item inactive" :class="{ 'text-gray-900': flyoutMenuOpen, 'text-gray-500': !flyoutMenuOpen }" class="group hover:text-gray-900 focus:outline-none focus:text-gray-900 inline-flex items-center space-x-2 text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out">
+          <span>Learn
+          </span>
+          <svg x-state:on="Item active" x-state:off="Item inactive" class="group-hover:text-gray-500 group-focus:text-gray-500 w-5 h-5 text-gray-400 transition duration-150 ease-in-out" x-bind:class="{ 'text-gray-600': flyoutMenuOpen, 'text-gray-400': !flyoutMenuOpen }" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+          </svg>
+        </button>
+        <div x-description="'Learn' flyout menu, show/hide based on flyout menu state." x-show="flyoutMenuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-1" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-1" class="left-1/2 sm:px-0 absolute w-screen max-w-xs px-2 mt-3 transform -translate-x-1/2" style="display: none;">
+          <div class="rounded-lg shadow-lg">
+            <div class="overflow-hidden rounded-lg shadow-xs">
+              <div class="sm:gap-8 sm:p-8 relative z-20 grid gap-6 px-5 py-6 bg-white">
+                <a href="https://codecourse.com/courses/laravel-multi-tenancy-basics" target="_blank" class="hover:bg-gray-50 block p-3 -m-3 space-y-1 transition duration-150 ease-in-out rounded-md">
+                  <p class="text-base font-medium leading-6 text-gray-900">
+                    Video course
+                  </p>
+                  <p class="text-sm leading-5 text-gray-500">
+                    A video course explaining how to create multi-database, subdomain separated tenants using this package.
+                  </p>
+                </a>
+                <a href="https://airtable.com/shrUpJo4jp6Cw4ER3" target="_blank" class="hover:bg-gray-50 block p-3 -m-3 space-y-1 transition duration-150 ease-in-out rounded-md">
+                  <p class="text-base font-medium leading-6 text-gray-900">
+                    Book
+                  </p>
+                  <p class="text-sm leading-5 text-gray-500">
+                    A book going through the practical aspects of developing and running a multi-tenant application using this package.
                   </p>
                 </a>
               </div>
@@ -281,7 +315,7 @@
         </div>
         <div class="px-5 py-6 space-y-6">
           <div class="grid grid-cols-2 gap-4">
-            <a href="/saas-boilerplate" class="hover:text-gray-700 text-base font-medium leading-6 text-gray-900 transition duration-150 ease-in-out">
+            <a href="/saas-boilerplate" data-splitbee-event="Click header CTA" class="hover:text-gray-700 text-base font-medium leading-6 text-gray-900 transition duration-150 ease-in-out">
               SaaS boilerplate
             </a>
             <a href="/contact" class="hover:text-gray-700 text-base font-medium leading-6 text-gray-900 transition duration-150 ease-in-out">

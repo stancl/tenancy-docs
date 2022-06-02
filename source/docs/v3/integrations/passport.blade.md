@@ -22,14 +22,50 @@ To use Passport inside the tenant part of your application, you may do the follo
         PreventAccessFromCentralDomains::class,
     ]]);
     ```
+    
+- Add this to `boot` method in your `AppServiceProvider`:
+
+    ```php
+    Passport::loadKeysFrom(base_path(config('passport.key_path')));
+    ```
 
 - `php artisan vendor:publish --tag=passport-migrations` & move to `database/migrations/tenant/` directory
+
+- Create `passport.php` file in your config directory and add database connection and key path config. This makes passport use the default connection.
+
+    ```php
+    <?php
+
+    return [
+
+    'storage' => [
+            'database' => [
+                'connection' => null,
+            ],
+        ],
+    'key_path' => env('OAUTH_KEY_PATH', 'storage')
+
+    ];
+    ```
+    
+You may set the OAUTH_KEY_PATH in your .env, but by default `passport:keys` puts them in `storage/` directory
 
 ## **Shared keys**
 
 If you want to use the same keypair for all tenants, do the following.
 
-- Don't use `passport:install`, use just `passport:keys`. The install command creates keys & two clients. Instead of creating clients centrally, create `Client`s manually in your [tenant database seeder]({{ $page->link('configuration#seeder-params') }}).
+- Don't use `passport:install`, use just `passport:keys`. The install command creates keys & two clients. Instead of creating clients centrally, create `Client`s manually in your [tenant database seeder]({{ $page->link('configuration#seeder-params') }}), like this:
+
+    ```php
+    public function run()
+    {
+        $client = new ClientRepository();
+        
+        $client->createPasswordGrantClient(null, 'Default password grant client', 'http://your.redirect.path');
+        $client->createPersonalAccessClient(null, 'Default personal access client', 'http://your.redirect.path');
+    }
+    ```
+
 
 ## **Tenant-specific keys** {#tenant-specific-keys}
 
@@ -51,7 +87,25 @@ And again, you need to create clients in your tenant database seeding process.
 
 ## Using Passport in both the central & tenant app {#using-passport-in-both-the-central-and-tenant-app}
 
-![Passport for both central & tenant app](/assets/images/passport_universal.png)
+To use Passport on central and tenant application, you may apply the following changes.
+
+- Remove this from the `register` method in your `AppServiceProvider` if you added it previously:
+
+    ```php
+    Passport::ignoreMigrations();
+    ```
+
+- Configure `Passport routes` on the `register` method in your `AppServiceProvider` as follows:
+
+    ```php
+    Passport::routes(null, ['middleware' => [
+        'universal', 
+        InitializeTenancyByDomain::class
+    ]]);
+    ```
+
+- Make a copy of `Passport migrations` to `database/migrations/tenant/` directory
+
 
 And make sure you enable the *Universal Routes* feature.
 

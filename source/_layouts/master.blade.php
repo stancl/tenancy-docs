@@ -37,6 +37,12 @@
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
   <title>{{ ($title ?? null) ? $title . ' | Tenancy for Laravel' : 'Tenancy for Laravel' }}</title>
+
+  <script async data-api="/_hive" src="/bee.js"></script>
+
+  <style>
+    [x-cloak] { display: none !important; }
+  </style>
 </head>
 <body class="font-sans antialiased">
 
@@ -55,6 +61,13 @@
 @include('_partials.footer')
 {{-- /Footer --}}
 
+{{-- Banner --}}
+@unless(isset($banner) && $banner === false )
+    @include('_partials.banner')
+@endunless
+{{-- /Banner --}}
+
 <script src="{{ $page->baseUrl . mix('js/main.js', 'assets/build') }}"></script>
+@stack('scripts')
 </body>
 </html>

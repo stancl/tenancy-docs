@@ -6,6 +6,8 @@ section: content
 
 # Installation {#installation}
 
+Laravel 6.0 or higher is needed.
+
 Require the package using composer:
 
 ```php
@@ -39,4 +41,4 @@ App\Providers\RouteServiceProvider::class,
 App\Providers\TenancyServiceProvider::class, // <-- here
 ```
 
-And finally, name your central connection (in `config/database.php`) `central` — or however else you want, but make sure it's the same name as the `tenancy.central_connection` config.
+And finally, if you want to use a different central database than the one defined by `DB_CONNECTION` in the file `.env`, name your central connection (in `config/database.php`) `central` — or however else you want, but make sure it's the same name as the `tenancy.central_connection` config.

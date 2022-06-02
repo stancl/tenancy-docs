@@ -10,21 +10,27 @@
         <meta property="og:title" content="{{ $page->title ?  $page->title . ' | ' : '' }}{{ $page->siteName }}"/>
         <meta property="og:description" content="{{ $page->description ?? $page->title }} | {{ $page->siteName }}"/>
         <meta property="og:url" content="{{ $page->getUrl() }}"/>
-        <meta property="og:image" content="/assets/img/logo.png"/>
         <meta property="og:type" content="website"/>
-        <meta property="twitter:image" content="https://tenancyforlaravel.com/assets/img/logo.png"/>
+
         <meta property="twitter:card" content="summary_large_image">
         <meta property="twitter:site" content="@samuelstancl">
         <meta property="twitter:title" content="{{ ($title ?? null) ? $title . ' | Tenancy for Laravel' : 'Tenancy for Laravel' }}">
+        <meta name="twitter:image:alt" content="{{ $page->siteName }}">
+
+        <meta name="twitter:image" content="https://previewify.app/generate/templates/760/meta?url={{ $page->getUrl() }}">
+        <meta property="og:image" content="https://previewify.app/generate/templates/760/meta?url={{ $page->getUrl() }}">
+
+        <meta name="previewify:overline" content="Tenancy for Laravel {{ $page->version() }}">
+        <meta name="previewify:title" content="{{ $page->title ?: 'Documentation | Tenancy for Laravel' }}">
+        <meta name="previewify:subtitle" content="Turn any Laravel application multi-tenant, automatically. No code changes needed.">
+        <meta name="previewify:repository" content="stancl/tenancy">
+        <meta name="previewify:image" content="https://tenancyforlaravel.com/assets/img/previewify-image.png">
 
         <meta name="theme-color" content="#5850EC">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
-
-        <meta name="twitter:image:alt" content="{{ $page->siteName }}">
-        <meta name="twitter:card" content="summary_large_image">
 
         <meta name="docsearch:language" content="en" />
         <meta name="docsearch:version" content="{{ $page->version() }}" />
@@ -54,6 +60,7 @@
         <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
 
+        <script async data-api="/_hive" src="/bee.js"></script>
         <script src="{{ mix('js/turbolinks.js', 'assets/build') }}"></script>
 
         @if ($page->docsearchApiKey && $page->docsearchIndexName)
@@ -61,11 +68,15 @@
         @endif
 
         <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+
+        <style>
+            [x-cloak] { display: none !important; }
+        </style>
     </head>
     <body class="font-sans antialiased">
         <div class="p-2">
             @include('_partials.header-docs')
-    
+
             <main role="main" class="">
                 <section class="px-6 py-4">
                     <div class="grid grid-cols-8 gap-4">
@@ -103,6 +114,12 @@
         </div>
 
         @include('_partials.footer')
+
+        {{-- Banner --}}
+        @unless(isset($banner) && $banner === false )
+            @include('_partials.banner')
+        @endunless
+        {{-- /Banner --}}
 
         @if ($page->docsearchApiKey && $page->docsearchIndexName)
         <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" data-turbolinks-eval="false"></script>

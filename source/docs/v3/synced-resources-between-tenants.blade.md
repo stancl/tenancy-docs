@@ -26,6 +26,8 @@ You will need two models for the resource. One for the tenant database and one f
 
 Both models must use the `ResourceSyncing` trait. This trait makes sure that a `SyncedResourceSaved` event is fired whenever the model is saved. The `UpdateSyncedResource` listener will update the resource in the central database and in all tenant databases where the resource exists. The listener is registered in your `TenancyServiceProvider`.
 
+It is important to note that when a model is updated or created as a result of being synchronised, that model is called with `withoutEvents` and as such if you rely on the saving or creating events you will need to implement this in some other way. 
+
 An important requirement of the `Syncable` interface is the `getSyncedAttributeNames()` method. You don't want to sync all columns (or more specifically, attributes, since we're talking about Eloquent models — **accessors & mutators are supported**). In the `users` example, you'd likely only want to sync attributes like the name, email and password, while keeping tenant-specific (or workspace-specific/team-specific, whatever makes sense in your project's terminology) attributes independent.
 
 The resource needs to have the same global ID in the central database and in tenant databases.
@@ -212,6 +214,8 @@ $user->tenants()->attach($tenant);
 Attaching a tenant to a user will copy even the unsynced columns (they act as default values), similarly to how creating the user inside the tenant's database will copy the tenant to the central database 1:1.
 
 If you'd like to use a custom pivot model, look into the source code of `TenantPivot` to see what to copy (or extend it) if you want to preserve this behavior.
+
+Also note that if you create a user in the tenant's database, the global id will be created using the ID generator. If you disable the ID generator for [incrementing tenant ids]({{ $page->link('tenants') }}#incrementing-ids), you'll need to make some changes.
 
 ## Queueing {#queueing}
 

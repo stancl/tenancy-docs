@@ -12,7 +12,7 @@ Multi-tenancy is the ability to provide your service to multiple users (tenants)
 
 You may find this talk insightful: [https://multitenantlaravel.com/](https://multitenantlaravel.com/). Simply going through the slides will give you 80% of the value of the talk in under five minutes.
 
-Note that if you just want to, say, scope todo tasks to the current user, there's no need to use a multi-tenancy package. Just use calls like `auth()->user()->tasks()`. This is the simplest for of multi-tenancy.
+Note that if you just want to, say, scope todo tasks to the current user, there's no need to use a multi-tenancy package. Just use calls like `auth()->user()->tasks()`. This is the simplest form of multi-tenancy.
 
 This package is built around the idea that multi-tenancy usually means letting tenants have their own users which have their own resources, e.g. todo tasks. Not just users having tasks.
 

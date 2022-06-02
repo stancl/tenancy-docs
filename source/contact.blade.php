@@ -11,7 +11,7 @@
         You can contact us if you need consulting, want to have your implementation audited, or want to discuss something.
       </p>
       <p class="mt-4 text-lg leading-6 text-gray-500">
-        You can also use email: <a class="text-indigo-700" href="mailto:samuel@tenancyforlaravel.com">samuel@tenancyforlaravel.com</a>.
+        You can also use email: <a class="text-indigo-700" href="mailto:tenancy@archte.ch">tenancy@archte.ch</a>.
       </p>
     </div>
     <div class="mt-12">

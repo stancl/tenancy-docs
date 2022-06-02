@@ -66,7 +66,7 @@ return [
             'url' => 'usage',
             'children' => [
                 'Creating Tenants' => 'creating-tenants',
-                'Tenant Migrations'=> 'tenant-migrations',
+                'Tenant Migrations' => 'tenant-migrations',
                 'Tenant Routes' => 'tenant-routes',
                 'Tenant Storage' => 'tenant-storage',
                 'Tenant Manager' => 'tenant-manager',
@@ -205,6 +205,7 @@ return [
                         'Nova' => 'integrations/nova',
                         'Telescope' => 'integrations/telescope',
                         'Livewire' => 'integrations/livewire',
+                        'Orchid' => 'integrations/orchid',
                     ],
                 ],
                 'Console commands' => 'console-commands',

@@ -13,3 +13,9 @@ Sometimes you may want to redirect the user to a specific route on a different d
 ```php
 return redirect()->route('home')->domain($domain);
 ```
+
+You can also use the `tenant_route()` helper to redirect users to another domain.
+
+```php
+return redirect(tenant_route($domain, 'home'));
+```

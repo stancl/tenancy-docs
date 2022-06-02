@@ -1,4 +1,4 @@
-@extends('_layouts.master', ['title' => 'Multi-tenant SaaS boilerplate for Laravel'])
+@extends('_layouts.master', ['title' => 'Multi-tenant SaaS boilerplate for Laravel', 'banner' => false])
 
 @section('content')
 
@@ -215,8 +215,8 @@
                 </li>
               </ul>
               <div class="mt-6 rounded-md shadow">
-                <a target="_blank" href="https://gumroad.com/l/saas-boilerplate/launch-website" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out" aria-describedby="tier-standard">
-                  Details
+                <a target="_blank" href="https://gumroad.com/l/saas-boilerplate?offer_code=launch-website&wanted=true" data-gumroad-single-product="true" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out" aria-describedby="tier-standard">
+                  Purchase
                 </a>
               </div>
             </div>
@@ -282,8 +282,8 @@
                 </li>
               </ul>
               <div class="mt-6 rounded-md shadow">
-                <a target="_blank" href="https://gumroad.com/l/saas-boilerplate-enterprise/launch-website" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out" aria-describedby="tier-enterprise">
-                  Details
+                <a target="_blank" href="https://gumroad.com/l/saas-boilerplate-enterprise?offer_code=launch-website&wanted=true" data-gumroad-single-product="true" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out" aria-describedby="tier-enterprise">
+                  Purchase
                 </a>
               </div>
             </div>
@@ -553,7 +553,8 @@
 </dt>
 <dd class="pr-12 mt-2" x-show="openPanel === 8" style="display: none;">
   <p class="text-base leading-6 text-gray-700">
-    Laravel 7 (a new version with Jetstream and Laravel 8 will be released in the coming months). Multi-domain multi-database tenancy. Customers get subdomains by default, can add their own 2nd level domains. Billing is done with Cashier Stripe, front-end is done with Tailwind CSS, occasional Alpine.js, and Livewire for some forms.
+    Laravel 9 (<a href="https://airtable.com/shroy4RrLmQFdj6zz" target="_blank" class="text-indigo-600 hover:text-indigo-500">a new version with Jetstream will be released in the coming months</a>).
+    Multi-domain multi-database tenancy. Customers get subdomains by default, can add their own 2nd level domains. Billing is done with Cashier Stripe, front-end is done with Tailwind CSS, occasional Alpine.js, and Livewire for some forms.
   </p>
 </dd>
 </div>
@@ -566,3 +567,7 @@
 
 
 @endsection
+
+@push('scripts')
+    <script type="text/javascript" src="https://gumroad.com/js/gumroad.js"></script>
+@endpush
