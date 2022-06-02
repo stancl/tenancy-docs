@@ -108,7 +108,7 @@ Also a good rule of thumb is that when you need to query the data with `WHERE` c
 
 ## Running commands in the tenant context {#running-commands-in-the-tenant-context}
 
-You may run commands in a tenant's context (e.g. creating a user in the tenants user database) and then return to the previous context (be it central, or another tenant's) by passing a callable to the `run()` method on the tenant object. For example:
+You may run commands in a tenant's context and then return to the previous context (be it central, or another tenant's) by passing a callable to the `run()` method on the tenant object. For example:
 
 ```php
 $tenant->run(function () {
