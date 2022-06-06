@@ -59,12 +59,12 @@ After the tenant is created, an event will be fired. This will result in things 
 
 ## Custom columns {#custom-columns}
 
-Attributes of the tenant model which don't have their column will be stored in the `data` JSON column. You can set these attributes as you'd normally set model attributes:
+Attributes of the tenant model which don't have their own column will be stored in the `data` JSON column. You can set these attributes like you'd set normal model attributes:
 
 ```php
 $tenant->update([
     'attributeThatHasNoColumn' => 'value', // stored in the `data` JSON column
-    'plan' => 'free' // stored in the `plan` column (see below)
+    'plan' => 'free' // stored in the dedicated `plan` column (see below)
 ]);
 ```
 or
@@ -74,7 +74,7 @@ $tenant->plan = 'free'; // stored in the `plan` column (see below)
 $tenant->save();
 ```
 
-You may define the custom columns that **won't** be stored in the `data` JSON column by overriding the `getCustomColumns()` method on your `Tenant` model:
+You may define the custom columns (that **won't** be stored in the `data` JSON column) by overriding the `getCustomColumns()` method on your `Tenant` model:
 
 ```php
 public static function getCustomColumns(): array
