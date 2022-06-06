@@ -16,9 +16,8 @@ The base model has the following features on top of the ones that are necessary 
 - Data column trait — lets you store arbitrary keys. Attributes that don't exist as columns on your `tenants` table go to the `data` column as serialized JSON.
 - Id generation trait — when you don't supply an ID, a random uuid will be generated. An alternative to this would be using AUTOINCREMENT columns. If you wish to use numerical ids, change the `create_tenants_table` migration to use `bigIncrements()` or some such column type, and set `tenancy.id_generator` config to null. That will disable the ID generation altogether, falling back to the database's autoincrement mechanism.
 
-**Most** applications using this package will want domain/subdomain identification and tenant databases.
-
-To do this, create a new model, e.g. `App\Tenant`, that looks like this:
+## Tenant Model
+**Most** applications using this package will want domain/subdomain identification and tenant databases. To do this, create a new model, e.g. `App\Tenant`, that looks like this:
 
 ```php
 <?php
@@ -60,9 +59,22 @@ After the tenant is created, an event will be fired. This will result in things 
 
 ## Custom columns {#custom-columns}
 
-Attributes of the tenant model which don't have their own column will be stored in the `data` JSON column.
+Attributes of the tenant model which don't have their own column will be stored in the `data` JSON column. You can set these attributes like you'd set normal model attributes:
 
-You may define the custom columns by overriding the `getCustomColumns()` method on your `Tenant` model:
+```php
+$tenant->update([
+    'attributeThatHasNoColumn' => 'value', // stored in the `data` JSON column
+    'plan' => 'free' // stored in the dedicated `plan` column (see below)
+]);
+```
+or
+```php
+$tenant->customAttribute = 'value'; // stored in the `data` JSON column
+$tenant->plan = 'free'; // stored in the `plan` column (see below)
+$tenant->save();
+```
+
+You may define the custom columns (that **won't** be stored in the `data` JSON column) by overriding the `getCustomColumns()` method on your `Tenant` model:
 
 ```php
 public static function getCustomColumns(): array
@@ -70,7 +82,6 @@ public static function getCustomColumns(): array
     return [
         'id',
         'plan',
-        'locale',
     ];
 }
 ```
