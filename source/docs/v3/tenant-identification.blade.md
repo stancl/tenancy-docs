@@ -46,7 +46,7 @@ Records that contain **dots** in the `domain` column will be treated as domains/
 
 Some applications will want to use a single domain, but use paths to identify the tenant. This would be when you want customers to use your branded product rather than giving them a whitelabel product that they can use on their own domains.
 
-To do this, use the `Stancl\Tenancy\Middleware\InitializeTenancyByPath` middleware **and make sure your routes are prefixes with `/{tenant}`**.
+To do this, use the `Stancl\Tenancy\Middleware\InitializeTenancyByPath` middleware **and make sure your routes are prefixed with `/{tenant}`**.
 
 ```php
 use Stancl\Tenancy\Middleware\InitializeTenancyByPath;
