@@ -219,7 +219,7 @@ Also note that if you create a user in the tenant's database, the global id will
 
 ## Queueing {#queueing}
 
-In production, you're almost certainly want to queue the listener that copies the changes to other databases. To do this, change the listener's static property:
+In production, you almost certainly want to queue the listener that copies the changes to other databases. To do this, change the listener's static property:
 
 ```php
 \Stancl\Tenancy\Listeners\UpdateSyncedResource::$shouldQueue = true;
