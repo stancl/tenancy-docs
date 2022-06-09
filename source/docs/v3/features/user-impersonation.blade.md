@@ -22,7 +22,7 @@ Each record in the table holds the following data:
 
 You visit an impersonation route that you create — though little work is needed on your side, your route will mostly just call a method provided by the feature. This route is a **tenant route**, meaning it's on the tenant domain if you use domain identification, or prefixed with the tenant id if you use path identification.
 
-This route checks tries to find a record in that table based on the token, and if it's valid it authenticates you with the stored user id against the auth guard and redirects you to the stored URL.
+This route tries to find a record in that table based on the token, and if it's valid, it authenticates you with the stored user id against the auth guard and redirects you to the stored URL.
 
 If the impersonation succeeds, the token is deleted from the database.
 
