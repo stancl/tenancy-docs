@@ -53,7 +53,7 @@ Note that you don't want to grant the users the ability to grant themselves more
 
 > **Important:** there should be no `tenant` connection in `config/database.php`. If you create a template connection for tenants, name it something like `tenant_template`. The `tenant` connection is entirely managed by the package and gets reset to `null` when tenancy is ended.
 
-To specify the connection that should be used to construct this tenant's database connection (the array like you'd find in `config/database.php`, set the `tenancy_db_connection` key. Otherwise, the connection whose name is in the `tenancy.database.template_connection` config will be used. If that key is null, the central connection will be used.
+To specify the connection that should be used to construct this tenant's database connection (the array like you'd find in `config/database.php`), set the `tenancy_db_connection` key. Otherwise, the connection whose name is in the `tenancy.database.template_connection` config will be used. If that key is null, the central connection will be used.
 
 ## Specifying other connection details {#specifyng-other-connection-details}
 
