@@ -87,7 +87,7 @@
                                 </a>
                             </li>
                             <li class="mt-4">
-                                <a href="https://discord.gg/7cpgPxv" class="text-base leading-6 text-gray-300 hover:text-white">
+                                <a href="https://archte.ch/discord" class="text-base leading-6 text-gray-300 hover:text-white">
                                     Discord
                                 </a>
                             </li>
