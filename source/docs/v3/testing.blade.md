@@ -55,7 +55,8 @@ class TestCase // extends ...
     public function initializeTenancy()
     {
         $tenant = Tenant::create();
-				tenancy()->initialize($tenant);
+	
+        tenancy()->initialize($tenant);
     }
 
     // ...
