@@ -218,10 +218,10 @@
         </div>
       </div>
 
-      <a target="_blank" href="https://github.com/stancl/tenancy" class="hidden xl:inline hover:text-gray-900 focus:outline-none focus:text-gray-900 text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out">
+      <a target="_blank" href="https://github.com/archtechx/tenancy" class="hidden xl:inline hover:text-gray-900 focus:outline-none focus:text-gray-900 text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out">
         GitHub
       </a>
-      <a target="_blank" href="https://discord.gg/vHjEyrw" class="hover:text-gray-900 focus:outline-none focus:text-gray-900 text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out">
+      <a target="_blank" href="https://archte.ch/discord" class="hover:text-gray-900 focus:outline-none focus:text-gray-900 text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out">
         Discord
       </a>
       <a href="/donate" class="hover:text-gray-900 focus:outline-none focus:text-gray-900 text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out">
