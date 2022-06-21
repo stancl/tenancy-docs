@@ -38,16 +38,23 @@ config/livewire.php
 'middleware_group' => [
         'web',
         InitializeTenancyByPath::class, // or whatever tenancy middleware you use
-    ],```
+    ],
+```
 add in the tenant route group
-```Route::post('livewire/message/{name}', [HttpConnectionHandler::class, '__invoke']);```
+```
+Route::post('livewire/message/{name}', [HttpConnectionHandler::class, '__invoke']);
+```
 
 In Blade just after @livewireScripts:
+
 ```
 @livewireScripts
 <script>
     window.livewire_app_url = '{{ tenant()->id}}';
 </script>
 ```
+
 And in case you are wondering about the config of Livewire, there is no need to change it. Just leave it as it is; null:
-```'asset_url' => null,```
+```
+'asset_url' => null,
+```
