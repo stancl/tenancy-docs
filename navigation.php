@@ -144,6 +144,7 @@ return [
             'children' => [
                 'The two applications' => 'the-two-applications',
                 'Tenants' => 'tenants',
+                'Encrypt Attributes' => 'encrypt-attributes',
                 'Domains' => 'domains',
                 'Event system' => 'event-system',
                 'Routes' => 'routes',
