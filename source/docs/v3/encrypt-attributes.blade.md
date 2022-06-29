@@ -10,10 +10,10 @@ We can encrypt the tenant attributes if needed. In the example below, We will en
 
 # Encrypt Tenant Username And Password {#encrypt-username-password}
 
-When resolving the tenant's database configuration, this package is using the values in the `data` column stored as `tenancy_db_username` and `tenancy_db_password` 
-to create the values used in the db config as `username` and `password`, respectively. So the Tenancy package is looking in the [Virtual Column](https://github.com/archtechx/virtualcolumn) for `tenancy_db_username` and `tenancy_db_password`.
+When resolving the tenant's database configuration, this package uses the values in the `data` column stored as `tenancy_db_username` and `tenancy_db_password` to create the values used in the DB config as `username` and `password`, 
+respectively. So the Tenancy package looks in the [Virtual Column](https://github.com/archtechx/virtualcolumn) for `tenancy_db_username` and `tenancy_db_password`.
 
-The package provides a place in the migrations for your own custom columns and a method to tell the model that it should be looking for the data in an actual database column instead of the virtual column.
+The package provides a place in the migrations for your own custom columns and a method to tell the model that it should look for the data in an actual database column instead of the virtual column.
 
 This means, we can do this:
 
