@@ -40,7 +40,7 @@ class CreateTenantsTable extends Migration
 }
 ```
 
-Define the custom columns in the Tenant model:
+Define the custom columns on the Tenant model:
 
 ```php
 public static function getCustomColumns(): array
@@ -53,7 +53,7 @@ public static function getCustomColumns(): array
 }
 ```
 
-Then cast the attributes (using [Laravel's encrypted casts](https://laravel.com/docs/9.x/eloquent-mutators#encrypted-casting), or your custom casts) to encrypt and decrypt the attributes when needed:
+Then define casts for the attributes on the model (using [Laravel's encrypted casts](https://laravel.com/docs/9.x/eloquent-mutators#encrypted-casting), or your custom casts) to encrypt and decrypt them when needed:
 
 ```php
 protected $casts = [
