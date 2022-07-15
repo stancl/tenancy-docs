@@ -8,7 +8,7 @@ section: content
 
 First, set up tenancy following the [quickstart guide](/docs/v3/quickstart), and install [Laravel Orchid](https://orchid.software/en/docs/installation/).
 
-To use Orchid both in the central & tenant apps:
+To use Orchid both in the central and the tenant app:
 
 – Copy the user and Orchid migrations to `migrations\tenant`
 
