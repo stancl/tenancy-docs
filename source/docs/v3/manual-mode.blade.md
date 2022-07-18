@@ -9,7 +9,7 @@ section: content
 
 > See: [Automatic mode]({{ $page->link('automatic-mode') }})
 
-If you wish to use the package only to keep track of the current tenant and make the application tenant-aware manually — without the use [Tenancy bootstrappers]({{ $page->link('tenancy-bootstrappers') }}), you can absolutely do that.
+If you wish to use the package only to keep track of the current tenant and make the application tenant-aware manually — without using the [Tenancy bootstrappers]({{ $page->link('tenancy-bootstrappers') }}), you can absolutely do that.
 
 You may use the `Stancl\Tenancy\Database\Concerns\CentralConnection` and `Stancl\Tenancy\Database\Concerns\TenantConnection` model traits to make models explicitly use the given connections.
 
