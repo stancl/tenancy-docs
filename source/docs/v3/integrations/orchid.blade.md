@@ -43,3 +43,5 @@ To use Orchid both in the central and the tenant app:
         PreventAccessFromCentralDomains::class,
     ]);
     ```
+
+- If listing users in the admin panel throws an exception, change line 55 in the UserListLayout class to `return $user->updated_at?->toDateTimeString()` (add null-safe operator)
