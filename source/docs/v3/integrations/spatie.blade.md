@@ -8,7 +8,7 @@ section: content
 
 ## **laravel-activitylog** {#laravel-activitylog}
 
-Note: Activity's subject_id has to be an integer. E.g., to use the LogsActivity trait on a model, the model's ID has to be an integer.
+> Note: Activity's subject_id has to be an integer. E.g., to use the LogsActivity trait on a model, the model's ID has to be an integer.
 
 ### For the tenant app: {#for-the-tenant-app}
 
