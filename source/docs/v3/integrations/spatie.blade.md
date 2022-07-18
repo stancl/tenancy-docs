@@ -8,6 +8,8 @@ section: content
 
 ## **laravel-activitylog** {#laravel-activitylog}
 
+Note: Activity's subject_id has to be an integer. E.g., to use the LogsActivity trait on a model, the model's ID has to be an integer.
+
 ### For the tenant app: {#for-the-tenant-app}
 
 - Set the `database_connection` key in `config/activitylog.php` to `null`. This makes activitylog use the default connection.
