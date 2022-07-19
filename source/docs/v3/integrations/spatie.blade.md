@@ -8,7 +8,8 @@ section: content
 
 ## **laravel-activitylog** {#laravel-activitylog}
 
-> Note: The ID of the model who's the subject of Activity needs to be an integer. We recommend extra security measures when using integer IDs for tenants – because the IDs become enumerable, they get vulnerable to enumeration attacks (which UUIDs are safe against). For example, to use the LogsActivity trait on the Tenant model, modify the model to have an integer ID.
+> Note: The ID of the model who's the subject of Activity needs to be an integer. We recommend extra security measures when using integer IDs for tenants. Because the IDs become enumerable, they get vulnerable to enumeration attacks (which UUIDs are safe against).
+> For example, to use the LogsActivity trait on the Tenant model, modify the model to have an integer ID.
 
 ### For the tenant app: {#for-the-tenant-app}
 
