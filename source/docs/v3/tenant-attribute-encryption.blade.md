@@ -6,9 +6,11 @@ section: content
 
 # Tenant attribute encryption {#encrypt}
 
-To encrypt the attributes, you must store them in [custom columns](https://tenancyforlaravel.com/docs/v3/tenants/#custom-columns). For example, we'll encrypt the tenant's database credentials (which are stored using the [Virtual Column](https://github.com/archtechx/virtualcolumn) as `tenancy_db_username` and `tenancy_db_password` by default) in a few steps.
+To encrypt the tenant attributes, store them in [custom columns](https://tenancyforlaravel.com/docs/v3/tenants/#custom-columns), and on the Tenant model, cast the attributes you want to encrypt to `'encrypted'`, or use your custom encryption cast.
 
-Add custom columns to the tenants migration (we recommend making the string size at least 512 characters, so it's big enough to contain the encrypted data):
+For example, we'll encrypt the tenant's database credentials – `tenancy_db_username` and `tenancy_db_password`. We need to create custom columns for these attributes, because they are, by default, stored using [virtual column](https://github.com/archtechx/virtualcolumn).
+
+- Add custom columns to the tenants migration (we recommend making the string size at least 512 characters, so the string is capable of containing the encrypted data):
 
 ```php
 <?php
@@ -40,7 +42,7 @@ class CreateTenantsTable extends Migration
 }
 ```
 
-Define the custom columns on the Tenant model:
+- Define the custom columns on the Tenant model:
 
 ```php
 public static function getCustomColumns(): array
@@ -53,7 +55,7 @@ public static function getCustomColumns(): array
 }
 ```
 
-Then define casts for the attributes on the model (using [Laravel's encrypted casts](https://laravel.com/docs/9.x/eloquent-mutators#encrypted-casting), or your custom casts) to encrypt and decrypt them when needed:
+- Then define casts for the attributes on the model (using [Laravel's encrypted casts](https://laravel.com/docs/9.x/eloquent-mutators#encrypted-casting), or your custom casts):
 
 ```php
 protected $casts = [
