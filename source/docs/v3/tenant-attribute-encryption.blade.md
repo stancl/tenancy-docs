@@ -6,7 +6,7 @@ section: content
 
 # Tenant attribute encryption {#encrypt}
 
-To encrypt the tenant attributes, store them in [custom columns](https://tenancyforlaravel.com/docs/v3/tenants/#custom-columns), and on the Tenant model, cast the attributes you want to encrypt to `'encrypted'`, or use your custom encryption cast.
+To encrypt attributes on the Tenant model, store them in [custom columns](https://tenancyforlaravel.com/docs/v3/tenants/#custom-columns) and cast the attributes to `'encrypted'`, or your custom encryption cast.
 
 For example, we'll encrypt the tenant's database credentials – `tenancy_db_username` and `tenancy_db_password`. We need to create custom columns for these attributes, because they are, by default, stored using [virtual column](https://github.com/archtechx/virtualcolumn).
 
