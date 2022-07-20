@@ -99,12 +99,12 @@ public static function getDataColumn(): string
 
 Note that querying data inside the `data` column with `where()` will require that you do for example:
 ```php
-where('data.foo', 'bar')
+where('data->foo', 'bar')
 ```
 
 The data column is encoded/decoded only on model retrieval and saving.
 
-Also a good rule of thumb is that when you need to query the data with `WHERE` clauses, it should have a dedicated column. This will improve performance and you won't have to think about the `data.` prefixing.
+Also a good rule of thumb is that when you need to query the data with `WHERE` clauses, it should have a dedicated column. This will improve performance and you won't have to think about the `data->` prefixing.
 
 ## Running commands in the tenant context {#running-commands-in-the-tenant-context}
 
