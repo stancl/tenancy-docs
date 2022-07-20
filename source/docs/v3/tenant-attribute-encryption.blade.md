@@ -10,7 +10,7 @@ To encrypt attributes on the Tenant model, store them in [custom columns]({{ $pa
 
 For example, we'll encrypt the tenant's database credentials – `tenancy_db_username` and `tenancy_db_password`. We need to create custom columns for these attributes, because by default, they are stored in the [virtual `data` column](https://github.com/archtechx/virtualcolumn).
 
-- Add custom columns to the tenants migration (we recommend making the string size at least 512 characters, so the string is capable of containing the encrypted data):
+- Add custom columns to the tenants table (we recommend making the string size at least 512 characters, so the string is capable of containing the encrypted data):
 
 ```php
 <?php
