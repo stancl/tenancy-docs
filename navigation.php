@@ -144,7 +144,6 @@ return [
             'children' => [
                 'The two applications' => 'the-two-applications',
                 'Tenants' => 'tenants',
-                'Tenant attribute encryption' => 'tenant-attribute-encryption',
                 'Domains' => 'domains',
                 'Event system' => 'event-system',
                 'Routes' => 'routes',
@@ -210,6 +209,7 @@ return [
                     ],
                 ],
                 'Console commands' => 'console-commands',
+                'Tenant attribute encryption' => 'tenant-attribute-encryption',
                 'Cached lookup' => 'cached-lookup',
                 'Real-time facades' => 'realtime-facades',
                 'Tenant maintenance mode' => 'tenant-maintenance-mode',
