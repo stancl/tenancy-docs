@@ -6,7 +6,7 @@ section: content
 
 # Laravel Orchid {#laravel-orchid}
 
-First, set up tenancy following the [quickstart guide](/docs/v3/quickstart), and install [Laravel Orchid](https://orchid.software/en/docs/installation/).
+First, set up tenancy following the [quickstart guide]({{ $page->link('quickstart') }}), and install [Laravel Orchid](https://orchid.software/en/docs/installation/).
 
 To use Orchid both in the central and the tenant app:
 
