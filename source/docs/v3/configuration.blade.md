@@ -60,6 +60,7 @@ The list of domains that host your [central app]({{ $page->link('the-two-applica
 This config array lets you enable, disable or add your own [tenancy bootstrappers]({{ $page->link('tenancy-bootstrappers') }}).
 
 ### Database {#database}
+> Note: If you're using Laravel [Sail](https://laravel.com/docs/9.x/sail), ensure that `DB_USERNAME` has the necessary permissions to create databases. You can grant access to users by running the following command in MySQL console `grant create on *.* to 'sail'@'%';`.
 
 `tenancy.database.*`
 
