@@ -176,7 +176,7 @@ To have users in tenant databases, let's move the `users` table migration (the f
 
 ## Creating tenants {#creating-tenants}
 
-> Note: If you're using Laravel [Sail](https://laravel.com/docs/9.x/sail), ensure that `DB_USERNAME` has the necessary permissions to create databases. You can grant access to users by running the following command in MySQL console `grant create on *.* to 'sail'@'%';`.
+> Note: If you're using [Laravel Sail](https://laravel.com/docs/9.x/sail), ensure that `DB_USERNAME` has the necessary permissions to create databases. You can grant access to users by running `grant create on *.* to 'sail'@'%';` in the MySQL console.
 
 For testing purposes, we'll create a tenant in `tinker` — no need to waste time creating controllers and views for now.
 
