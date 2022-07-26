@@ -209,6 +209,7 @@ return [
                     ],
                 ],
                 'Console commands' => 'console-commands',
+                'Tenant attribute encryption' => 'tenant-attribute-encryption',
                 'Cached lookup' => 'cached-lookup',
                 'Real-time facades' => 'realtime-facades',
                 'Tenant maintenance mode' => 'tenant-maintenance-mode',
