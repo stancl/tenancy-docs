@@ -7,6 +7,6 @@
 @import 'base';
 @import 'navigation';
 @import 'search';
-
+@import 'clipboard';
 
 @tailwind utilities;
