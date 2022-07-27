@@ -1,5 +1,5 @@
 .code-block-wrapper .copyBtn {
-    @apply absolute right-2 top-2 outline-none text-gray-200 opacity-25;
+    @apply absolute right-2 top-4 outline-none text-gray-200 opacity-25;
 }
 
 .code-block-wrapper .copyBtn:hover {
