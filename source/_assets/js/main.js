@@ -1,4 +1,5 @@
 import hljs from 'highlight.js/lib/highlight';
+import './clipboard';
 
 hljs.registerLanguage('bash', require('highlight.js/lib/languages/bash'));
 hljs.registerLanguage('css', require('highlight.js/lib/languages/css'));

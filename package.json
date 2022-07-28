@@ -23,6 +23,7 @@
         "@splitbee/web": "^0.3.0"
     },
     "dependencies": {
+        "clipboard": "^2.0.11",
         "turbolinks": "^5.2.0"
     }
 }

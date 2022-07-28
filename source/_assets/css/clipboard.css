@@ -1,0 +1,11 @@
+.code-block-wrapper .copyBtn {
+    @apply absolute right-2 top-5 outline-none text-gray-200 opacity-25;
+}
+
+.code-block-wrapper .copyBtn:hover {
+    @apply text-gray-500 opacity-100;
+}
+
+.code-block-wrapper .copyBtn:active {
+    @apply text-white outline-none opacity-100;
+}
