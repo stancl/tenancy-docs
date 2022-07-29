@@ -6,56 +6,55 @@ section: content
 
 # Laravel Passport {#laravel-passport}
 
-> If you just want to write an SPA, but don't need an API for some other use (e.g. mobile app), you can avoid a lot of the complexity of writing SPAs by using [Inertia.js](https://inertiajs.com/).
+> **Tip:** If you only want to write a SPA application but don't need an API for some other use (for example, a mobile application), you can avoid much of the complexity by using [Inertia.js](https://inertiajs.com/).
 
-> Note: This guide may be out of date (it's from the v2 era). If you have Passport and Tenancy v3 working, please consider contributing back by submitting a pull request updating this page. You may use the **Edit this page** button at the bottom of this page.
+**Very important:** Don't use the command `passport:install` to avoid issues. 
 
-To use Passport inside the tenant part of your application, you may do the following.
+## Passport use cases
 
-- Add this to the `register` method in your `AppServiceProvider`:
+- [**Using Passport only in central application**](#using-passport-only-in-central-application)
+- [**Using Passport only in tenant application**](#using-passport-only-in-tenant-application)
+- [**Using Passport in both the central and tenant application**](#using-passport-in-both-the-central-and-tenant-application)
 
+## Passport keys
+- [**Manage Passport keys**](#manage-passport-keys)
+    - [**Shared keys**](#shared-keys)
+    - [**Tenant-specific keys**](#tenant-specific-keys)
+
+### **Using Passport only in central application**
+You don't have to do anything special in this use case, just install **Laravel Passport** as its official documentation explains:  
+[Laravel Passport official documentation](https://laravel.com/docs/9.x/passport)
+
+### **Using Passport only in tenant application**
+To use **Laravel Passport** inside the tenant application, you must follow the following steps:
+
+1. Add this code to the `register` method in your `AppServiceProvider` to prevent Passport migrations from running in the central application:
     ```php
     Passport::ignoreMigrations();
+    ```
+    
+2. Register Passport routes adding this code to the `boot` method in your `AuthServiceProvider`:
+    ```php
     Passport::routes(null, ['middleware' => [
-        // You can make this simpler by creating a tenancy route group
-        InitializeTenancyByDomain::class,
+        InitializeTenancyByDomain::class, // Or whatever tenant identification middlewares you're going to use
         PreventAccessFromCentralDomains::class,
     ]]);
     ```
     
-- Add this to `boot` method in your `AppServiceProvider`:
+3. Publish Passport migrations running `php artisan vendor:publish --tag=passport-migrations` command and **move** (not copy) all of them to `database/migrations/tenant/` directory.
 
+4. Publish Passport config file running `php artisan vendor:publish --tag=passport-config` command. After that, open `config/passport.php` file and set storage database connection to `null`. This will make Passport use the default connection:
     ```php
-    Passport::loadKeysFrom(base_path(config('passport.key_path')));
-    ```
-
-- `php artisan vendor:publish --tag=passport-migrations` & move to `database/migrations/tenant/` directory
-
-- Create `passport.php` file in your config directory and add database connection and key path config. This makes passport use the default connection.
-
-    ```php
-    <?php
-
     return [
-
-    'storage' => [
+        'storage' => [
             'database' => [
                 'connection' => null,
             ],
         ],
-    'key_path' => env('OAUTH_KEY_PATH', 'storage')
-
     ];
     ```
-    
-You may set the OAUTH_KEY_PATH in your .env, but by default `passport:keys` puts them in `storage/` directory
 
-## **Shared keys**
-
-If you want to use the same keypair for all tenants, do the following.
-
-- Don't use `passport:install`, use just `passport:keys`. The install command creates keys & two clients. Instead of creating clients centrally, create `Client`s manually in your [tenant database seeder]({{ $page->link('configuration#seeder-params') }}), like this:
-
+5. Create Passport Clients in your tenant database seeder like this:
     ```php
     public function run()
     {
@@ -64,49 +63,66 @@ If you want to use the same keypair for all tenants, do the following.
         $client->createPasswordGrantClient(null, 'Default password grant client', 'http://your.redirect.path');
         $client->createPersonalAccessClient(null, 'Default personal access client', 'http://your.redirect.path');
     }
+    ```  
+    *You can set your tenants database seeder class in `config/tenancy.php` file at `seeder_parameters` key.*  
+    
+6. Create Passport keys following [**Manage Passport keys**](#manage-passport-keys) section.
+
+ 
+### **Using Passport in both the central and tenant application**
+To use **Laravel Passport** on central and tenant application, you must follow the following steps:
+
+1. Enable [**Universal Routes**]({{ $page->link('universal-routes') }}) feature.
+    
+2. Register Passport routes adding this code to the `boot` method in your `AuthServiceProvider`:
+    ```php
+    Passport::routes(null, ['middleware' => [
+        'universal',
+        PreventAccessFromCentralDomains::class,
+    ]]);
+    ```
+    
+3. Publish Passport migrations running `php artisan vendor:publish --tag=passport-migrations` command and make a **copy** of all of them to `database/migrations/tenant/` directory.
+
+4. Publish Passport config file running `php artisan vendor:publish --tag=passport-config` command. After that, open `config/passport.php` file and set storage database connection to `null`. This will make Passport use the default connection:
+    ```php
+    return [
+        'storage' => [
+            'database' => [
+                'connection' => null,
+            ],
+        ],
+    ];
     ```
 
-
-## **Tenant-specific keys** {#tenant-specific-keys}
-
-If you want to use a unique keypair for each tenant, do the following. (Note: The security benefit of doing this isn't probably that big, since you're likely already using the same `APP_KEY` for all tenants.)
-
-There are multiple ways you can store & load tenant keys, but the most straightforward way is to store the keys in the on the tenant model and load them into the `passport` configuration using the **[Tenant Config]({{ $page->link('features/tenant-config') }})** feature:
-
-- Uncomment the `TenantConfig` line in your `tenancy.features` config
-- Configure the mapping as follows:
-
+5. Create Passport Clients in your central and tenant database seeders like this:
     ```php
-    [
+    public function run()
+    {
+        $client = new ClientRepository();
+        
+        $client->createPasswordGrantClient(null, 'Default password grant client', 'http://your.redirect.path');
+        $client->createPersonalAccessClient(null, 'Default personal access client', 'http://your.redirect.path');
+    }
+    ```  
+    *You can set your tenants database seeder class in `config/tenancy.php` file at `seeder_parameters` key.*  
+
+6. Create Passport keys following [**Manage Passport keys**](#manage-passport-keys) section.
+ 
+
+### **Manage Passport keys**
+#### **Shared keys**
+If you want to use the same Passport keys for all your tenants and your central application (in case you are using Passport in your central app), you only have to run `php artisan passport:keys` command and you are done.
+
+#### **Tenant-specific keys**
+> **Note:** The security benefit of doing this isn't probably that big, since you're likely already using the same `APP_KEY` for all tenants. This is a relatively complex approach, so before implementing it, make sure you really want it.  
+
+If you want to use an unique Passport keys for each tenant, there are multiple ways you can store and load tenant Passport keys, but the most straightforward way is to store the keys in the `Tenant model` and load them into the passport configuration using the [**Tenant Config**]({{ $page->link('features/tenant-config') }}) feature.  
+
+Once the [**Tenant Config**]({{ $page->link('features/tenant-config') }}) feature is enabled, simply map your tenant Passport keys into the `boot` method of your `TenancyServiceProvider` as follows:  
+    ```php
+    \Stancl\Tenancy\Features\TenantConfig::$storageToConfigMap = [
         'passport_public_key' => 'passport.public_key',
         'passport_private_key' => 'passport.private_key',
     ],
     ```
-
-And again, you need to create clients in your tenant database seeding process.
-
-## Using Passport in both the central & tenant app {#using-passport-in-both-the-central-and-tenant-app}
-
-To use Passport on central and tenant application, you may apply the following changes.
-
-- Remove this from the `register` method in your `AppServiceProvider` if you added it previously:
-
-    ```php
-    Passport::ignoreMigrations();
-    ```
-
-- Configure `Passport routes` on the `register` method in your `AppServiceProvider` as follows:
-
-    ```php
-    Passport::routes(null, ['middleware' => [
-        'universal', 
-        InitializeTenancyByDomain::class
-    ]]);
-    ```
-
-- Make a copy of `Passport migrations` to `database/migrations/tenant/` directory
-
-
-And make sure you enable the *Universal Routes* feature.
-
-Also change the value of `storage.database.connection` to `null` in the file `config/passport.php` to force Passport to use the default database connection. That way, Passport will work in both central and tenant parts of the application.
