@@ -8,7 +8,7 @@ section: content
 
 > **Tip:** If you only want to write a SPA application but don't need an API for some other use (for example, a mobile application), you can avoid much of the complexity by using [Inertia.js](https://inertiajs.com/).
 
-**Very important:** Don't use the command `passport:install` to avoid mistakes. 
+**Very important:** Don't use the command `passport:install` to avoid issues. 
 
 ## Passport use cases
 
