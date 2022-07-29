@@ -39,6 +39,7 @@ To use **Laravel Passport** inside the tenant application, you must follow the f
         InitializeTenancyByDomain::class, // Or whatever tenant identification middlewares you're going to use
         PreventAccessFromCentralDomains::class,
     ]]);
+    ```
     
 3. Publish Passport migrations running `php artisan vendor:publish --tag=passport-migrations` command and **move** (not copy) all of them to `database/migrations/tenant/` directory.
 
@@ -79,6 +80,7 @@ To use **Laravel Passport** on central and tenant application, you must follow t
         'universal',
         PreventAccessFromCentralDomains::class,
     ]]);
+    ```
     
 3. Publish Passport migrations running `php artisan vendor:publish --tag=passport-migrations` command and make a **copy** of all of them to `database/migrations/tenant/` directory.
 
@@ -118,8 +120,9 @@ If you want to use the same Passport keys for all your tenants and your central 
 If you want to use an unique Passport keys for each tenant, there are multiple ways you can store and load tenant Passport keys, but the most straightforward way is to store the keys in the `Tenant model` and load them into the passport configuration using the [**Tenant Config**]({{ $page->link('features/tenant-config') }}) feature.  
 
 Once the [**Tenant Config**]({{ $page->link('features/tenant-config') }}) feature is enabled, simply map your tenant Passport keys into the `boot` method of your `TenancyServiceProvider` as follows:  
-
+    ```php
     \Stancl\Tenancy\Features\TenantConfig::$storageToConfigMap = [
         'passport_public_key' => 'passport.public_key',
         'passport_private_key' => 'passport.private_key',
     ],
+    ```
