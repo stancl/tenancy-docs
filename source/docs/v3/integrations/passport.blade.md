@@ -12,14 +12,14 @@ section: content
 
 ## Passport use cases
 
-- [**Using Passport only in central application**](#using-passport-only-in-central-application)
-- [**Using Passport only in tenant application**](#using-passport-only-in-tenant-application)
-- [**Using Passport in both the central and tenant application**](#using-passport-in-both-the-central-and-tenant-application)
+- [Using Passport only in central application](#using-passport-only-in-central-application)
+- [Using Passport only in tenant application](#using-passport-only-in-tenant-application)
+- [Using Passport in both the central and tenant application](#using-passport-in-both-the-central-and-tenant-application)
 
 ## Passport keys
-- [**Manage Passport keys**](#manage-passport-keys)
-    - [**Shared keys**](#shared-keys)
-    - [**Tenant-specific keys**](#tenant-specific-keys)
+- [Manage Passport keys](#manage-passport-keys)
+    - [Shared keys](#shared-keys)
+    - [Tenant-specific keys](#tenant-specific-keys)
 
 ### **Using Passport only in central application** {#using-passport-only-in-central-application}
 You don't have to do anything special in this use case, just install **Laravel Passport** as its official documentation explains:
@@ -66,13 +66,13 @@ To use **Laravel Passport** inside the tenant application, you must follow the f
     ```
     *You can set your tenants database seeder class in `config/tenancy.php` file at `seeder_parameters` key.*
 
-6. Create Passport keys following [**Manage Passport keys**](#manage-passport-keys) section.
+6. Create Passport keys following [Manage Passport keys](#manage-passport-keys) section.
 
 
 ### **Using Passport in both the central and tenant application** {#using-passport-in-both-the-central-and-tenant-application}
 To use **Laravel Passport** on central and tenant application, you must follow the following steps:
 
-1. Enable [**Universal Routes**]({{ $page->link('universal-routes') }}) feature.
+1. Enable [Universal Routes]({{ $page->link('universal-routes') }}) feature.
 
 2. Register Passport routes adding this code to the `boot` method in your `AuthServiceProvider`:
     ```php
@@ -107,7 +107,7 @@ To use **Laravel Passport** on central and tenant application, you must follow t
     ```
     *You can set your tenants database seeder class in `config/tenancy.php` file at `seeder_parameters` key.*
 
-6. Create Passport keys following [**Manage Passport keys**](#manage-passport-keys) section.
+6. Create Passport keys following [Manage Passport keys](#manage-passport-keys) section.
 
 
 ### **Manage Passport keys** {#manage-passport-keys}
@@ -117,9 +117,9 @@ If you want to use the same Passport keys for all your tenants and your central 
 #### **Tenant-specific keys** {#tenant-specific-keys}
 > **Note:** The security benefit of doing this isn't probably that big, since you're likely already using the same `APP_KEY` for all tenants. This is a relatively complex approach, so before implementing it, make sure you really want it.
 
-If you want to use an unique Passport keys for each tenant, there are multiple ways you can store and load tenant Passport keys, but the most straightforward way is to store the keys in the `Tenant model` and load them into the passport configuration using the [**Tenant Config**]({{ $page->link('features/tenant-config') }}) feature.
+If you want to use an unique Passport keys for each tenant, there are multiple ways you can store and load tenant Passport keys, but the most straightforward way is to store the keys in the `Tenant model` and load them into the passport configuration using the [Tenant Config]({{ $page->link('features/tenant-config') }}) feature.
 
-Once the [**Tenant Config**]({{ $page->link('features/tenant-config') }}) feature is enabled, simply map your tenant Passport keys into the `boot` method of your `TenancyServiceProvider` as follows:
+Once the [Tenant Config]({{ $page->link('features/tenant-config') }}) feature is enabled, simply map your tenant Passport keys into the `boot` method of your `TenancyServiceProvider` as follows:
     ```php
     \Stancl\Tenancy\Features\TenantConfig::$storageToConfigMap = [
         'passport_public_key' => 'passport.public_key',
