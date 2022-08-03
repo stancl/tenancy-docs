@@ -10,7 +10,7 @@ section: content
 
 > **Another tip:** Using Passport only in the central application doesn't require any additional configuration. You can just install it following [the official Laravel Passport documentation](https://laravel.com/docs/9.x/passport).
 
-### **Using Passport in the tenant application only** {#using-passport-in-the-tenant-application-only}
+## **Using Passport in the tenant application only** {#using-passport-in-the-tenant-application-only}
 
 > **Note:** Don't use the `passport:install` command. The command creates the encryption keys & two clients in the central application. Instead of that, we'll generate the keys and create the clients manually later.
 
@@ -43,7 +43,7 @@ To use Passport inside the tenant part of your application, you may do the follo
 
 6. Set up [the encryption keys](#passport-encryption-keys).
 
-### **Using Passport in both the tenant and the central application** {#using-passport-in-both-the-tenant-and-the-central-application}
+## **Using Passport in both the tenant and the central application** {#using-passport-in-both-the-tenant-and-the-central-application}
 To use Passport in both the tenant and the central application, follow [the steps for using Passport in the tenant appliction](#using-passport-in-the-tenant-application-only) with the following adjustments:
 
 1. Copy the Passport migrations to the central application, so that the Passport migrations are in both the central and the tenant application.
@@ -57,8 +57,8 @@ Passport::routes(null, ['middleware' => [
 ```
 4. Enable [universal routes]({{ $page->link('features/universal-routes') }}) to make Passport routes accessible to both apps.
 
-### **Passport encryption keys** {#passport-encryption-keys}
-#### **Shared keys** {#shared-keys}
+## **Passport encryption keys** {#passport-encryption-keys}
+### **Shared keys** {#shared-keys}
 To generate a single Passport key pair for the whole app, create Passport clients for your tenants by adding the following code to your [tenant database seeder]({{ $page->link('configuration/#seeder-parameters') }}).
 
 ```php
@@ -74,7 +74,7 @@ public function run()
 
 Then, seed the database and generate the key pair by running `php artisan passport:keys`.
 
-#### **Tenant-specific keys** {#tenant-specific-keys}
+### **Tenant-specific keys** {#tenant-specific-keys}
 > **Note:** The security benefit of doing this is negligable since you're likely already using the same `APP_KEY` for all tenants. This is a relatively complex approach, so before implementing it, make sure you really want it. **Using shared keys instead is strongly recommended.**
 
 If you want to use a unique Passport key pair for each tenant, there are multiple ways to store and load tenant Passport keys. The most straightforward way is to store them in the `Tenant model` and load them into the Passport configuration using the [Tenant Config]({{ $page->link('features/tenant-config') }}) feature. Then, you can access the keys like `$tenant->passport_public_key`.
