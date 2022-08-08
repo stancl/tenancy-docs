@@ -94,6 +94,17 @@ class CentralUser extends Model implements SyncMaster
             'email',
         ];
     }
+    
+    public function getCreateAttributeNames(): array
+    {
+        // attributes should be used when syncing resources from central to tenant DB
+        return [
+            'global_id',
+            'name',
+            'password',
+            'email',
+        ];
+    }
 }
 
 class User extends Model implements Syncable
@@ -126,6 +137,18 @@ class User extends Model implements Syncable
             'email',
         ];
     }
+    
+    public function getCreateAttributeNames(): array
+    {
+        // attributes should be used when syncing resources from tenant to central DB
+        return [
+            'global_id',
+            'name',
+            'password',
+            'email',
+        ];
+    }
+    
 }
 
 // Pivot table migration
