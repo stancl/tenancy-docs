@@ -77,6 +77,8 @@ Then, seed the database and generate the key pair by running `php artisan passpo
 ### **Tenant-specific keys** {#tenant-specific-keys}
 > **Note:** The security benefit of doing this is negligable since you're likely already using the same `APP_KEY` for all tenants. This is a relatively complex approach, so before implementing it, make sure you really want it. **Using shared keys instead is strongly recommended.**
 
+> **Warning:** The usage of tenant specific keys has not been fully tested. [Feel free to contribute to this section.]({{ $page->editLink() }})
+
 If you want to use a unique Passport key pair for each tenant, there are multiple ways to store and load tenant Passport keys. The most straightforward way is to store them in the `Tenant model` and load them into the Passport configuration using the [Tenant Config]({{ $page->link('features/tenant-config') }}) feature. Then, you can access the keys like `$tenant->passport_public_key`.
 
 To achieve that, enable the [Tenant Config]({{ $page->link('features/tenant-config') }}) feature, and configure the storage-to-config mapping in the `boot` method of your `TenancyServiceProvider` this way:
