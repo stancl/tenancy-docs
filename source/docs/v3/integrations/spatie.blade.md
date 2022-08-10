@@ -8,6 +8,9 @@ section: content
 
 ## **laravel-activitylog** {#laravel-activitylog}
 
+> Note: The package requires logged models to have integer IDs. We recommend extra security measures when using integer IDs for tenants. Because the IDs become enumerable, they get vulnerable to enumeration attacks (which UUIDs are safe against).
+> For example, to use the LogsActivity trait on the Tenant model, modify the model to have an integer ID.
+
 ### For the tenant app: {#for-the-tenant-app}
 
 - Set the `database_connection` key in `config/activitylog.php` to `null`. This makes activitylog use the default connection.
