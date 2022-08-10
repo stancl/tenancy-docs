@@ -17,19 +17,18 @@ section: content
 To use Passport inside the tenant part of your application, you may do the following.
 
 1. Publish the Passport migrations by running `php artisan vendor:publish --tag=passport-migrations` and move them your tenant migration directory (`database/migrations/tenant/`).
-2. Publish the Passport config by running `php artisan vendor:publish --tag=passport-config`. Then, make Passport use the default database connection by setting the storage database connection to `null`. `passport:keys` puts the keys in the `storage/` directory by default – you can change that by setting the key path.
+2. Publish the Passport config by running `php artisan vendor:publish --tag=passport-config`. Then, make Passport use the default database connection by setting the storage database connection to `null`.
     ```php
     return [
         'storage' => [
             'database' => [
                 'connection' => null,
-            ],
-        ],
-        'key_path' => env('OAUTH_KEY_PATH', 'storage') // This is optional
+            ]
+        ]
     ];
     ```
 
-3. Prevent Passport migrations from running in the central application by adding `Passport::ignoreMigrations()` to the `register` method in your `AppServiceProvider`.
+3. In your `AppServiceProvider`, add `Passport::ignoreMigrations()` to the `register` method to prevent Passport migrations from running in the central application. Also add `Passport::loadKeysFrom(storage_path(config('passport.storage.key_path')))` there
 
 4. Apply Passport migrations by running `php artisan migrate`.
 
@@ -71,6 +70,8 @@ public function run()
 }
 ```
 *You can set your tenant database seeder class in `config/tenancy.php` file at `seeder_parameters` key.*
+
+Next, we'll tell Passport where to look for the keys by adding `Passport::loadKeysFrom(storage_path(config('passport.storage.key_path')))` to the `register()` method of your `AppServiceProvider`. Also add `'key_path' => env('OAUTH_KEY_PATH', '')` to your `passport.storage` config – Passport will create the keys (using `passport:keys`) or look for them in the `'storage/' . config('passport.storage.key_path')` directory.
 
 Then, seed the database and generate the key pair by running `php artisan passport:keys`.
 
