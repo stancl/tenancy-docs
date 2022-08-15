@@ -119,8 +119,10 @@ public function boot()
 {
     $this->configureRateLimiting();
 
-    $this->mapWebRoutes();
-    $this->mapApiRoutes();
+    $this->routes(function () {
+        $this->mapApiRoutes();
+        $this->mapWebRoutes();
+    });
 }
 ```
 
