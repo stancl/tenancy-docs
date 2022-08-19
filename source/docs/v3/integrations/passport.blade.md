@@ -31,7 +31,7 @@ To use Passport inside the tenant part of your application, you may do the follo
 
 3. Prevent Passport migrations from running in the central application by adding `Passport::ignoreMigrations()` to the `register` method in your `AppServiceProvider`.
 
-4. Apply Passport migrations by running `php artisan migrate`.
+4. Apply Passport migrations by running `php artisan tenants:migrate`.
 
 5. Register the Passport routes in your `AuthServiceProvider` by adding the following code to the provider's `boot` method.
     ```php
