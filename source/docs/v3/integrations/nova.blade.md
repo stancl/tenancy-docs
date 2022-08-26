@@ -51,13 +51,13 @@ To use Nova inside of the tenant part of your application, do the following:
         // You can make this simpler by creating a tenancy route group
         InitializeTenancyByDomain::class,
         PreventAccessFromCentralDomains::class,
-        'web',
+        'nova',
     ])
     ->withPasswordResetRoutes([
         // You can make this simpler by creating a tenancy route group
         InitializeTenancyByDomain::class,
         PreventAccessFromCentralDomains::class,
-        'web',
+        'nova',
     ])
     ```
 - Set the `domain` in Nova config to `null`
