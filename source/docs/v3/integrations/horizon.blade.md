@@ -5,7 +5,7 @@ section: content
 ---
 
 # Laravel Horizon {#laravel-horizon}
-> Note: **Horizon is used in the central app**. You can separate the jobs by [tagging them with tenant IDs](#tags).
+> Note: **Horizon is only accessible on the central domain**. You can separate the jobs by [tagging them with tenant IDs](#tags).
 
 Make sure your [queues]({{ $page->link('queues') }}) are configured correctly before using this.
 
