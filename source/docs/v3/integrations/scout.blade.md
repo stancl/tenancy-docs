@@ -5,7 +5,9 @@ section: content
 ---
 
 # Laravel Scout {#laravel-scout}
-After [installing Scout](https://laravel.com/docs/9.x/scout#installation), make sure the models of all tenants aren't being imported in the same index by prefixing the model indices with the current tenant's key. You can achieve that by adding a listener with this code to the TenancyInitialized event in your TenancyServiceProvider:
+> Note: Make sure the Scout config file is published
+
+After [installing Scout](https://laravel.com/docs/9.x/scout#installation), make sure the models of all tenants aren't being imported in the same index by prefixing the model indices with the current tenant's key. You can achieve that by adding a listener with this code to the `TenancyInitialized` event in your `TenancyServiceProvider`:
 
 ```php
 config(['scout.prefix' => tenant()->getTenantKey()]);
