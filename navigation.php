@@ -204,6 +204,7 @@ return [
                         'Passport' => 'integrations/passport',
                         'Nova' => 'integrations/nova',
                         'Telescope' => 'integrations/telescope',
+                        'Scout' => 'integrations/scout',
                         'Livewire' => 'integrations/livewire',
                         'Orchid' => 'integrations/orchid',
                     ],
