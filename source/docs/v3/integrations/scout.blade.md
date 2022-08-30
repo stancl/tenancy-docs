@@ -13,6 +13,12 @@ After [installing Scout](https://laravel.com/docs/9.x/scout#installation), make 
 config(['scout.prefix' => tenant()->getTenantKey()]);
 ```
 
+And to reset the prefix as tenancy ends, add a listener with this code to the `TenancyEnded` event:
+
+```php
+config(['scout.prefix' => '']);
+```
+
 After that, you can import your existing records for each tenant using the `tenants:run` command:
 
 ```
