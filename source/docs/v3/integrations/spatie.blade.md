@@ -38,3 +38,29 @@ Event::listen(TenancyBootstrapped::class, function (TenancyBootstrapped $event) 
 ```
 
 The reason for this is that spatie/laravel-permission caches permissions & roles to save DB queries, which means that we need to separate the permission cache by tenant.
+
+## **laravel-medialibrary** {#laravel-medialibrary}
+
+To generate the correct media URLs for tenants, create a custom URL generator class extending `Spatie\MediaLibrary\Support\UrlGenerator\DefaultUrlGenerator` and override the `getUrl()` method:
+
+```php
+use Spatie\MediaLibrary\Support\UrlGenerator\DefaultUrlGenerator;
+
+class TenantAwareUrlGenerator extends DefaultUrlGenerator
+{
+    public function getUrl(): string
+    {
+        $url = asset($this->getPathRelativeToRoot());
+
+        $url = $this->versionUrl($url);
+
+        return $url;
+    }
+}
+```
+
+Then, change the `url_generator` in the media-library config to the custom one (make sure to import it):
+
+```php
+'url_generator' => TenantAwareUrlGenerator::class,
+```
