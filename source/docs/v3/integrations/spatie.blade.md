@@ -26,18 +26,15 @@ php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvid
 mv database/migrations/*_create_permission_tables.php database/migrations/tenant
 ```
 
-Then add this to your `AppServiceProvider::boot()` method:
+Then add this to your `TenancyServiceProvider::boot()`:
 
 ```php
 Event::listen(TenancyBootstrapped::class, function (TenancyBootstrapped $event) {
-    // TenancyBootstraped event is called if you are creating tenants through the central app,
-    // so to prevent making caches with wrong permissions the code below can be used
-    // 
-    // $isACentralDomain = in_array(request()->getHost(), config('tenancy.central_domains'), true);
-    // if(!$isACentralDomain) {
-    //     \Spatie\Permission\PermissionRegistrar::$cacheKey = 'spatie.permission.cache.tenant.' . $event->tenancy->tenant->id;
-    // }
     \Spatie\Permission\PermissionRegistrar::$cacheKey = 'spatie.permission.cache.tenant.' . $event->tenancy->tenant->id;
+});
+
+Event::listen(TenancyEnded::class, function (TenancyEnded $event) {
+    \Spatie\Permission\PermissionRegistrar::$cacheKey = 'spatie.permission.cache';
 });
 ```
 
