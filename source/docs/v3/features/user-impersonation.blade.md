@@ -6,7 +6,9 @@ section: content
 
 # User impersonation {#user-impersonation}
 
-This package comes with a feature that lets you impersonate users inside tenant databases. This feature works with **any identification method** and **any auth guard** — even if you use multiple.
+This package comes with a feature that lets you impersonate users inside tenant databases. This feature works with **any identification method** and **any stateful auth guard** — even if you use multiple.
+
+> Note: If you're currently using a non-stateful auth guard (e.g., Laravel Sanctum's guard), you can still utilize user impersonation by passing a stateful guard to `tenancy()->impersonate()` (e.g., the `'web'` guard).
 
 ## How it works
 
@@ -99,6 +101,8 @@ return redirect("{$tenant->id}/impersonate/{$token->token}");
 And that's it. The user will be redirected to your impersonation route, logged in as the impersonated user, and finally redirected to your redirect URL.
 
 ### Custom auth guards {#custom-auth-guards}
+
+> Note: The auth guard used by user impersonation has to be stateful (it has to implement the `Illuminate\Contracts\Auth\StatefulGuard` interface).
 
 If you're using multiple auth guards, you may want to specify what auth guard the impersonation logic should use.
 
