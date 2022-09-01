@@ -29,11 +29,15 @@ php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvid
 mv database/migrations/*_create_permission_tables.php database/migrations/tenant
 ```
 
-Then add this to your `AppServiceProvider::boot()` method:
+Then add this to your `TenancyServiceProvider::boot()`:
 
 ```php
 Event::listen(TenancyBootstrapped::class, function (TenancyBootstrapped $event) {
     \Spatie\Permission\PermissionRegistrar::$cacheKey = 'spatie.permission.cache.tenant.' . $event->tenancy->tenant->id;
+});
+
+Event::listen(TenancyEnded::class, function (TenancyEnded $event) {
+    \Spatie\Permission\PermissionRegistrar::$cacheKey = 'spatie.permission.cache';
 });
 ```
 
