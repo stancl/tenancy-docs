@@ -75,7 +75,7 @@ public function run()
 Then, seed the database and generate the key pair by running `php artisan passport:keys`.
 
 ### **Tenant-specific keys** {#tenant-specific-keys}
-> **Note:** The security benefit of doing this is negligable since you're likely already using the same `APP_KEY` for all tenants. This is a relatively complex approach, so before implementing it, make sure you really want it. **Using shared keys instead is strongly recommended.**
+> **Note:** The security benefit of doing this is negligible since you're likely already using the same `APP_KEY` for all tenants. This is a relatively complex approach, so before implementing it, make sure you really want it. **Using shared keys instead is strongly recommended.**
 
 > **Warning:** The usage of tenant specific keys has not been fully tested. [Feel free to contribute to this section.]({{ $page->editLink() }})
 
