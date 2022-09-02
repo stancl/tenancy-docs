@@ -8,7 +8,7 @@ section: content
 
 This package comes with a feature that lets you impersonate users inside tenant databases. This feature works with **any identification method** and **any stateful auth guard** — even if you use multiple.
 
-> Note: If you're currently using a non-stateful auth guard (e.g., Laravel Sanctum's guard), you can still utilize user impersonation by passing a stateful guard to `tenancy()->impersonate()` (e.g., the `'web'` guard).
+> Note: If you're currently using a non-stateful auth guard (e.g., Laravel Sanctum's guard), you can still utilize user impersonation by passing a stateful guard to `tenancy()->impersonate()` (e.g. the `'web'` guard).
 
 ## How it works
 
