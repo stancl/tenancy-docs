@@ -9,28 +9,28 @@ section: content
 
 The package comes with some useful artisan commands.
 
-## **Migrate** {#migrate}
+Tenant-aware commands run for all tenants by default. The commands also have the `--tenants` option which lets you specify IDs of the tenants for which the command will run.
 
-The most important command. To use tenants, you have to be able to migrate their databases.
+> Note: To include multiple tenants using CLI, you can use multiple `--tenants=<...>` options. If you're calling the command using `Artisan::call()`, `--tenants` has to be an array.
 
-You can use the `tenants:migrate` command to migrate tenant's databases. You can also specify which tenants' databases should be migrated using the `--tenants` option.
+## **Migrate** (tenant-aware) {#migrate}
+
+`tenants:migrate` is the most important command. To use tenants, you have to be able to migrate their databases.
 
 ```
 php artisan tenants:migrate --tenants=8075a580-1cb8-11e9-8822-49c5d8f8ff23
 ```
 
-You may use multiple `--tenants=<...>` options.
+> Note: By default, the migrations should be in database/migrations/tenant. If you wish to use a different path, you may use the `--path` option. You can also specify the default parameters for the command [in the tenancy config]({{ $page->link('configuration#migration-parameters') }})
 
-> Note: By default, the migrations should be in database/migrations/tenant. If you wish to use a different path, you may use the `--path` argument.
-
-## **Rollback & seed** {#rollback-and-seed}
+## **Rollback & seed** (tenant-aware) {#rollback-and-seed}
 
 - Rollback: `tenants:rollback`
 - Seed: `tenants:seed`
 
-Similarly to `migrate`, these commands accept a `--tenants` option.
+> Note: You can configure the default parameters for `tenants:seed` (e.g. use a custom tenant seeder) in [the tenancy config]({{ $page->link('configuration#seeder-parameters') }})
 
-## **Migrate fresh** {#migrate-fresh}
+## **Migrate fresh** (tenant-aware) {#migrate-fresh}
 
 This package also offers a simplified, tenant-aware version of `migrate:fresh`. It runs `db:wipe` and `tenants:migrate` on the tenant's database.
 
@@ -40,7 +40,7 @@ You may use it like this:
 php artisan tenants:migrate-fresh --tenants=8075a580-1cb8-11e9-8822-49c5d8f8ff23
 ```
 
-## **Run** {#run}
+## **Run** (tenant-aware) {#run}
 
 You can use the `tenants:run` command to run your own commands for tenants.
 
