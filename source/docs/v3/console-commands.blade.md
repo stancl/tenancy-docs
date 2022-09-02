@@ -9,13 +9,9 @@ section: content
 
 The package comes with some useful artisan commands.
 
-All tenant-aware commands accept two options:
-
-- `--tenants` – IDs of the tenants for which the command should run, and if not specified, run the command for all tenants.
+Tenant-aware commands run for all tenants by default. The commands also have the `--tenants` option which lets you specify IDs of the tenants for which the command will run.
 
 > Note: To include multiple tenants using CLI, you can use multiple `--tenants=<...>` options. If you're calling the command using `Artisan::call()`, `--tenants` has to be an array.
-
-- `--with-pending` – Specify if the command should also run for the pending tenants // todo@pendingTenantsDocumentation
 
 ## **Migrate** (tenant-aware) {#migrate}
 
