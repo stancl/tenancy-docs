@@ -19,19 +19,30 @@ class MyCommand extends Command
 
 However, this trait requires you to implement a `getTenants()` method that returns an array of `Tenant` instances.
 
-If you don't want to implement the method yourself, you may use the `HasTenantOptions` trait. The trait also adds two options to your command:
+If you don't want to implement the options/arguments yourself, you may use one of these two traits:
+- `HasATenantsOption` - accepts multiple tenant IDs, optional -- by default the command is executed for all tenants
+- `HasATenantArgument` - accepts a single tenant ID, required argument
 
-- `--tenants` – Accepts IDs of the tenants for which the command should run (optional, if empty, run the command for all tenants)
-- `--with-pending` – Specify if the command should also run for the pending tenants (optional, boolean) // todo@pendingTenantsDocumentation
+These traits implement the `getTenants()` method needed by `TenantAwareCommand`.
 
-> Note: If you're using a custom constructor for your command, you need to add `$this->specifyParameters()` at the end for the trait to take effect.
+> Note: If you're using a custom constructor for your command, you need to add `$this->specifyParameters()` at the end for the option/argument traits to take effect.
 
-So if you use the `TenantAwareCommand` trait in combination with `HasTenantOptions`, you won't have to change a thing in your command:
+So if you use these traits in combination with `TenantAwareCommand`, you won't have to change a thing in your command:
 
 ```php
 class FooCommand extends Command
 {
-    use TenantAwareCommand, HasTenantOptions;
+    use TenantAwareCommand, HasATenantsOption;
+
+    public function handle()
+    {
+        //
+    }
+}
+
+class BarCommand extends Command
+{
+    use TenantAwareCommand, HasATenantArgument;
 
     public function handle()
     {
