@@ -29,7 +29,7 @@ php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvid
 mv database/migrations/*_create_permission_tables.php database/migrations/tenant
 ```
 
-Next, add the following listeners to the `TenancyBootstrapped` and `TenancyEnded` events in `TenancyServiceProvider::events()`:
+Next, add the following listeners to the `TenancyBootstrapped` and `TenancyEnded` events to `events()` in your `TenancyServiceProvider`:
 
 ```php
 Events\TenancyBootstrapped::class => [
