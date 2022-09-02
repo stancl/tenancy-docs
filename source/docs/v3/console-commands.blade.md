@@ -15,7 +15,7 @@ Tenant-aware commands run for all tenants by default. The commands also have the
 
 ## **Migrate** (tenant-aware) {#migrate}
 
-The most important command. To use tenants, you have to be able to migrate their databases.
+`tenants:migrate` is the most important command. To use tenants, you have to be able to migrate their databases.
 
 ```
 php artisan tenants:migrate --tenants=8075a580-1cb8-11e9-8822-49c5d8f8ff23
@@ -28,7 +28,7 @@ php artisan tenants:migrate --tenants=8075a580-1cb8-11e9-8822-49c5d8f8ff23
 - Rollback: `tenants:rollback`
 - Seed: `tenants:seed`
 
-> Note: You can configure the default parameters for `tenants:seed` in [the tenancy config]({{ $page->link('configuration#seeder-parameters') }})
+> Note: You can configure the default parameters for `tenants:seed` (e.g. use a custom tenant seeder) in [the tenancy config]({{ $page->link('configuration#seeder-parameters') }})
 
 ## **Migrate fresh** (tenant-aware) {#migrate-fresh}
 
