@@ -29,19 +29,23 @@ php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvid
 mv database/migrations/*_create_permission_tables.php database/migrations/tenant
 ```
 
-Then add this to your `TenancyServiceProvider::boot()`:
+Next, add the following listeners to the `TenancyBootstrapped` and `TenancyEnded` events to `events()` in your `TenancyServiceProvider`:
 
 ```php
-Event::listen(TenancyBootstrapped::class, function (TenancyBootstrapped $event) {
-    \Spatie\Permission\PermissionRegistrar::$cacheKey = 'spatie.permission.cache.tenant.' . $event->tenancy->tenant->id;
-});
+Events\TenancyBootstrapped::class => [
+    function (TenancyBootstrapped $event) {
+        \Spatie\Permission\PermissionRegistrar::$cacheKey = 'spatie.permission.cache.tenant.' . $event->tenancy->tenant->id;
+    }
+],
 
-Event::listen(TenancyEnded::class, function (TenancyEnded $event) {
-    \Spatie\Permission\PermissionRegistrar::$cacheKey = 'spatie.permission.cache';
-});
+Events\TenancyEnded::class => [
+    function (TenancyEnded $event) {
+        \Spatie\Permission\PermissionRegistrar::$cacheKey = 'spatie.permission.cache';
+    }
+],
 ```
 
-The reason for this is that spatie/laravel-permission caches permissions & roles to save DB queries, which means that we need to separate the permission cache by tenant.
+The reason for this is that spatie/laravel-permission caches permissions & roles to save DB queries, which means that we need to separate the permission cache by tenant. We also need to reset the cache key when tenancy ends so that the tenant's cache key isn't used in the central app.
 
 ## **laravel-medialibrary** {#laravel-medialibrary}
 
