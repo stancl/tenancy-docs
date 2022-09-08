@@ -75,27 +75,19 @@ Then, change the `url_generator` in the media-library config to the custom one (
 
 ## **laravel-login-link** {#laravel-login-link}
 
-After Installing the package, publish the config file:
+After installing the package, publish the config file:
 
 ```sh
 php artisan vendor:publish --tag="login-link-config"
 ```
 
-Then open the config file and add the appropriate tenant identification middlewares in the `middleware` config key:
-
-> Make sure to use the **Tenant Identification** method that you are using in your application's tenant routes.
+After that, add your [tenant identification]({{ $page->link('tenant-identification') }}) middlewares to the config file's `middleware` key:
 
 ```php
-
-    /*
-     * This middleware will be applied on the route
-     * that logs in a user via a link.
-     */
-    'middleware' => [
-        'web',
-        InitializeTenancyByDomain::class,
-        PreventAccessFromCentralDomains::class,
-    ],
-    
+'middleware' => [
+    'web',
+    // Add whatever tenant identification middlewares you use in your tenant routes
+    InitializeTenancyByDomain::class,
+    PreventAccessFromCentralDomains::class,
+],
 ```
-
