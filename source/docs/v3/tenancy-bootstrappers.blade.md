@@ -29,10 +29,9 @@ php artisan cache:clear --tag=tenant_123
 Note that you must use a cache store that supports tagging, e.g. Redis.
 
 ## Filesystem tenancy bootstrapper {#filesystem-tenancy-boostrapper}
+The filesystem bootstrapper makes your app's `storage_path()` and `asset()` helper and the `Storage` facade tenant-aware by modifying the paths they retrieve.
 
-The filesystem bootstrapper makes your app's `storage_path()` and `asset()` helpers and the `Storage` facade tenant-aware by modifying the paths they retrieve.
-
-> Note: If you want to bootstrap filesystem tenancy in a different way (e.g. provision an S3 bucket for each tenant), you can absolutely do that. Take a look at the package's bootstrappers to get an idea of how to write one yourself, and feel free to implement it any way you want.
+> Note: If you want to bootstrap filesystem tenancy differently (e.g. provision an S3 bucket for each tenant), you can absolutely do that. Take a look at the package's bootstrappers to get an idea of how to write one yourself, and feel free to implement it any way you want.
 
 ### Storage path helper
 
@@ -46,13 +45,13 @@ Since `storage_path()` will be suffixed, your folder structure will look like th
 
 ![The folder structure](https://i.imgur.com/GAXQOnN.png)
 
-Logs will be saved in `storage/logs` regardless of any changes to `storage_path()`, and regardless of tenant.
+Logs will be saved in `storage/logs` regardless of any changes to `storage_path()` and regardless of the tenant.
 
 ### Storage facade
 
 The bootstrapper also makes the `Storage` facade tenant-aware by suffixing the roots of disks listed in `config('tenancy.filesystem.disks')` and by overriding the roots in `config('tenancy.filesystem.root_override')`.
 
-The root of each disk listed in `config('tenancy.filesystem.disks')` will be suffixed. Doing that alone could cause unwanted behavior since Laravel does its own suffixing, so the filesystem config has the `root_override` section which lets you override the disk roots **after** tenancy has been initialized:
+The root of each disk listed in `config('tenancy.filesystem.disks')` will be suffixed. Doing that alone could cause unwanted behavior since Laravel does its own suffixing, so the filesystem config has the `root_override` section, which lets you override the disk roots **after** tenancy has been initialized:
 
 ```php
 // Tenancy config (tenancy.filesystem.root_override)
@@ -68,7 +67,7 @@ To make the tenant-aware `Storage` facade work with a custom disk, add the disk'
 
 ### Assets
 
-The bootstrapper modifies the links retrieved by the `asset()` helper so that they link to the files *of the currently initialized and identified tenant*.
+The bootstrapper modifies the links retrieved by the `asset()` helper, so they link to the files *of the currently initialized and identified tenant*.
 
 Before using the `asset()` helper, make sure to [assign the identification middleware you're using in your app to TenantAssetsController's `$tenancyMiddleware`]({{ $page->link('configuration#static-properties') }}):
 
@@ -86,7 +85,7 @@ public function boot()
 >
 > For non-tenant-specific assets (assets shared among all tenants or JS/CSS assets), you can use `global_asset()` and `mix()`.
 
-If `config('app.asset_url')` has been set, the bootstrapper simply suffixes the configured asset URL the same way as `storage_path()` (useful if you're using Laravel Vapor or similar).
+If `config('app.asset_url')` has been set, the bootstrapper suffixes the configured asset URL the same way as `storage_path()` (useful if you're using Laravel Vapor or similar).
 
 If `config('app.asset_url')` is null (as it is by default), `asset()` will return a URL pointing to the TenantAssetsController (`/tenancy/assets/...`) which returns a file response:
 
