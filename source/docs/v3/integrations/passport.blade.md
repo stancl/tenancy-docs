@@ -16,7 +16,7 @@ section: content
 
 To use Passport inside the tenant part of your application, you may do the following.
 
-1. Publish the Passport migrations by running `php artisan vendor:publish --tag=passport-migrations` and move them your tenant migration directory (`database/migrations/tenant/`).
+1. Publish the Passport migrations by running `php artisan vendor:publish --tag=passport-migrations` and move them to your tenant migration directory (`database/migrations/tenant/`).
 2. Publish the Passport config by running `php artisan vendor:publish --tag=passport-config`. Then, make Passport use the default database connection by setting the storage database connection to `null`. `passport:keys` puts the keys in the `storage/` directory by default – you can change that by setting the key path.
     ```php
     return [
