@@ -94,7 +94,7 @@ If `config('app.asset_url')` is null (as it is by default), `asset()` will retur
 return response()->file(storage_path('app/public/' . $path));
 ```
 
-When `config('app.asset_url')` is not set, **you need to store the assets in your tenant's `app/public/` directory**. So for non-private (global) assets, you may want to create a disk and use URLs from that disk instead (don't add that disk to `config(tenancy.filesystem.disks)`). For example:
+When `config('app.asset_url')` is null, **you need to store the assets in your tenant's `app/public/` directory**. So for non-private (global) assets, you may want to create a disk and use URLs from that disk instead (don't add that disk to `config(tenancy.filesystem.disks)`). For example:
 
 ```php
 Storage::disk('app-public')->url('tenants/logos/' . tenant()->id . '.png');
