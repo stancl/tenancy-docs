@@ -37,7 +37,7 @@ The filesystem bootstrapper makes your app's `storage_path()` and `asset()` help
 
 The bootstrapper suffixes the path retrieved by `storage_path()` to make the helper tenant-aware.
 
-- The suffix is `config('tenancy.filesystem.suffix_base') . $tenantKey`
+- The suffix is (`config('tenancy.filesystem.suffix_base') . $tenantKey`)
 - The suffix_base is 'tenant' by default, but feel free to change it in the tenancy config
 - After suffixing the `storage_path()` helper, it returns `"/$path_to_your_application/storage/$suffix/"`
 
