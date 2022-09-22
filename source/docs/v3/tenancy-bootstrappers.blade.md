@@ -37,9 +37,8 @@ The filesystem bootstrapper makes your app's `storage_path()` and `asset()` help
 
 The bootstrapper suffixes the path retrieved by `storage_path()` to make the helper tenant-aware.
 
-- The suffix is (`config('tenancy.filesystem.suffix_base') . $tenantKey`)
-- The suffix_base is 'tenant' by default, but feel free to change it in the tenancy config
-- After suffixing the `storage_path()` helper, it returns `"/$path_to_your_application/storage/$suffix/"`
+- The suffix is built by appending the tenant key to your `suffix_base`. The `suffix_base` is `tenant` by default, but feel free to change it in the `tenancy.filesystem` config. For example, the suffix will be `tenant42` if the tenant's key is `42` and the `suffix_base` is `tenant`.
+- After the suffixing, `storage_path()` helper returns `"/$path_to_your_application/storage/$suffix/"`
 
 Since `storage_path()` will be suffixed, your folder structure will look like this:
 
@@ -49,7 +48,7 @@ Logs will be saved in `storage/logs` regardless of any changes to `storage_path(
 
 ### Storage facade
 
-The bootstrapper also makes the `Storage` facade tenant-aware by suffixing the roots of disks listed in `config('tenancy.filesystem.disks')` and by overriding the roots in `config('tenancy.filesystem.root_override')`.
+The bootstrapper also makes the `Storage` facade tenant-aware by suffixing the roots of disks listed in `config('tenancy.filesystem.disks')` and by overriding the disk roots in `config('tenancy.filesystem.root_override')` (disk root = the disk path used by the `Storage` facade).
 
 The root of each disk listed in `config('tenancy.filesystem.disks')` will be suffixed. Doing that alone could cause unwanted behavior since Laravel does its own suffixing, so the filesystem config has the `root_override` section, which lets you override the disk roots **after** tenancy has been initialized:
 
@@ -81,7 +80,9 @@ public function boot()
 }
 ```
 
-> Note: You can disable tenancy of `asset()` in the config (`tenancy.filesystem.asset_helper_tenancy`) and explicitly use `tenant_asset()` instead. You may want to do that if you're facing issues using a package that utilizes `asset()` inside the tenant app.
+> Note: You can disable tenancy of `asset()` in the config (`tenancy.filesystem.asset_helper_tenancy`) and explicitly use `tenant_asset()` instead. But keep in mind that `tenant_asset()` does not respect the asset URL you set in `config('app.asset_url')` – the helper will always return your website's url suffixed by `tenancy/assets/name-of-your-asset.foo` (e.g. `https://your-site.test/tenancy/assets/asset-name.txt`).
+>
+> You may want to do that if you're facing issues using a package that utilizes `asset()` inside the tenant app.
 >
 > For non-tenant-specific assets (assets shared among all tenants or JS/CSS assets), you can use `global_asset()` and `mix()`.
 
