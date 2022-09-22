@@ -24,7 +24,7 @@ In single-database tenancy, there are 4 types of models:
 - primary models — models that **directly** belongTo tenants
 - secondary models — models that **indirectly** belongTo tenants
     - e.g. **Comment** belongsTo **Post** belongsTo **Tenant**
-    - or more complex, **Vote** belongsTo **Tenant** belongsTo **Post** belongsTo **Tenant**
+    - or more complex, **Vote** belongsTo **Comment** belongsTo **Post** belongsTo **Tenant**
 - global models — models that are **not scoped** to any tenant whatsoever
 
 To scope your queries correctly, apply the `Stancl\Tenancy\Database\Concerns\BelongsToTenant` trait **on primary models**. This will ensure that all calls to your parent models are scoped to the current tenant, and that **calls to their child relations are scoped through the parent relationships**.
