@@ -206,6 +206,7 @@ return [
                         'Telescope' => 'integrations/telescope',
                         'Livewire' => 'integrations/livewire',
                         'Orchid' => 'integrations/orchid',
+                        'Sanctum' => 'integrations/sanctum',
                     ],
                 ],
                 'Console commands' => 'console-commands',
