@@ -67,10 +67,10 @@ Route::group([
 });
 ```
 
-Finally, open the blade file where the `@livewireScripts` directive is, and add:
+Finally, open the blade file where the `@@livewireScripts` directive is, and add:
 
 ```html
-@livewireScripts
+@@livewireScripts
 <script>
     window.livewire_app_url = '{{ tenant()->id }}';
 </script>
