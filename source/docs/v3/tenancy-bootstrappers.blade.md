@@ -67,7 +67,24 @@ To make the tenant-aware `Storage` facade work with a custom disk, add the disk'
 
 ### Assets
 
-The bootstrapper modifies the links retrieved by the `asset()` helper, so they link to the files *of the currently initialized and identified tenant*.
+The filesystem bootstrapper makes the `asset()` helper link to the files *of the currently initialized and identified tenant*. By default, the bootstrapper makes the helper output a URL pointing to the TenantAssetsController (`/tenancy/assets/...`), which returns a file response:
+
+```php
+// TenantAssetsController
+return response()->file(storage_path('app/public/' . $path));
+```
+
+The package expects the assets to be stored in your tenant's `app/public/` directory. For global assets (non-private assets shared among all tenants or JS/CSS assets), you may want to create a disk and use URLs from that disk instead. For example:
+
+```php
+Storage::disk('app-public')->url('tenants/logos/' . tenant()->id . '.png');
+```
+
+To access the global assets, you can use `global_asset()` and `mix()`.
+
+The `asset()` helper's behavior can be changed by configuring the asset URL (`ASSET_URL` in your `.env`) – when the asset URL is not null, the bootstrapper will suffix the configured asset URL (the same way as `storage_path()` gets suffixed), and make the `asset()` helper output that.
+
+You can disable tenancy of `asset()` in the config (`tenancy.filesystem.asset_helper_tenancy`) and explicitly use `tenant_asset()` instead. `tenant_asset()` returns your website's URL suffixed by `tenancy/assets/$nameOfYourAsset` (e.g. `https://your-site.test/tenancy/assets/asset-name.txt`). You may want to do that if you're facing issues using a package that utilizes `asset()` inside the tenant app.
 
 Before using the `asset()` helper, make sure to [assign the identification middleware you're using in your app to TenantAssetsController's `$tenancyMiddleware`]({{ $page->link('configuration#static-properties') }}):
 
@@ -79,27 +96,6 @@ public function boot()
     // Update the middleware used by the asset controller
     TenantAssetsController::$tenancyMiddleware = InitializeTenancyByDomainOrSubdomain::class;
 }
-```
-
-> Note: You can disable tenancy of `asset()` in the config (`tenancy.filesystem.asset_helper_tenancy`) and explicitly use `tenant_asset()` instead. But keep in mind that `tenant_asset()` does not respect the asset URL you set in `config('app.asset_url')` – the helper will always return your website's url suffixed by `tenancy/assets/name-of-your-asset.foo` (e.g. `https://your-site.test/tenancy/assets/asset-name.txt`).
->
-> You may want to do that if you're facing issues using a package that utilizes `asset()` inside the tenant app.
->
-> For non-tenant-specific assets (assets shared among all tenants or JS/CSS assets), you can use `global_asset()` and `mix()`.
-
-If `config('app.asset_url')` has been set, the bootstrapper suffixes the configured asset URL the same way as `storage_path()` (useful if you're using Laravel Vapor or similar).
-
-If `config('app.asset_url')` is null (as it is by default), `asset()` will return the same output as `tenant_asset()` — a URL pointing to the TenantAssetsController (`/tenancy/assets/...`) which returns a file response:
-
-```php
-// TenantAssetsController
-return response()->file(storage_path('app/public/' . $path));
-```
-
-When `config('app.asset_url')` is null, **you need to store the assets in your tenant's `app/public/` directory**. So for non-private (global) assets, you may want to create a disk and use URLs from that disk instead (don't add that disk to `config(tenancy.filesystem.disks)`). For example:
-
-```php
-Storage::disk('app-public')->url('tenants/logos/' . tenant()->id . '.png');
 ```
 
 ## Queue tenancy bootstrapper {#queue-tenancy-bootstrapper}
