@@ -89,7 +89,7 @@ public function boot()
 
 If `config('app.asset_url')` has been set, the bootstrapper suffixes the configured asset URL the same way as `storage_path()` (useful if you're using Laravel Vapor or similar).
 
-If `config('app.asset_url')` is null (as it is by default), `asset()` will return a URL pointing to the TenantAssetsController (`/tenancy/assets/...`) which returns a file response:
+If `config('app.asset_url')` is null (as it is by default), `asset()` will return the same output as `tenant_asset()` — a URL pointing to the TenantAssetsController (`/tenancy/assets/...`) which returns a file response:
 
 ```php
 // TenantAssetsController
