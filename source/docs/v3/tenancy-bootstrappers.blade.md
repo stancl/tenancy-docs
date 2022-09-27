@@ -42,7 +42,7 @@ The bootstrapper suffixes the path retrieved by `storage_path()` to make the hel
 
 Since `storage_path()` will be suffixed, your folder structure will look like this:
 
-![The folder structure](https://i.imgur.com/GAXQOnN.png)
+![The folder structure](/assets/images/file_structure_tenancy.png)
 
 Logs will be saved in `storage/logs` regardless of any changes to `storage_path()` and regardless of the tenant.
 

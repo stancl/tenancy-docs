@@ -19,7 +19,7 @@ That's what the `root_override` section is for. `%storage_path%` gets replaced b
 
 Since `storage_path()` will be suffixed, your folder structure will look like this:
 
-![The folder structure](https://i.imgur.com/GAXQOnN.png)
+![The folder structure](/assets/images/file_structure_tenancy.png)
 
 If you write to these directories, you will need to create them after you create the tenant. See the docs for [PHP's mkdir](http://php.net/function.mkdir).
 
