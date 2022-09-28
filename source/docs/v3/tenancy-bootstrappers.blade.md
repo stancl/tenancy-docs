@@ -63,7 +63,7 @@ The root of each disk listed in `config('tenancy.filesystem.disks')` will be suf
 ],
 ```
 
-To make the tenant-aware `Storage` facade work with a custom disk, add the disk's name to `config('tenancy.filesystem.disks')` and override its root in `config('tenancy.filesystem.root_override')` as shown above.
+To make the tenant-aware `Storage` facade work with a custom disk, add the disk's name to `config('tenancy.filesystem.disks')` and if the disk is local, override its root in `config('tenancy.filesystem.root_override')` as shown above. With S3, overriding the disk roots is not necessary – `Storage::disk('s3')->path('foo.txt')` will return `/tenant42/foo.txt`.
 
 ### Assets
 
