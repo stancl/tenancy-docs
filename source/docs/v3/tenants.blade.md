@@ -132,19 +132,16 @@ Alternatively, you may typehint the `Stancl\Tenancy\Contracts\Tenant` interface 
 
 ## Accessing the central application {#accessing-the-central-application}
 
-When your code executes in the context of a tenant (for instance, when the `DatabaseMigrated` event is dispatched), you may access the central application context by using the `tenancy()->central($callback)` function.
+When your code executes in the context of a tenant, you may access the central application context by using the `tenancy()->central($callback)` function.
 
 For instance, if you want to retrieve the list of users of the central application when the code executes in a tenant's context, you may write:
 
 ```php
-public function getCentralUsers()
-{
-    // here we are in the tenant's context. \App\Models\User::all() would return the current tenant's users.
-    return tenancy()->central(function () {
-        // here we are in the central app context
-        return \App\Models\User::all();
-    });
-}
+// here we are in the tenant's context. \App\Models\User::all() would return the current tenant's users.
+$centralUsers = tenancy()->central(function () {
+    // here we are in the central app context
+    return \App\Models\User::all();
+});
 ```
 
 ## Incrementing IDs {#incrementing-ids}
