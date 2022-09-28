@@ -29,31 +29,74 @@ php artisan cache:clear --tag=tenant_123
 Note that you must use a cache store that supports tagging, e.g. Redis.
 
 ## Filesystem tenancy bootstrapper {#filesystem-tenancy-boostrapper}
+The filesystem bootstrapper makes your app's `Storage` facade and the `storage_path()` and `asset()` helpers tenant-aware by modifying the paths they return.
 
-This bootstrapper does the following things:
+> Note: If you want to bootstrap filesystem tenancy differently (e.g. provision an S3 bucket for each tenant), you can absolutely do that. Take a look at the package's bootstrappers to get an idea of how to write one yourself, and feel free to implement it any way you want.
 
-- Suffixes roots of disks used by the `Storage` facade
-- Suffixes `storage_path()` (useful if you're using the local disk for storing tenant files)
-- Makes `asset()` calls use the TenantAssetController to retrieve tenant-specific files
-    - Note: For some assets, e.g. images, you may want to use `global_asset()` (if the asset is shared for all tenants). And for JS/CSS assets, you should use `mix()` or again `global_asset()`.
-    - Because the `asset()` helper uses the TenantAssetController to retrieve tenant-specific files. Be aware this requires the tenant to be identified and initialized to function. Accordingly, you should ensure that the tenant identification middleware used is appropriate for your use case (defaults to InitializeTenancyByDomain). For example, if you are only using subdomain identification, you should update the middleware used by the TenantAssetController to the InitializeTenancyBySubdomain middleware. To do this, you can follow the steps outlined in [configuration]({{ $page->link('configuration') }}) to update the public static property which defined the middleware used, e.g. in your TenancyServiceProvider:
-    
+### Storage path helper
+
+The bootstrapper suffixes the path returned by `storage_path()` to make the helper tenant-aware.
+
+- The suffix is built by appending the tenant key to your `suffix_base`. The `suffix_base` is `tenant` by default, but feel free to change it in the `tenancy.filesystem` config. For example, the suffix will be `tenant42` if the tenant's key is `42` and the `suffix_base` is `tenant`.
+- After the suffixing, `storage_path()` helper returns `"/$path_to_your_application/storage/tenant42/"`
+
+Since `storage_path()` will be suffixed, your folder structure will look like this:
+
+![The folder structure](/assets/images/file_structure_tenancy.png)
+
+Logs will be saved in `storage/logs` regardless of any changes to `storage_path()` and regardless of the tenant.
+
+### Storage facade
+
+The bootstrapper also makes the `Storage` facade tenant-aware by suffixing the roots of disks listed in `config('tenancy.filesystem.disks')` and by overriding the disk roots in `config('tenancy.filesystem.root_override')` (disk root = the disk path used by the `Storage` facade).
+
+The root of each disk listed in `config('tenancy.filesystem.disks')` will be suffixed. Doing that alone could cause unwanted behavior since Laravel does its own suffixing, so the filesystem config has the `root_override` section, which lets you override the disk roots **after** tenancy has been initialized:
+
 ```php
-use Stancl\Tenancy\Controllers\TenantAssetsController;
-use Stancl\Tenancy\Middleware\InitializeTenancyByDomainOrSubdomain;
-
-    // other methods in the TenancyServiceProvider
-
-    public function boot()
-    {
-        // update the middleware used by the asset controller
-        TenantAssetsController::$tenancyMiddleware = InitializeTenancyByDomainOrSubdomain::class;
-    }
+// Tenancy config (tenancy.filesystem.root_override)
+// %storage_path% gets replaced by storage_path()'s output
+// E.g. Storage::disk('local')->path('') will return "/$path_to_your_application/storage/tenant42/app"
+// (Given a suffix_base of 'tenant' and a tenant with a key of `42`. Same as in the example above in the Storage path helper section)
+'root_override' => [
+    'local' => '%storage_path%/app/',
+    'public' => '%storage_path%/app/public/',
+],
 ```
 
-This bootstrapper is the most complex one, by far. We will have a — better written — explanation in v3 docs soon, but for now, refer to the 2.x docs for information about filesystem tenancy. [https://tenancyforlaravel.com/docs/v2/filesystem-tenancy/](https://tenancyforlaravel.com/docs/v2/filesystem-tenancy/)
+To make the tenant-aware `Storage` facade work with a custom disk, add the disk's name to `config('tenancy.filesystem.disks')` and if the disk is local, override its root in `config('tenancy.filesystem.root_override')` as shown above. With S3, overriding the disk roots is not necessary – `Storage::disk('s3')->path('foo.txt')` will return `/tenant42/foo.txt`.
 
-If you don't want to bootstrap filesystem tenancy in this way, and want to — for example — provision an S3 bucket for each tenant, you can absolutely do that. Look at the package's bootstrappers to get an idea of how to write one yourself, and feel free to implement it any way you want.
+### Assets
+
+The filesystem bootstrapper makes the `asset()` helper link to the files *of the current tenant*. By default, the bootstrapper makes the helper output a URL pointing to the TenantAssetsController (`/tenancy/assets/...`), which returns a file response:
+
+```php
+// TenantAssetsController
+return response()->file(storage_path('app/public/' . $path));
+```
+
+The package expects the assets to be stored in your tenant's `app/public/` directory. For global assets (non-private assets shared among all tenants), you may want to create a disk and use URLs from that disk instead. For example:
+
+```php
+Storage::disk('branding')->url('header-logo.png');
+```
+
+To access global assets such as JS/CSS assets, you can use `global_asset()` and `mix()`.
+
+Configuring the asset URL (`ASSET_URL` in your `.env`) changes the `asset()` helper's behavior – when the asset URL is set, the bootstrapper will suffix the configured asset URL (the same way `storage_path()` gets suffixed), and make the `asset()` helper output that instead of a path to the TenantAssetsController.
+
+You can disable tenancy of `asset()` in the config (`tenancy.filesystem.asset_helper_tenancy`) and explicitly use `tenant_asset()` instead. `tenant_asset()` **always** returns a path to the TenantAssetController: `tenant_asset('foo.txt')` returns `your-site.com/tenancy/assets/foo.txt`. You may want to do that if you're facing issues using a package that utilizes `asset()` inside the tenant app.
+
+Before using the `asset()` helper, make sure to [assign the identification middleware you're using in your app to TenantAssetsController's `$tenancyMiddleware`]({{ $page->link('configuration#static-properties') }}):
+
+```php
+// TenancyServiceProvider (don't forget to import the classes)
+
+public function boot()
+{
+    // Update the middleware used by the asset controller
+    TenantAssetsController::$tenancyMiddleware = InitializeTenancyByDomainOrSubdomain::class;
+}
+```
 
 ## Queue tenancy bootstrapper {#queue-tenancy-bootstrapper}
 
@@ -87,7 +130,7 @@ class MyBootstrapper implements TenancyBootstrapper
     {
         // ...
     }
-	
+
     public function revert()
     {
         // ...
