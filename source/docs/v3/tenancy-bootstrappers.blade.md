@@ -82,7 +82,7 @@ Storage::disk('app-public')->url('tenants/logos/' . tenant()->id . '.png');
 
 To access the global assets, you can use `global_asset()` and `mix()`.
 
-The `asset()` helper's behavior can be changed by configuring the asset URL (`ASSET_URL` in your `.env`) – when the asset URL is not null, the bootstrapper will suffix the configured asset URL (the same way as `storage_path()` gets suffixed), and make the `asset()` helper output that.
+Configuring the asset URL (`ASSET_URL` in your `.env`) changes the `asset()` helper's behavior – when the asset URL is set, the bootstrapper will suffix the configured asset URL (the same way `storage_path()` gets suffixed), and make the `asset()` helper output that.
 
 You can disable tenancy of `asset()` in the config (`tenancy.filesystem.asset_helper_tenancy`) and explicitly use `tenant_asset()` instead. `tenant_asset()` returns your website's URL suffixed by `tenancy/assets/$nameOfYourAsset` (e.g. `https://your-site.test/tenancy/assets/asset-name.txt`). You may want to do that if you're facing issues using a package that utilizes `asset()` inside the tenant app.
 
