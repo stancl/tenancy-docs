@@ -56,7 +56,7 @@ The root of each disk listed in `config('tenancy.filesystem.disks')` will be suf
 // Tenancy config (tenancy.filesystem.root_override)
 // %storage_path% gets replaced by storage_path()'s output
 // E.g. Storage::disk('local')->path('') will return "/$path_to_your_application/storage/tenant42/app"
-// (Given a suffix_base of 'tenant' and a tenant with an ID of 42. Same as in the example above in the Storage path helper section)
+// (Given a suffix_base of 'tenant' and a tenant with a key of `42`. Same as in the example above in the Storage path helper section)
 'root_override' => [
     'local' => '%storage_path%/app/',
     'public' => '%storage_path%/app/public/',
