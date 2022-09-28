@@ -29,7 +29,7 @@ php artisan cache:clear --tag=tenant_123
 Note that you must use a cache store that supports tagging, e.g. Redis.
 
 ## Filesystem tenancy bootstrapper {#filesystem-tenancy-boostrapper}
-The filesystem bootstrapper makes your app's `storage_path()` and `asset()` helper and the `Storage` facade tenant-aware by modifying the paths they retrieve.
+The filesystem bootstrapper makes your app's `Storage` facade and the `storage_path()` and `asset()` helpers tenant-aware by modifying the paths they return.
 
 > Note: If you want to bootstrap filesystem tenancy differently (e.g. provision an S3 bucket for each tenant), you can absolutely do that. Take a look at the package's bootstrappers to get an idea of how to write one yourself, and feel free to implement it any way you want.
 
@@ -67,7 +67,7 @@ To make the tenant-aware `Storage` facade work with a custom disk, add the disk'
 
 ### Assets
 
-The filesystem bootstrapper makes the `asset()` helper link to the files *of the currently initialized and identified tenant*. By default, the bootstrapper makes the helper output a URL pointing to the TenantAssetsController (`/tenancy/assets/...`), which returns a file response:
+The filesystem bootstrapper makes the `asset()` helper link to the files *of the current tenant*. By default, the bootstrapper makes the helper output a URL pointing to the TenantAssetsController (`/tenancy/assets/...`), which returns a file response:
 
 ```php
 // TenantAssetsController
