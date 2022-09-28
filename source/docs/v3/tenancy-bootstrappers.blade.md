@@ -74,13 +74,13 @@ The filesystem bootstrapper makes the `asset()` helper link to the files *of the
 return response()->file(storage_path('app/public/' . $path));
 ```
 
-The package expects the assets to be stored in your tenant's `app/public/` directory. For global assets (non-private assets shared among all tenants or JS/CSS assets), you may want to create a disk and use URLs from that disk instead. For example:
+The package expects the assets to be stored in your tenant's `app/public/` directory. For global assets (non-private assets shared among all tenants), you may want to create a disk and use URLs from that disk instead. For example:
 
 ```php
-Storage::disk('app-public')->url('tenants/logos/' . tenant()->id . '.png');
+Storage::disk('branding')->url('header-logo.png');
 ```
 
-To access the global assets, you can use `global_asset()` and `mix()`.
+To access global assets such as JS/CSS assets, you can use `global_asset()` and `mix()`.
 
 Configuring the asset URL (`ASSET_URL` in your `.env`) changes the `asset()` helper's behavior – when the asset URL is set, the bootstrapper will suffix the configured asset URL (the same way `storage_path()` gets suffixed), and make the `asset()` helper output that.
 
