@@ -82,7 +82,7 @@ Storage::disk('branding')->url('header-logo.png');
 
 To access global assets such as JS/CSS assets, you can use `global_asset()` and `mix()`.
 
-Configuring the asset URL (`ASSET_URL` in your `.env`) changes the `asset()` helper's behavior – when the asset URL is set, the bootstrapper will suffix the configured asset URL (the same way `storage_path()` gets suffixed), and make the `asset()` helper output that.
+Configuring the asset URL (`ASSET_URL` in your `.env`) changes the `asset()` helper's behavior – when the asset URL is set, the bootstrapper will suffix the configured asset URL (the same way `storage_path()` gets suffixed), and make the `asset()` helper output that instead of a path to the TenantAssetsController.
 
 You can disable tenancy of `asset()` in the config (`tenancy.filesystem.asset_helper_tenancy`) and explicitly use `tenant_asset()` instead. `tenant_asset()` **always** returns a path to the TenantAssetController: `tenant_asset('foo.txt')` returns `your-site.com/tenancy/assets/foo.txt`. You may want to do that if you're facing issues using a package that utilizes `asset()` inside the tenant app.
 
