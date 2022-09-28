@@ -137,10 +137,10 @@ When your code executes in the context of a tenant, you may access the central a
 For instance, if you want to retrieve the list of users of the central application when the code executes in a tenant's context, you may write:
 
 ```php
-// here we are in the tenant's context. \App\Models\User::all() would return the current tenant's users.
+// Here we are in the tenant's context. User::all() would return the current tenant's users
 $centralUsers = tenancy()->central(function () {
-    // here we are in the central app context
-    return \App\Models\User::all();
+    // Here we are in the central context
+    return User::all();
 });
 ```
 
