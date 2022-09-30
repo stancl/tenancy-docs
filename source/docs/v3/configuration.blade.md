@@ -60,10 +60,8 @@ The list of domains that host your [central app]({{ $page->link('the-two-applica
 This config array lets you enable, disable or add your own [tenancy bootstrappers]({{ $page->link('tenancy-bootstrappers') }}).
 
 ### Database {#database}
-> Note: If you're using [Laravel Sail](https://laravel.com/docs/9.x/sail), ensure that `DB_USERNAME` has the necessary permissions. You can grant privileges to users by running `GRANT ALL PRIVILEGES on *.* to 'sail'@'%';` in the MySQL console. 
-> Once you have finalized the permissions, always be sure to reload all the privileges `FLUSH PRIVILEGES;` 
 
-`tenancy.database.*`
+>If you're using Laravel Sail, please refer the [Laravel Sail integration guide]({{ $page->link('integrations/sail') }}):
 
 This section is relevant to the multi-database tenancy, specifically, to the `DatabaseTenancyBootstrapper` and logic that manages tenant databases.
 

@@ -136,14 +136,7 @@ Now we need to actually specify the central domains. A central domain is a domai
 ],
 ```
 
-If you're using Laravel Sail, no changes are needed, default values are good to go:
-
-```php
-'central_domains' => [
-    '127.0.0.1',
-    'localhost',
-],
-```
+>If you're using Laravel Sail, please refer the [Laravel Sail integration guide]({{ $page->link('integrations/sail') }}):
 
 ## Tenant routes {#tenant-routes}
 
@@ -177,8 +170,8 @@ Route::get('/', function () {
 To have users in tenant databases, let's move the `users` table migration (the file `database/migrations/2014_10_12_000000_create_users_table.php` or similar) to `database/migrations/tenant`. This will prevent the table from being created in the central database, and it will be instead created in the tenant database when a tenant is created — thanks to our event setup.
 
 ## Creating tenants {#creating-tenants}
-> Note: If you're using [Laravel Sail](https://laravel.com/docs/9.x/sail), ensure that `DB_USERNAME` has the necessary permissions. You can grant privileges to users by running `GRANT ALL PRIVILEGES on *.* to 'sail'@'%';` in the MySQL console.
-> Once you have finalized the permissions, always be sure to reload all the privileges `FLUSH PRIVILEGES;`
+
+>If you're using Laravel Sail, please refer the [Laravel Sail integration guide]({{ $page->link('integrations/sail') }}):
 
 For testing purposes, we'll create a tenant in `tinker` — no need to waste time creating controllers and views for now.
 
