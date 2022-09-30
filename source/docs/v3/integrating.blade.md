@@ -16,4 +16,4 @@ If you're using the [automatic mode]({{ $page->link('automatic-mode') }}) & [mul
 - [Laravel Telescope]({{ $page->link('integrations/telescope') }})
 - [Livewire]({{ $page->link('integrations/livewire') }})
 - [Laravel Sanctum]({{ $page->link('integrations/sanctum') }})
-- [Vite]({{ $page->link('integrations/vite') }})
+- [Vite]({{ $page->link('features/vite-bundler') }})

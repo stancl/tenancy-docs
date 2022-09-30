@@ -208,7 +208,7 @@ return [
                         'Livewire' => 'integrations/livewire',
                         'Orchid' => 'integrations/orchid',
                         'Sanctum' => 'integrations/sanctum',
-                        'Vite' => 'integrations/vite',
+                        'Vite' => 'features/vite-bundler',
                     ],
                 ],
                 'Console commands' => 'console-commands',
