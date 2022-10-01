@@ -6,19 +6,6 @@ section: content
 
 # Laravel Sail {#sail}
 
-## Central domains
-
-If you're using Laravel Sail, no changes are needed, default values are good to go:
-
-```php
-// config/tenancy.php
-
-'central_domains' => [
-    '127.0.0.1',
-    'localhost',
-],
-```
-
 ## Creating tenants
 
 Before creating any tenants you have to ensure that the `sail` user has the necessary permissions.
