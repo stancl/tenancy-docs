@@ -17,11 +17,15 @@ GRANT ALL PRIVILEGES on *.* to 'sail'@'%';
 FLUSH PRIVILEGES;
 ```
 
-If you are using [Database Customization]({{ $page->link('customizing-databases') }}), then you will have add the following GRANT as well:
+### Specifying Database Credentials {#specifying-database-credentials}
+
+If you want to use custom users (one user for each database), you will need `GRANT OPTION` grant on your central database user (`sail` in this case), otherwise you cannot grant permissions to the newly created user.
+
+Just run the following SQL from root user:
 
 ```bash
 GRANT GRANT OPTION on central_database.* to 'sail'@'%';
 FLUSH PRIVILEGES;
 ```
 
-This grant allows the central database to grant permissions to other users.
+>For more info see [Specifying Database Credentials]({{ $page->link('customizing-databases#specifying-database-credentials') }})
