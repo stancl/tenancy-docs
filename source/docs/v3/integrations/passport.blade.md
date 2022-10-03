@@ -6,6 +6,8 @@ section: content
 
 # Laravel Passport {#laravel-passport}
 
+> **Note:** This guide is written for Laravel Passport 10.x
+
 > **Tip:** If you just want to write an SPA application but don't need an API for some other use (e.g., a mobile app), you can avoid a lot of the complexity of writing SPAs by using [Inertia.js](https://inertiajs.com/).
 
 > **Another tip:** Using Passport only in the central application doesn't require any additional configuration. You can just install it following [the official Laravel Passport documentation](https://laravel.com/docs/9.x/passport).
