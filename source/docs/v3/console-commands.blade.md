@@ -60,7 +60,9 @@ Artisan::call('tenants:run', [
     '--argument' => ['body=We have launched a new feature.'] // Array
 ])
 ```
-## **Tenant list** {#tenant-list}
+## **List** {#list}
+
+The `tenants:list` command lists all existing tenants.
 
 ```
 php artisan tenants:list
