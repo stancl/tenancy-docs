@@ -15,7 +15,7 @@ Tenant-aware commands run for all tenants by default. The commands also have the
 
 ## **Migrate** (tenant-aware) {#migrate}
 
-`tenants:migrate` is the most important command. To use tenants, you have to be able to migrate their databases.
+The `tenants:migrate` command migrates databases of your tenants.
 
 ```
 php artisan tenants:migrate --tenants=8075a580-1cb8-11e9-8822-49c5d8f8ff23
@@ -60,7 +60,9 @@ Artisan::call('tenants:run', [
     '--argument' => ['body=We have launched a new feature.'] // Array
 ])
 ```
-## **Tenant list** {#tenant-list}
+## **List** {#list}
+
+The `tenants:list` command lists all existing tenants.
 
 ```
 php artisan tenants:list
