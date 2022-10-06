@@ -9,7 +9,7 @@ section: content
 
 The package comes with some useful artisan commands.
 
-Tenant-aware commands run for all tenants by default. The commands also have the `--tenants` option which lets you specify keys of the tenants for which the command will run.
+Tenant-aware commands run for all tenants by default. The commands also have the `--tenants` option which lets you specify IDs of the tenants for which the command will run.
 
 > Note: To include multiple tenants using CLI, you can use multiple `--tenants=<...>` options. If you're calling the command using `Artisan::call()`, `--tenants` has to be an array.
 
@@ -79,4 +79,4 @@ You can delete specific tenants' cache by using the `--tags` option on `cache
 php artisan cache:clear --tags=tenantdbe0b330-1a6e-11e9-b4c3-354da4b4f339
 ```
 
-The tag is derived from `config('tenancy.cache.tag_base') . $tenantKey`.
+The tag is derived from `config('tenancy.cache.tag_base') . $id`.
