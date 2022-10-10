@@ -40,7 +40,7 @@ To use Passport inside the tenant part of your application, you may do the follo
 ```
 
 
-4. If you're using Passport 11.x, disable the automatic Passport route registering and register the routes manually by adding the following code to the `register` method in your `AppServiceProvider`:
+5. If you're using Passport 11.x, disable the automatic Passport route registering and register the routes manually by adding the following code to the `register` method in your `AppServiceProvider`:
 
     ```php
     Passport::$registersRoutes = false;
@@ -55,9 +55,9 @@ To use Passport inside the tenant part of your application, you may do the follo
     });
     ```
 
-5. Apply Passport migrations by running `php artisan tenants:migrate`.
+6. Apply Passport migrations by running `php artisan tenants:migrate`.
 
-6. Set up [the encryption keys](#passport-encryption-keys).
+7. Set up [the encryption keys](#passport-encryption-keys).
 
 ## **Using Passport in both the tenant and the central application** {#using-passport-in-both-the-tenant-and-the-central-application}
 To use Passport in both the tenant and the central application, follow [the steps for using Passport in the tenant appliction](#using-passport-in-the-tenant-application-only) with the following adjustments:
