@@ -102,6 +102,8 @@ public function boot()
 
 This bootstrapper adds the current tenant's ID to the queued job payloads, and initializes tenancy based on this ID when jobs are being processed.
 
+The bootstrapper has a static `$forceRefresh` property which is `false` by default. Setting the property to `true` will make tenancy re-initialize for each queued job. This is useful when you're changing the tenant's state (e.g. properties in the `data` column) and want the next job to initialize tenancy again with the new data. Features like the Tenant Config are only executed when tenancy is initialized, so the re-initialization is needed in some cases.
+
 You can read more about this on the *Queues* page:
 
 [Queues]({{ $page->link('queues') }})
