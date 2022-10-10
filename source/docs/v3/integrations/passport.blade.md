@@ -6,8 +6,6 @@ section: content
 
 # Laravel Passport {#laravel-passport}
 
-> **Note:** This guide is written for Laravel Passport 10.x
-
 > **Tip:** If you just want to write an SPA application but don't need an API for some other use (e.g., a mobile app), you can avoid a lot of the complexity of writing SPAs by using [Inertia.js](https://inertiajs.com/).
 
 > **Another tip:** Using Passport only in the central application doesn't require any additional configuration. You can just install it following [the official Laravel Passport documentation](https://laravel.com/docs/9.x/passport).
@@ -31,19 +29,35 @@ To use Passport inside the tenant part of your application, you may do the follo
     ];
     ```
 
-3. Prevent Passport migrations from running in the central application by adding `Passport::ignoreMigrations()` to the `register` method in your `AppServiceProvider`.
+3. Prevent Passport migrations from running in the central application by adding `Passport::ignoreMigrations()` to the `register` method in your `AppServiceProvider`.
 
-4. Apply Passport migrations by running `php artisan tenants:migrate`.
-
-5. Register the Passport routes in your `AuthServiceProvider` by adding the following code to the provider's `boot` method.
-    ```php
+4. If you're using Passport 10.x, register the Passport routes in your `AuthServiceProvider` by adding the following code to the provider's `boot` method:
+```php
     Passport::routes(null, ['middleware' => [
         InitializeTenancyByDomain::class, // Or other identification middleware of your choice
         PreventAccessFromCentralDomains::class,
     ]]);
+```
+
+
+5. If you're using Passport 11.x, disable the automatic Passport route registering and register the routes manually by adding the following code to the `register` method in your `AppServiceProvider`:
+
+    ```php
+    Passport::$registersRoutes = false;
+
+    Route::group([
+        'as' => 'passport.',
+        'middleware' => [InitializeTenancyByDomain::class], // Use tenancy initialization middleware of your choice
+        'prefix' => config('passport.path', 'oauth'),
+        'namespace' => 'Laravel\Passport\Http\Controllers',
+    ], function () {
+        $this->loadRoutesFrom(__DIR__ . "/../../vendor/laravel/passport/src/../routes/web.php");
+    });
     ```
 
-6. Set up [the encryption keys](#passport-encryption-keys).
+6. Apply Passport migrations by running `php artisan tenants:migrate`.
+
+7. Set up [the encryption keys](#passport-encryption-keys).
 
 ## **Using Passport in both the tenant and the central application** {#using-passport-in-both-the-tenant-and-the-central-application}
 To use Passport in both the tenant and the central application, follow [the steps for using Passport in the tenant appliction](#using-passport-in-the-tenant-application-only) with the following adjustments:
