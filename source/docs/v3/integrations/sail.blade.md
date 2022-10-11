@@ -19,11 +19,13 @@ FLUSH PRIVILEGES;
 
 ### Specifying Database Credentials {#specifying-database-credentials}
 
-If you want to use custom users (one user for each database), you will need `GRANT OPTION` grant on your central database user (`sail` in this case), otherwise you cannot grant permissions to the newly created user.
+While working with sail, it offers a database user `sail` which just have the privileges for just the one database created at the inception of the project (central database in our tenancy case). This user does not have the privileges to create new users or `GRANT OPTION` privilege, which is used to grant permissions to other users.
 
-Just run the following SQL from root user:
+If you want to use custom users (one user for each respective database), you will need `GRANT OPTION` grant on your central database user (`sail` in this case), otherwise you cannot grant permissions to the newly created user and will result in an error.
 
-```bash
+To avoid this failure, run the following SQL from root user:
+
+```sql
 GRANT GRANT OPTION on central_database.* to 'sail'@'%';
 FLUSH PRIVILEGES;
 ```
