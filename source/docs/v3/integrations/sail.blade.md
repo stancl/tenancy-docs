@@ -8,9 +8,10 @@ section: content
 
 ## Creating tenants
 
-Before creating any tenants you have to ensure that the `sail` user has the necessary permissions.
+By default sail has the `ALL` privilege on the default database (here it is the central database).
+In order to create, read, update and delete opreations related to the database, we will assign `ALL` privilege on all databases via the wildcard `*`;
 
-To do so either login to the mysql shell or via any client using root user credentials and run the following queries:
+To do so either login to the mysql shell or via any client using root user credentials and run the following statements
 
 ```bash
 GRANT ALL PRIVILEGES on *.* to 'sail'@'%';
@@ -30,4 +31,4 @@ GRANT GRANT OPTION on central_database.* to 'sail'@'%';
 FLUSH PRIVILEGES;
 ```
 
->For more info see [Specifying Database Credentials]({{ $page->link('customizing-databases#specifying-database-credentials') }})
+*For more info see [Specifying Database Credentials]({{ $page->link('customizing-databases#specifying-database-credentials') }})*

@@ -61,7 +61,7 @@ This config array lets you enable, disable or add your own [tenancy bootstrapper
 
 ### Database {#database}
 
->If you're using Laravel Sail, please refer the [Laravel Sail integration guide]({{ $page->link('integrations/sail') }}):
+*If you're using Laravel Sail, please refer the [Laravel Sail integration guide]({{ $page->link('integrations/sail') }}).*
 
 This section is relevant to the multi-database tenancy, specifically, to the `DatabaseTenancyBootstrapper` and logic that manages tenant databases.
 
