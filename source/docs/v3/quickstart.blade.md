@@ -82,7 +82,7 @@ In other words, it creates & migrates the tenant's database after he's created â
 
 ## Central routes {#central-routes}
 
-We'll make a small change to the `app/Providers/RouteServiceProvider.php` file. Specifically, we'll make sure that central routes are registered on central domains only. 
+We'll make a small change to the `app/Providers/RouteServiceProvider.php` file. Specifically, we'll make sure that central routes are registered on central domains only.
 
 ```php
 protected function mapWebRoutes()
@@ -136,7 +136,7 @@ Now we need to actually specify the central domains. A central domain is a domai
 ],
 ```
 
->If you're using Laravel Sail, no changes required:
+>If you're using Laravel Sail, no changes required.
 
 ## Tenant routes {#tenant-routes}
 
