@@ -171,7 +171,7 @@ To have users in tenant databases, let's move the `users` table migration (the f
 
 ## Creating tenants {#creating-tenants}
 
->If you're using Laravel Sail, please refer the [Laravel Sail integration guide]({{ $page->link('integrations/sail') }}):
+> If you're using Laravel Sail, please refer the [Laravel Sail integration guide]({{ $page->link('integrations/sail') }}):
 
 For testing purposes, we'll create a tenant in `tinker` — no need to waste time creating controllers and views for now.
 
