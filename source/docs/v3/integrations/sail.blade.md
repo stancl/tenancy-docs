@@ -4,8 +4,6 @@ extends: _layouts.documentation
 section: content
 ---
 
-# Laravel Sail {#sail}
-
 ## Creating tenants
 
 By default sail has the `ALL` privilege on the default database (here it is the central database).

@@ -136,8 +136,6 @@ Now we need to actually specify the central domains. A central domain is a domai
 ],
 ```
 
->If you're using Laravel Sail, no changes required.
-
 ## Tenant routes {#tenant-routes}
 
 Your tenant routes will look like this by default:
