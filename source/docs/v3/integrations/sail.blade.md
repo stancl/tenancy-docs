@@ -4,7 +4,7 @@ extends: _layouts.documentation
 section: content
 ---
 
-## Creating tenants
+# Laravel Sail {#sail}
 
 By default sail has the `ALL` privilege on the default database (here it is the central database).
 In order to create, read, update and delete operations related to the database, we will assign `ALL` privilege on all databases via the wildcard `*`;
