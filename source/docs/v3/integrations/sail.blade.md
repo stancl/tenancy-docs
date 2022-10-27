@@ -6,10 +6,7 @@ section: content
 
 # Laravel Sail {#sail}
 
-By default sail has the `ALL` privilege on the default database (here it is the central database).
-In order to create, read, update and delete operations related to the database, we will assign `ALL` privilege on all databases via the wildcard `*`;
-
-To do so either login to the mysql shell or via any client using root user credentials and run the following statements
+Sail can only perform the create, read, update and delete operations in the central database by default. To give Sail permission to also perform these operations in tenant databases, log in to Sail's MySQL shell as the root user (`docker-compose exec mysql bash`, then `mysql -u root -p` – by default, the password is `password`) and grant the `sail` user access to all databases by running the following statements:
 
 ```bash
 GRANT ALL PRIVILEGES on *.* to 'sail'@'%';
