@@ -72,7 +72,7 @@ Finally, open the blade file where the `@@livewireScripts` directive is, and add
 ```html
 @@livewireScripts
 <script>
-    window.livewire_app_url = '{{ tenant()->id }}';
+    window.livewire_app_url = '/{{ tenant()->id }}';
 </script>
 ```
 
