@@ -24,7 +24,7 @@ This will let you use the following method on each tenant object:
 $tenant->putDownForMaintenance();
 ```
 
-To remove specific tenant from maintainance mode:
+To remove specific tenant from maintenance mode:
 ```php
 $tenant->update(['maintenance_mode' => null]);
 ```
