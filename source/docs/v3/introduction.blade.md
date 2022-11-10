@@ -21,13 +21,13 @@ This package is built around the idea that multi-tenancy usually means letting t
 There are two **types** of multi-tenancy:
 
 - single-database tenancy — tenants share one database and their data is separated using e.g. `where tenant_id = 1` clauses.
-- multi-database tenancy — each tenant has his own database
+- multi-database tenancy — each tenant has their own database.
 
 This package lets you do both, though it focuses more on multi-database tenancy because that type requires more work on the side of the package and less work on your side. Whereas for single-database tenancy you're provided with a class that keeps track of the current tenant and model traits — and the rest is up to you.
 
 ## Modes of multi-tenancy {#modes-of-multi-tenancy}
 
-The tenancy "mode" is a unique property of this package. In previous versions, this package was intended primarily for [automatic tenancy]({{ $page->link('automatic-mode') }}), which means that after a tenant was identified, things like database connections, caches, filesystems, queues etc were switched to that tenant's context — his data completely isolated from the rest.
+The tenancy "mode" is a unique property of this package. In previous versions, this package was intended primarily for [automatic tenancy]({{ $page->link('automatic-mode') }}), which means that after a tenant was identified, things like database connections, caches, filesystems, queues etc were switched to that tenant's context — their data is completely isolated from the rest.
 
 In the current version, we're also making [manual tenancy]({{ $page->link('manual-mode') }}) a first-class feature. We provide you with things like model traits if you wish to scope the data yourself.
 
