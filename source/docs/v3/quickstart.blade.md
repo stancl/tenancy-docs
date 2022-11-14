@@ -136,6 +136,14 @@ Now we need to actually specify the central domains. A central domain is a domai
 ],
 ```
 
+If you're using Laravel Sail, no changes are needed, default values are good to go:
+
+```php
+'central_domains' => [
+    '127.0.0.1',
+    'localhost',
+],
+```
 ## Tenant routes {#tenant-routes}
 
 Your tenant routes will look like this by default:
