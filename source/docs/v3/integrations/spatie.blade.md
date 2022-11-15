@@ -33,13 +33,13 @@ Next, add the following listeners to the `TenancyBootstrapped` and `TenancyEnde
 
 ```php
 Events\TenancyBootstrapped::class => [
-    function (TenancyBootstrapped $event) {
+    function (Events\TenancyBootstrapped $event) {
         \Spatie\Permission\PermissionRegistrar::$cacheKey = 'spatie.permission.cache.tenant.' . $event->tenancy->tenant->id;
     }
 ],
 
 Events\TenancyEnded::class => [
-    function (TenancyEnded $event) {
+    function (Events\TenancyEnded $event) {
         \Spatie\Permission\PermissionRegistrar::$cacheKey = 'spatie.permission.cache';
     }
 ],
