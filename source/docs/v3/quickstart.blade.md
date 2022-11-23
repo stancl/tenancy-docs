@@ -48,7 +48,7 @@ App\Providers\TenancyServiceProvider::class, // <-- here
 
 ## Creating a tenant model {#creating-a-tenant-model}
 
-Now you need to create a Tenant model. The package comes with a default Tenant model that has many features, but it attempts to be mostly unopinonated and as such, we need to create a custom model to use domains & databases. Create the file `app/Models/Tenant.php` like this:
+Now you need to create a Tenant model. The package comes with a default Tenant model that has many features, but it attempts to be mostly unopinionated and as such, we need to create a custom model to use domains & databases. Create the file `app/Models/Tenant.php` like this:
 
 ```php
 <?php
