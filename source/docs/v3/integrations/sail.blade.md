@@ -16,3 +16,13 @@ The default Sail user can only perform the create, read, update and delete opera
 GRANT ALL PRIVILEGES on *.* to 'sail'@'%';
 FLUSH PRIVILEGES;
 ```
+
+You have to grant the privileges every time you re-run a container. To automate granting the privileges, create an SQL file with the previously mentioned SQL statements to grant all privileges to the Sail user. Then, add the path to the SQL file to `docker-compose.yml`'s MySQL volumes:
+
+```yml
+mysql:
+    ...
+    volumes:
+        ...
+        - 'PATH_TO_THE_SQL_FILE:/docker-entrypoint-initdb.d/SQL_FILE_NAME.sql'
+```
