@@ -43,7 +43,7 @@ To use Passport inside the tenant part of your application, you may do the follo
 5. If you're using Passport 11.x, disable the automatic Passport route registering and register the routes manually by adding the following code to the `register` method in your `AuthServiceProvider`:
 
 ```php
-    Passport::$registersRoutes = false;
+    Passport::ignoreRoutes();
 
     Route::group([
         'as' => 'passport.',
@@ -74,7 +74,7 @@ Passport::routes(null, ['middleware' => [
 ]]);
 
 // Passport 11.x
-Passport::$registersRoutes = false;
+Passport::ignoreRoutes();
 
 Route::group([
     'as' => 'passport.',
