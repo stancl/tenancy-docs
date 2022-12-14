@@ -27,7 +27,7 @@ Route::group(['prefix' => config('sanctum.prefix', 'sanctum')], static function 
 });
 ```
 
-### Sanctum's csrf-cookie in both the central and the tenant app
+### Sanctum's csrf-cookie route in both the central and the tenant app
 
 To use the `sanctum.csrf-cookie` route in both the central and the tenant apps:
 
