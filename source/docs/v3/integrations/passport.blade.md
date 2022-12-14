@@ -17,6 +17,7 @@ section: content
 To use Passport inside the tenant part of your application, you may do the following.
 
 1. Publish the Passport migrations by running `php artisan vendor:publish --tag=passport-migrations` and move them to your tenant migration directory (`database/migrations/tenant/`).
+
 2. Publish the Passport config by running `php artisan vendor:publish --tag=passport-config`. Then, make Passport use the default database connection by setting the storage database connection to `null`. `passport:keys` puts the keys in the `storage/` directory by default – you can change that by setting the key path.
     ```php
     return [
@@ -66,9 +67,13 @@ To use Passport inside the tenant part of your application, you may do the follo
 To use Passport in both the tenant and the central application:
 
 1. Follow [the steps for using Passport in the tenant appliction](#using-passport-in-the-tenant-application-only).
+
 2. Copy the Passport migrations to the central application, so that the Passport migrations are in both the central and the tenant application.
+
 3. Remove `Passport::ignoreMigrations()` from the `register` method in your `AuthServiceProvider` (if it is there).
-4. In your `AuthServiceProvider`, add the `'universal'` middleware to the Passport routes, and remove the `PreventAccessFromCentralDomains::class` middleware (if it is there). The routes should look like this:
+
+4. In your `AuthServiceProvider`'s `register()` method (where you registered the Passport routes), add the `'universal'` middleware to the Passport routes, and remove the `PreventAccessFromCentralDomains::class` middleware. The related code in your `register()` method should look like this:
+
 ```php
 // Passport 10.x
 Passport::routes(null, ['middleware' => [
@@ -91,6 +96,7 @@ Route::group([
     $this->loadRoutesFrom(__DIR__ . "/../../vendor/laravel/passport/src/../routes/web.php");
 });
 ```
+
 5. Enable [universal routes]({{ $page->link('features/universal-routes') }}) to make Passport routes accessible to both apps.
 
 ## **Passport encryption keys** {#passport-encryption-keys}
