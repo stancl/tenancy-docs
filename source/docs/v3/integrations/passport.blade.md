@@ -47,7 +47,10 @@ To use Passport inside the tenant part of your application, you may do the follo
 
     Route::group([
         'as' => 'passport.',
-        'middleware' => [InitializeTenancyByDomain::class], // Use tenancy initialization middleware of your choice
+        'middleware' => [
+            InitializeTenancyByDomain::class, // Use tenancy initialization middleware of your choice
+            PreventAccessFromCentralDomains::class,
+        ],
         'prefix' => config('passport.path', 'oauth'),
         'namespace' => 'Laravel\Passport\Http\Controllers',
     ], function () {
