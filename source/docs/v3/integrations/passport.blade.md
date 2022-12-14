@@ -29,7 +29,7 @@ To use Passport inside the tenant part of your application, you may do the follo
     ];
     ```
 
-3. Prevent Passport migrations from running in the central application by adding `Passport::ignoreMigrations()` to the `register` method in your `AppServiceProvider`.
+3. Prevent Passport migrations from running in the central application by adding `Passport::ignoreMigrations()` to the `register` method in your `AuthServiceProvider`.
 
 4. If you're using Passport 10.x, register the Passport routes in your `AuthServiceProvider` by adding the following code to the provider's `boot` method:
 ```php
@@ -40,9 +40,9 @@ To use Passport inside the tenant part of your application, you may do the follo
 ```
 
 
-5. If you're using Passport 11.x, disable the automatic Passport route registering and register the routes manually by adding the following code to the `register` method in your `AppServiceProvider`:
+5. If you're using Passport 11.x, disable the automatic Passport route registering and register the routes manually by adding the following code to the `register` method in your `AuthServiceProvider`:
 
-    ```php
+```php
     Passport::$registersRoutes = false;
 
     Route::group([
@@ -53,25 +53,42 @@ To use Passport inside the tenant part of your application, you may do the follo
     ], function () {
         $this->loadRoutesFrom(__DIR__ . "/../../vendor/laravel/passport/src/../routes/web.php");
     });
-    ```
+```
 
 6. Apply Passport migrations by running `php artisan tenants:migrate`.
 
 7. Set up [the encryption keys](#passport-encryption-keys).
 
 ## **Using Passport in both the tenant and the central application** {#using-passport-in-both-the-tenant-and-the-central-application}
-To use Passport in both the tenant and the central application, follow [the steps for using Passport in the tenant appliction](#using-passport-in-the-tenant-application-only) with the following adjustments:
+To use Passport in both the tenant and the central application:
 
-1. Copy the Passport migrations to the central application, so that the Passport migrations are in both the central and the tenant application.
-2. Remove `Passport::ignoreMigrations()` from the `register` method in your `AppServiceProvider` (if it is there).
-3. In your `AuthServiceProvider`'s `boot` method, add the `'universal'` middleware to the Passport routes, and remove the `PreventAccessFromCentralDomains::class` middleware (if it is there). The routes should look like this:
+1. Follow [the steps for using Passport in the tenant appliction](#using-passport-in-the-tenant-application-only).
+2. Copy the Passport migrations to the central application, so that the Passport migrations are in both the central and the tenant application.
+3. Remove `Passport::ignoreMigrations()` from the `register` method in your `AuthServiceProvider` (if it is there).
+4. In your `AuthServiceProvider`, add the `'universal'` middleware to the Passport routes, and remove the `PreventAccessFromCentralDomains::class` middleware (if it is there). The routes should look like this:
 ```php
+// Passport 10.x
 Passport::routes(null, ['middleware' => [
     'universal',
     InitializeTenancyByDomain::class
 ]]);
+
+// Passport 11.x
+Passport::$registersRoutes = false;
+
+Route::group([
+    'as' => 'passport.',
+    'middleware' => [
+        'universal',
+        InitializeTenancyByDomain::class
+    ],
+    'prefix' => config('passport.path', 'oauth'),
+    'namespace' => 'Laravel\Passport\Http\Controllers',
+], function () {
+    $this->loadRoutesFrom(__DIR__ . "/../../vendor/laravel/passport/src/../routes/web.php");
+});
 ```
-4. Enable [universal routes]({{ $page->link('features/universal-routes') }}) to make Passport routes accessible to both apps.
+5. Enable [universal routes]({{ $page->link('features/universal-routes') }}) to make Passport routes accessible to both apps.
 
 ## **Passport encryption keys** {#passport-encryption-keys}
 ### **Shared keys** {#shared-keys}
