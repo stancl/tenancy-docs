@@ -8,7 +8,7 @@ section: content
 
 > Note: The `sanctum` auth guard can't be used with [user impersonation]({{ $page->link('features/user-impersonation') }}) because user impersonation supports stateful guards only.
 
-Laravel Sanctum works with Tenancy out of the box, with the exception of the `sanctum.csrf-cookie` route.
+Laravel Sanctum works with Tenancy out of the box, with the exception of the `sanctum.csrf-cookie` route. You can make some small changes to make the route work.
 
 ### Making the csrf-cookie route work in the tenant app
 
