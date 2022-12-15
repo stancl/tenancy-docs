@@ -30,9 +30,9 @@ To use Passport inside the tenant part of your application, you may do the follo
     ];
     ```
 
-3. Prevent Passport migrations from running in the central application by adding `Passport::ignoreMigrations()` to the `register` method in your `AuthServiceProvider`.
+3. Prevent Passport migrations from running in the central application by adding `Passport::ignoreMigrations()` to the `register()` method in your `AuthServiceProvider`.
 
-4. If you're using Passport 10.x, register the Passport routes in your `AuthServiceProvider` by adding the following code to the provider's `boot` method:
+4. If you're using Passport 10.x, register the Passport routes in your `AuthServiceProvider` by adding the following code to the provider's `boot()` method:
 ```php
     Passport::routes(null, ['middleware' => [
         InitializeTenancyByDomain::class, // Or other identification middleware of your choice
@@ -41,11 +41,9 @@ To use Passport inside the tenant part of your application, you may do the follo
 ```
 
 
-5. If you're using Passport 11.x, disable the automatic Passport route registering and register the routes manually by adding the following code to the `register` method in your `AuthServiceProvider`:
+5. If you're using Passport 11.x, disable the automatic Passport route registering in your `AuthServiceProvider` by adding `Passport::ignoreRoutes();` to the `register()` method. Then, register the Passport routes manually by adding the following code to the `boot()` method:
 
 ```php
-    Passport::ignoreRoutes();
-
     Route::group([
         'as' => 'passport.',
         'middleware' => [
@@ -82,8 +80,6 @@ Passport::routes(null, ['middleware' => [
 ]]);
 
 // Passport 11.x
-Passport::ignoreRoutes();
-
 Route::group([
     'as' => 'passport.',
     'middleware' => [
