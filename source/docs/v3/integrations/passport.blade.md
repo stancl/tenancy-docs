@@ -70,9 +70,9 @@ To use Passport in both the tenant and the central application:
 
 2. Copy the Passport migrations to the central application, so that the Passport migrations are in both the central and the tenant application.
 
-3. Remove `Passport::ignoreMigrations()` from the `register` method in your `AuthServiceProvider` (if it is there).
+3. Remove `Passport::ignoreMigrations()` from the `register()` method in your `AuthServiceProvider` (if it is there).
 
-4. In your `AuthServiceProvider`'s `register()` method (where you registered the Passport routes), add the `'universal'` middleware to the Passport routes, and remove the `PreventAccessFromCentralDomains::class` middleware. The related code in your `register()` method should look like this:
+4. In your `AuthServiceProvider`'s `boot()` method (where you registered the Passport routes), add the `'universal'` middleware to the Passport routes, and remove the `PreventAccessFromCentralDomains::class` middleware. The related code in your `boot()` method should look like this:
 
 ```php
 // Passport 10.x
