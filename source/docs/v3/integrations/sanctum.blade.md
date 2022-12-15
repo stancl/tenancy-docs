@@ -6,17 +6,35 @@ section: content
 
 # Laravel Sanctum {#sanctum}
 
-> Note that the `sanctum` auth guard can't be used with [user impersonation]({{ $page->link('features/user-impersonation') }}) because user impersonation supports stateful guards only.
+> Note: The `sanctum` auth guard can't be used with [user impersonation]({{ $page->link('features/user-impersonation') }}) because user impersonation supports stateful guards only.
 
-If you need to use the `csrf-cookie` route that Sanctum provides, you have to set up [universal routes]({{ $page->link('features/universal-routes') }}) in your app. Then, add `'routes' => false` to the `sanctum.php` config.
+Laravel Sanctum works with Tenancy out of the box, with the exception of the `sanctum.csrf-cookie` route. You can make some small changes to make the route work.
 
-Finally, add the following code to `routes/tenant.php` (use tenancy initialization middleware of your choice):
+### Making the csrf-cookie route work in the tenant app
+
+To make the `sanctum.csrf-cookie` route work in the tenant app, do the following:
+
+1. Add `'routes' => false` to the `sanctum.php` config
+2. Publish the Sanctum migrations and move them to `migrations/tenant`
+3. Make Sanctum not use its migrations in the central app by adding `Sanctum::ignoreMigrations()` to the `register()` method in your `AuthServiceProvider`
+4. Add the following code to `routes/tenant.php` to override the original `sanctum.csrf-cookie` route:
 
 ```php
 Route::group(['prefix' => config('sanctum.prefix', 'sanctum')], static function () {
-    Route::get('/csrf-cookie',[\Laravel\Sanctum\Http\Controllers\CsrfCookieController::class, 'show'])
-        // Use tenancy initialization middleware of your choice
-        ->middleware(['universal', 'web', \Stancl\Tenancy\Middleware\InitializeTenancyByDomain::class])
-        ->name('sanctum.csrf-cookie');
+    Route::get('/csrf-cookie', [CsrfCookieController::class, 'show'])
+        ->middleware([
+            'web',
+            InitializeTenancyByDomain::class // Use tenancy initialization middleware of your choice
+        ])->name('sanctum.csrf-cookie');
 });
 ```
+
+### Making the csrf-cookie route work both in the central and the tenant app
+
+To use the `sanctum.csrf-cookie` route in both the central and the tenant apps:
+
+1. Follow the steps in the previous section ("Sanctum's csrf-cookie route in the tenant app")
+2. Set up [universal routes]({{ $page->link('features/universal-routes') }})
+3. Remove `Sanctum::ignoreMigrations()` from your `AuthServiceProvider`'s `register()` method
+4. Remove `'routes' => false` from the `sanctum.php` config
+5. Add the `'universal'` middleware to the `sanctum.csrf-cookie` route in your `routes/tenant.php`
