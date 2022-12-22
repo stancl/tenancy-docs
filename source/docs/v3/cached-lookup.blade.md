@@ -35,3 +35,10 @@ DomainTenantResolver::$cacheStore = 'redis';
 ## Cache invalidation
 
 Updating and saving a Tenant model's attributes will cause the cached entry for this model to be invalidated when `DomainTenantResolver::$shouldCache` is set to `true`.
+
+You may invalidate the cache by calling :
+```php
+app(\Stancl\Tenancy\Resolvers\DomainTenantResolver::class)->invalidateCache($tenant);
+```
+
+> Note: When using the domain identification, the key of the cache contains the name of the domain. Make sure to invalidate the cache before making any changes if you intend to update the domain name.
