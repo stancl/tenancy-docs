@@ -17,6 +17,7 @@ section: content
 To use Passport inside the tenant part of your application, you may do the following.
 
 1. Publish the Passport migrations by running `php artisan vendor:publish --tag=passport-migrations` and move them to your tenant migration directory (`database/migrations/tenant/`).
+
 2. Publish the Passport config by running `php artisan vendor:publish --tag=passport-config`. Then, make Passport use the default database connection by setting the storage database connection to `null`. `passport:keys` puts the keys in the `storage/` directory by default – you can change that by setting the key path.
     ```php
     return [
@@ -29,9 +30,9 @@ To use Passport inside the tenant part of your application, you may do the follo
     ];
     ```
 
-3. Prevent Passport migrations from running in the central application by adding `Passport::ignoreMigrations()` to the `register` method in your `AppServiceProvider`.
+3. Prevent Passport migrations from running in the central application by adding `Passport::ignoreMigrations()` to the `register()` method in your `AuthServiceProvider`.
 
-4. If you're using Passport 10.x, register the Passport routes in your `AuthServiceProvider` by adding the following code to the provider's `boot` method:
+4. If you're using Passport 10.x, register the Passport routes in your `AuthServiceProvider` by adding the following code to the provider's `boot()` method:
 ```php
     Passport::routes(null, ['middleware' => [
         InitializeTenancyByDomain::class, // Or other identification middleware of your choice
@@ -40,38 +41,59 @@ To use Passport inside the tenant part of your application, you may do the follo
 ```
 
 
-5. If you're using Passport 11.x, disable the automatic Passport route registering and register the routes manually by adding the following code to the `register` method in your `AppServiceProvider`:
+5. If you're using Passport 11.x, disable the automatic Passport route registering in your `AuthServiceProvider` by adding `Passport::ignoreRoutes();` to the `register()` method. Then, register the Passport routes manually by adding the following code to the `boot()` method:
 
-    ```php
-    Passport::$registersRoutes = false;
-
+```php
     Route::group([
         'as' => 'passport.',
-        'middleware' => [InitializeTenancyByDomain::class], // Use tenancy initialization middleware of your choice
+        'middleware' => [
+            InitializeTenancyByDomain::class, // Use tenancy initialization middleware of your choice
+            PreventAccessFromCentralDomains::class,
+        ],
         'prefix' => config('passport.path', 'oauth'),
         'namespace' => 'Laravel\Passport\Http\Controllers',
     ], function () {
         $this->loadRoutesFrom(__DIR__ . "/../../vendor/laravel/passport/src/../routes/web.php");
     });
-    ```
+```
 
 6. Apply Passport migrations by running `php artisan tenants:migrate`.
 
 7. Set up [the encryption keys](#passport-encryption-keys).
 
 ## **Using Passport in both the tenant and the central application** {#using-passport-in-both-the-tenant-and-the-central-application}
-To use Passport in both the tenant and the central application, follow [the steps for using Passport in the tenant appliction](#using-passport-in-the-tenant-application-only) with the following adjustments:
+To use Passport in both the tenant and the central application:
 
-1. Copy the Passport migrations to the central application, so that the Passport migrations are in both the central and the tenant application.
-2. Remove `Passport::ignoreMigrations()` from the `register` method in your `AppServiceProvider` (if it is there).
-3. In your `AuthServiceProvider`'s `boot` method, add the `'universal'` middleware to the Passport routes, and remove the `PreventAccessFromCentralDomains::class` middleware (if it is there). The routes should look like this:
+1. Follow [the steps for using Passport in the tenant appliction](#using-passport-in-the-tenant-application-only).
+
+2. Copy the Passport migrations to the central application, so that the Passport migrations are in both the central and the tenant application.
+
+3. Remove `Passport::ignoreMigrations()` from the `register()` method in your `AuthServiceProvider` (if it is there).
+
+4. In your `AuthServiceProvider`'s `boot()` method (where you registered the Passport routes), add the `'universal'` middleware to the Passport routes, and remove the `PreventAccessFromCentralDomains::class` middleware. The related code in your `boot()` method should look like this:
+
 ```php
+// Passport 10.x
 Passport::routes(null, ['middleware' => [
     'universal',
     InitializeTenancyByDomain::class
 ]]);
+
+// Passport 11.x
+Route::group([
+    'as' => 'passport.',
+    'middleware' => [
+        'universal',
+        InitializeTenancyByDomain::class
+    ],
+    'prefix' => config('passport.path', 'oauth'),
+    'namespace' => 'Laravel\Passport\Http\Controllers',
+], function () {
+    $this->loadRoutesFrom(__DIR__ . "/../../vendor/laravel/passport/src/../routes/web.php");
+});
 ```
-4. Enable [universal routes]({{ $page->link('features/universal-routes') }}) to make Passport routes accessible to both apps.
+
+5. Enable [universal routes]({{ $page->link('features/universal-routes') }}) to make Passport routes accessible to both apps.
 
 ## **Passport encryption keys** {#passport-encryption-keys}
 ### **Shared keys** {#shared-keys}
