@@ -16,7 +16,7 @@ Here's how you can prevent this.
 
 Since the databases are automatically separated, simply using the database as the session driver will make this problem disappear altogether.
 
-## Storing sessions in Redis {storing-sessions-in-redis}
+## Storing sessions in Redis {#storing-sessions-in-redis}
 
 This is the same solution as using the DB session driver. If you use the [`RedisTenancyBootstrapper`]({{ $page->link('tenancy-bootstrappers') }}), your Redis databases will be automatically separated for your tenants, and as such, any sessions stored in those Redis databases will be scoped correctly.
 

@@ -52,7 +52,7 @@ The `JobPipeline` is a simple, yet **extremely powerful** class that lets you **
 
 You may use a job pipeline like any other listener, so you can register it in the `TenancyServiceProvider`, `EventServiceProvider` using the `$listen` array, or in any other place using `Event::listen()` — up to you.
 
-## Creating job pipelines {creating-job-pipelines}
+## Creating job pipelines {#creating-job-pipelines}
 
 To create a job pipeline, start by specifying the jobs you want to use:
 

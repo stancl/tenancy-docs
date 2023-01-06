@@ -16,7 +16,7 @@ The base model has the following features on top of the ones that are necessary 
 - Data column trait — lets you store arbitrary keys. Attributes that don't exist as columns on your `tenants` table go to the `data` column as serialized JSON.
 - Id generation trait — when you don't supply an ID, a random uuid will be generated. An alternative to this would be using AUTOINCREMENT columns. If you wish to use numerical ids, change the `create_tenants_table` migration to use `bigIncrements()` or some such column type, and set `tenancy.id_generator` config to null. That will disable the ID generation altogether, falling back to the database's autoincrement mechanism.
 
-## Tenant Model
+## Tenant Model {#tenant-model}
 **Most** applications using this package will want domain/subdomain identification and tenant databases. To do this, create a new model, e.g. `App\Tenant`, that looks like this:
 
 ```php

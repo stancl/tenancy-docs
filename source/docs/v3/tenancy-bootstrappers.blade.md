@@ -33,7 +33,7 @@ The filesystem bootstrapper makes your app's `Storage` facade and the `storage_p
 
 > Note: If you want to bootstrap filesystem tenancy differently (e.g. provision an S3 bucket for each tenant), you can absolutely do that. Take a look at the package's bootstrappers to get an idea of how to write one yourself, and feel free to implement it any way you want.
 
-### Storage path helper
+### Storage path helper {#storage-path-helper}
 
 The bootstrapper suffixes the path returned by `storage_path()` to make the helper tenant-aware.
 
@@ -46,7 +46,7 @@ Since `storage_path()` will be suffixed, your folder structure will look like th
 
 Logs will be saved in `storage/logs` regardless of any changes to `storage_path()` and regardless of the tenant.
 
-### Storage facade
+### Storage facade {#storage-facade}
 
 The bootstrapper also makes the `Storage` facade tenant-aware by suffixing the roots of disks listed in `config('tenancy.filesystem.disks')` and by overriding the disk roots in `config('tenancy.filesystem.root_override')` (disk root = the disk path used by the `Storage` facade).
 
@@ -65,7 +65,7 @@ The root of each disk listed in `config('tenancy.filesystem.disks')` will be suf
 
 To make the tenant-aware `Storage` facade work with a custom disk, add the disk's name to `config('tenancy.filesystem.disks')` and if the disk is local, override its root in `config('tenancy.filesystem.root_override')` as shown above. With S3, overriding the disk roots is not necessary – `Storage::disk('s3')->path('foo.txt')` will return `/tenant42/foo.txt`.
 
-### Assets
+### Assets {#assets}
 
 The filesystem bootstrapper makes the `asset()` helper link to the files *of the current tenant*. By default, the bootstrapper makes the helper output a URL pointing to the TenantAssetsController (`/tenancy/assets/...`), which returns a file response:
 

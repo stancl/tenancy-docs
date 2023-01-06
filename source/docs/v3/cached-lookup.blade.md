@@ -32,7 +32,7 @@ DomainTenantResolver::$cacheTTL = 3600;
 DomainTenantResolver::$cacheStore = 'redis';
 ```
 
-## Cache invalidation
+## Cache invalidation {#cache-invalidation}
 
 Updating and saving a Tenant model's attributes will cause the cached entry for this model to be invalidated when `DomainTenantResolver::$shouldCache` is set to `true`.
 
