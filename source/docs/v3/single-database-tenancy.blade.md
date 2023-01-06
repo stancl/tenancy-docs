@@ -70,7 +70,7 @@ So, to give you an example, you would do this:
 ```php
 class Comment extends Model
 {
-		use BelongsToPrimaryModel;
+    use BelongsToPrimaryModel;
 
     public function getRelationshipToPrimaryModel(): string
     {
