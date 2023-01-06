@@ -30,7 +30,7 @@ If the impersonation succeeds, the token is deleted from the database.
 
 All tokens expire after 60 seconds by default, and this TTL can be customized — see the section at the very bottom.
 
-## Enabling the feature
+## Enabling the feature {#enabling-the-feature}
 
 To enable this feature, go to your `config/tenancy.php` file and make sure the following class is in your `features` part of the config:
 

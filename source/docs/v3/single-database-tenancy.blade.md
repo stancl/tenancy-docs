@@ -88,7 +88,7 @@ And this will automatically scope the `Comment::all()` call to the current tenan
 
 # Database considerations {#database-considerations}
 
-### Unique indexes {unique-indexes}
+### Unique indexes {#unique-indexes}
 
 If you'd have a unique index such as:
 

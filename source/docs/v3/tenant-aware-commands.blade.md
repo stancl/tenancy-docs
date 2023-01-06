@@ -51,7 +51,7 @@ class BarCommand extends Command
 }
 ```
 
-### Custom implementation
+### Custom implementation {#custom-implementation}
 
 If you want more control, you may implement this functionality yourself by simply accepting a `tenant_id` argument and then inside `handle()` doing something like this:
 ```php

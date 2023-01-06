@@ -10,7 +10,7 @@ section: content
 
 TODO: Review
 
-## Events
+## Events {#events}
 
 Keep in mind that the package makes heavy use of events, so if you use `Event::fake()` anywhere in your tests, tenancy initialization and related processes might break.
 
@@ -30,7 +30,7 @@ Event::fake();
 
 To test your central app, just write normal Laravel tests.
 
-## Tenant app {#central-app}
+## Tenant app {#tenant-app}
 
 Note: If you're using multi-database tenancy & the automatic mode, it's not possible to use `:memory:` SQLite databases or the `RefreshDatabase` trait due to the switching of default database.
 
@@ -55,7 +55,7 @@ class TestCase // extends ...
     public function initializeTenancy()
     {
         $tenant = Tenant::create();
-	
+
         tenancy()->initialize($tenant);
     }
 

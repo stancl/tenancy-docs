@@ -6,7 +6,7 @@ section: content
 
 # Laravel Nova {#laravel-nova}
 
-## In the central app
+## In the central app {#in-the-central-app}
 
 If you wish to use Laravel Nova in the central application (to manage tenants), you need to make a small change to the Nova migrations, they expect your model primary keys to always be unsigned big integers, but your tenants might be using `string` ids.
 
