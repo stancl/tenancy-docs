@@ -61,3 +61,15 @@ To use Nova inside of the tenant part of your application, do the following:
     ])
     ```
 - Set the `domain` in Nova config to `null`
+
+
+## Tenant file thumbnails and previews {#file-thumbnails}
+To make the file field previews show correctly, you have to call `thumbnail(fn($value, $disk) => tenant_asset($value))` and `preview(fn($value, $disk) => tenant_asset($value))` on the field.
+
+For example:
+```php
+Avatar::make('Avatar', 'photo')
+    ->disk('public')
+    ->thumbnail(fn($value, $disk) => tenant_asset($value)),
+    ->preview(fn($value, $disk) => tenant_asset($value)),
+```
