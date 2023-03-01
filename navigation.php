@@ -208,6 +208,7 @@ return [
                         'Livewire' => 'integrations/livewire',
                         'Orchid' => 'integrations/orchid',
                         'Sanctum' => 'integrations/sanctum',
+                        'Sail' => 'integrations/sail',
                         'Vite' => 'features/vite-bundler',
                     ],
                 ],

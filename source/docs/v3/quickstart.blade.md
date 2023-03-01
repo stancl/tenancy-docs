@@ -82,7 +82,7 @@ In other words, it creates & migrates the tenant's database after he's created �
 
 ## Central routes {#central-routes}
 
-We'll make a small change to the `app/Providers/RouteServiceProvider.php` file. Specifically, we'll make sure that central routes are registered on central domains only. 
+We'll make a small change to the `app/Providers/RouteServiceProvider.php` file. Specifically, we'll make sure that central routes are registered on central domains only.
 
 ```php
 protected function mapWebRoutes()
@@ -144,7 +144,6 @@ If you're using Laravel Sail, no changes are needed, default values are good to 
     'localhost',
 ],
 ```
-
 ## Tenant routes {#tenant-routes}
 
 Your tenant routes will look like this by default:
@@ -177,8 +176,8 @@ Route::get('/', function () {
 To have users in tenant databases, let's move the `users` table migration (the file `database/migrations/2014_10_12_000000_create_users_table.php` or similar) to `database/migrations/tenant`. This will prevent the table from being created in the central database, and it will be instead created in the tenant database when a tenant is created — thanks to our event setup.
 
 ## Creating tenants {#creating-tenants}
-> Note: If you're using [Laravel Sail](https://laravel.com/docs/9.x/sail), ensure that `DB_USERNAME` has the necessary permissions. You can grant privileges to users by running `GRANT ALL PRIVILEGES on *.* to 'sail'@'%';` in the MySQL console.
-> Once you have finalized the permissions, always be sure to reload all the privileges `FLUSH PRIVILEGES;`
+
+> If you're using Laravel Sail, please refer the [Laravel Sail integration guide]({{ $page->link('integrations/sail') }}):
 
 For testing purposes, we'll create a tenant in `tinker` — no need to waste time creating controllers and views for now.
 
