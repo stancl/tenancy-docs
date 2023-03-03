@@ -164,6 +164,7 @@ These routes will only be accessible on tenant (non-central) domains — the `Pr
 
 Let's make a small change to dump all the users in the database, so that we can actually see multi-tenancy working. Open the file `routes/tenant.php` and apply the modification below:
 
+
 ```php
 Route::get('/', function () {
     dd(\App\Models\User::all());
@@ -191,6 +192,8 @@ $ php artisan tinker
 ```
 
 Now we'll create a user inside each tenant's database:
+
+Please run **php artisan tenants:migrate** before you create the users otherwise you will get an error.
 
 ```php
 App\Models\Tenant::all()->runForEach(function () {
