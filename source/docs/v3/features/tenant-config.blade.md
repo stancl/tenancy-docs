@@ -21,9 +21,9 @@ Uncomment the following line in your `tenancy.features` config:
 // Stancl\Tenancy\Features\TenantConfig::class,
 ```
 
-## **Configuring the mappings** {#configuring-the-mappings}
+## **Configuring the mapping** {#configuring-the-mapping}
 
-This feature maps keys in the tenant storage to config keys based on the `$storageToConfigMap` [static property]({{ $page->link('configuration#static-properties') }}).
+This feature maps keys in the tenant storage (properties on the `Tenant` model, these may be [custom columns]({{ $page->link('tenants#custom-columns') }}) or virtual columns within `data`) to config keys based on the `$storageToConfigMap` [static property]({{ $page->link('configuration#static-properties') }}).
 
 For example, if your `$storageToConfigMap` looked like this:
 
