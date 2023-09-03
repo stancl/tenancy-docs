@@ -91,7 +91,7 @@ See this section in the config, it's documented with comments.
 
 This section is relevant to Redis data separation, specifically, to the `RedisTenancyBootstrapper`.
 
-Note: To use the this bootstrapper, you need phpredis.
+Note: To use this bootstrapper, you need phpredis.
 
 See this section in the config, it's documented with comments.
 
