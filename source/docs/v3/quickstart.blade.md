@@ -128,11 +128,11 @@ public function boot()
 
 ## Central domains {#central-domains}
 
-Now we need to actually specify the central domains. A central domain is a domain that serves your "central app" content, e.g. the landing page where tenants sign up. Open the `config/tenancy.php` file and add them in:
+Now we need actually to specify the central domains. A central domain is a domain that serves your "central app" content, e.g. the landing page where tenants sign up. Open the `config/tenancy.php` file and add them in:
 
 ```php
 'central_domains' => [
-    'saas.test', // Add the ones that you use. I use this one with Laravel Valet.
+    'saas.test', // Add the ones you use. I use this one with Laravel Valet.
 ],
 ```
 
@@ -155,14 +155,14 @@ Route::middleware([
     PreventAccessFromCentralDomains::class,
 ])->group(function () {
     Route::get('/', function () {
-        return 'This is your multi-tenant application. The id of the current tenant is ' . tenant('id');
+        return 'This is your multi-tenant application. The id of the current tenant is '. tenant('id');
     });
 });
 ```
 
-These routes will only be accessible on tenant (non-central) domains — the `PreventAccessFromCentralDomains` middleware enforces that.
+These routes will only be accessible on the tenant (non-central) domains — the `PreventAccessFromCentralDomains` middleware enforces that.
 
-Let's make a small change to dump all the users in the database, so that we can actually see multi-tenancy working. Open the file `routes/tenant.php` and apply the modification below:
+Let's make a small change to dump all the users in the database so that we can actually see multi-tenancy working. Open the file `routes/tenant.php` and apply the modification below:
 
 ```php
 Route::get('/', function () {
@@ -173,11 +173,11 @@ Route::get('/', function () {
 
 ## Migrations {#migrations}
 
-To have users in tenant databases, let's move the `users` table migration (the file `database/migrations/2014_10_12_000000_create_users_table.php` or similar) to `database/migrations/tenant`. This will prevent the table from being created in the central database, and it will be instead created in the tenant database when a tenant is created — thanks to our event setup.
+To have users in tenant databases, let's move the `users` table migration (the file `database/migrations/2014_10_12_000000_create_users_table.php` or similar) to `database/migrations/tenant`. This will prevent the table from being created in the central database and will be created in the tenant database when a tenant is created — thanks to our event setup.
 
 ## Creating tenants {#creating-tenants}
 
-> If you're using Laravel Sail, please refer the [Laravel Sail integration guide]({{ $page->link('integrations/sail') }}):
+> If you're using Laravel Sail, please refer to the [Laravel Sail integration guide]({{ $page->link('integrations/sail') }}):
 
 For testing purposes, we'll create a tenant in `tinker` — no need to waste time creating controllers and views for now.
 
