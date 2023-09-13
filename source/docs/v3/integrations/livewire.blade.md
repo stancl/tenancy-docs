@@ -22,6 +22,25 @@ to this:
 ],
 ```
 
+For livewire 3, configuration key `middleware_group` has been removed, so instead in the `AppServiceProvider.php` add the following:
+
+```php
+public function boot(): void
+    {
+        ...
+
+        Livewire::setUpdateRoute(static function ($handle) {
+            return Route::post('/livewire/update', $handle)
+                ->middleware(
+                    'web',
+                    'universal',
+                    InitializeTenancyByDomain::class, // or whatever tenancy middleware you use
+                );
+        });
+    }
+
+```
+
 (Don't forget to import the middleware class.)
 
 Now you can use Livewire both in the central app and the tenant app.
