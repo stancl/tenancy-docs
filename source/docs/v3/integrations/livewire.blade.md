@@ -22,14 +22,14 @@ to this:
 ],
 ```
 
-For livewire 3, configuration key `middleware_group` has been removed, so instead in the `AppServiceProvider.php` add the following:
+In Livewire 3, the configuration key `middleware_group` has been removed, so instead add the following in `TenancyServiceProvider` (or any other provider):
 
 ```php
 public function boot(): void
     {
         ...
 
-        Livewire::setUpdateRoute(static function ($handle) {
+        Livewire::setUpdateRoute(function ($handle) {
             return Route::post('/livewire/update', $handle)
                 ->middleware(
                     'web',
