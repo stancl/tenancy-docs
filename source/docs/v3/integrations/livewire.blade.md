@@ -26,19 +26,18 @@ In Livewire 3, the configuration key `middleware_group` has been removed, so ins
 
 ```php
 public function boot(): void
-    {
-        ...
+{
+    // ...
 
-        Livewire::setUpdateRoute(function ($handle) {
-            return Route::post('/livewire/update', $handle)
-                ->middleware(
-                    'web',
-                    'universal',
-                    InitializeTenancyByDomain::class, // or whatever tenancy middleware you use
-                );
-        });
-    }
-
+    Livewire::setUpdateRoute(function ($handle) {
+        return Route::post('/livewire/update', $handle)
+            ->middleware(
+                'web',
+                'universal',
+                InitializeTenancyByDomain::class, // or whatever tenancy middleware you use
+            );
+    });
+}
 ```
 
 (Don't forget to import the middleware class.)
