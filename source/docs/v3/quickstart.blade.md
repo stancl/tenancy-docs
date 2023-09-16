@@ -173,7 +173,7 @@ Route::get('/', function () {
 
 ## Migrations {#migrations}
 
-To have users in tenant databases, let's move the `users` table migration (the file `database/migrations/2014_10_12_000000_create_users_table.php` or similar) to `database/migrations/tenant`. This will prevent the table from being created in the central database, and it will be instead created in the tenant database when a tenant is created — thanks to our event setup.
+To have users in tenant databases, let's move the `users` table migration (the file `database/migrations/2014_10_12_000000_create_users_table.php` or similar) to `database/migrations/tenant`. This will prevent the table from being created in the central database, and it will be instead created in the tenant database when a tenant is created — thanks to our event setup. If you have any other migrations that are necessary for your application, move those migrations as well.
 
 ## Creating tenants {#creating-tenants}
 
