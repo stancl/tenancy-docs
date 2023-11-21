@@ -34,15 +34,38 @@ Next, add the following listeners to the `TenancyBootstrapped` and `TenancyEnde
 ```php
 Events\TenancyBootstrapped::class => [
     function (Events\TenancyBootstrapped $event) {
-        \Spatie\Permission\PermissionRegistrar::$cacheKey = 'spatie.permission.cache.tenant.' . $event->tenancy->tenant->id;
+        $permissionRegistrar = app(\Spatie\Permission\PermissionRegistrar::class);
+        $permissionRegistrar->cacheKey = 'spatie.permission.cache.tenant.' . $event->tenancy->tenant->getTenantKey();
     }
 ],
 
 Events\TenancyEnded::class => [
     function (Events\TenancyEnded $event) {
-        \Spatie\Permission\PermissionRegistrar::$cacheKey = 'spatie.permission.cache';
+        $permissionRegistrar = app(\Spatie\Permission\PermissionRegistrar::class);
+        $permissionRegistrar->cacheKey = 'spatie.permission.cache';
     }
 ],
+```
+
+Alternatively, create a bootstrapper:
+
+```php
+class SpatiePermissionsBootstrapper implements TenancyBootstrapper
+{
+    public function __construct(
+        protected PermissionRegistrar $registrar,
+    ) {}
+
+    public function bootstrap(Tenant $tenant): void
+    {
+        $this->registrar->cacheKey = 'spatie.permission.cache.tenant.' . $tenant->getTenantKey();
+    }
+
+    public function revert(): void
+    {
+        $this->registrar->cacheKey = 'spatie.permission.cache';
+    }
+}
 ```
 
 The reason for this is that spatie/laravel-permission caches permissions & roles to save DB queries, which means that we need to separate the permission cache by tenant. We also need to reset the cache key when tenancy ends so that the tenant's cache key isn't used in the central app.
