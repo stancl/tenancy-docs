@@ -107,9 +107,9 @@
                 <p class="mt-4 text-base leading-6 text-gray-300">
                     Receive notifications about important releases, new packages and other updates.
                 </p>
-                <form action="https://github.us3.list-manage.com/subscribe/post?u=6a33c422777aedd88e9a9488e&amp;id=9b99f013b8" method="post" target="_blank" class="mt-4 sm:flex sm:max-w-md">
-                    <input name="EMAIL" aria-label="Email address" type="email" required class="w-full px-5 py-3 text-base leading-6 text-gray-900 placeholder-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md appearance-none focus:outline-none focus:placeholder-gray-400" placeholder="Enter your email" />
-                    <input type="hidden" value="8" name="group[27425][8]" id="mce-group[27425]-27425-3">
+                <form action="https://archtech.activehosted.com/f/7" method="get" target="_blank" class="mt-4 sm:flex sm:max-w-md">
+                    <input name="email" aria-label="Email address" type="email" required class="w-full px-5 py-3 text-base leading-6 text-gray-900 placeholder-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md appearance-none focus:outline-none focus:placeholder-gray-400" placeholder="Enter your email" />
+                    {{-- <input type="hidden" value="8" name="group[27425][8]" id="mce-group[27425]-27425-3"> --}}
                     <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
                         <button class="flex items-center justify-center w-full px-5 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500">
                             Subscribe
