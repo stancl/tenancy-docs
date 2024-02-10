@@ -83,7 +83,7 @@ JobPipeline::make([
 })
 ```
 
-Next, decide if you want to queue the pipeline. By default, pipelines are synchronous (= not queued) by default.
+Next, decide if you want to queue the pipeline. By default, pipelines are synchronous (= not queued).
 
 If you **do** want pipelines to be queued by default, you can do that by setting a static property:
 `\Stancl\JobPipeline\JobPipeline::$shouldBeQueuedByDefault = true;`
