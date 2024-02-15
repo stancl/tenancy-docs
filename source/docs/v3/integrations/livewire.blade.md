@@ -40,7 +40,19 @@ public function boot(): void
 }
 ```
 
-(Don't forget to import the middleware class.)
+To make file uploads work on Livewire 3, set the following in any service provider:
+```php
+// specify the right identification middleware
+FilePreviewController::$middleware = ['web', 'universal', InitializeTenancyByDomain::class];
+```
+
+And change `livewire.temporary_file_upload.middleware` to include the tenancy middleware as well:
+
+```php
+// config/livewire.php
+
+'livewire.temporary_file_upload.middleware' => ['throttle:60,1', 'universal', InitializeTenancyByDomain::class],
+```
 
 Now you can use Livewire both in the central app and the tenant app.
 
