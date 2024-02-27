@@ -11,6 +11,8 @@ Even though [`tenants:run`]({{ $page->link('console-commands#run') }}) lets you 
 
 To make a command tenant-aware, utilize the `TenantAwareCommand` trait:
 ```php
+use Stancl\Tenancy\Concerns\TenantAwareCommand;
+
 class MyCommand extends Command
 {
     use TenantAwareCommand;
@@ -20,8 +22,8 @@ class MyCommand extends Command
 However, this trait requires you to implement a `getTenants()` method that returns an array of `Tenant` instances.
 
 If you don't want to implement the options/arguments yourself, you may use one of these two traits:
-- `HasATenantsOption` - accepts multiple tenant IDs, optional -- by default the command is executed for all tenants
-- `HasATenantArgument` - accepts a single tenant ID, required argument
+- `Stancl\Tenancy\Concerns\HasATenantsOption` - accepts multiple tenant IDs, optional -- by default the command is executed for all tenants
+- `Stancl\Tenancy\Concerns\HasATenantArgument` - accepts a single tenant ID, required argument
 
 These traits implement the `getTenants()` method needed by `TenantAwareCommand`.
 
@@ -30,6 +32,10 @@ These traits implement the `getTenants()` method needed by `TenantAwareCommand`.
 So if you use these traits in combination with `TenantAwareCommand`, you won't have to change a thing in your command:
 
 ```php
+
+use Stancl\Tenancy\Concerns\TenantAwareCommand;
+use Stancl\Tenancy\Concerns\HasATenantsOption;
+
 class FooCommand extends Command
 {
     use TenantAwareCommand, HasATenantsOption;
@@ -39,6 +45,9 @@ class FooCommand extends Command
         //
     }
 }
+
+use Stancl\Tenancy\Concerns\TenantAwareCommand;
+use Stancl\Tenancy\Concerns\HasATenantArgument;
 
 class BarCommand extends Command
 {
