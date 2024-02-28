@@ -34,15 +34,13 @@ Next, add the following listeners to the `TenancyBootstrapped` and `TenancyEnde
 ```php
 Events\TenancyBootstrapped::class => [
     function (Events\TenancyBootstrapped $event) {
-        $permissionRegistrar = app(\Spatie\Permission\PermissionRegistrar::class);
-        $permissionRegistrar->cacheKey = 'spatie.permission.cache.tenant.' . $event->tenancy->tenant->getTenantKey();
+        \Spatie\Permission\PermissionRegistrar::$cacheKey = 'spatie.permission.cache.tenant.' . $event->tenancy->tenant->getTenantKey();
     }
 ],
 
 Events\TenancyEnded::class => [
     function (Events\TenancyEnded $event) {
-        $permissionRegistrar = app(\Spatie\Permission\PermissionRegistrar::class);
-        $permissionRegistrar->cacheKey = 'spatie.permission.cache';
+        \Spatie\Permission\PermissionRegistrar::$cacheKey = 'spatie.permission.cache';
     }
 ],
 ```
@@ -52,18 +50,14 @@ Alternatively, create a bootstrapper:
 ```php
 class SpatiePermissionsBootstrapper implements TenancyBootstrapper
 {
-    public function __construct(
-        protected PermissionRegistrar $registrar,
-    ) {}
-
     public function bootstrap(Tenant $tenant): void
     {
-        $this->registrar->cacheKey = 'spatie.permission.cache.tenant.' . $tenant->getTenantKey();
+        \Spatie\Permission\PermissionRegistrar::$cacheKey = 'spatie.permission.cache.tenant.' . $tenant->getTenantKey();
     }
 
     public function revert(): void
     {
-        $this->registrar->cacheKey = 'spatie.permission.cache';
+        \Spatie\Permission\PermissionRegistrar::$cacheKey = 'spatie.permission.cache';
     }
 }
 ```
