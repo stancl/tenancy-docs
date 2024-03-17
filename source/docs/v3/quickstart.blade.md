@@ -12,6 +12,8 @@ We recommend following this tutorial just **to get things working** so that you 
 
 ## Installation {#installation}
 
+> Note: Laravel 11 has a different folder structure than Laravel 10. An updated installation guide is coming soon. For now you can see [this discussion](https://github.com/archtechx/tenancy/pull/1180).
+
 First, require the package using composer:
 
 ```php

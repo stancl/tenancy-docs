@@ -6,6 +6,8 @@ section: content
 
 # Installation {#installation}
 
+> Note: Laravel 11 has a different folder structure than Laravel 10. An updated installation guide is coming soon. For now you can see [this discussion](https://github.com/archtechx/tenancy/pull/1180).
+
 Laravel 6.0 or higher is needed.
 
 Require the package using composer:
