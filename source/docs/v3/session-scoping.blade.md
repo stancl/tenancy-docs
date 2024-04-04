@@ -14,6 +14,8 @@ Here's how you can prevent this.
 
 ## Storing sessions in the database {#storing-sessions-in-the-database}
 
+> Note: This approach has more variables than Redis, making it less reliable. It's recommended to use phpredis + the Redis session driver for proper session scoping.
+
 Since the databases are automatically separated, simply using the database as the session driver will make this problem disappear altogether.
 
 ## Storing sessions in Redis {#storing-sessions-in-redis}
