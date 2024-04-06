@@ -8,7 +8,7 @@ section: content
 
 Session scoping is one thing that you might have to deal with yourself.
 
-The issue occurs when you're using multiple tenant domains and databases. Users can change their session cookie's domain and their session data will be shared in another tenant's application.
+The issue occurs when you're using multiple tenant databases. Users can change their session cookie's domain and their session data will be shared in another tenant's application.
 
 Here's how you can prevent this.
 
