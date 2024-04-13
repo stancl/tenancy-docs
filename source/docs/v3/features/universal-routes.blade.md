@@ -18,10 +18,12 @@ First, enable the `UniversalRoutes` feature by uncommenting the following line i
 Stancl\Tenancy\Features\UniversalRoutes::class,
 ```
 
-Next, go to your `app/Http/Kernel.php` file and add the following middleware group:
+Next, go to your `bootstrap/app.php` file and add the following middleware group:
 
 ```php
-'universal' => [],
+->withMiddleware(function (Middleware $middleware) {
+    $middleware->group('universal', []);
+})
 ```
 
 We will use this middleware group as a "flag" on the route, to mark it as a universal route. We don't need any actual middleware inside the group.
