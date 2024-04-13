@@ -34,18 +34,13 @@ Let's run the migrations:
 php artisan migrate
 ```
 
-Register the service provider in `config/app.php`. Make sure it's on the same position as in the code snippet below:
+Register the service provider in `bootstrap/providers.php`:
 
 ```php
-/*
- * Application Service Providers...
- */
-App\Providers\AppServiceProvider::class,
-App\Providers\AuthServiceProvider::class,
-// App\Providers\BroadcastServiceProvider::class,
-App\Providers\EventServiceProvider::class,
-App\Providers\RouteServiceProvider::class,
-App\Providers\TenancyServiceProvider::class, // <-- here
+return [
+    App\Providers\AppServiceProvider::class,
+    App\Providers\TenancyServiceProvider::class, // <-- here
+];
 ```
 
 ## Creating a tenant model {#creating-a-tenant-model}
@@ -84,49 +79,19 @@ In other words, it creates & migrates the tenant's database after he's created â
 
 ## Central routes {#central-routes}
 
-We'll make a small change to the `app/Providers/RouteServiceProvider.php` file. Specifically, we'll make sure that central routes are registered on central domains only.
+We'll make a small change to your existing route files. Specifically, we'll make sure that central routes are registered on central domains only:
 
 ```php
-protected function mapWebRoutes()
-{
-    foreach ($this->centralDomains() as $domain) {
-        Route::middleware('web')
-            ->domain($domain)
-            ->namespace($this->namespace)
-            ->group(base_path('routes/web.php'));
-    }
-}
+// routes/web.php, api.php or any other central route files you have
 
-protected function mapApiRoutes()
-{
-    foreach ($this->centralDomains() as $domain) {
-        Route::prefix('api')
-            ->domain($domain)
-            ->middleware('api')
-            ->namespace($this->namespace)
-            ->group(base_path('routes/api.php'));
-    }
-}
-
-protected function centralDomains(): array
-{
-    return config('tenancy.central_domains');
-}
-```
-
-Call these methods manually from your `RouteServiceProvider`'s `boot()` method, instead of the `$this->routes()` calls.
-
-```php
-public function boot()
-{
-    $this->configureRateLimiting();
-
-    $this->routes(function () {
-        $this->mapApiRoutes();
-        $this->mapWebRoutes();
+foreach (config('tenancy.central_domains') as $domain) {
+    Route::domain($domain)->group(function () {
+        // your actual routes
     });
 }
 ```
+
+Alternatively, to keep your route files more clean, you can use [this approach](https://github.com/archtechx/tenancy/pull/1180#issuecomment-2006098346) to register all of your routes in the `using` callback of the Application Builder.
 
 ## Central domains {#central-domains}
 
@@ -146,6 +111,7 @@ If you're using Laravel Sail, no changes are needed, default values are good to 
     'localhost',
 ],
 ```
+
 ## Tenant routes {#tenant-routes}
 
 Your tenant routes will look like this by default:
