@@ -8,16 +8,17 @@ section: content
 
 > Note: The `sanctum` auth guard can't be used with [user impersonation]({{ $page->link('features/user-impersonation') }}) because user impersonation supports stateful guards only.
 
-Laravel Sanctum works with Tenancy out of the box, with the exception of the `sanctum.csrf-cookie` route. You can make some small changes to make the route work.
+Laravel Sanctum mostly works with Tenancy out of the box -- just publish the Sanctum migrations and copy them to `migrations/tenant` so that tenant apps have the personal access token table too.
+
+"Mostly" because the `sanctum.csrf-cookie` route doesn't work in the tenant app out of the box. You can make some small changes to make the route work.
 
 ### Making the csrf-cookie route work in the tenant app {#csrf-cookie-route-in-tenant-app}
 
 To make the `sanctum.csrf-cookie` route work in the tenant app, do the following:
 
 1. Add `'routes' => false` to the `sanctum.php` config
-2. Publish the Sanctum migrations and move them to `migrations/tenant`
-3. Make Sanctum not use its migrations in the central app by adding `Sanctum::ignoreMigrations()` to the `register()` method in your `AuthServiceProvider`
-4. Add the following code to `routes/tenant.php` to override the original `sanctum.csrf-cookie` route:
+2. Make Sanctum not use its migrations in the central app by adding `Sanctum::ignoreMigrations()` to the `register()` method in your `AuthServiceProvider`
+3. Add the following code to `routes/tenant.php` to override the original `sanctum.csrf-cookie` route:
 
 ```php
 Route::group(['prefix' => config('sanctum.prefix', 'sanctum')], static function () {
