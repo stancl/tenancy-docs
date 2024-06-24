@@ -73,3 +73,16 @@ Avatar::make('Avatar', 'photo')
     ->thumbnail(fn ($value, $disk) => tenant_asset($value)),
     ->preview(fn ($value, $disk) => tenant_asset($value)),
 ```
+
+Important: make sure to update `TenantAssetsController::$tenancyMiddleware` to the identification middleware of your choice.
+
+E.g. if you're using InitializeByDomainOrSubdomain in your app, set `TenantAssetsController::$tenancyMiddleware` to InitializeByDomainOrSubdomain in TenancyServiceProvider's `boot()` method:
+
+```php
+// In App\Providers\TenancyServiceProvider
+public function boot(): void
+{
+    // ...
+    TenantAssetsController::$tenancyMiddleware = InitializeTenancyByDomainOrSubdomain::class;
+}
+```
