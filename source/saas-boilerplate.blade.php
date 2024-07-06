@@ -553,7 +553,7 @@
 </dt>
 <dd class="pr-12 mt-2" x-show="openPanel === 8" style="display: none;">
   <p class="text-base leading-6 text-gray-700">
-    Laravel 10 (<a href="https://airtable.com/shroy4RrLmQFdj6zz" target="_blank" class="text-indigo-600 hover:text-indigo-500">a new version with Jetstream will be released in the coming months</a>).
+    Laravel 11 (<a href="https://airtable.com/shroy4RrLmQFdj6zz" target="_blank" class="text-indigo-600 hover:text-indigo-500">a new version with Jetstream will be released in the coming months</a>).
     Multi-domain multi-database tenancy. Customers get subdomains by default, can add their own 2nd level domains. Billing is done with Cashier Stripe, front-end is done with Tailwind CSS, occasional Alpine.js, and Livewire for some forms.
   </p>
 </dd>
