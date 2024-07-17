@@ -12,6 +12,8 @@ This package has a concept of central routes and tenant routes. Central routes a
 
 You may register central routes in `routes/web.php` or `routes/api.php` like you're used to. However, you need to make one small change to your RouteServiceProvider.
 
+> Note: Since Laravel 11, there isn't a `RouteServiceProvider`, so you can instead wrap your central routes in a `Route::domain(...)->group(...)` call. See the quickstart guide for an example.
+
 You don't want central routes — think landing pages and sign up forms — to be accessible on tenant domains. For that reason, register them in such a way that they're **only** accessible on your central domains:
 
 ```php
