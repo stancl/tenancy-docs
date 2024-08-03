@@ -63,3 +63,40 @@ class CreateFrameworkDirectoriesForTenant
     }
 }
 ```
+
+## Deleting framework directories for tenants {#deleting-framework-directories-for-tenants}
+
+If you used the previous solution and created the framework directories for a tenant, then you may be interested in
+deleting the framework directories once the tenant has been destroyed. Similarly, you will have to create a new `Job` that
+will remove any framework files created previously.
+
+Similarly, create a new `Job` like the one below, and add the `Job` to the `TenantDeleted` job pipeline
+
+```php
+<?php
+
+namespace App\Jobs;
+
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Support\Facades\File;
+use Stancl\Tenancy\Contracts\Tenant;
+
+class DeleteFrameworkDirectoriesForTenant implements ShouldQueue
+{
+    protected Tenant $tenant;
+
+    public function __construct(Tenant $tenant)
+    {
+        $this->tenant = $tenant;
+    }
+
+    public function handle(): void
+    {
+        $this->tenant->run(function ($tenant) {
+            $storage_path = storage_path();
+
+            File::deleteDirectory($storage_path);
+        });
+    }
+}
+```
