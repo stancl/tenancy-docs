@@ -72,7 +72,7 @@ The reason for this is that spatie/laravel-permission caches permissions & roles
 
 ## **laravel-medialibrary** {#laravel-medialibrary}
 
-To generate the correct media URLs for tenants, create a custom URL generator class extending `Spatie\MediaLibrary\Support\UrlGenerator\DefaultUrlGenerator` and override the `getUrl()` method and the `getResponsiveImagesDirectoryUrl` method that is used for generating URLs of responsive images.
+To generate the correct media URLs for tenants, create a custom URL generator class extending `Spatie\MediaLibrary\Support\UrlGenerator\DefaultUrlGenerator` and override the `getUrl()` method and the `getResponsiveImagesDirectoryUrl()` method that is used for generating URLs of responsive images.
 
 ```php
 use Spatie\MediaLibrary\Support\UrlGenerator\DefaultUrlGenerator;
