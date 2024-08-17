@@ -14,6 +14,25 @@ You may register central routes in `routes/web.php` or `routes/api.php` like you
 
 > Note: Since Laravel 11, there isn't a `RouteServiceProvider`, so you can instead wrap your central routes in a `Route::domain(...)->group(...)` call. See the quickstart guide for an example.
 
+```php
+// web.php
+Route::domain('saas.test')->group(function() {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->middleware(['auth', 'verified'])->name('dashboard');
+
+    Route::middleware('auth')->group(function () {
+        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+        Route::resource('tenents', TenantController::class);
+    });
+
+    require __DIR__.'/auth.php';
+});
+```
+
 You don't want central routes — think landing pages and sign up forms — to be accessible on tenant domains. For that reason, register them in such a way that they're **only** accessible on your central domains:
 
 ```php
