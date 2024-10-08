@@ -79,3 +79,18 @@ class FooTest extends TestCase
 ```
 
 Or you may want to create a separate TestCase class for tenant tests, for better organization.
+
+When using `InitializeTenancyBySubdomain` you need disable this middleware while testing. This middleware will cause your tests on tenant routes to return a 404 error. Disabling the middleware can be done in the `TestCase` as well. For example:
+```php
+public function setUp(): void
+{
+    parent::setUp();
+
+    if ($this->tenancy) {
+        $this->initializeTenancy();
+
+         $this->withoutMiddleware([
+            InitializeTenancyBySubdomain::class,
+         ]);
+    }
+}
