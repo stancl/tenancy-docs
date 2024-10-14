@@ -57,6 +57,9 @@ class TestCase // extends ...
         $tenant = Tenant::create();
 
         tenancy()->initialize($tenant);
+
+        // Depending on the tenant identification middleware you may want to force the URL. For example:
+        URL::forceRootUrl( 'https://'.$this->tenant->domains[ 0 ]->domain.'.'.centralDomains()[ 0 ] );        
     }
 
     // ...
