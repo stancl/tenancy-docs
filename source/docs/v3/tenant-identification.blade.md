@@ -12,7 +12,7 @@ The package lets you identify tenants using the following methods:
 - Subdomain identification (`acme.yoursaas.com`)
 - Domain OR subdomain identification (both of the above)
 - Path identification (`yoursaas.com/acme/dashboard`)
-- Request data identification (`yoursaas.com/users?tenant_id=acme` — or using request headers)
+- Request data identification (`yoursaas.com/users?tenant=acme` — or using request headers)
 
 However, **you're free to write additional tenant resolvers.**
 
