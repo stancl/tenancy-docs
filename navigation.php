@@ -205,6 +205,7 @@ return [
                         'Passport' => 'integrations/passport',
                         'Nova' => 'integrations/nova',
                         'Telescope' => 'integrations/telescope',
+                        'Pulse' => 'integrations/pulse',
                         'Livewire' => 'integrations/livewire',
                         'Orchid' => 'integrations/orchid',
                         'Sanctum' => 'integrations/sanctum',
