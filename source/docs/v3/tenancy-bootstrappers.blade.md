@@ -23,7 +23,7 @@ Note that only the **default** connection is switched. If you use another connec
 The cache tenancy bootstrapper replaces the Laravel's CacheManager instance with a custom CacheManager that adds tags with the current tenant's ids to each cache call. This scopes cache calls and lets you selectively clear tenants' caches:
 
 ```php
-php artisan cache:clear --tag=tenant_123
+php artisan cache:clear --tags=tenant_123
 ```
 
 Note that you must use a cache store that supports tagging, e.g. Redis.
