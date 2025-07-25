@@ -41,7 +41,7 @@ To use Passport inside the tenant part of your application, you may do the follo
 ```
 
 
-5. If you're using Passport 11.x, disable the automatic Passport route registering in your `AuthServiceProvider` by adding `Passport::ignoreRoutes();` to the `register()` method. Then, register the Passport routes manually by adding the following code to the `boot()` method:
+5. If you're using Passport 11.x, disable the automatic Passport route registering in your `AuthServiceProvider` by adding `Passport::ignoreRoutes();` to the `register()` method. Additionally, you should provide a static path for your keys, otherwise, your tenancy storage resolver will override the default place to tenant space, do this by adding a `Passport::loadKeysFrom(storage_path());`. Then, register the Passport routes manually by adding the following code to the `boot()` method:
 
 ```php
     Route::group([
