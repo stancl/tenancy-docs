@@ -112,6 +112,24 @@ public function run()
 
 Then, seed the database and generate the key pair by running `php artisan passport:keys`.
 
+#### Passport version 12 & shared keys {#passport-12-shared-keys}
+> **Note**: When using **Passport 12+** with **shared** keys, 
+Passport may look for those key files in a **tenant-specific** path, such as 
+`/storage/{tenant}/...`. If you only have **one** shared key pair, you can force 
+Passport to load them from the **central** storage path by placing the following code 
+in your `AppServiceProvider` or `AuthServiceProvider`:
+
+```php
+use Laravel\Passport\Passport;
+
+public function boot()
+{
+    Passport::loadKeysFrom(storage_path());
+    // ...
+}
+```
+This ensures Passport uses storage/oauth-private.key and storage/oauth-public.key for all tenants. If you do not call loadKeysFrom(), Passport might attempt to read from storage/tenant/{tenant}/oauth-private.key and fail if tenant-specific keys do not exist.
+
 ### **Tenant-specific keys** {#tenant-specific-keys}
 > **Note:** The security benefit of doing this is negligible since you're likely already using the same `APP_KEY` for all tenants. This is a relatively complex approach, so before implementing it, make sure you really want it. **Using shared keys instead is strongly recommended.**
 
