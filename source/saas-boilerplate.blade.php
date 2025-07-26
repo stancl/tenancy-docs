@@ -215,7 +215,7 @@
                 </li>
               </ul>
               <div class="mt-6 rounded-md shadow">
-                <a target="_blank" href="https://portal.archte.ch/buy/3" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out" aria-describedby="tier-standard">
+                <a target="_blank" href="https://app.gumroad.com/checkout?offer_code=launch-website&wanted=true&product=adAZB&quantity=1&code=launch-website&referrer=" data-gumroad-single-product="true" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out" aria-describedby="tier-standard">
                   Purchase
                 </a>
               </div>
@@ -282,7 +282,7 @@
                 </li>
               </ul>
               <div class="mt-6 rounded-md shadow">
-                <a target="_blank" href="https://portal.archte.ch/buy/4" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out" aria-describedby="tier-enterprise">
+                <a target="_blank" href="https://app.gumroad.com/checkout?wanted=true&offer_code=launch-website&product=FeNvZ&quantity=1&code=launch-website&referrer=" data-gumroad-single-product="true" class="flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out" aria-describedby="tier-enterprise">
                   Purchase
                 </a>
               </div>
@@ -335,7 +335,7 @@
               class="flex items-start justify-between w-full text-left text-gray-400 focus:outline-none focus:text-gray-900"
               x-bind:aria-expanded="openPanel === 1" aria-expanded="true">
               <span class="font-medium text-gray-900">
-                Can I pay with credit card/bank?
+                Can I pay with PayPal/credit card?
               </span>
               <span class="flex items-center ml-6 h-7">
                 <svg class="w-6 h-6 transform -rotate-180"
@@ -351,7 +351,7 @@
         </dt>
         <dd class="pr-12 mt-2" x-show="openPanel === 1">
           <p class="text-base leading-6 text-gray-700">
-            Yes! Payments are processed using Stripe which lets you pay with multiple payment methods depending on your region.
+            Yes! Payments are processed using Gumroad which lets you pay with PayPal or a payment card.
           </p>
         </dd>
       </div>
@@ -363,7 +363,7 @@
             class="flex items-start justify-between w-full text-left text-gray-400 focus:outline-none focus:text-gray-900"
             x-bind:aria-expanded="openPanel === 2">
             <span class="font-medium text-gray-900">
-              Can I get a receipt?
+              Can I get an invoice?
             </span>
             <span class="flex items-center ml-6 h-7">
               <svg class="w-6 h-6 transform rotate-0"
@@ -379,7 +379,7 @@
       </dt>
       <dd class="pr-12 mt-2" x-show="openPanel === 2" style="display: none;">
         <p class="text-base leading-6 text-gray-700">
-          Sure! A basic Stripe receipt is sent automatically after purchase. After that, you can get a detailed one within our portal.
+          Sure! When you receive the payment confirmation from Gumroad, you'll see a <em>Generate invoice</em> button. Use that and add your company details. Also be sure to add your VAT ID during the payment, if you have one, to be billed without extra VAT.
         </p>
       </dd>
     </div>
@@ -569,5 +569,5 @@
 @endsection
 
 @push('scripts')
-    <!-- <script type="text/javascript" src="https://gumroad.com/js/gumroad.js"></script> -->
+    <script type="text/javascript" src="https://gumroad.com/js/gumroad.js"></script>
 @endpush
