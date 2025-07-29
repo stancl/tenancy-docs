@@ -461,7 +461,7 @@ fill="none" viewBox="0 0 404 784">
               Downloads
             </dt>
             <dd class="order-1 text-5xl font-extrabold leading-none text-indigo-600">
-              4 500 000+
+              4.5M+
             </dd>
           </div>
           <div class="flex flex-col p-6 text-center border-t border-gray-100 sm:border-0 sm:border-l">
