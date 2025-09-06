@@ -204,7 +204,7 @@
                     A video course explaining how to create multi-database, subdomain separated tenants using this package.
                   </p>
                 </a>
-                <a href="https://airtable.com/shrUpJo4jp6Cw4ER3" target="_blank" class="hover:bg-gray-50 block p-3 -m-3 space-y-1 transition duration-150 ease-in-out rounded-md">
+                <a href="https://airtable.com/appxrhchYcUmfwppe/shr1hawexOHcCkBbE" target="_blank" class="hover:bg-gray-50 block p-3 -m-3 space-y-1 transition duration-150 ease-in-out rounded-md">
                   <p class="text-base font-medium leading-6 text-gray-900">
                     Book
                   </p>
