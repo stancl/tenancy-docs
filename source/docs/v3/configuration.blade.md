@@ -112,3 +112,5 @@ This config array lets you set parameters used by default when running the `tena
 `tenancy.seeder_parameters`
 
 The same as migration parameters, but for `tenants:seed` and the `SeedDatabase` job.
+
+> Note: Set `--force`to `true` to allow seeding tenant databases in production (e. g. during tenant creation).
