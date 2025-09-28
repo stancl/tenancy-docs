@@ -3,6 +3,7 @@
 use Illuminate\Support\Str;
 
 return [
+    'legacy'          => intval(env('DOCS_LEGACY_DEPLOYMENT', '1')),
     'baseUrl'         => 'http://localhost:3000',
     'production'      => false,
     'siteName'        => 'Tenancy for Laravel',

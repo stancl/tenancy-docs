@@ -5,7 +5,7 @@ require('laravel-mix-jigsaw');
 
 
 
-mix.disableSuccessNotifications();
+mix.disableNotifications();
 mix.setPublicPath('source/assets/build');
 
 mix.js('source/_assets/js/main.js', 'js')

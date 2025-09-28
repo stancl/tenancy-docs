@@ -3,7 +3,7 @@ node_modules
 yarn.lock
 dist/tailwind.css
 
-
+result
 build_local
 build_staging
 build_production
