@@ -66,9 +66,9 @@
           composerDeps = php74.buildComposerProject2 {
             pname = "tenancy-docs-composer";
             version = "1.0.0";
-            src = ./.;
+            src = pkgs.lib.cleanSource ./.;
 
-            vendorHash = "sha256-X7yyQ/fV5vKul+jZlw1vMsPsMrBMVUGhMMDMJDUugsU=";
+            vendorHash = "sha256-Gc5eqGEURko8Wigke7EZBFnEfvK8vXkLRsU3kv/tbFo=";
 
             postInstall = ''
               cp -R ./vendor/* $out
@@ -77,7 +77,7 @@
         in pkgs.buildNpmPackage {
           pname = "tenancy-docs";
           version = "1.0.0";
-          src = ./.;
+          src = pkgs.lib.cleanSource ./.;
 
           nodejs = pkgs.nodejs_24;
           npmDepsHash = "sha256-ufeN4BXCAlZZypViznlkXWosSgZ5nsPvMJJ0FVLXxJI=";
