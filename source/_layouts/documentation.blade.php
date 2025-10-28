@@ -27,10 +27,12 @@
         <meta name="previewify:image" content="https://tenancyforlaravel.com/assets/img/previewify-image.png">
 
         <meta name="theme-color" content="#5850EC">
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/site.webmanifest">
+        @if($page->legacy)
+            <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+            <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+            <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+            <link rel="manifest" href="/site.webmanifest">
+        @endif
 
         <meta name="docsearch:language" content="en" />
         <meta name="docsearch:version" content="{{ $page->version() }}" />
@@ -60,7 +62,9 @@
         <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
 
-        <script async data-api="/_hive" src="/bee.js"></script>
+        @if($page->legacy)
+            <script async data-api="/_hive" src="/bee.js"></script>
+        @endif
         <script src="{{ mix('js/turbolinks.js', 'assets/build') }}"></script>
 
         @if ($page->docsearchApiKey && $page->docsearchIndexName)

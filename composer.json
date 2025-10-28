@@ -1,4 +1,7 @@
 {
+    "name": "stancl/tenancy-docs",
+    "description": "Tenancy for Laravel docs",
+    "license": "MIT",
     "require": {
         "tightenco/jigsaw": "^1.3",
         "tightenco/jigsaw-docs-template": "^1.0",
